@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python爬虫初体验</title>
+    <url>/undefined/5208.html</url>
+    <content><![CDATA[<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><a id="more"></a>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res = requests.get(<span class="string">'https://wpblog.x0y1.com'</span>)</span><br><span class="line"><span class="comment">#print(res)</span></span><br><span class="line">print(res.text)</span><br><span class="line"><span class="keyword">if</span> res.status_code == <span class="number">200</span>:</span><br><span class="line">  print(<span class="string">'请求成功'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">'请求失败'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取孔乙己数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://apiv3.shanbay.com/codetime/articles/mnvdu'</span>)</span><br><span class="line"><span class="comment"># 以写入的方式打开一个名为孔乙己的 txt 文档</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'孔乙己.txt'</span>, <span class="string">'w'</span> ,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  <span class="comment"># 将数据的字符串形式写入文件中</span></span><br><span class="line">  file.write(res.text)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图片数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://assets.baydn.com/baydn/public/codetime/xiaobei/info.jpg'</span>)</span><br><span class="line"><span class="comment"># 以二进制写入的方式打开一个名为 info.jpg 的文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'info.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line"><span class="comment"># 将数据的二进制形式写入文件中</span></span><br><span class="line">  file.write(res.content)</span><br></pre></td></tr></table></figure>
+
+<p>变量 <strong>res</strong>它的类型是 <strong>Response</strong> 对象</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>res.status_code</td>
+<td>响应的 HTTP 状态码</td>
+</tr>
+<tr>
+<td>res.text</td>
+<td>响应内容的字符串形式</td>
+</tr>
+<tr>
+<td>res.content</td>
+<td>响应内容的二进制形式</td>
+</tr>
+<tr>
+<td>res.encoding</td>
+<td>响应内容的编码</td>
+</tr>
+</tbody></table>
+<h2 id="爬虫初体验"><a href="#爬虫初体验" class="headerlink" title="爬虫初体验"></a>爬虫初体验</h2><blockquote>
+<p>目标：自动循环小王子的所有章节，将故事存放到一个目录当中，每个章节一份文件。title做为文件名</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'http://www.eywedu.net/xiaowangzi/14.htm'</span>)</span><br><span class="line">res.encoding=<span class="string">'gb2312'</span></span><br><span class="line">text = res.text</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open (<span class="string">'小王子.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  file.write(text)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>开发语言</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MonogDB初体验</title>
     <url>/undefined/15869.html</url>
     <content><![CDATA[<h1 id="1-MonogDB简介"><a href="#1-MonogDB简介" class="headerlink" title="1.MonogDB简介"></a>1.MonogDB简介</h1><p>MongoDB 是一款强大，灵活，且易于扩展的通用性数据库，<strong>面向文档的数据库</strong>。</p>
@@ -127,52 +173,6 @@
       <categories>
         <category>开发语言</category>
         <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数据开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python爬虫初体验</title>
-    <url>/undefined/5208.html</url>
-    <content><![CDATA[<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><a id="more"></a>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res = requests.get(<span class="string">'https://wpblog.x0y1.com'</span>)</span><br><span class="line"><span class="comment">#print(res)</span></span><br><span class="line">print(res.text)</span><br><span class="line"><span class="keyword">if</span> res.status_code == <span class="number">200</span>:</span><br><span class="line">  print(<span class="string">'请求成功'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">'请求失败'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取孔乙己数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://apiv3.shanbay.com/codetime/articles/mnvdu'</span>)</span><br><span class="line"><span class="comment"># 以写入的方式打开一个名为孔乙己的 txt 文档</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'孔乙己.txt'</span>, <span class="string">'w'</span> ,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  <span class="comment"># 将数据的字符串形式写入文件中</span></span><br><span class="line">  file.write(res.text)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图片数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://assets.baydn.com/baydn/public/codetime/xiaobei/info.jpg'</span>)</span><br><span class="line"><span class="comment"># 以二进制写入的方式打开一个名为 info.jpg 的文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'info.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line"><span class="comment"># 将数据的二进制形式写入文件中</span></span><br><span class="line">  file.write(res.content)</span><br></pre></td></tr></table></figure>
-
-<p>变量 <strong>res</strong>它的类型是 <strong>Response</strong> 对象</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>res.status_code</td>
-<td>响应的 HTTP 状态码</td>
-</tr>
-<tr>
-<td>res.text</td>
-<td>响应内容的字符串形式</td>
-</tr>
-<tr>
-<td>res.content</td>
-<td>响应内容的二进制形式</td>
-</tr>
-<tr>
-<td>res.encoding</td>
-<td>响应内容的编码</td>
-</tr>
-</tbody></table>
-<h2 id="爬虫初体验"><a href="#爬虫初体验" class="headerlink" title="爬虫初体验"></a>爬虫初体验</h2><blockquote>
-<p>目标：自动循环小王子的所有章节，将故事存放到一个目录当中，每个章节一份文件。title做为文件名</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'http://www.eywedu.net/xiaowangzi/14.htm'</span>)</span><br><span class="line">res.encoding=<span class="string">'gb2312'</span></span><br><span class="line">text = res.text</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open (<span class="string">'小王子.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  file.write(text)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>开发语言</category>
       </categories>
       <tags>
         <tag>python</tag>
