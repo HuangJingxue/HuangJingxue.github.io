@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>豆瓣电影排行榜</title>
-    <url>/undefined/9836.html</url>
-    <content><![CDATA[<h1 id="1-如何处理数据"><a href="#1-如何处理数据" class="headerlink" title="1.如何处理数据"></a>1.如何处理数据</h1><p>BeautifulSoup</p>
-<ul>
-<li>解析数据</li>
-<li>提出数据</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="2-案例"><a href="#2-案例" class="headerlink" title="2.案例"></a>2.案例</h1><h2 id="2-1获取豆瓣图书TOP250当中"><a href="#2-1获取豆瓣图书TOP250当中" class="headerlink" title="2.1获取豆瓣图书TOP250当中"></a>2.1获取豆瓣图书TOP250当中</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment"># 引入 BeautifulSoup</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">res = requests.get(<span class="string">'https://book.douban.com/top250'</span>, headers=headers)</span><br><span class="line"><span class="comment"># 第一个参数为网页源代码，第二个参数为解析器</span></span><br><span class="line">soup = BeautifulSoup(res.text, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment"># print(soup)</span></span><br><span class="line"><span class="comment"># items = soup.find_all('div', class_='pl2')</span></span><br><span class="line">items = soup.select(<span class="string">'div.pl2 a'</span>)</span><br><span class="line"><span class="comment"># print(items)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  <span class="comment"># tag = i.find('a')</span></span><br><span class="line">  <span class="comment"># name = ''.join(tag.text.split())</span></span><br><span class="line">  <span class="comment"># name = tag['title']</span></span><br><span class="line">  <span class="comment"># link = tag['href']</span></span><br><span class="line">  name = i[<span class="string">'title'</span>]</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  print(name, link)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2获取豆瓣电影的数据-电影名和链接"><a href="#2-2获取豆瓣电影的数据-电影名和链接" class="headerlink" title="2.2获取豆瓣电影的数据(电影名和链接)"></a>2.2获取豆瓣电影的数据(电影名和链接)</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'https://movie.douban.com/top250'</span>, headers=headers)</span><br><span class="line">soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">items = soup.select(<span class="string">'div.hd a'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  tag = i.find(class_=<span class="string">'title'</span>)</span><br><span class="line">  name = tag.text</span><br><span class="line">  print(name,link)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>开发语言</category>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数据开发</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MonogDB初体验</title>
     <url>/undefined/15869.html</url>
     <content><![CDATA[<h1 id="1-MonogDB简介"><a href="#1-MonogDB简介" class="headerlink" title="1.MonogDB简介"></a>1.MonogDB简介</h1><p>MongoDB 是一款强大，灵活，且易于扩展的通用性数据库，<strong>面向文档的数据库</strong>。</p>
@@ -131,6 +107,30 @@
       </categories>
       <tags>
         <tag>mongodb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>豆瓣电影排行榜</title>
+    <url>/undefined/9836.html</url>
+    <content><![CDATA[<h1 id="1-如何处理数据"><a href="#1-如何处理数据" class="headerlink" title="1.如何处理数据"></a>1.如何处理数据</h1><p>BeautifulSoup</p>
+<ul>
+<li>解析数据</li>
+<li>提出数据</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="2-案例"><a href="#2-案例" class="headerlink" title="2.案例"></a>2.案例</h1><h2 id="2-1获取豆瓣图书TOP250当中"><a href="#2-1获取豆瓣图书TOP250当中" class="headerlink" title="2.1获取豆瓣图书TOP250当中"></a>2.1获取豆瓣图书TOP250当中</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment"># 引入 BeautifulSoup</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">res = requests.get(<span class="string">'https://book.douban.com/top250'</span>, headers=headers)</span><br><span class="line"><span class="comment"># 第一个参数为网页源代码，第二个参数为解析器</span></span><br><span class="line">soup = BeautifulSoup(res.text, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment"># print(soup)</span></span><br><span class="line"><span class="comment"># items = soup.find_all('div', class_='pl2')</span></span><br><span class="line">items = soup.select(<span class="string">'div.pl2 a'</span>)</span><br><span class="line"><span class="comment"># print(items)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  <span class="comment"># tag = i.find('a')</span></span><br><span class="line">  <span class="comment"># name = ''.join(tag.text.split())</span></span><br><span class="line">  <span class="comment"># name = tag['title']</span></span><br><span class="line">  <span class="comment"># link = tag['href']</span></span><br><span class="line">  name = i[<span class="string">'title'</span>]</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  print(name, link)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2获取豆瓣电影的数据-电影名和链接"><a href="#2-2获取豆瓣电影的数据-电影名和链接" class="headerlink" title="2.2获取豆瓣电影的数据(电影名和链接)"></a>2.2获取豆瓣电影的数据(电影名和链接)</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'https://movie.douban.com/top250'</span>, headers=headers)</span><br><span class="line">soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">items = soup.select(<span class="string">'div.hd a'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  tag = i.find(class_=<span class="string">'title'</span>)</span><br><span class="line">  name = tag.text</span><br><span class="line">  print(name,link)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>开发语言</category>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据开发</tag>
       </tags>
   </entry>
   <entry>

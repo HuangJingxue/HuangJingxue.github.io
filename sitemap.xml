@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://applegit11.github.io/about/index.html</loc>
+    
+    <lastmod>2020-04-07T10:19:41.218Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://applegit11.github.io/links/index.html</loc>
+    
+    <lastmod>2020-04-07T09:49:01.254Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://applegit11.github.io/undefined/5208.html</loc>
     
     <lastmod>2020-04-06T15:54:50.105Z</lastmod>
@@ -37,23 +51,9 @@
   </url>
   
   <url>
-    <loc>https://applegit11.github.io/about/index.html</loc>
-    
-    <lastmod>2020-04-06T12:35:21.534Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://applegit11.github.io/links/linklist.json</loc>
     
     <lastmod>2020-04-06T12:01:42.092Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://applegit11.github.io/links/index.html</loc>
-    
-    <lastmod>2020-04-06T11:59:36.644Z</lastmod>
     
   </url>
   
