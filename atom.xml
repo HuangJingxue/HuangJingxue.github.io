@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://applegit11.github.io/"/>
-  <updated>2020-04-10T10:37:17.031Z</updated>
+  <updated>2020-04-14T11:39:40.068Z</updated>
   <id>https://applegit11.github.io/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么你改了我看不见?</title>
+    <link href="https://applegit11.github.io/undefined/c0a85e31.html"/>
+    <id>https://applegit11.github.io/undefined/c0a85e31.html</id>
+    <published>2020-04-14T19:23:01.000Z</published>
+    <updated>2020-04-14T11:39:40.068Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;事务A&lt;/th&gt;
+&lt;th&gt;事务B&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;启动事务；查询得到值&lt;/td&gt;
+&lt;td&gt;启动事务&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;查询得到值1&lt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://applegit11.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql" scheme="https://applegit11.github.io/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql误删数据谁来背锅</title>
