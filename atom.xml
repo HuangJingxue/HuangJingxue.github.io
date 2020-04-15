@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://applegit11.github.io/"/>
-  <updated>2020-04-14T11:39:40.068Z</updated>
+  <updated>2020-04-15T05:49:04.680Z</updated>
   <id>https://applegit11.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>云数据库Polardb如何获取事务提交时间戳</title>
+    <link href="https://applegit11.github.io/undefined/8c90e6a4.html"/>
+    <id>https://applegit11.github.io/undefined/8c90e6a4.html</id>
+    <published>2020-04-15T13:27:48.000Z</published>
+    <updated>2020-04-15T05:49:04.680Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;polardb-需开启binlog&quot;&gt;&lt;a href=&quot;#polardb-需开启binlog&quot; class=&quot;headerlink&quot; title=&quot;polardb 需开启binlog&quot;&gt;&lt;/a&gt;polardb 需开启binlog&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;修改当前值&lt;strong&gt;loose_polar_log_bin&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;数据库引擎为MySQL 5.6的PolarDB集群，当前值修改为ON_WITH_GTID；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数据库引擎为MySQL 8.0的PolarDB集群，当前值修改为ON。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;canal拉取binlog&quot;&gt;&lt;a href=&quot;#canal拉取binlog&quot; class=&quot;headerlink&quot; title=&quot;canal拉取binlog&quot;&gt;&lt;/a&gt;canal拉取binlog&lt;/h2&gt;&lt;p&gt;简介：（阿里巴巴 MySQL binlog 增量订阅&amp;amp;消费组件）&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;参考：&lt;a href=&quot;https://github.com/alibaba/canal&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/alibaba/canal&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="云数据库" scheme="https://applegit11.github.io/categories/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql" scheme="https://applegit11.github.io/tags/mysql/"/>
+    
+      <category term="Polardb" scheme="https://applegit11.github.io/tags/Polardb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>为什么你改了我看不见?</title>
     <link href="https://applegit11.github.io/undefined/c0a85e31.html"/>
     <id>https://applegit11.github.io/undefined/c0a85e31.html</id>
     <published>2020-04-14T19:23:01.000Z</published>
-    <updated>2020-04-14T11:39:40.068Z</updated>
+    <updated>2020-04-14T11:41:32.062Z</updated>
     
     <summary type="html">
     
@@ -52,7 +86,7 @@
       <category term="数据库" scheme="https://applegit11.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="https://applegit11.github.io/tags/mysql/"/>
+      <category term="mysql - 事务" scheme="https://applegit11.github.io/tags/mysql-%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   

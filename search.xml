@@ -1,71 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>豆瓣电影排行榜</title>
-    <url>/undefined/9836.html</url>
-    <content><![CDATA[<h1 id="1-如何处理数据"><a href="#1-如何处理数据" class="headerlink" title="1.如何处理数据"></a>1.如何处理数据</h1><p>BeautifulSoup</p>
-<ul>
-<li>解析数据</li>
-<li>提出数据</li>
+    <title>云数据库Polardb如何获取事务提交时间戳</title>
+    <url>/undefined/8c90e6a4.html</url>
+    <content><![CDATA[<h2 id="polardb-需开启binlog"><a href="#polardb-需开启binlog" class="headerlink" title="polardb 需开启binlog"></a>polardb 需开启binlog</h2><ul>
+<li>修改当前值<strong>loose_polar_log_bin</strong></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br></pre></td></tr></table></figure>
+<p><strong>说明</strong></p>
+<ul>
+<li><p>数据库引擎为MySQL 5.6的PolarDB集群，当前值修改为ON_WITH_GTID；</p>
+</li>
+<li><p>数据库引擎为MySQL 8.0的PolarDB集群，当前值修改为ON。</p>
+</li>
+</ul>
+<h2 id="canal拉取binlog"><a href="#canal拉取binlog" class="headerlink" title="canal拉取binlog"></a>canal拉取binlog</h2><p>简介：（阿里巴巴 MySQL binlog 增量订阅&amp;消费组件）</p>
+<p><em>参考：<a href="https://github.com/alibaba/canal" target="_blank" rel="noopener">https://github.com/alibaba/canal</a></em></p>
 <a id="more"></a>
-<h1 id="2-案例"><a href="#2-案例" class="headerlink" title="2.案例"></a>2.案例</h1><h2 id="2-1获取豆瓣图书TOP250当中"><a href="#2-1获取豆瓣图书TOP250当中" class="headerlink" title="2.1获取豆瓣图书TOP250当中"></a>2.1获取豆瓣图书TOP250当中</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment"># 引入 BeautifulSoup</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">res = requests.get(<span class="string">'https://book.douban.com/top250'</span>, headers=headers)</span><br><span class="line"><span class="comment"># 第一个参数为网页源代码，第二个参数为解析器</span></span><br><span class="line">soup = BeautifulSoup(res.text, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment"># print(soup)</span></span><br><span class="line"><span class="comment"># items = soup.find_all('div', class_='pl2')</span></span><br><span class="line">items = soup.select(<span class="string">'div.pl2 a'</span>)</span><br><span class="line"><span class="comment"># print(items)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  <span class="comment"># tag = i.find('a')</span></span><br><span class="line">  <span class="comment"># name = ''.join(tag.text.split())</span></span><br><span class="line">  <span class="comment"># name = tag['title']</span></span><br><span class="line">  <span class="comment"># link = tag['href']</span></span><br><span class="line">  name = i[<span class="string">'title'</span>]</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  print(name, link)</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-2获取豆瓣电影的数据-电影名和链接"><a href="#2-2获取豆瓣电影的数据-电影名和链接" class="headerlink" title="2.2获取豆瓣电影的数据(电影名和链接)"></a>2.2获取豆瓣电影的数据(电影名和链接)</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'https://movie.douban.com/top250'</span>, headers=headers)</span><br><span class="line">soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">items = soup.select(<span class="string">'div.hd a'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  tag = i.find(class_=<span class="string">'title'</span>)</span><br><span class="line">  name = tag.text</span><br><span class="line">  print(name,link)</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul>
+<li><p>下载 canal, 访问 <a href="https://github.com/alibaba/canal/releases" target="_blank" rel="noopener">release 页面</a> , 选择需要的包下载, 如以 1.1.4 版本为例</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;alibaba&#x2F;canal&#x2F;releases&#x2F;download&#x2F;canal-1.1.4&#x2F;canal.deployer-1.1.4.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h1 id="canal-python"><a href="#canal-python" class="headerlink" title="canal-python"></a>canal-python</h1><h2 id="一-canal-python-简介"><a href="#一-canal-python-简介" class="headerlink" title="一.canal-python 简介"></a>一.canal-python 简介</h2><p>canal-python 是阿里巴巴开源项目 <a href="https://github.com/alibaba/canal" target="_blank" rel="noopener">Canal</a>是阿里巴巴mysql数据库binlog的增量订阅&amp;消费组件 的 python 客户端。为 python 开发者提供一个更友好的使用 Canal 的方式。Canal 是mysql数据库binlog的增量订阅&amp;消费组件。</p>
+<p>基于日志增量订阅&amp;消费支持的业务：</p>
+<ol>
+<li>数据库镜像</li>
+<li>数据库实时备份</li>
+<li>多级索引 (卖家和买家各自分库索引)</li>
+<li>search build</li>
+<li>业务cache刷新</li>
+<li>价格变化等重要业务消息</li>
+</ol>
+<p>关于 Canal 的更多信息请访问 <a href="https://github.com/alibaba/canal/wiki" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki</a></p>
+<h2 id="二-应用场景"><a href="#二-应用场景" class="headerlink" title="二.应用场景"></a>二.应用场景</h2><p>canal-python 作为Canal的客户端，其应用场景就是Canal的应用场景。关于应用场景在Canal介绍一节已有概述。举一些实际的使用例子：</p>
+<p>1.代替使用轮询数据库方式来监控数据库变更，有效改善轮询耗费数据库资源。</p>
+<p>2.根据数据库的变更实时更新搜索引擎，比如电商场景下商品信息发生变更，实时同步到商品搜索引擎 Elasticsearch、solr等</p>
+<p>3.根据数据库的变更实时更新缓存，比如电商场景下商品价格、库存发生变更实时同步到redis</p>
+<p>4.数据库异地备份、数据同步</p>
+<p>5.根据数据库变更触发某种业务，比如电商场景下，创建订单超过xx时间未支付被自动取消，我们获取到这条订单数据的状态变更即可向用户推送消息。</p>
+<p>6.将数据库变更整理成自己的数据格式发送到kafka等消息队列，供消息队列的消费者进行消费。</p>
+<h2 id="三-工作原理"><a href="#三-工作原理" class="headerlink" title="三.工作原理"></a>三.工作原理</h2><p>canal-python 是 Canal 的 python 客户端，它与 Canal 是采用的Socket来进行通信的，传输协议是TCP，交互协议采用的是 Google Protocol Buffer 3.0。</p>
+<h2 id="四-工作流程"><a href="#四-工作流程" class="headerlink" title="四.工作流程"></a>四.工作流程</h2><p>1.Canal连接到mysql数据库，模拟slave</p>
+<p>2.canal-python 与 Canal 建立连接</p>
+<p>2.数据库发生变更写入到binlog</p>
+<p>5.Canal向数据库发送dump请求，获取binlog并解析</p>
+<p>4.canal-python 向 Canal 请求数据库变更</p>
+<p>4.Canal 发送解析后的数据给canal-python</p>
+<p>5.canal-python收到数据，消费成功，发送回执。（可选）</p>
+<p>6.Canal记录消费位置。</p>
+<h2 id="五-快速启动"><a href="#五-快速启动" class="headerlink" title="五.快速启动"></a>五.快速启动</h2><h3 id="安装Canal"><a href="#安装Canal" class="headerlink" title="安装Canal"></a>安装Canal</h3><p>Canal 的安装以及配置使用请查看 <a href="https://github.com/alibaba/canal/wiki/QuickStart" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki/QuickStart</a></p>
+<p>安装java请查看 <a href="https://www.cnblogs.com/lumama520/p/11058927.html" target="_blank" rel="noopener">https://www.cnblogs.com/lumama520/p/11058927.html</a></p>
+<h3 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h3><p>python &gt;= 3</p>
+<h3 id="构建canal-python客户端"><a href="#构建canal-python客户端" class="headerlink" title="构建canal python客户端"></a>构建canal python客户端</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install canal-python</span><br><span class="line">pip install protobuf</span><br></pre></td></tr></table></figure>
+
+<h3 id="建立与Canal的连接"><a href="#建立与Canal的连接" class="headerlink" title="建立与Canal的连接"></a>建立与Canal的连接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim canalpython.py</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">from canal.client import Client</span><br><span class="line">from canal.protocol import EntryProtocol_pb2</span><br><span class="line">from canal.protocol import CanalProtocol_pb2</span><br><span class="line"></span><br><span class="line">client &#x3D; Client()</span><br><span class="line">client.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;11111)</span><br><span class="line">client.check_valid(username&#x3D;b&#39;&#39;, password&#x3D;b&#39;&#39;)</span><br><span class="line">client.subscribe(client_id&#x3D;b&#39;1001&#39;, destination&#x3D;b&#39;example&#39;, filter&#x3D;b&#39;.*\\..*&#39;)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    message &#x3D; client.get(100)</span><br><span class="line">    entries &#x3D; message[&#39;entries&#39;]</span><br><span class="line">    for entry in entries:</span><br><span class="line">        entry_type &#x3D; entry.entryType</span><br><span class="line">        if entry_type in [EntryProtocol_pb2.EntryType.TRANSACTIONBEGIN, EntryProtocol_pb2.EntryType.TRANSACTIONEND]:</span><br><span class="line">            continue</span><br><span class="line">        row_change &#x3D; EntryProtocol_pb2.RowChange()</span><br><span class="line">        row_change.MergeFromString(entry.storeValue)</span><br><span class="line">        event_type &#x3D; row_change.eventType</span><br><span class="line">        header &#x3D; entry.header</span><br><span class="line">        database &#x3D; header.schemaName</span><br><span class="line">        table &#x3D; header.tableName</span><br><span class="line">        event_type &#x3D; header.eventType</span><br><span class="line">        for row in row_change.rowDatas:</span><br><span class="line">            format_data &#x3D; dict()</span><br><span class="line">            if event_type &#x3D;&#x3D; EntryProtocol_pb2.EventType.DELETE:</span><br><span class="line">                for column in row.beforeColumns:</span><br><span class="line">                    format_data &#x3D; &#123;</span><br><span class="line">                        column.name: column.value</span><br><span class="line">                    &#125;</span><br><span class="line">            elif event_type &#x3D;&#x3D; EntryProtocol_pb2.EventType.INSERT:</span><br><span class="line">                for column in row.afterColumns:</span><br><span class="line">                    format_data &#x3D; &#123;</span><br><span class="line">                        column.name: column.value</span><br><span class="line">                    &#125;</span><br><span class="line">            else:</span><br><span class="line">                format_data[&#39;before&#39;] &#x3D; format_data[&#39;after&#39;] &#x3D; dict()</span><br><span class="line">                for column in row.beforeColumns:</span><br><span class="line">                    format_data[&#39;before&#39;][column.name] &#x3D; column.value</span><br><span class="line">                for column in row.afterColumns:</span><br><span class="line">                    format_data[&#39;after&#39;][column.name] &#x3D; column.value</span><br><span class="line">            data &#x3D; dict(</span><br><span class="line">                db&#x3D;database,</span><br><span class="line">                table&#x3D;table,</span><br><span class="line">                event_type&#x3D;event_type,</span><br><span class="line">                data&#x3D;format_data,</span><br><span class="line">            )</span><br><span class="line">            print(data)</span><br><span class="line">    time.sleep(1)</span><br><span class="line"></span><br><span class="line">client.disconnect()</span><br></pre></td></tr></table></figure>
+
+<h2 id="事务时间戳获取"><a href="#事务时间戳获取" class="headerlink" title="事务时间戳获取"></a>事务时间戳获取</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@Oracle01 ~]# mysql -uxxx -pxxx -hlocalhost</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> use qinxidb</span></span><br><span class="line">Database changed</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> insert into tb (userId) values (9161);</span></span><br><span class="line">Query OK, 1 row affected (0.10 sec)</span><br><span class="line"></span><br><span class="line">[root@Oracle01 canal]# python3 canalpython.py </span><br><span class="line">connected to 127.0.0.1:11111</span><br><span class="line">Auth succed</span><br><span class="line">Subscribe succed</span><br><span class="line">header &#123;</span><br><span class="line">  version: 1</span><br><span class="line">  logfileName: "mybinlog.000011"</span><br><span class="line">  logfileOffset: 38812146</span><br><span class="line">  serverId: 4</span><br><span class="line">  serverenCode: "UTF-8"</span><br><span class="line">  executeTime: 1586929590000</span><br><span class="line">  sourceType: MYSQL</span><br><span class="line">  eventLength: 75</span><br><span class="line">&#125;</span><br><span class="line">entryType: TRANSACTIONBEGIN</span><br><span class="line">storeValue: " \204\254\001"</span><br><span class="line"></span><br><span class="line">header &#123;</span><br><span class="line">  version: 1</span><br><span class="line">  logfileName: "mybinlog.000011"</span><br><span class="line">  logfileOffset: 38812269</span><br><span class="line">  serverId: 4</span><br><span class="line">  serverenCode: "UTF-8"</span><br><span class="line">  executeTime: 1586929590000</span><br><span class="line">  sourceType: MYSQL</span><br><span class="line">  schemaName: "qinxidb"</span><br><span class="line">  tableName: "tb"</span><br><span class="line">  eventLength: 40</span><br><span class="line">  eventType: INSERT</span><br><span class="line">  props &#123;</span><br><span class="line">    key: "rowsCount"</span><br><span class="line">    value: "1"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">entryType: ROWDATA</span><br><span class="line">storeValue: "\010\177\020\001P\000b#\022!\010\000\020\004\032\006userId \000(\0010\000B\0049161R\007int(11)"</span><br><span class="line"></span><br><span class="line">&#123;'db': 'qinxidb', 'table': 'tb', 'event_type': 1, 'data': &#123;'userId': '9161'&#125;&#125;</span><br><span class="line">header &#123;</span><br><span class="line">  version: 1</span><br><span class="line">  logfileName: "mybinlog.000011"</span><br><span class="line">  logfileOffset: 38812309</span><br><span class="line">  serverId: 4</span><br><span class="line">  serverenCode: "UTF-8"</span><br><span class="line">  executeTime: 1586929590000</span><br><span class="line">  sourceType: MYSQL</span><br><span class="line">  eventLength: 31</span><br><span class="line">&#125;</span><br><span class="line">entryType: TRANSACTIONEND</span><br><span class="line">storeValue: "\022\00551434"</span><br></pre></td></tr></table></figure>
+
+
+
+
 
 ]]></content>
       <categories>
-        <category>开发语言</category>
-        <category>爬虫</category>
+        <category>云数据库</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>数据开发</tag>
+        <tag>mysql</tag>
+        <tag>Polardb</tag>
       </tags>
   </entry>
   <entry>
-    <title>python爬虫初体验</title>
-    <url>/undefined/5208.html</url>
-    <content><![CDATA[<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res = requests.get(<span class="string">'https://wpblog.x0y1.com'</span>)</span><br><span class="line"><span class="comment">#print(res)</span></span><br><span class="line">print(res.text)</span><br><span class="line"><span class="keyword">if</span> res.status_code == <span class="number">200</span>:</span><br><span class="line">  print(<span class="string">'请求成功'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">'请求失败'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取孔乙己数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://apiv3.shanbay.com/codetime/articles/mnvdu'</span>)</span><br><span class="line"><span class="comment"># 以写入的方式打开一个名为孔乙己的 txt 文档</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'孔乙己.txt'</span>, <span class="string">'w'</span> ,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  <span class="comment"># 将数据的字符串形式写入文件中</span></span><br><span class="line">  file.write(res.text)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图片数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://assets.baydn.com/baydn/public/codetime/xiaobei/info.jpg'</span>)</span><br><span class="line"><span class="comment"># 以二进制写入的方式打开一个名为 info.jpg 的文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'info.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line"><span class="comment"># 将数据的二进制形式写入文件中</span></span><br><span class="line">  file.write(res.content)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>变量 <strong>res</strong>它的类型是 <strong>Response</strong> 对象</p>
-<table>
+    <title>为什么你改了我看不见?</title>
+    <url>/undefined/c0a85e31.html</url>
+    <content><![CDATA[<table>
 <thead>
 <tr>
-<th>属性</th>
-<th>含义</th>
+<th>事务A</th>
+<th>事务B</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>res.status_code</td>
-<td>响应的 HTTP 状态码</td>
+<td>启动事务；查询得到值</td>
+<td>启动事务</td>
 </tr>
 <tr>
-<td>res.text</td>
-<td>响应内容的字符串形式</td>
+<td></td>
+<td>查询得到值1</td>
 </tr>
 <tr>
-<td>res.content</td>
-<td>响应内容的二进制形式</td>
+<td></td>
+<td>将1改成2</td>
 </tr>
 <tr>
-<td>res.encoding</td>
-<td>响应内容的编码</td>
+<td>查询得到值V1</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>提交事务B</td>
+</tr>
+<tr>
+<td>查询得到值V2</td>
+<td></td>
+</tr>
+<tr>
+<td>提交事务A</td>
+<td></td>
+</tr>
+<tr>
+<td>查询得到值V3</td>
+<td></td>
 </tr>
 </tbody></table>
-<h2 id="爬虫初体验"><a href="#爬虫初体验" class="headerlink" title="爬虫初体验"></a>爬虫初体验</h2><blockquote>
-<p>目标：自动循环小王子的所有章节，将故事存放到一个目录当中，每个章节一份文件。title做为文件名</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'http://www.eywedu.net/xiaowangzi/14.htm'</span>)</span><br><span class="line">res.encoding=<span class="string">'gb2312'</span></span><br><span class="line">text = res.text</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open (<span class="string">'小王子.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  file.write(text)</span><br></pre></td></tr></table></figure>
-
+<p>若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以，V3的值也是2。</p>
+<p>在实现上，数据库里面会创建一个视图，访问的时候以视图的逻辑结果为准。</p>
+<ul>
+<li>在“可重复读”隔离级别下，这个视图是在事务启动时创建的，整个事务存在期间都用这个视图。</li>
+<li>在“读提交”隔离级别下，这个视图是在每个SQL语句开始执行的时候创建的。</li>
+<li>在“读未提交”隔离级别下直接返回记录下的最新之，没有视图概念。</li>
+<li>而“串性化”隔离级别下直接用加锁的方式来避免并行访问。</li>
+</ul>
+<p>为保证数据库隔离级别一致，你一定要记得将MYSQL的隔离级别设置为“读提交”。</p>
 ]]></content>
       <categories>
-        <category>开发语言</category>
+        <category>数据库</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>数据开发</tag>
+        <tag>mysql - 事务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql误删数据谁来背锅</title>
+    <url>/undefined/d4c410ce.html</url>
+    <content><![CDATA[<blockquote>
+<p>我们不止要说误删数据的事后处理办法，更重要是要做到事前预防。</p>
+</blockquote>
+<p><em>误删数据分类</em></p>
+<ul>
+<li>使用 delete 语句误删数据行；</li>
+<li>使用 drop table 或者 truncate table 语句误删数据表；</li>
+<li>使用 drop database 语句误删数据库；</li>
+<li>使用 rm 命令误删整个 MySQL 实例。<a id="more"></a>
+
+</li>
+</ul>
+<p><em>需要完善自动恢复脚本</em></p>
+<blockquote>
+<p>一种加速的方法是，在用备份恢复出临时实例之后，将这个临时实例设置成线上备库的从库</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.恢复全量备份</span></span><br><span class="line">a.指定全量备份路径</span><br><span class="line">b.写入全量备份名称</span><br><span class="line">c.恢复全量备份到指定临时实例</span><br><span class="line"></span><br><span class="line">在 start slave 之前，先通过执行﻿﻿change replication filter replicate_do_table = (tbl_name) 命令，就可以让临时库只同步误操作的表；</span><br><span class="line">这样做也可以用上并行复制技术，来加速整个数据恢复过程。</span><br><span class="line"><span class="comment">#2.自动恢复binlog</span></span><br><span class="line">a.指定binlog备份路径</span><br><span class="line">b.指定需要恢复的binlog名称（1个或者多个）</span><br><span class="line">c.恢复binlog到指定临时实例</span><br></pre></td></tr></table></figure>
+
+<p><em>预防误删库 / 表的方法</em></p>
+<ul>
+<li><p>第一条建议是，账号分离。这样做的目的是，避免写错命令。</p>
+<blockquote>
+<p>比如：我们只给业务开发同学 DML 权限，而不给 truncate/drop 权限。<br>而如果业务开发人员有 DDL 需求的话，也可以通过开发管理系统得到支持。<br>即使是 DBA 团队成员，日常也都规定只使用只读账号，必要的时候才使用有更新权限的账号。</p>
+</blockquote>
+</li>
+<li><p>第二条建议是，制定操作规范。</p>
+<blockquote>
+<p>这样做的目的，是避免写错要删除的表名。<br>比如：在删除数据表之前，必须先对表做改名操作。然后，观察一段时间，确保对业务无影响以后再删除这张表。<br>改表名的时候，要求给表名加固定的后缀（比如加 _to_be_deleted)，然后删除表的动作必须通过管理系统执行。并且，管理系删除表的时候，只能删除固定后缀的表。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -178,105 +286,71 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql误删数据谁来背锅</title>
-    <url>/undefined/d4c410ce.html</url>
-    <content><![CDATA[<blockquote>
-<p>我们不止要说误删数据的事后处理办法，更重要是要做到事前预防。</p>
-</blockquote>
-<p><em>误删数据分类</em></p>
+    <title>豆瓣电影排行榜</title>
+    <url>/undefined/9836.html</url>
+    <content><![CDATA[<h1 id="1-如何处理数据"><a href="#1-如何处理数据" class="headerlink" title="1.如何处理数据"></a>1.如何处理数据</h1><p>BeautifulSoup</p>
 <ul>
-<li>使用 delete 语句误删数据行；</li>
-<li>使用 drop table 或者 truncate table 语句误删数据表；</li>
-<li>使用 drop database 语句误删数据库；</li>
-<li>使用 rm 命令误删整个 MySQL 实例。<a id="more"></a>
-
-</li>
+<li>解析数据</li>
+<li>提出数据</li>
 </ul>
-<p><em>需要完善自动恢复脚本</em></p>
-<blockquote>
-<p>一种加速的方法是，在用备份恢复出临时实例之后，将这个临时实例设置成线上备库的从库</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.恢复全量备份</span></span><br><span class="line">a.指定全量备份路径</span><br><span class="line">b.写入全量备份名称</span><br><span class="line">c.恢复全量备份到指定临时实例</span><br><span class="line"></span><br><span class="line">在 start slave 之前，先通过执行﻿﻿change replication filter replicate_do_table = (tbl_name) 命令，就可以让临时库只同步误操作的表；</span><br><span class="line">这样做也可以用上并行复制技术，来加速整个数据恢复过程。</span><br><span class="line"><span class="comment">#2.自动恢复binlog</span></span><br><span class="line">a.指定binlog备份路径</span><br><span class="line">b.指定需要恢复的binlog名称（1个或者多个）</span><br><span class="line">c.恢复binlog到指定临时实例</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="2-案例"><a href="#2-案例" class="headerlink" title="2.案例"></a>2.案例</h1><h2 id="2-1获取豆瓣图书TOP250当中"><a href="#2-1获取豆瓣图书TOP250当中" class="headerlink" title="2.1获取豆瓣图书TOP250当中"></a>2.1获取豆瓣图书TOP250当中</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment"># 引入 BeautifulSoup</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">res = requests.get(<span class="string">'https://book.douban.com/top250'</span>, headers=headers)</span><br><span class="line"><span class="comment"># 第一个参数为网页源代码，第二个参数为解析器</span></span><br><span class="line">soup = BeautifulSoup(res.text, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment"># print(soup)</span></span><br><span class="line"><span class="comment"># items = soup.find_all('div', class_='pl2')</span></span><br><span class="line">items = soup.select(<span class="string">'div.pl2 a'</span>)</span><br><span class="line"><span class="comment"># print(items)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  <span class="comment"># tag = i.find('a')</span></span><br><span class="line">  <span class="comment"># name = ''.join(tag.text.split())</span></span><br><span class="line">  <span class="comment"># name = tag['title']</span></span><br><span class="line">  <span class="comment"># link = tag['href']</span></span><br><span class="line">  name = i[<span class="string">'title'</span>]</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  print(name, link)</span><br></pre></td></tr></table></figure>
 
-<p><em>预防误删库 / 表的方法</em></p>
-<ul>
-<li><p>第一条建议是，账号分离。这样做的目的是，避免写错命令。</p>
-<blockquote>
-<p>比如：我们只给业务开发同学 DML 权限，而不给 truncate/drop 权限。<br>而如果业务开发人员有 DDL 需求的话，也可以通过开发管理系统得到支持。<br>即使是 DBA 团队成员，日常也都规定只使用只读账号，必要的时候才使用有更新权限的账号。</p>
-</blockquote>
-</li>
-<li><p>第二条建议是，制定操作规范。</p>
-<blockquote>
-<p>这样做的目的，是避免写错要删除的表名。<br>比如：在删除数据表之前，必须先对表做改名操作。然后，观察一段时间，确保对业务无影响以后再删除这张表。<br>改表名的时候，要求给表名加固定的后缀（比如加 _to_be_deleted)，然后删除表的动作必须通过管理系统执行。并且，管理系删除表的时候，只能删除固定后缀的表。</p>
-</blockquote>
-</li>
-</ul>
+<h2 id="2-2获取豆瓣电影的数据-电影名和链接"><a href="#2-2获取豆瓣电影的数据-电影名和链接" class="headerlink" title="2.2获取豆瓣电影的数据(电影名和链接)"></a>2.2获取豆瓣电影的数据(电影名和链接)</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'https://movie.douban.com/top250'</span>, headers=headers)</span><br><span class="line">soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">items = soup.select(<span class="string">'div.hd a'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  tag = i.find(class_=<span class="string">'title'</span>)</span><br><span class="line">  name = tag.text</span><br><span class="line">  print(name,link)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>数据库</category>
+        <category>开发语言</category>
+        <category>爬虫</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
+        <tag>python</tag>
+        <tag>数据开发</tag>
       </tags>
   </entry>
   <entry>
-    <title>为什么你改了我看不见?</title>
-    <url>/undefined/c0a85e31.html</url>
-    <content><![CDATA[<table>
+    <title>python爬虫初体验</title>
+    <url>/undefined/5208.html</url>
+    <content><![CDATA[<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res = requests.get(<span class="string">'https://wpblog.x0y1.com'</span>)</span><br><span class="line"><span class="comment">#print(res)</span></span><br><span class="line">print(res.text)</span><br><span class="line"><span class="keyword">if</span> res.status_code == <span class="number">200</span>:</span><br><span class="line">  print(<span class="string">'请求成功'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">'请求失败'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取孔乙己数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://apiv3.shanbay.com/codetime/articles/mnvdu'</span>)</span><br><span class="line"><span class="comment"># 以写入的方式打开一个名为孔乙己的 txt 文档</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'孔乙己.txt'</span>, <span class="string">'w'</span> ,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  <span class="comment"># 将数据的字符串形式写入文件中</span></span><br><span class="line">  file.write(res.text)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图片数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://assets.baydn.com/baydn/public/codetime/xiaobei/info.jpg'</span>)</span><br><span class="line"><span class="comment"># 以二进制写入的方式打开一个名为 info.jpg 的文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'info.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line"><span class="comment"># 将数据的二进制形式写入文件中</span></span><br><span class="line">  file.write(res.content)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>变量 <strong>res</strong>它的类型是 <strong>Response</strong> 对象</p>
+<table>
 <thead>
 <tr>
-<th>事务A</th>
-<th>事务B</th>
+<th>属性</th>
+<th>含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>启动事务；查询得到值</td>
-<td>启动事务</td>
+<td>res.status_code</td>
+<td>响应的 HTTP 状态码</td>
 </tr>
 <tr>
-<td></td>
-<td>查询得到值1</td>
+<td>res.text</td>
+<td>响应内容的字符串形式</td>
 </tr>
 <tr>
-<td></td>
-<td>将1改成2</td>
+<td>res.content</td>
+<td>响应内容的二进制形式</td>
 </tr>
 <tr>
-<td>查询得到值V1</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>提交事务B</td>
-</tr>
-<tr>
-<td>查询得到值V2</td>
-<td></td>
-</tr>
-<tr>
-<td>提交事务A</td>
-<td></td>
-</tr>
-<tr>
-<td>查询得到值V3</td>
-<td></td>
+<td>res.encoding</td>
+<td>响应内容的编码</td>
 </tr>
 </tbody></table>
-<p>若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以，V3的值也是2。</p>
-<p>在实现上，数据库里面会创建一个视图，访问的时候以视图的逻辑结果为准。</p>
-<ul>
-<li>在“可重复读”隔离级别下，这个视图是在事务启动时创建的，整个事务存在期间都用这个视图。</li>
-<li>在“读提交”隔离级别下，这个视图是在每个SQL语句开始执行的时候创建的。</li>
-<li>在“读未提交”隔离级别下直接返回记录下的最新之，没有视图概念。</li>
-<li>而“串性化”隔离级别下直接用加锁的方式来避免并行访问。</li>
-</ul>
-<p>为保证数据库隔离级别一致，你一定要记得将MYSQL的隔离级别设置为“读提交”。</p>
+<h2 id="爬虫初体验"><a href="#爬虫初体验" class="headerlink" title="爬虫初体验"></a>爬虫初体验</h2><blockquote>
+<p>目标：自动循环小王子的所有章节，将故事存放到一个目录当中，每个章节一份文件。title做为文件名</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'http://www.eywedu.net/xiaowangzi/14.htm'</span>)</span><br><span class="line">res.encoding=<span class="string">'gb2312'</span></span><br><span class="line">text = res.text</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open (<span class="string">'小王子.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  file.write(text)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>数据库</category>
+        <category>开发语言</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
+        <tag>python</tag>
+        <tag>数据开发</tag>
       </tags>
   </entry>
 </search>
