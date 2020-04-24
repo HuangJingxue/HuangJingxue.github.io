@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://applegit11.github.io/"/>
-  <updated>2020-04-24T07:39:19.874Z</updated>
+  <updated>2020-04-24T07:46:37.638Z</updated>
   <id>https://applegit11.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://applegit11.github.io/undefined/5bbb5192.html"/>
     <id>https://applegit11.github.io/undefined/5bbb5192.html</id>
     <published>2020-04-20T19:23:13.000Z</published>
-    <updated>2020-04-24T07:39:19.874Z</updated>
+    <updated>2020-04-24T07:46:37.638Z</updated>
     
     <summary type="html">
     
@@ -40,7 +40,9 @@
       <category term="数据库" scheme="https://applegit11.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql - 事务" scheme="https://applegit11.github.io/tags/mysql-%E4%BA%8B%E5%8A%A1/"/>
+      <category term="mysql" scheme="https://applegit11.github.io/tags/mysql/"/>
+    
+      <category term="事务" scheme="https://applegit11.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
@@ -83,7 +85,7 @@
     <link href="https://applegit11.github.io/undefined/c0a85e31.html"/>
     <id>https://applegit11.github.io/undefined/c0a85e31.html</id>
     <published>2020-04-14T19:23:01.000Z</published>
-    <updated>2020-04-24T07:45:12.232Z</updated>
+    <updated>2020-04-24T07:46:48.363Z</updated>
     
     <summary type="html">
     
@@ -104,7 +106,9 @@
       <category term="数据库" scheme="https://applegit11.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql - 事务" scheme="https://applegit11.github.io/tags/mysql-%E4%BA%8B%E5%8A%A1/"/>
+      <category term="mysql" scheme="https://applegit11.github.io/tags/mysql/"/>
+    
+      <category term="事务" scheme="https://applegit11.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
