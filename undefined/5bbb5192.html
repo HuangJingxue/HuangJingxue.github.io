@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"applegit11.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="可盐可甜，努力实践，百变达人😊">
-<meta property="og:type" content="website">
-<meta property="og:title" content="青雨果果的博客">
-<meta property="og:url" content="https://applegit11.github.io/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/index.html">
+  <meta name="description" content="初始化语句 1234567891011121314mysql&gt; CREATE TABLE &#96;t&#96; (    -&gt;   &#96;id&#96; int(11) NOT NULL,    -&gt;   &#96;c&#96; int(11) DEFAULT NULL,    -&gt;   &#96;d&#96; int(11) DEFAULT NULL,    -&gt;   PRIMARY KEY (&#96;id&#96;),    -&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="幻读是什么，幻读有什么问题？">
+<meta property="og:url" content="https://applegit11.github.io/undefined/5bbb5192.html">
 <meta property="og:site_name" content="青雨果果的博客">
-<meta property="og:description" content="可盐可甜，努力实践，百变达人😊">
+<meta property="og:description" content="初始化语句 1234567891011121314mysql&gt; CREATE TABLE &#96;t&#96; (    -&gt;   &#96;id&#96; int(11) NOT NULL,    -&gt;   &#96;c&#96; int(11) DEFAULT NULL,    -&gt;   &#96;d&#96; int(11) DEFAULT NULL,    -&gt;   PRIMARY KEY (&#96;id&#96;),    -&amp;gt">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-20T19:23:13.000Z">
+<meta property="article:modified_time" content="2020-04-24T07:39:19.874Z">
 <meta property="article:author" content="青雨果果">
+<meta property="article:tag" content="mysql - 事务">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://applegit11.github.io/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">
+<link rel="canonical" href="https://applegit11.github.io/undefined/5bbb5192.html">
 
 
 <script id="page-configurations">
@@ -38,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 开发语言 | 青雨果果的博客</title>
+  <title>幻读是什么，幻读有什么问题？ | 青雨果果的博客</title>
   
 
 
@@ -201,71 +204,231 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">开发语言
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://applegit11.github.io/undefined/5bbb5192.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="青雨果果">
+      <meta itemprop="description" content="可盐可甜，努力实践，百变达人😊">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青雨果果的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          幻读是什么，幻读有什么问题？
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-20 19:23:13" itemprop="dateCreated datePublished" datetime="2020-04-20T19:23:13Z">2020-04-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-24 07:39:19" itemprop="dateModified" datetime="2020-04-24T07:39:19Z">2020-04-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p><strong>初始化语句</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE `t` (</span><br><span class="line">    -&gt;   `id` int(11) NOT NULL,</span><br><span class="line">    -&gt;   `c` int(11) DEFAULT NULL,</span><br><span class="line">    -&gt;   `d` int(11) DEFAULT NULL,</span><br><span class="line">    -&gt;   PRIMARY KEY (`id`),</span><br><span class="line">    -&gt;   KEY `c` (`c`)</span><br><span class="line">    -&gt; ) ENGINE=InnoDB;</span><br><span class="line">Query OK, 0 rows affected (0.06 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; </span><br><span class="line">mysql&gt; insert into t values(0,0,0),(5,5,5),</span><br><span class="line">    -&gt; (10,10,10),(15,15,15),(20,20,20),(25,25,25);</span><br><span class="line">Query OK, 6 rows affected (0.04 sec)</span><br><span class="line">Records: 6  Duplicates: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>隔离级别</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select @@tx_isolation;</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| @@tx_isolation  |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| REPEATABLE-READ |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">select</span> @@global.tx_isolation;</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| @@global.tx_isolation |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| REPEATABLE-READ       |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<h1 id="幻读是什么？"><a href="#幻读是什么？" class="headerlink" title="幻读是什么？"></a>幻读是什么？</h1><table>
+<thead>
+<tr>
+<th></th>
+<th>sessionA</th>
+<th>sessionB</th>
+<th>seesionC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>begin;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select * from t where d=5 for update;/*Q1/ result:(5,5,5)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T2</td>
+<td></td>
+<td>update t set d=5 where id=0;</td>
+<td></td>
+</tr>
+<tr>
+<td>T3</td>
+<td>select * from t where d=5 for update;/*Q2/ result:(0,0,5),(5,5,5)</td>
+<td></td>
+<td>insert into t values(1,1,5);</td>
+</tr>
+<tr>
+<td>T4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T5</td>
+<td>select * from t where d=5 for update;/*Q3/ result:(0,0,5),(1,1,5),(5,5,5)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T6</td>
+<td>commit;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.Q1 只返回 id&#x3D;5 这一行；</span><br><span class="line">2.在 T2 时刻，session B 把 id&#x3D;0 这一行的 d 值改成了 5，因此 T3 时刻 Q2 查出来的是 id&#x3D;0 和 id&#x3D;5 这两行；</span><br><span class="line">3.在 T4 时刻，session C 又插入一行（1,1,5），因此 T5 时刻 Q3 查出来的是 id&#x3D;0、id&#x3D;1 和 id&#x3D;5 的这三行。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中，Q3 读到 id=1 这一行的现象，被称为“幻读”。也就是说，幻读指的是一个事务在前后两次查询同一个范围的时候，后一次查询看到了前一次查询没有看到的行。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.在可重复读隔离级别下，普通的查询是快照读，是不会看到别的事务插入的数据的。因此，幻读在“当前读”下才会出现。</span><br><span class="line">2.上面 session B 的修改结果，被 session A 之后的 select 语句用“当前读”看到，不能称为幻读。幻读仅专指“新插入的行”。</span><br></pre></td></tr></table></figure>
+
+<h2 id="幻读有什么问题？"><a href="#幻读有什么问题？" class="headerlink" title="幻读有什么问题？"></a>幻读有什么问题？</h2><ul>
+<li>首先是语义上的。</li>
+<li>其次，是数据一致性的问题。</li>
+<li>也就是说，即使把所有的记录都加上锁，还是阻止不了新插入的记录</li>
+</ul>
+<h2 id="如何解决幻读？"><a href="#如何解决幻读？" class="headerlink" title="如何解决幻读？"></a>如何解决幻读？</h2><blockquote>
+<p>产生幻读的原因是，行锁只能锁住行，但是新插入记录这个动作，要更新的是记录之间的“间隙”。因此，为了解决幻读问题，InnoDB 只好引入新的锁，也就是间隙锁 (Gap Lock)。间隙锁和 next-key lock 的引入，帮我们解决了幻读的问题，但同时也带来了一些“困扰”。间隙锁的引入，可能会导致同样的语句锁住更大的范围，这其实是影响了并发度的。</p>
+</blockquote>
+<ul>
+<li>间隙锁是在可重复读隔离级别下才会生效的</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\undefined\c0a85e31.html" rel="bookmark">为什么你改了我看不见?</a></div>
+    </li>
+  </ul>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-04T12:51:14Z"
-              content="2020-04-04">
-          04-04
-        </time>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    <i class="fa fa-qrcode fa-2x" style="line-height:35px;"></i>
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="青雨果果 支付宝">
+        <p>支付宝</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/undefined/9836.html" itemprop="url">
-            <span itemprop="name">豆瓣电影排行榜</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-03T22:08:43Z"
-              content="2020-04-03">
-          04-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/undefined/5208.html" itemprop="url">
-            <span itemprop="name">python爬虫初体验</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>青雨果果
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://applegit11.github.io/undefined/5bbb5192.html" title="幻读是什么，幻读有什么问题？">https://applegit11.github.io/undefined/5bbb5192.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mysql-%E4%BA%8B%E5%8A%A1/" rel="tag"># mysql - 事务</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/undefined/8c90e6a4.html" rel="prev" title="云数据库Polardb如何获取事务提交时间戳">
+      <i class="fa fa-chevron-left"></i> 云数据库Polardb如何获取事务提交时间戳
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -318,6 +481,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#幻读是什么？"><span class="nav-number">1.</span> <span class="nav-text">幻读是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#幻读有什么问题？"><span class="nav-number">1.1.</span> <span class="nav-text">幻读有什么问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何解决幻读？"><span class="nav-number">1.2.</span> <span class="nav-text">如何解决幻读？</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

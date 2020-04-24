@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>幻读是什么，幻读有什么问题？</title>
+    <url>/undefined/5bbb5192.html</url>
+    <content><![CDATA[<p><strong>初始化语句</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE `t` (</span><br><span class="line">    -&gt;   `id` int(11) NOT NULL,</span><br><span class="line">    -&gt;   `c` int(11) DEFAULT NULL,</span><br><span class="line">    -&gt;   `d` int(11) DEFAULT NULL,</span><br><span class="line">    -&gt;   PRIMARY KEY (`id`),</span><br><span class="line">    -&gt;   KEY `c` (`c`)</span><br><span class="line">    -&gt; ) ENGINE=InnoDB;</span><br><span class="line">Query OK, 0 rows affected (0.06 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; </span><br><span class="line">mysql&gt; insert into t values(0,0,0),(5,5,5),</span><br><span class="line">    -&gt; (10,10,10),(15,15,15),(20,20,20),(25,25,25);</span><br><span class="line">Query OK, 6 rows affected (0.04 sec)</span><br><span class="line">Records: 6  Duplicates: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>隔离级别</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; select @@tx_isolation;</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| @@tx_isolation  |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| REPEATABLE-READ |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">select</span> @@global.tx_isolation;</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| @@global.tx_isolation |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| REPEATABLE-READ       |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<h1 id="幻读是什么？"><a href="#幻读是什么？" class="headerlink" title="幻读是什么？"></a>幻读是什么？</h1><table>
+<thead>
+<tr>
+<th></th>
+<th>sessionA</th>
+<th>sessionB</th>
+<th>seesionC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>begin;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select * from t where d=5 for update;/*Q1/ result:(5,5,5)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T2</td>
+<td></td>
+<td>update t set d=5 where id=0;</td>
+<td></td>
+</tr>
+<tr>
+<td>T3</td>
+<td>select * from t where d=5 for update;/*Q2/ result:(0,0,5),(5,5,5)</td>
+<td></td>
+<td>insert into t values(1,1,5);</td>
+</tr>
+<tr>
+<td>T4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T5</td>
+<td>select * from t where d=5 for update;/*Q3/ result:(0,0,5),(1,1,5),(5,5,5)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T6</td>
+<td>commit;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.Q1 只返回 id&#x3D;5 这一行；</span><br><span class="line">2.在 T2 时刻，session B 把 id&#x3D;0 这一行的 d 值改成了 5，因此 T3 时刻 Q2 查出来的是 id&#x3D;0 和 id&#x3D;5 这两行；</span><br><span class="line">3.在 T4 时刻，session C 又插入一行（1,1,5），因此 T5 时刻 Q3 查出来的是 id&#x3D;0、id&#x3D;1 和 id&#x3D;5 的这三行。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中，Q3 读到 id=1 这一行的现象，被称为“幻读”。也就是说，幻读指的是一个事务在前后两次查询同一个范围的时候，后一次查询看到了前一次查询没有看到的行。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.在可重复读隔离级别下，普通的查询是快照读，是不会看到别的事务插入的数据的。因此，幻读在“当前读”下才会出现。</span><br><span class="line">2.上面 session B 的修改结果，被 session A 之后的 select 语句用“当前读”看到，不能称为幻读。幻读仅专指“新插入的行”。</span><br></pre></td></tr></table></figure>
+
+<h2 id="幻读有什么问题？"><a href="#幻读有什么问题？" class="headerlink" title="幻读有什么问题？"></a>幻读有什么问题？</h2><ul>
+<li>首先是语义上的。</li>
+<li>其次，是数据一致性的问题。</li>
+<li>也就是说，即使把所有的记录都加上锁，还是阻止不了新插入的记录</li>
+</ul>
+<h2 id="如何解决幻读？"><a href="#如何解决幻读？" class="headerlink" title="如何解决幻读？"></a>如何解决幻读？</h2><blockquote>
+<p>产生幻读的原因是，行锁只能锁住行，但是新插入记录这个动作，要更新的是记录之间的“间隙”。因此，为了解决幻读问题，InnoDB 只好引入新的锁，也就是间隙锁 (Gap Lock)。间隙锁和 next-key lock 的引入，帮我们解决了幻读的问题，但同时也带来了一些“困扰”。间隙锁的引入，可能会导致同样的语句锁住更大的范围，这其实是影响了并发度的。</p>
+</blockquote>
+<ul>
+<li>间隙锁是在可重复读隔离级别下才会生效的</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql - 事务</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>云数据库Polardb如何获取事务提交时间戳</title>
     <url>/undefined/8c90e6a4.html</url>
     <content><![CDATA[<h2 id="polardb-需开启binlog"><a href="#polardb-需开启binlog" class="headerlink" title="polardb 需开启binlog"></a>polardb 需开启binlog</h2><ul>
@@ -77,7 +164,56 @@
   <entry>
     <title>为什么你改了我看不见?</title>
     <url>/undefined/c0a85e31.html</url>
-    <content><![CDATA[<table>
+    <content><![CDATA[<p><strong>事务的基本要素(ACID)</strong></p>
+<ul>
+<li>原子性（Atomicity）；事务开始后所有操作，要么全部做完，要么全部不做，不能停滞在中间环节。</li>
+<li>一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏。</li>
+<li>隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。</li>
+<li>持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</li>
+</ul>
+<p><strong>事务的并发问题</strong></p>
+<ul>
+<li>脏读：事务B修改数据但未提交，事务A读数据，然后B回滚，则A读到的是脏数据。</li>
+<li>不可重复读：事务A第一次读取数据，事务B修改数据提交，事务A第二次读数据，两次数据不一致。</li>
+<li>幻读：事务A update表的全部行，事务B插入一行，事务A就会发现表中还有未修改的行。（一般加间隙锁）</li>
+</ul>
+<p><strong>MySQL事务隔离级别</strong></p>
+<table>
+<thead>
+<tr>
+<th>事务隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读未提交</td>
+<td>会</td>
+<td>会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>读已提交</td>
+<td>不会</td>
+<td>会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>可重复读</td>
+<td>不会</td>
+<td>不会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>串行话</td>
+<td>不会</td>
+<td>不会</td>
+<td>不会</td>
+</tr>
+</tbody></table>
+<p><strong>案例</strong></p>
+<table>
 <thead>
 <tr>
 <th>事务A</th>
@@ -117,7 +253,16 @@
 <td></td>
 </tr>
 </tbody></table>
-<p>若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以，V3的值也是2。</p>
+<ul>
+<li><p>若隔离级别是“读未提交”， 则 V1 的值就是 2。这时候事务 B 虽然还没有提交，但是结果已经被 A 看到了。因此，V2、V3 也都是 2。</p>
+</li>
+<li><p>若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以，V3的值也是2。</p>
+</li>
+<li><p>若隔离级别是“可重复读”，则 V1、V2 是 1，V3 是 2。之所以 V2 还是 1，遵循的就是这个要求：事务在执行期间看到的数据前后必须是一致的。</p>
+</li>
+<li><p>若隔离级别是“串行化”，则在事务 B 执行“将 1 改成 2”的时候，会被锁住。直到事务 A 提交后，事务 B 才可以继续执行。所以从 A 的角度看， V1、V2 值是 1，V3 的值是 2。</p>
+</li>
+</ul>
 <p>在实现上，数据库里面会创建一个视图，访问的时候以视图的逻辑结果为准。</p>
 <ul>
 <li>在“可重复读”隔离级别下，这个视图是在事务启动时创建的，整个事务存在期间都用这个视图。</li>

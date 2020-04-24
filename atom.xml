@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://applegit11.github.io/"/>
-  <updated>2020-04-15T05:49:04.680Z</updated>
+  <updated>2020-04-24T07:39:19.874Z</updated>
   <id>https://applegit11.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>幻读是什么，幻读有什么问题？</title>
+    <link href="https://applegit11.github.io/undefined/5bbb5192.html"/>
+    <id>https://applegit11.github.io/undefined/5bbb5192.html</id>
+    <published>2020-04-20T19:23:13.000Z</published>
+    <updated>2020-04-24T07:39:19.874Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;初始化语句&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://applegit11.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql - 事务" scheme="https://applegit11.github.io/tags/mysql-%E4%BA%8B%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>云数据库Polardb如何获取事务提交时间戳</title>
     <link href="https://applegit11.github.io/undefined/8c90e6a4.html"/>
     <id>https://applegit11.github.io/undefined/8c90e6a4.html</id>
     <published>2020-04-15T13:27:48.000Z</published>
-    <updated>2020-04-15T05:49:04.680Z</updated>
+    <updated>2020-04-15T05:49:34.319Z</updated>
     
     <summary type="html">
     
@@ -55,7 +83,7 @@
     <link href="https://applegit11.github.io/undefined/c0a85e31.html"/>
     <id>https://applegit11.github.io/undefined/c0a85e31.html</id>
     <published>2020-04-14T19:23:01.000Z</published>
-    <updated>2020-04-14T11:41:32.062Z</updated>
+    <updated>2020-04-24T07:45:12.232Z</updated>
     
     <summary type="html">
     
@@ -63,20 +91,10 @@
       
         
         
-          &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;事务A&lt;/th&gt;
-&lt;th&gt;事务B&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;启动事务；查询得到值&lt;/td&gt;
-&lt;td&gt;启动事务&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;查询得到值1&lt;
+          &lt;p&gt;&lt;strong&gt;事务的基本要素(ACID)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原子性（Atomicity）；事务开始后所有操作，要么全部做完，要么全部不做，不能停滞在中间环节。&lt;/li&gt;
+&lt;li&gt;一致性（Consistency）：事务开始前和结束后，数据库的完整性
         
       
     
