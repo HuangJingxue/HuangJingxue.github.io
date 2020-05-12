@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://applegit11.github.io/"/>
-  <updated>2020-04-24T07:46:37.638Z</updated>
+  <updated>2020-05-12T07:37:24.043Z</updated>
   <id>https://applegit11.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql误删数据谁来拯救</title>
+    <link href="https://applegit11.github.io/undefined/64a498ae.html"/>
+    <id>https://applegit11.github.io/undefined/64a498ae.html</id>
+    <published>2020-05-12T15:32:36.000Z</published>
+    <updated>2020-05-12T07:37:24.043Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt; 拯救者：MyFlash&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;MyFlash初体验&quot;&gt;&lt;a href=&quot;#MyFlash初体验&quot; class=&quot;headerlink&quot; title=&quot;MyFlash初体验&quot;&gt;&lt;/a&gt;MyFlash初体验&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Meituan-Dianping/MyFlash&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Meituan-Dianping/MyFlash&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://applegit11.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql" scheme="https://applegit11.github.io/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>幻读是什么，幻读有什么问题？</title>

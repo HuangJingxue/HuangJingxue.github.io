@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mysql误删数据谁来拯救</title>
+    <url>/undefined/64a498ae.html</url>
+    <content><![CDATA[<blockquote>
+<p> 拯救者：MyFlash</p>
+</blockquote>
+<h1 id="MyFlash初体验"><a href="#MyFlash初体验" class="headerlink" title="MyFlash初体验"></a>MyFlash初体验</h1><p><a href="https://github.com/Meituan-Dianping/MyFlash" target="_blank" rel="noopener">https://github.com/Meituan-Dianping/MyFlash</a></p>
+<a id="more"></a>
+
+<p>安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;yum install libgnomeui-devel  </span><br><span class="line">gcc -w -g &#96;pkg-config --cflags  glib-2.0&#96; source&#x2F;binlogParseGlib.c   -o binary&#x2F;flashback &#x2F;usr&#x2F;lib64&#x2F;libglib-2.0.a -lrt yum install install glib2*&#96;</span><br></pre></td></tr></table></figure>
+
+<p>测试环境准备</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;Meituan-Dianping&#x2F;MyFlash&#x2F;blob&#x2F;master&#x2F;doc&#x2F;TestCase.md</span><br><span class="line">CREATE TABLE &#96;tb_test&#96; (   &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,   &#96;nameBlob&#96; longblob,   PRIMARY KEY (&#96;id&#96;) ) ENGINE&#x3D;InnoDB；</span><br></pre></td></tr></table></figure>
+
+
+
+<p>回滚命令生成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;.&#x2F;MyFlash&#x2F;binary&#x2F;flashback --binlogFileNames&#x3D;&#x2F;alidata&#x2F;mysql&#x2F;mybinlog.000022 --outBinlogFileNameBase&#x3D;22delete.flashback&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>扩展</p>
+<p>阿里云RDS实例，用户没有Super权限，导入带有set @@信息，会提示ERROR 1227 (42000) at line 18: Access denied; you need (at least one of) the SUPERprivilege(s) for this operation报错。</p>
+<p>本地5.7版本，测试去除set @@GTID_NEXT,当GTID模式开启状态，导入实例会提示报错:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR 1782 (HY000) at line 19: @@SESSION.GTID_NEXT cannot be set to ANONYMOUS when @@GLOBAL.GTID_MODE &#x3D; ON.</span><br></pre></td></tr></table></figure>
+
+<p>只有将 GTID模式关闭，才可以正常导入。</p>
+<p><a href="https://bugs.mysql.com/bug.php?id=85480" target="_blank" rel="noopener">https://bugs.mysql.com/bug.php?id=85480</a></p>
+<p>5.6版本没有以上问题。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;mysqlbinlog -v -v --skip-gtids 22delete.flashback | sed &#39;s@\&#x2F;\*.*\*\&#x2F;@@&#39; |mysql -uroot -proot&#96;</span><br></pre></td></tr></table></figure>
+
+<p>初步结论：云上RDS 目前无法使用该工具，由于没有super权限。</p>
+<p>解决方案：采用MyFlash + binlog2sql拯救云上RDS误删数据。</p>
+<h2 id="验证binlog2sql-是否支持blob转换"><a href="#验证binlog2sql-是否支持blob转换" class="headerlink" title="验证binlog2sql 是否支持blob转换"></a>验证binlog2sql 是否支持blob转换</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--w_blob.py  写入blob</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">import sys</span><br><span class="line">import pymysql</span><br><span class="line">import os</span><br><span class="line"> </span><br><span class="line">path &#x3D; &quot;.&#x2F;&quot;</span><br><span class="line"> </span><br><span class="line">fp &#x3D; open(&quot;&#x2F;alidata&#x2F;PG01.jpg&quot;, &#39;rb&#39;)</span><br><span class="line">img &#x3D; fp.read()</span><br><span class="line">fp.close()</span><br><span class="line"> </span><br><span class="line">database &#x3D; pymysql.connect(host&#x3D;&quot;localhost&quot;, user&#x3D;&quot;root&quot;, passwd&#x3D;&quot;root&quot;, db&#x3D;&quot;qinxi&quot;)</span><br><span class="line">cursor &#x3D; database.cursor()</span><br><span class="line">sql &#x3D; &quot;INSERT INTO tb_test (nameBlob) VALUES  (%s);&quot;</span><br><span class="line">args &#x3D; (img)</span><br><span class="line">cursor.execute(sql, args)</span><br><span class="line">database.commit()</span><br><span class="line">cursor.close()</span><br><span class="line">database.close()</span><br><span class="line"> </span><br><span class="line">print(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;)</span><br><span class="line">print(&quot;Done! &quot;)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">--r_blob.py 读取blob</span><br><span class="line"> </span><br><span class="line">import pymysql as mdb</span><br><span class="line">import sys</span><br><span class="line"> </span><br><span class="line">conn &#x3D; mdb.connect(host&#x3D;&#39;localhost&#39;,user&#x3D;&#39;root&#39;,passwd&#x3D;&#39;root&#39;,db&#x3D;&#39;qinxi&#39;)</span><br><span class="line">cursor &#x3D; conn.cursor()</span><br><span class="line">cursor.execute(&quot;SELECT nameBlob FROM tb_test LIMIT 1&quot;)</span><br><span class="line">fout &#x3D; open(&#39;PG333.jpg&#39;,&#39;wb&#39;)</span><br><span class="line">fout.write(cursor.fetchone()[0])</span><br><span class="line">fout.close()</span><br><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">python binlog2sql.py -uroot -h10.200.6.53 -proot -B --start-file&#x3D;mybinlog.000033 &gt; 33.sql</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>幻读是什么，幻读有什么问题？</title>
     <url>/undefined/5bbb5192.html</url>
     <content><![CDATA[<p><strong>初始化语句</strong></p>
