@@ -1,6 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git玩转三剑客-第1课-仓库初始化</title>
+    <url>/2020/05/16/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">创建目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir git_01</span></span><br><span class="line"></span><br><span class="line">进入目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> git_01/</span></span><br><span class="line"></span><br><span class="line">初始化</span><br><span class="line"><span class="meta">$</span><span class="bash"> git init .</span></span><br><span class="line">Initialized empty Git repository in xxx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> .git/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 7</span><br><span class="line">-rw-r--r-- 1 Apple 197121 130 5月  15 10:33 config</span><br><span class="line">-rw-r--r-- 1 Apple 197121  73 5月  15 10:33 description</span><br><span class="line">-rw-r--r-- 1 Apple 197121  23 5月  15 10:33 HEAD</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 hooks/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 info/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 objects/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 refs/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line"></span><br><span class="line">配置</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">		</span><br><span class="line">--global配置config文件内容没有变化</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">[user]</span><br><span class="line">        name = apple</span><br><span class="line">        mail = huangjx@jiagouyun.com</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="上传文件到仓库"><a href="#上传文件到仓库" class="headerlink" title="上传文件到仓库"></a>上传文件到仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">新建文件</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim xxCPU高了.md</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use "git add &lt;file&gt;..." to include in what will be committed)</span><br><span class="line"></span><br><span class="line">        "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use "git add" to track)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line">warning: LF will be replaced by CRLF in xxCPU高了.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git rm --cached &lt;file&gt;..." to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'新增了一个文件XX'</span></span></span><br><span class="line">[master (root-commit) e9a5c8c] 新增了一个文件XX</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>新增文件会先放到工作区放到git add将文件放到暂存区再放到git commit版本库</p>
+</blockquote>
+<h1 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br></pre></td></tr></table></figure>
+
+<h1 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch a</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">        a</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">[master e84f58a] 新增a</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e84f58a3eff4b3b05023e005d966cdb8f835a258 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:46:36 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增a</span><br><span class="line"></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span></span><br><span class="line">HEAD is now at e9a5c8c 新增了一个文件XX</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br></pre></td></tr></table></figure>
+
+<h1 id="将git仓库备份到本地"><a href="#将git仓库备份到本地" class="headerlink" title="将git仓库备份到本地"></a>将git仓库备份到本地</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> --bare file:///d/gitlab仓库1/git_01 backup_git_01</span></span><br><span class="line">Cloning into bare repository 'backup_git_01'...</span><br><span class="line">remote: Counting objects: 3, done.</span><br><span class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (3/3), done.</span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add backup_git_01 file:///gitlab仓库1/git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push --<span class="built_in">set</span>-upstream backup_git_01 master</span></span><br><span class="line">Everything up-to-date</span><br><span class="line">Branch master set up to track remote branch master from backup_git_01.</span><br></pre></td></tr></table></figure>
+
+<h1 id="如何多地管理仓库"><a href="#如何多地管理仓库" class="headerlink" title="如何多地管理仓库"></a>如何多地管理仓库</h1><p><a href="https://help.github.com/en/github/getting-started-with-github" target="_blank" rel="noopener">github帮助</a></p>
+<ul>
+<li>github创建仓库<img src="/2020/05/16/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/1.jpg" class="" title="This is an 1 image"></li>
+<li>本地仓库上传到github仓库</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">create a new repository on the command line</span><br><span class="line">echo "# git_01" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line">                </span><br><span class="line">…or push an existing repository from the command line</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin git@github.com:HuangJingxue/git_01.git</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Writing objects: 100% (3/3), 248 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">Branch master set up to track remote branch master from origin.</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>本地仓库成功推送到github仓库</p>
+</blockquote>
+<img src="/2020/05/16/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/2.jpg" class="" title="This is an 2 image">
+
+<p>远程拉取github仓库更新内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim studygit.md</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A .</span></span><br><span class="line">warning: LF will be replaced by CRLF in studygit.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'add studygit'</span></span></span><br><span class="line">[master b8623c7] add studygit</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 studygit.md</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (3/3), 287 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line">   e9a5c8c..b8623c7  master -&gt; master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">由BooBooWei操作</span><br><span class="line">cd gittest</span><br><span class="line">git clone https://github.com/HuangJingxue/git_01.git</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>开源工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql/MyFlash初体验</title>
+    <url>/2020/05/12/mysql/MyFlash%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="MyFlash初体验"><a href="#MyFlash初体验" class="headerlink" title="MyFlash初体验"></a>MyFlash初体验</h2><h2 id="验证binlog2sql-是否支持blob转换"><a href="#验证binlog2sql-是否支持blob转换" class="headerlink" title="验证binlog2sql 是否支持blob转换"></a>验证binlog2sql 是否支持blob转换</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;--w_blob.py  写入blob   import sys import pymysql import os  path &#x3D; &quot;.&#x2F;&quot;  fp &#x3D; open(&quot;&#x2F;alidata&#x2F;PG01.jpg&quot;, &#39;rb&#39;) img &#x3D; fp.read() fp.close()  database &#x3D; pymysql.connect(host&#x3D;&quot;localhost&quot;, user&#x3D;&quot;root&quot;, passwd&#x3D;&quot;root&quot;, db&#x3D;&quot;qinxi&quot;) cursor &#x3D; database.cursor() sql &#x3D; &quot;INSERT INTO tb_test (nameBlob) VALUES  (%s);&quot; args &#x3D; (img) cursor.execute(sql, args) database.commit() cursor.close() database.close()  print(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;) print(&quot;Done! &quot;)   --r_blob.py 读取blob  import pymysql as mdb import sys  conn &#x3D; mdb.connect(host&#x3D;&#39;localhost&#39;,user&#x3D;&#39;root&#39;,passwd&#x3D;&#39;root&#39;,db&#x3D;&#39;qinxi&#39;) cursor &#x3D; conn.cursor() cursor.execute(&quot;SELECT nameBlob FROM tb_test LIMIT 1&quot;) fout &#x3D; open(&#39;PG333.jpg&#39;,&#39;wb&#39;) fout.write(cursor.fetchone()[0]) fout.close() cursor.close() conn.close()    python binlog2sql.py -uroot -h10.200.6.53 -proot -B --start-file&#x3D;mybinlog.000033 &gt; 33.sql&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="MyFlash测试"><a href="#MyFlash测试" class="headerlink" title="MyFlash测试"></a>MyFlash测试</h1><p><a href="https://github.com/Meituan-Dianping/MyFlash" target="_blank" rel="noopener">https://github.com/Meituan-Dianping/MyFlash</a></p>
+<p>安装</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;yum install libgnomeui-devel  gcc -w -g &#96;pkg-config --cflags  glib-2.0&#96; source&#x2F;binlogParseGlib.c   -o binary&#x2F;flashback &#x2F;usr&#x2F;lib64&#x2F;libglib-2.0.a -lrt yum install install glib2*&#96;</span><br></pre></td></tr></table></figure>
+
+<p>测试环境准备</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;Meituan-Dianping&#x2F;MyFlash&#x2F;blob&#x2F;master&#x2F;doc&#x2F;TestCase.md</span><br><span class="line">CREATE TABLE &#96;tb_test&#96; (   &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,   &#96;nameBlob&#96; longblob,   PRIMARY KEY (&#96;id&#96;) ) ENGINE&#x3D;InnoDB；</span><br></pre></td></tr></table></figure>
+
+
+
+<p>回滚命令生成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;.&#x2F;MyFlash&#x2F;binary&#x2F;flashback --binlogFileNames&#x3D;&#x2F;alidata&#x2F;mysql&#x2F;mybinlog.000022 --outBinlogFileNameBase&#x3D;22delete.flashback&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>扩展</p>
+<p>阿里云RDS实例，用户没有Super权限，导入带有set @@信息，会提示ERROR 1227 (42000) at line 18: Access denied; you need (at least one of) the SUPERprivilege(s) for this operation报错。</p>
+<p>本地5.7版本，测试去除set @@GTID_NEXT,当GTID模式开启状态，导入实例会提示报错:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR 1782 (HY000) at line 19: @@SESSION.GTID_NEXT cannot be set to ANONYMOUS when @@GLOBAL.GTID_MODE &#x3D; ON.</span><br></pre></td></tr></table></figure>
+
+<p>只有将 GTID模式关闭，才可以正常导入。</p>
+<p><a href="https://bugs.mysql.com/bug.php?id=85480" target="_blank" rel="noopener">https://bugs.mysql.com/bug.php?id=85480</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;mysqlbinlog -v -v --skip-gtids 22delete.flashback | sed &#39;s@\&#x2F;\*.*\*\&#x2F;@@&#39; |mysql -uroot -proot&#96;</span><br></pre></td></tr></table></figure>
+
+<p>初步结论：云上RDS 目前无法使用该工具，由于没有super权限。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>mysql误删数据谁来背锅</title>
+    <url>/2020/04/10/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/</url>
+    <content><![CDATA[<blockquote>
+<p>我们不止要说误删数据的事后处理办法，更重要是要做到事前预防。</p>
+</blockquote>
+<p><em>误删数据分类</em></p>
+<ul>
+<li>使用 delete 语句误删数据行；</li>
+<li>使用 drop table 或者 truncate table 语句误删数据表；</li>
+<li>使用 drop database 语句误删数据库；</li>
+<li>使用 rm 命令误删整个 MySQL 实例。<a id="more"></a>
+
+</li>
+</ul>
+<p><em>需要完善自动恢复脚本</em></p>
+<blockquote>
+<p>一种加速的方法是，在用备份恢复出临时实例之后，将这个临时实例设置成线上备库的从库</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.恢复全量备份</span></span><br><span class="line">a.指定全量备份路径</span><br><span class="line">b.写入全量备份名称</span><br><span class="line">c.恢复全量备份到指定临时实例</span><br><span class="line"></span><br><span class="line">在 start slave 之前，先通过执行﻿﻿change replication filter replicate_do_table = (tbl_name) 命令，就可以让临时库只同步误操作的表；</span><br><span class="line">这样做也可以用上并行复制技术，来加速整个数据恢复过程。</span><br><span class="line"><span class="comment">#2.自动恢复binlog</span></span><br><span class="line">a.指定binlog备份路径</span><br><span class="line">b.指定需要恢复的binlog名称（1个或者多个）</span><br><span class="line">c.恢复binlog到指定临时实例</span><br></pre></td></tr></table></figure>
+
+<p><em>预防误删库 / 表的方法</em></p>
+<ul>
+<li><p>第一条建议是，账号分离。这样做的目的是，避免写错命令。</p>
+<blockquote>
+<p>比如：我们只给业务开发同学 DML 权限，而不给 truncate/drop 权限。<br>而如果业务开发人员有 DDL 需求的话，也可以通过开发管理系统得到支持。<br>即使是 DBA 团队成员，日常也都规定只使用只读账号，必要的时候才使用有更新权限的账号。</p>
+</blockquote>
+</li>
+<li><p>第二条建议是，制定操作规范。</p>
+<blockquote>
+<p>这样做的目的，是避免写错要删除的表名。<br>比如：在删除数据表之前，必须先对表做改名操作。然后，观察一段时间，确保对业务无影响以后再删除这张表。<br>改表名的时候，要求给表名加固定的后缀（比如加 _to_be_deleted)，然后删除表的动作必须通过管理系统执行。并且，管理系删除表的时候，只能删除固定后缀的表。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>云数据库Polardb如何获取事务提交时间戳</title>
     <url>/2020/04/15/aliyundb/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93Polardb%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E4%BA%8B%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E6%88%B3/</url>
     <content><![CDATA[<h2 id="polardb-需开启binlog"><a href="#polardb-需开启binlog" class="headerlink" title="polardb 需开启binlog"></a>polardb 需开启binlog</h2><ul>
@@ -70,52 +189,8 @@
         <category>云数据库</category>
       </categories>
       <tags>
-        <tag>Polardb</tag>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git玩转三剑客-第1课</title>
-    <url>/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE/</url>
-    <content><![CDATA[<h1 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">创建目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir git_01</span></span><br><span class="line"></span><br><span class="line">进入目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> git_01/</span></span><br><span class="line"></span><br><span class="line">初始化</span><br><span class="line"><span class="meta">$</span><span class="bash"> git init .</span></span><br><span class="line">Initialized empty Git repository in xxx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> .git/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 7</span><br><span class="line">-rw-r--r-- 1 Apple 197121 130 5月  15 10:33 config</span><br><span class="line">-rw-r--r-- 1 Apple 197121  73 5月  15 10:33 description</span><br><span class="line">-rw-r--r-- 1 Apple 197121  23 5月  15 10:33 HEAD</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 hooks/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 info/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 objects/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 refs/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line"></span><br><span class="line">配置</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">		</span><br><span class="line">--global配置config文件内容没有变化</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">[user]</span><br><span class="line">        name = apple</span><br><span class="line">        mail = huangjx@jiagouyun.com</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
-<h1 id="上传文件到仓库"><a href="#上传文件到仓库" class="headerlink" title="上传文件到仓库"></a>上传文件到仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">新建文件</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim xxCPU高了.md</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use "git add &lt;file&gt;..." to include in what will be committed)</span><br><span class="line"></span><br><span class="line">        "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use "git add" to track)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line">warning: LF will be replaced by CRLF in xxCPU高了.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git rm --cached &lt;file&gt;..." to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'新增了一个文件XX'</span></span></span><br><span class="line">[master (root-commit) e9a5c8c] 新增了一个文件XX</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>新增文件会先放到工作区放到git add将文件放到暂存区再放到git commit版本库</p>
-</blockquote>
-<h1 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br></pre></td></tr></table></figure>
-
-<h1 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch a</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">        a</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">[master e84f58a] 新增a</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e84f58a3eff4b3b05023e005d966cdb8f835a258 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:46:36 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增a</span><br><span class="line"></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span></span><br><span class="line">HEAD is now at e9a5c8c 新增了一个文件XX</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br></pre></td></tr></table></figure>
-
-<h1 id="将git仓库备份到本地"><a href="#将git仓库备份到本地" class="headerlink" title="将git仓库备份到本地"></a>将git仓库备份到本地</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> --bare file:///d/gitlab仓库1/git_01 backup_git_01</span></span><br><span class="line">Cloning into bare repository 'backup_git_01'...</span><br><span class="line">remote: Counting objects: 3, done.</span><br><span class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (3/3), done.</span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add backup_git_01 file:///gitlab仓库1/git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push --<span class="built_in">set</span>-upstream backup_git_01 master</span></span><br><span class="line">Everything up-to-date</span><br><span class="line">Branch master set up to track remote branch master from backup_git_01.</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="如何多地管理仓库"><a href="#如何多地管理仓库" class="headerlink" title="如何多地管理仓库"></a>如何多地管理仓库</h1><p><a href="https://help.github.com/en/github/getting-started-with-github" target="_blank" rel="noopener">github帮助</a></p>
-<ul>
-<li><p>github创建仓库</p>
-<img src="/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE/1.jpg" class="" title="This is an 1 image">
-</li>
-<li><p>本地仓库上传到github仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">create a new repository on the command line</span><br><span class="line">echo "# git_01" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line">                </span><br><span class="line">…or push an existing repository from the command line</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin git@github.com:HuangJingxue/git_01.git</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Writing objects: 100% (3/3), 248 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">Branch master set up to track remote branch master from origin.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>本地仓库成功推送到github仓库</p>
-</blockquote>
-</li>
-</ul>
-<img src="/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE/2.jpg" class="" title="This is an 2 image">
-
-<p>远程拉取github仓库更新内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim studygit.md</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A .</span></span><br><span class="line">warning: LF will be replaced by CRLF in studygit.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'add studygit'</span></span></span><br><span class="line">[master b8623c7] add studygit</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 studygit.md</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (3/3), 287 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line">   e9a5c8c..b8623c7  master -&gt; master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">由BooBooWei操作</span><br><span class="line">cd gittest</span><br><span class="line">git clone https://github.com/HuangJingxue/git_01.git</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>开源工具</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
+        <tag>Polardb</tag>
       </tags>
   </entry>
   <entry>
@@ -132,6 +207,125 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你改了我看不见?</title>
+    <url>/2020/04/15/mysql%20%E6%9E%81%E5%AE%A245/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/</url>
+    <content><![CDATA[<p><strong>事务的基本要素(ACID)</strong></p>
+<ul>
+<li>原子性（Atomicity）；事务开始后所有操作，要么全部做完，要么全部不做，不能停滞在中间环节。</li>
+<li>一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏。</li>
+<li>隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。</li>
+<li>持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</li>
+</ul>
+<p><strong>事务的并发问题</strong></p>
+<ul>
+<li>脏读：事务B修改数据但未提交，事务A读数据，然后B回滚，则A读到的是脏数据。</li>
+<li>不可重复读：事务A第一次读取数据，事务B修改数据提交，事务A第二次读数据，两次数据不一致。</li>
+<li>幻读：事务A update表的全部行，事务B插入一行，事务A就会发现表中还有未修改的行。（一般加间隙锁）</li>
+</ul>
+<p><strong>MySQL事务隔离级别</strong></p>
+<table>
+<thead>
+<tr>
+<th>事务隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读未提交</td>
+<td>会</td>
+<td>会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>读已提交</td>
+<td>不会</td>
+<td>会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>可重复读</td>
+<td>不会</td>
+<td>不会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>串行话</td>
+<td>不会</td>
+<td>不会</td>
+<td>不会</td>
+</tr>
+</tbody></table>
+<p><strong>案例</strong></p>
+<table>
+<thead>
+<tr>
+<th>事务A</th>
+<th>事务B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动事务；查询得到值</td>
+<td>启动事务</td>
+</tr>
+<tr>
+<td></td>
+<td>查询得到值1</td>
+</tr>
+<tr>
+<td></td>
+<td>将1改成2</td>
+</tr>
+<tr>
+<td>查询得到值V1</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>提交事务B</td>
+</tr>
+<tr>
+<td>查询得到值V2</td>
+<td></td>
+</tr>
+<tr>
+<td>提交事务A</td>
+<td></td>
+</tr>
+<tr>
+<td>查询得到值V3</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>若隔离级别是“读未提交”， 则 V1 的值就是 2。这时候事务 B 虽然还没有提交，但是结果已经被 A 看到了。因此，V2、V3 也都是 2。</p>
+</li>
+<li><p>若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以，V3的值也是2。</p>
+</li>
+<li><p>若隔离级别是“可重复读”，则 V1、V2 是 1，V3 是 2。之所以 V2 还是 1，遵循的就是这个要求：事务在执行期间看到的数据前后必须是一致的。</p>
+</li>
+<li><p>若隔离级别是“串行化”，则在事务 B 执行“将 1 改成 2”的时候，会被锁住。直到事务 A 提交后，事务 B 才可以继续执行。所以从 A 的角度看， V1、V2 值是 1，V3 的值是 2。</p>
+</li>
+</ul>
+<p>在实现上，数据库里面会创建一个视图，访问的时候以视图的逻辑结果为准。</p>
+<ul>
+<li>在“可重复读”隔离级别下，这个视图是在事务启动时创建的，整个事务存在期间都用这个视图。</li>
+<li>在“读提交”隔离级别下，这个视图是在每个SQL语句开始执行的时候创建的。</li>
+<li>在“读未提交”隔离级别下直接返回记录下的最新之，没有视图概念。</li>
+<li>而“串性化”隔离级别下直接用加锁的方式来避免并行访问。</li>
+</ul>
+<p>为保证数据库隔离级别一致，你一定要记得将MYSQL的隔离级别设置为“读提交”。</p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>事务</tag>
       </tags>
   </entry>
   <entry>
@@ -242,40 +436,6 @@
       <tags>
         <tag>mongodb</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>mysql/MyFlash初体验</title>
-    <url>/2020/05/12/mysql/MyFlash%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[<h2 id="MyFlash初体验"><a href="#MyFlash初体验" class="headerlink" title="MyFlash初体验"></a>MyFlash初体验</h2><h2 id="验证binlog2sql-是否支持blob转换"><a href="#验证binlog2sql-是否支持blob转换" class="headerlink" title="验证binlog2sql 是否支持blob转换"></a>验证binlog2sql 是否支持blob转换</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;--w_blob.py  写入blob   import sys import pymysql import os  path &#x3D; &quot;.&#x2F;&quot;  fp &#x3D; open(&quot;&#x2F;alidata&#x2F;PG01.jpg&quot;, &#39;rb&#39;) img &#x3D; fp.read() fp.close()  database &#x3D; pymysql.connect(host&#x3D;&quot;localhost&quot;, user&#x3D;&quot;root&quot;, passwd&#x3D;&quot;root&quot;, db&#x3D;&quot;qinxi&quot;) cursor &#x3D; database.cursor() sql &#x3D; &quot;INSERT INTO tb_test (nameBlob) VALUES  (%s);&quot; args &#x3D; (img) cursor.execute(sql, args) database.commit() cursor.close() database.close()  print(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;) print(&quot;Done! &quot;)   --r_blob.py 读取blob  import pymysql as mdb import sys  conn &#x3D; mdb.connect(host&#x3D;&#39;localhost&#39;,user&#x3D;&#39;root&#39;,passwd&#x3D;&#39;root&#39;,db&#x3D;&#39;qinxi&#39;) cursor &#x3D; conn.cursor() cursor.execute(&quot;SELECT nameBlob FROM tb_test LIMIT 1&quot;) fout &#x3D; open(&#39;PG333.jpg&#39;,&#39;wb&#39;) fout.write(cursor.fetchone()[0]) fout.close() cursor.close() conn.close()    python binlog2sql.py -uroot -h10.200.6.53 -proot -B --start-file&#x3D;mybinlog.000033 &gt; 33.sql&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="MyFlash测试"><a href="#MyFlash测试" class="headerlink" title="MyFlash测试"></a>MyFlash测试</h1><p><a href="https://github.com/Meituan-Dianping/MyFlash" target="_blank" rel="noopener">https://github.com/Meituan-Dianping/MyFlash</a></p>
-<p>安装</p>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;yum install libgnomeui-devel  gcc -w -g &#96;pkg-config --cflags  glib-2.0&#96; source&#x2F;binlogParseGlib.c   -o binary&#x2F;flashback &#x2F;usr&#x2F;lib64&#x2F;libglib-2.0.a -lrt yum install install glib2*&#96;</span><br></pre></td></tr></table></figure>
-
-<p>测试环境准备</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;Meituan-Dianping&#x2F;MyFlash&#x2F;blob&#x2F;master&#x2F;doc&#x2F;TestCase.md</span><br><span class="line">CREATE TABLE &#96;tb_test&#96; (   &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,   &#96;nameBlob&#96; longblob,   PRIMARY KEY (&#96;id&#96;) ) ENGINE&#x3D;InnoDB；</span><br></pre></td></tr></table></figure>
-
-
-
-<p>回滚命令生成</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;.&#x2F;MyFlash&#x2F;binary&#x2F;flashback --binlogFileNames&#x3D;&#x2F;alidata&#x2F;mysql&#x2F;mybinlog.000022 --outBinlogFileNameBase&#x3D;22delete.flashback&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>扩展</p>
-<p>阿里云RDS实例，用户没有Super权限，导入带有set @@信息，会提示ERROR 1227 (42000) at line 18: Access denied; you need (at least one of) the SUPERprivilege(s) for this operation报错。</p>
-<p>本地5.7版本，测试去除set @@GTID_NEXT,当GTID模式开启状态，导入实例会提示报错:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR 1782 (HY000) at line 19: @@SESSION.GTID_NEXT cannot be set to ANONYMOUS when @@GLOBAL.GTID_MODE &#x3D; ON.</span><br></pre></td></tr></table></figure>
-
-<p>只有将 GTID模式关闭，才可以正常导入。</p>
-<p><a href="https://bugs.mysql.com/bug.php?id=85480" target="_blank" rel="noopener">https://bugs.mysql.com/bug.php?id=85480</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;mysqlbinlog -v -v --skip-gtids 22delete.flashback | sed &#39;s@\&#x2F;\*.*\*\&#x2F;@@&#39; |mysql -uroot -proot&#96;</span><br></pre></td></tr></table></figure>
-
-<p>初步结论：云上RDS 目前无法使用该工具，由于没有super权限。</p>
-]]></content>
   </entry>
   <entry>
     <title>幻读是什么，幻读有什么问题？</title>
@@ -443,167 +603,6 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么你改了我看不见?</title>
-    <url>/2020/04/15/mysql%20%E6%9E%81%E5%AE%A245/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/</url>
-    <content><![CDATA[<p><strong>事务的基本要素(ACID)</strong></p>
-<ul>
-<li>原子性（Atomicity）；事务开始后所有操作，要么全部做完，要么全部不做，不能停滞在中间环节。</li>
-<li>一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏。</li>
-<li>隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。</li>
-<li>持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</li>
-</ul>
-<p><strong>事务的并发问题</strong></p>
-<ul>
-<li>脏读：事务B修改数据但未提交，事务A读数据，然后B回滚，则A读到的是脏数据。</li>
-<li>不可重复读：事务A第一次读取数据，事务B修改数据提交，事务A第二次读数据，两次数据不一致。</li>
-<li>幻读：事务A update表的全部行，事务B插入一行，事务A就会发现表中还有未修改的行。（一般加间隙锁）</li>
-</ul>
-<p><strong>MySQL事务隔离级别</strong></p>
-<table>
-<thead>
-<tr>
-<th>事务隔离级别</th>
-<th>脏读</th>
-<th>不可重复读</th>
-<th>幻读</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>读未提交</td>
-<td>会</td>
-<td>会</td>
-<td>会</td>
-</tr>
-<tr>
-<td>读已提交</td>
-<td>不会</td>
-<td>会</td>
-<td>会</td>
-</tr>
-<tr>
-<td>可重复读</td>
-<td>不会</td>
-<td>不会</td>
-<td>会</td>
-</tr>
-<tr>
-<td>串行话</td>
-<td>不会</td>
-<td>不会</td>
-<td>不会</td>
-</tr>
-</tbody></table>
-<p><strong>案例</strong></p>
-<table>
-<thead>
-<tr>
-<th>事务A</th>
-<th>事务B</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>启动事务；查询得到值</td>
-<td>启动事务</td>
-</tr>
-<tr>
-<td></td>
-<td>查询得到值1</td>
-</tr>
-<tr>
-<td></td>
-<td>将1改成2</td>
-</tr>
-<tr>
-<td>查询得到值V1</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>提交事务B</td>
-</tr>
-<tr>
-<td>查询得到值V2</td>
-<td></td>
-</tr>
-<tr>
-<td>提交事务A</td>
-<td></td>
-</tr>
-<tr>
-<td>查询得到值V3</td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>若隔离级别是“读未提交”， 则 V1 的值就是 2。这时候事务 B 虽然还没有提交，但是结果已经被 A 看到了。因此，V2、V3 也都是 2。</p>
-</li>
-<li><p>若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以，V3的值也是2。</p>
-</li>
-<li><p>若隔离级别是“可重复读”，则 V1、V2 是 1，V3 是 2。之所以 V2 还是 1，遵循的就是这个要求：事务在执行期间看到的数据前后必须是一致的。</p>
-</li>
-<li><p>若隔离级别是“串行化”，则在事务 B 执行“将 1 改成 2”的时候，会被锁住。直到事务 A 提交后，事务 B 才可以继续执行。所以从 A 的角度看， V1、V2 值是 1，V3 的值是 2。</p>
-</li>
-</ul>
-<p>在实现上，数据库里面会创建一个视图，访问的时候以视图的逻辑结果为准。</p>
-<ul>
-<li>在“可重复读”隔离级别下，这个视图是在事务启动时创建的，整个事务存在期间都用这个视图。</li>
-<li>在“读提交”隔离级别下，这个视图是在每个SQL语句开始执行的时候创建的。</li>
-<li>在“读未提交”隔离级别下直接返回记录下的最新之，没有视图概念。</li>
-<li>而“串性化”隔离级别下直接用加锁的方式来避免并行访问。</li>
-</ul>
-<p>为保证数据库隔离级别一致，你一定要记得将MYSQL的隔离级别设置为“读提交”。</p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>事务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql误删数据谁来背锅</title>
-    <url>/2020/04/10/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/</url>
-    <content><![CDATA[<blockquote>
-<p>我们不止要说误删数据的事后处理办法，更重要是要做到事前预防。</p>
-</blockquote>
-<p><em>误删数据分类</em></p>
-<ul>
-<li>使用 delete 语句误删数据行；</li>
-<li>使用 drop table 或者 truncate table 语句误删数据表；</li>
-<li>使用 drop database 语句误删数据库；</li>
-<li>使用 rm 命令误删整个 MySQL 实例。<a id="more"></a>
-
-</li>
-</ul>
-<p><em>需要完善自动恢复脚本</em></p>
-<blockquote>
-<p>一种加速的方法是，在用备份恢复出临时实例之后，将这个临时实例设置成线上备库的从库</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.恢复全量备份</span></span><br><span class="line">a.指定全量备份路径</span><br><span class="line">b.写入全量备份名称</span><br><span class="line">c.恢复全量备份到指定临时实例</span><br><span class="line"></span><br><span class="line">在 start slave 之前，先通过执行﻿﻿change replication filter replicate_do_table = (tbl_name) 命令，就可以让临时库只同步误操作的表；</span><br><span class="line">这样做也可以用上并行复制技术，来加速整个数据恢复过程。</span><br><span class="line"><span class="comment">#2.自动恢复binlog</span></span><br><span class="line">a.指定binlog备份路径</span><br><span class="line">b.指定需要恢复的binlog名称（1个或者多个）</span><br><span class="line">c.恢复binlog到指定临时实例</span><br></pre></td></tr></table></figure>
-
-<p><em>预防误删库 / 表的方法</em></p>
-<ul>
-<li><p>第一条建议是，账号分离。这样做的目的是，避免写错命令。</p>
-<blockquote>
-<p>比如：我们只给业务开发同学 DML 权限，而不给 truncate/drop 权限。<br>而如果业务开发人员有 DDL 需求的话，也可以通过开发管理系统得到支持。<br>即使是 DBA 团队成员，日常也都规定只使用只读账号，必要的时候才使用有更新权限的账号。</p>
-</blockquote>
-</li>
-<li><p>第二条建议是，制定操作规范。</p>
-<blockquote>
-<p>这样做的目的，是避免写错要删除的表名。<br>比如：在删除数据表之前，必须先对表做改名操作。然后，观察一段时间，确保对业务无影响以后再删除这张表。<br>改表名的时候，要求给表名加固定的后缀（比如加 _to_be_deleted)，然后删除表的动作必须通过管理系统执行。并且，管理系删除表的时候，只能删除固定后缀的表。</p>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>豆瓣电影排行榜</title>
     <url>/2020/04/04/python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/</url>
     <content><![CDATA[<h1 id="1-如何处理数据"><a href="#1-如何处理数据" class="headerlink" title="1.如何处理数据"></a>1.如何处理数据</h1><p>BeautifulSoup</p>
@@ -625,49 +624,6 @@
       <tags>
         <tag>python</tag>
         <tag>数据开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git玩转三剑客-第1课-仓库初始化</title>
-    <url>/2020/05/16/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
-    <content><![CDATA[<h1 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">创建目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir git_01</span></span><br><span class="line"></span><br><span class="line">进入目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> git_01/</span></span><br><span class="line"></span><br><span class="line">初始化</span><br><span class="line"><span class="meta">$</span><span class="bash"> git init .</span></span><br><span class="line">Initialized empty Git repository in xxx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> .git/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 7</span><br><span class="line">-rw-r--r-- 1 Apple 197121 130 5月  15 10:33 config</span><br><span class="line">-rw-r--r-- 1 Apple 197121  73 5月  15 10:33 description</span><br><span class="line">-rw-r--r-- 1 Apple 197121  23 5月  15 10:33 HEAD</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 hooks/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 info/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 objects/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 refs/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line"></span><br><span class="line">配置</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">		</span><br><span class="line">--global配置config文件内容没有变化</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">[user]</span><br><span class="line">        name = apple</span><br><span class="line">        mail = huangjx@jiagouyun.com</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h1 id="上传文件到仓库"><a href="#上传文件到仓库" class="headerlink" title="上传文件到仓库"></a>上传文件到仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">新建文件</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim xxCPU高了.md</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use "git add &lt;file&gt;..." to include in what will be committed)</span><br><span class="line"></span><br><span class="line">        "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use "git add" to track)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line">warning: LF will be replaced by CRLF in xxCPU高了.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git rm --cached &lt;file&gt;..." to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'新增了一个文件XX'</span></span></span><br><span class="line">[master (root-commit) e9a5c8c] 新增了一个文件XX</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>新增文件会先放到工作区放到git add将文件放到暂存区再放到git commit版本库</p>
-</blockquote>
-<h1 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br></pre></td></tr></table></figure>
-
-<h1 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch a</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">        a</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">[master e84f58a] 新增a</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e84f58a3eff4b3b05023e005d966cdb8f835a258 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:46:36 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增a</span><br><span class="line"></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span></span><br><span class="line">HEAD is now at e9a5c8c 新增了一个文件XX</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br></pre></td></tr></table></figure>
-
-<h1 id="将git仓库备份到本地"><a href="#将git仓库备份到本地" class="headerlink" title="将git仓库备份到本地"></a>将git仓库备份到本地</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> --bare file:///d/gitlab仓库1/git_01 backup_git_01</span></span><br><span class="line">Cloning into bare repository 'backup_git_01'...</span><br><span class="line">remote: Counting objects: 3, done.</span><br><span class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (3/3), done.</span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add backup_git_01 file:///gitlab仓库1/git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push --<span class="built_in">set</span>-upstream backup_git_01 master</span></span><br><span class="line">Everything up-to-date</span><br><span class="line">Branch master set up to track remote branch master from backup_git_01.</span><br></pre></td></tr></table></figure>
-
-<h1 id="如何多地管理仓库"><a href="#如何多地管理仓库" class="headerlink" title="如何多地管理仓库"></a>如何多地管理仓库</h1><p><a href="https://help.github.com/en/github/getting-started-with-github" target="_blank" rel="noopener">github帮助</a></p>
-<ul>
-<li>github创建仓库<img src="/2020/05/16/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/1.jpg" class="" title="This is an 1 image"></li>
-<li>本地仓库上传到github仓库</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">create a new repository on the command line</span><br><span class="line">echo "# git_01" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line">                </span><br><span class="line">…or push an existing repository from the command line</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin git@github.com:HuangJingxue/git_01.git</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Writing objects: 100% (3/3), 248 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">Branch master set up to track remote branch master from origin.</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>本地仓库成功推送到github仓库</p>
-</blockquote>
-<img src="/2020/05/16/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/2.jpg" class="" title="This is an 2 image">
-
-<p>远程拉取github仓库更新内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim studygit.md</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A .</span></span><br><span class="line">warning: LF will be replaced by CRLF in studygit.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'add studygit'</span></span></span><br><span class="line">[master b8623c7] add studygit</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 studygit.md</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (3/3), 287 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line">   e9a5c8c..b8623c7  master -&gt; master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">由BooBooWei操作</span><br><span class="line">cd gittest</span><br><span class="line">git clone https://github.com/HuangJingxue/git_01.git</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>开源工具</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
 </search>
