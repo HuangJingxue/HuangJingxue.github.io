@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test1</title>
-    <url>/undefined/8ab2dce2.html</url>
-    <content><![CDATA[<p><img src="test1/1.jpg" alt=""></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/undefined/d87f7e0c.html</url>
-    <content><![CDATA[<p><img src=".%5Ctest%5Cpic%5C1.jpg" alt="pic"></p>
-<p>测试图片</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Git玩转三剑客-第2课-分支管理</title>
     <url>/undefined/4a0f8359.html</url>
     <content><![CDATA[<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> ssh://git@gitlab.jiagouyun.com:40022/zy-docs/pd-forethought-helps.git</span></span><br><span class="line">Cloning into 'pd-forethought-helps'...</span><br><span class="line">remote: Counting objects: 10236, done.</span><br><span class="line">remote: Compressing objects: 100% (77/77), done.</span><br><span class="line">remote: Total 10236 (delta 26), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (10236/10236), 67.68 MiB | 949.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (5016/5016), done.</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Your branch is up-to-date with 'origin/master'.</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看当前分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line">* master</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看所有分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch --all</span></span><br><span class="line">* master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dashboard/MySQL锁监控</span><br><span class="line">  remotes/origin/dashboard/自建MariaDB监控</span><br><span class="line"></span><br><span class="line">创建分支</span><br><span class="line">git branch dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line">切换分支</span><br><span class="line">git checkout dashborad/自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> 当前分支所有提交完成，允许切换</span></span><br><span class="line"></span><br><span class="line">上传本地到分支仓库</span><br><span class="line">git push --set-upstream origin dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">提交merge request</span><br><span class="line">初学者选择web页面上处理</span><br><span class="line"><span class="meta">#</span><span class="bash">命令方式待完善</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除分支</span><br><span class="line">git branch -d 自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> web页面上也点击清除</span></span><br></pre></td></tr></table></figure>
