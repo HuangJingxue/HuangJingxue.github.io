@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangjingxue.github.io/"/>
-  <updated>2020-05-15T11:41:23.251Z</updated>
+  <updated>2020-05-15T11:57:34.729Z</updated>
   <id>https://huangjingxue.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://huangjingxue.github.io/2020/05/16/test1/"/>
     <id>https://huangjingxue.github.io/2020/05/16/test1/</id>
     <published>2020-05-15T19:40:47.000Z</published>
-    <updated>2020-05-15T11:41:23.251Z</updated>
+    <updated>2020-05-15T11:57:34.729Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;test1%5C1.jpg&quot;
+          &lt;p&gt;&lt;img src=&quot;test1%5C1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;/2020/05/16/test1/1.jpg&quot; class=&quot;&quot; title=&quot;This is an example
         
       
     
