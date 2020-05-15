@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangjingxue.github.io/"/>
-  <updated>2020-05-15T11:23:36.167Z</updated>
+  <updated>2020-05-15T11:41:23.251Z</updated>
   <id>https://huangjingxue.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test1</title>
+    <link href="https://huangjingxue.github.io/2020/05/16/test1/"/>
+    <id>https://huangjingxue.github.io/2020/05/16/test1/</id>
+    <published>2020-05-15T19:40:47.000Z</published>
+    <updated>2020-05-15T11:41:23.251Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;test1%5C1.jpg&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Git玩转三剑客-第1课</title>
     <link href="https://huangjingxue.github.io/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE/"/>
     <id>https://huangjingxue.github.io/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE/</id>
     <published>2020-05-15T19:10:28.000Z</published>
-    <updated>2020-05-15T11:23:36.167Z</updated>
+    <updated>2020-05-15T11:29:10.884Z</updated>
     
     <summary type="html">
     
@@ -167,9 +190,9 @@
       <category term="云数据库" scheme="https://huangjingxue.github.io/categories/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="https://huangjingxue.github.io/tags/mysql/"/>
-    
       <category term="Polardb" scheme="https://huangjingxue.github.io/tags/Polardb/"/>
+    
+      <category term="mysql" scheme="https://huangjingxue.github.io/tags/mysql/"/>
     
   </entry>
   
