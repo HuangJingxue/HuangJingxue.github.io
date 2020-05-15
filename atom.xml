@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangjingxue.github.io/"/>
-  <updated>2020-05-15T05:03:27.879Z</updated>
+  <updated>2020-05-15T10:27:28.247Z</updated>
   <id>https://huangjingxue.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="https://huangjingxue.github.io/undefined/d87f7e0c.html"/>
+    <id>https://huangjingxue.github.io/undefined/d87f7e0c.html</id>
+    <published>2020-05-15T18:26:22.000Z</published>
+    <updated>2020-05-15T10:27:28.247Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;.%5Ctest%5Cpic%5C1.jpg&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Git玩转三剑客-第2课-分支管理</title>
     <link href="https://huangjingxue.github.io/undefined/4a0f8359.html"/>
     <id>https://huangjingxue.github.io/undefined/4a0f8359.html</id>
     <published>2020-05-15T11:41:22.000Z</published>
-    <updated>2020-05-15T05:03:27.879Z</updated>
+    <updated>2020-05-15T10:22:39.624Z</updated>
     
     <summary type="html">
     
@@ -48,7 +71,7 @@
     <link href="https://huangjingxue.github.io/undefined/84840b3c.html"/>
     <id>https://huangjingxue.github.io/undefined/84840b3c.html</id>
     <published>2020-05-15T10:34:54.000Z</published>
-    <updated>2020-05-15T10:19:33.113Z</updated>
+    <updated>2020-05-15T10:25:20.068Z</updated>
     
     <summary type="html">
     

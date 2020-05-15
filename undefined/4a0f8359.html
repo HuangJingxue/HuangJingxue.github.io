@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"huangjingxue.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="分支管理12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849Apple@DESKTOP-V8IAR5D MINGW64 &#x2F;d&#x2F;智能团队相关资料&#x2F;08_学习内容&#x2F;04_gitlab仓库1$ git clone ssh:&#x2F;&#x2F;git@gitlab.jiagouyun.com:40">
+  <meta name="description" content="分支管理12345678910111213141516171819202122232425262728293031323334353637383940414243$ git clone ssh:&#x2F;&#x2F;git@gitlab.jiagouyun.com:40022&#x2F;zy-docs&#x2F;pd-forethought-helps.gitCloning into &#39;pd-forethought-helps&#39;...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git玩转三剑客-第2课-分支管理">
 <meta property="og:url" content="https://huangjingxue.github.io/undefined/4a0f8359.html">
 <meta property="og:site_name" content="青雨果果的博客">
-<meta property="og:description" content="分支管理12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849Apple@DESKTOP-V8IAR5D MINGW64 &#x2F;d&#x2F;智能团队相关资料&#x2F;08_学习内容&#x2F;04_gitlab仓库1$ git clone ssh:&#x2F;&#x2F;git@gitlab.jiagouyun.com:40">
+<meta property="og:description" content="分支管理12345678910111213141516171819202122232425262728293031323334353637383940414243$ git clone ssh:&#x2F;&#x2F;git@gitlab.jiagouyun.com:40022&#x2F;zy-docs&#x2F;pd-forethought-helps.gitCloning into &#39;pd-forethought-helps&#39;...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-15T11:41:22.000Z">
-<meta property="article:modified_time" content="2020-05-15T05:03:27.879Z">
+<meta property="article:modified_time" content="2020-05-15T10:22:39.624Z">
 <meta property="article:author" content="青雨果果">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -235,7 +235,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-15 11:41:22 / 修改时间：05:03:27" itemprop="dateCreated datePublished" datetime="2020-05-15T11:41:22Z">2020-05-15</time>
+              <time title="创建时间：2020-05-15 11:41:22 / 修改时间：10:22:39" itemprop="dateCreated datePublished" datetime="2020-05-15T11:41:22Z">2020-05-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,7 +260,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>905</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> ssh://git@gitlab.jiagouyun.com:40022/zy-docs/pd-forethought-helps.git</span></span><br><span class="line">Cloning into 'pd-forethought-helps'...</span><br><span class="line">remote: Counting objects: 10236, done.</span><br><span class="line">remote: Compressing objects: 100% (77/77), done.</span><br><span class="line">remote: Total 10236 (delta 26), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (10236/10236), 67.68 MiB | 949.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (5016/5016), done.</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Your branch is up-to-date with 'origin/master'.</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看当前分支</span></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1/pd-forethought-helps (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line">* master</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看所有分支</span></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1/pd-forethought-helps (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch --all</span></span><br><span class="line">* master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dashboard/MySQL锁监控</span><br><span class="line">  remotes/origin/dashboard/自建MariaDB监控</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1/pd-forethought-helps (master)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建分支</span><br><span class="line">git branch dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line">切换分支</span><br><span class="line">git checkout dashborad/自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> 当前分支所有提交完成，允许切换</span></span><br><span class="line"></span><br><span class="line">上传本地到分支仓库</span><br><span class="line">git push --set-upstream origin dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">提交merge request</span><br><span class="line">初学者选择web页面上处理</span><br><span class="line"><span class="meta">#</span><span class="bash">命令方式待完善</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除分支</span><br><span class="line">git branch -d 自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> web页面上也点击清除</span></span><br></pre></td></tr></table></figure>
+        <h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> ssh://git@gitlab.jiagouyun.com:40022/zy-docs/pd-forethought-helps.git</span></span><br><span class="line">Cloning into 'pd-forethought-helps'...</span><br><span class="line">remote: Counting objects: 10236, done.</span><br><span class="line">remote: Compressing objects: 100% (77/77), done.</span><br><span class="line">remote: Total 10236 (delta 26), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (10236/10236), 67.68 MiB | 949.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (5016/5016), done.</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Your branch is up-to-date with 'origin/master'.</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看当前分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line">* master</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看所有分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch --all</span></span><br><span class="line">* master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dashboard/MySQL锁监控</span><br><span class="line">  remotes/origin/dashboard/自建MariaDB监控</span><br><span class="line"></span><br><span class="line">创建分支</span><br><span class="line">git branch dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line">切换分支</span><br><span class="line">git checkout dashborad/自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> 当前分支所有提交完成，允许切换</span></span><br><span class="line"></span><br><span class="line">上传本地到分支仓库</span><br><span class="line">git push --set-upstream origin dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">提交merge request</span><br><span class="line">初学者选择web页面上处理</span><br><span class="line"><span class="meta">#</span><span class="bash">命令方式待完善</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除分支</span><br><span class="line">git branch -d 自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> web页面上也点击清除</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><ul>
 <li>Pycharm管理git仓库</li>
@@ -345,7 +345,10 @@
     <a href="/undefined/84840b3c.html" rel="prev" title="Git玩转三剑客_第1课-仓库管理">
       <i class="fa fa-chevron-left"></i> Git玩转三剑客_第1课-仓库管理
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/undefined/d87f7e0c.html" rel="next" title="test">
+      test <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -420,7 +423,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -462,6 +465,10 @@
         
         
           <li>
+            <a href="/undefined/d87f7e0c.html" title="test" target="_blank">test</a>
+          </li>
+        
+          <li>
             <a href="/undefined/4a0f8359.html" title="Git玩转三剑客-第2课-分支管理" target="_blank">Git玩转三剑客-第2课-分支管理</a>
           </li>
         
@@ -475,10 +482,6 @@
         
           <li>
             <a href="/undefined/3df502a.html" title="mysql/mysql误删数据谁来拯救" target="_blank">mysql/mysql误删数据谁来拯救</a>
-          </li>
-        
-          <li>
-            <a href="/undefined/5bbb5192.html" title="幻读是什么，幻读有什么问题？" target="_blank">幻读是什么，幻读有什么问题？</a>
           </li>
         
       </ul>
@@ -778,13 +781,13 @@ if(canvas.getContext){
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">24k</span>
+    <span title="站点总字数">23k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
