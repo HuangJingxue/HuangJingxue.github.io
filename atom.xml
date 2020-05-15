@@ -69,17 +69,16 @@
     <link href="https://applegit11.github.io/undefined/986eb678.html"/>
     <id>https://applegit11.github.io/undefined/986eb678.html</id>
     <published>2020-05-12T10:56:24.518Z</published>
-    <updated>2020-05-15T04:59:18.958Z</updated>
+    <updated>2020-05-15T05:05:27.743Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;MyFlash初体验&quot;&gt;&lt;a href=&quot;#MyFlash初体验&quot; class=&quot;headerlink&quot; title=&quot;MyFlash初体验&quot;&gt;&lt;/a&gt;MyFlash初体验&lt;/h2&gt;&lt;h2 id=&quot;验证binlog2sql-是否支持blob转换&quot;&gt;&lt;a
-        
-      
+      &lt;h2 id=&quot;MyFlash初体验&quot;&gt;&lt;a href=&quot;#MyFlash初体验&quot; class=&quot;headerlink&quot; title=&quot;MyFlash初体验&quot;&gt;&lt;/a&gt;MyFlash初体验&lt;/h2&gt;&lt;h2 id=&quot;验证binlog2sql-是否支持blob转换&quot;&gt;&lt;a href=&quot;#验证binlog2sql-是否支持blob转换&quot; class=&quot;headerlink&quot; title=&quot;验证binlog2sql 是否支持blob转换&quot;&gt;&lt;/a&gt;验证binlog2sql 是否支持blob转换&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#96;--w_blob.py  写入blob   import sys import pymysql import os  path &amp;#x3D; &amp;quot;.&amp;#x2F;&amp;quot;  fp &amp;#x3D; open(&amp;quot;&amp;#x2F;alidata&amp;#x2F;PG01.jpg&amp;quot;, &amp;#39;rb&amp;#39;) img &amp;#x3D; fp.read() fp.close()  database &amp;#x3D; pymysql.connect(host&amp;#x3D;&amp;quot;localhost&amp;quot;, user&amp;#x3D;&amp;quot;root&amp;quot;, passwd&amp;#x3D;&amp;quot;root&amp;quot;, db&amp;#x3D;&amp;quot;qinxi&amp;quot;) cursor &amp;#x3D; database.cursor() sql &amp;#x3D; &amp;quot;INSERT INTO tb_test (nameBlob) VALUES  (%s);&amp;quot; args &amp;#x3D; (img) cursor.execute(sql, args) database.commit() cursor.close() database.close()  print(&amp;quot;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;quot;) print(&amp;quot;Done! &amp;quot;)   --r_blob.py 读取blob  import pymysql as mdb import sys  conn &amp;#x3D; mdb.connect(host&amp;#x3D;&amp;#39;localhost&amp;#39;,user&amp;#x3D;&amp;#39;root&amp;#39;,passwd&amp;#x3D;&amp;#39;root&amp;#39;,db&amp;#x3D;&amp;#39;qinxi&amp;#39;) cursor &amp;#x3D; conn.cursor() cursor.execute(&amp;quot;SELECT nameBlob FROM tb_test LIMIT 1&amp;quot;) fout &amp;#x3D; open(&amp;#39;PG333.jpg&amp;#39;,&amp;#39;wb&amp;#39;) fout.write(cursor.fetchone()[0]) fout.close() cursor.close() conn.close()    python binlog2sql.py -uroot -h10.200.6.53 -proot -B --start-file&amp;#x3D;mybinlog.000033 &amp;gt; 33.sql&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+&lt;h1 id=&quot;MyFlash测试&quot;&gt;&lt;a href=&quot;#MyFlash测试&quot; class=&quot;headerlink&quot; title=&quot;MyFlash测试&quot;&gt;&lt;/a&gt;MyFlash测试&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Meituan-Dianping/MyFlash&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Meituan-Dianping/MyFlash&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装&lt;/p&gt;
     
     </summary>
     
