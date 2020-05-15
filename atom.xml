@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangjingxue.github.io/"/>
-  <updated>2020-05-15T10:27:28.247Z</updated>
+  <updated>2020-05-15T10:39:14.670Z</updated>
   <id>https://huangjingxue.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test1</title>
+    <link href="https://huangjingxue.github.io/undefined/8ab2dce2.html"/>
+    <id>https://huangjingxue.github.io/undefined/8ab2dce2.html</id>
+    <published>2020-05-15T18:37:48.000Z</published>
+    <updated>2020-05-15T10:39:14.670Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;test1/1.jpg&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>test</title>
