@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>青雨果果的博客</title>
-  <icon>https://huangjingxue.github.io/icon.png</icon>
+  <icon>https://www.huangjingxue.com/icon.png</icon>
   <subtitle>不积硅步，无以至千里！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://huangjingxue.github.io/"/>
-  <updated>2020-05-15T12:05:18.975Z</updated>
-  <id>https://huangjingxue.github.io/</id>
+  <link href="https://www.huangjingxue.com/"/>
+  <updated>2020-05-21T10:04:36.144Z</updated>
+  <id>https://www.huangjingxue.com/</id>
   
   <author>
     <name>青雨果果</name>
@@ -17,30 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Git玩转三剑客-第1课-仓库初始化</title>
-    <link href="https://huangjingxue.github.io/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/"/>
-    <id>https://huangjingxue.github.io/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/</id>
-    <published>2020-05-15T20:04:04.000Z</published>
-    <updated>2020-05-15T12:05:18.975Z</updated>
+    <title>获取在线MySQL实例的Binlog信息</title>
+    <link href="https://www.huangjingxue.com/2020/05/22/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/"/>
+    <id>https://www.huangjingxue.com/2020/05/22/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/</id>
+    <published>2020-05-21T17:49:19.000Z</published>
+    <updated>2020-05-21T10:04:36.144Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;初始化仓库&quot;&gt;&lt;a href=&quot;#初始化仓库&quot; class=&quot;headerlink&quot; title=&quot;初始化仓库&quot;&gt;&lt;/a&gt;初始化仓库&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;创建目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; mkdir git_01&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;进入目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; git_01/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;初始化&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; git init .&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Initialized empty Git repository in xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; .git/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; ll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;total 7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-rw-r--r-- 1 Apple 197121 130 5月  15 10:33 config&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-rw-r--r-- 1 Apple 197121  73 5月  15 10:33 description&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-rw-r--r-- 1 Apple 197121  23 5月  15 10:33 HEAD&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 hooks/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 info/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 objects/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 refs/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; cat config&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[core]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        repositoryformatversion = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        filemode = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        bare = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logallrefupdates = true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        symlinks = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ignorecase = true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; git config --global user.name apple&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; git config --global user.mail huangjx@jiagouyun.com&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; cat config&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[core]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        repositoryformatversion = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        filemode = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        bare = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logallrefupdates = true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        symlinks = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ignorecase = true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--global配置config文件内容没有变化&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; git config --&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt; user.name apple&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; git config --&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt; user.mail huangjx@jiagouyun.com&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; cat config&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[core]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        repositoryformatversion = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        filemode = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        bare = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logallrefupdates = true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        symlinks = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ignorecase = true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[user]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        name = apple&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        mail = huangjx@jiagouyun.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      当你没有开启SQL洞察，SQL审计，慢日志也抓取不到的时候，请用它。
     
     </summary>
     
     
-      <category term="开源工具" scheme="https://huangjingxue.github.io/categories/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="tookit" scheme="https://www.huangjingxue.com/tags/tookit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git玩转三剑客-第1课-仓库初始化</title>
+    <link href="https://www.huangjingxue.com/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/"/>
+    <id>https://www.huangjingxue.com/2020/05/16/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/</id>
+    <published>2020-05-15T20:04:04.000Z</published>
+    <updated>2020-05-21T05:05:46.533Z</updated>
+    
+    <summary type="html">
+    
+      仓库初始化
+    
+    </summary>
     
     
-      <category term="Git" scheme="https://huangjingxue.github.io/tags/Git/"/>
+      <category term="开源工具" scheme="https://www.huangjingxue.com/categories/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="https://www.huangjingxue.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Git玩转三剑客-第2课-分支管理</title>
-    <link href="https://huangjingxue.github.io/2020/05/15/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC2%E8%AF%BE/"/>
-    <id>https://huangjingxue.github.io/2020/05/15/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC2%E8%AF%BE/</id>
+    <link href="https://www.huangjingxue.com/2020/05/15/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC2%E8%AF%BE/"/>
+    <id>https://www.huangjingxue.com/2020/05/15/git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC2%E8%AF%BE/</id>
     <published>2020-05-15T11:41:22.000Z</published>
     <updated>2020-05-15T10:22:39.624Z</updated>
     
@@ -57,17 +76,17 @@
     </summary>
     
     
-      <category term="开源工具" scheme="https://huangjingxue.github.io/categories/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
+      <category term="开源工具" scheme="https://www.huangjingxue.com/categories/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Git" scheme="https://huangjingxue.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://www.huangjingxue.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>mysql/MyFlash初体验</title>
-    <link href="https://huangjingxue.github.io/2020/05/12/mysql/MyFlash%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>https://huangjingxue.github.io/2020/05/12/mysql/MyFlash%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
+    <link href="https://www.huangjingxue.com/2020/05/12/mysql/MyFlash%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>https://www.huangjingxue.com/2020/05/12/mysql/MyFlash%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
     <published>2020-05-12T10:56:24.518Z</published>
     <updated>2020-05-15T05:05:27.743Z</updated>
     
@@ -88,8 +107,8 @@
   
   <entry>
     <title>mysql/mysql误删数据谁来拯救</title>
-    <link href="https://huangjingxue.github.io/2020/05/12/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E6%8B%AF%E6%95%91/"/>
-    <id>https://huangjingxue.github.io/2020/05/12/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E6%8B%AF%E6%95%91/</id>
+    <link href="https://www.huangjingxue.com/2020/05/12/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E6%8B%AF%E6%95%91/"/>
+    <id>https://www.huangjingxue.com/2020/05/12/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E6%8B%AF%E6%95%91/</id>
     <published>2020-05-12T07:32:36.548Z</published>
     <updated>2020-05-15T04:59:18.958Z</updated>
     
@@ -111,8 +130,8 @@
   
   <entry>
     <title>幻读是什么，幻读有什么问题？</title>
-    <link href="https://huangjingxue.github.io/2020/04/21/mysql%20%E6%9E%81%E5%AE%A245/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/"/>
-    <id>https://huangjingxue.github.io/2020/04/21/mysql%20%E6%9E%81%E5%AE%A245/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/</id>
+    <link href="https://www.huangjingxue.com/2020/04/21/mysql%20%E6%9E%81%E5%AE%A245/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/"/>
+    <id>https://www.huangjingxue.com/2020/04/21/mysql%20%E6%9E%81%E5%AE%A245/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/</id>
     <published>2020-04-20T19:23:13.000Z</published>
     <updated>2020-04-24T07:46:37.638Z</updated>
     
@@ -130,19 +149,19 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://huangjingxue.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.huangjingxue.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="https://huangjingxue.github.io/tags/mysql/"/>
+      <category term="mysql" scheme="https://www.huangjingxue.com/tags/mysql/"/>
     
-      <category term="事务" scheme="https://huangjingxue.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
+      <category term="事务" scheme="https://www.huangjingxue.com/tags/%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
   <entry>
     <title>云数据库Polardb如何获取事务提交时间戳</title>
-    <link href="https://huangjingxue.github.io/2020/04/15/aliyundb/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93Polardb%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E4%BA%8B%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E6%88%B3/"/>
-    <id>https://huangjingxue.github.io/2020/04/15/aliyundb/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93Polardb%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E4%BA%8B%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E6%88%B3/</id>
+    <link href="https://www.huangjingxue.com/2020/04/15/aliyundb/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93Polardb%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E4%BA%8B%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E6%88%B3/"/>
+    <id>https://www.huangjingxue.com/2020/04/15/aliyundb/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93Polardb%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E4%BA%8B%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E6%88%B3/</id>
     <published>2020-04-15T13:27:48.000Z</published>
     <updated>2020-04-15T05:49:34.319Z</updated>
     
@@ -164,19 +183,19 @@
     </summary>
     
     
-      <category term="云数据库" scheme="https://huangjingxue.github.io/categories/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="云数据库" scheme="https://www.huangjingxue.com/categories/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="https://huangjingxue.github.io/tags/mysql/"/>
+      <category term="Polardb" scheme="https://www.huangjingxue.com/tags/Polardb/"/>
     
-      <category term="Polardb" scheme="https://huangjingxue.github.io/tags/Polardb/"/>
+      <category term="mysql" scheme="https://www.huangjingxue.com/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>为什么你改了我看不见?</title>
-    <link href="https://huangjingxue.github.io/2020/04/15/mysql%20%E6%9E%81%E5%AE%A245/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/"/>
-    <id>https://huangjingxue.github.io/2020/04/15/mysql%20%E6%9E%81%E5%AE%A245/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/</id>
+    <link href="https://www.huangjingxue.com/2020/04/15/mysql%20%E6%9E%81%E5%AE%A245/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/"/>
+    <id>https://www.huangjingxue.com/2020/04/15/mysql%20%E6%9E%81%E5%AE%A245/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/</id>
     <published>2020-04-14T19:23:01.000Z</published>
     <updated>2020-04-24T07:46:48.363Z</updated>
     
@@ -196,19 +215,19 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://huangjingxue.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.huangjingxue.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="https://huangjingxue.github.io/tags/mysql/"/>
+      <category term="mysql" scheme="https://www.huangjingxue.com/tags/mysql/"/>
     
-      <category term="事务" scheme="https://huangjingxue.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
+      <category term="事务" scheme="https://www.huangjingxue.com/tags/%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
   <entry>
     <title>mysql误删数据谁来背锅</title>
-    <link href="https://huangjingxue.github.io/2020/04/10/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/"/>
-    <id>https://huangjingxue.github.io/2020/04/10/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/</id>
+    <link href="https://www.huangjingxue.com/2020/04/10/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/"/>
+    <id>https://www.huangjingxue.com/2020/04/10/mysql/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/</id>
     <published>2020-04-10T14:26:28.000Z</published>
     <updated>2020-05-12T07:37:31.635Z</updated>
     
@@ -227,17 +246,17 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://huangjingxue.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.huangjingxue.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mysql" scheme="https://huangjingxue.github.io/tags/mysql/"/>
+      <category term="mysql" scheme="https://www.huangjingxue.com/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>MonogDB初体验</title>
-    <link href="https://huangjingxue.github.io/2020/04/04/mongodb/mongodb%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>https://huangjingxue.github.io/2020/04/04/mongodb/mongodb%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
+    <link href="https://www.huangjingxue.com/2020/04/04/mongodb/mongodb%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>https://www.huangjingxue.com/2020/04/04/mongodb/mongodb%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
     <published>2020-04-04T13:18:09.000Z</published>
     <updated>2020-04-06T09:17:15.615Z</updated>
     
@@ -255,19 +274,19 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://huangjingxue.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.huangjingxue.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mongodb" scheme="https://huangjingxue.github.io/tags/mongodb/"/>
+      <category term="mongodb" scheme="https://www.huangjingxue.com/tags/mongodb/"/>
     
   </entry>
   
   <entry>
     <title>豆瓣电影排行榜</title>
-    <link href="https://huangjingxue.github.io/2020/04/04/python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/"/>
-    <id>https://huangjingxue.github.io/2020/04/04/python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/</id>
+    <link href="https://www.huangjingxue.com/2020/04/04/python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/"/>
+    <id>https://www.huangjingxue.com/2020/04/04/python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/</id>
     <published>2020-04-04T12:51:14.000Z</published>
-    <updated>2020-04-06T13:26:02.438Z</updated>
+    <updated>2020-05-19T08:24:52.524Z</updated>
     
     <summary type="html">
     
@@ -281,21 +300,19 @@
     </summary>
     
     
-      <category term="开发语言" scheme="https://huangjingxue.github.io/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="爬虫" scheme="https://huangjingxue.github.io/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/%E7%88%AC%E8%99%AB/"/>
+      <category term="开发语言" scheme="https://www.huangjingxue.com/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="python" scheme="https://huangjingxue.github.io/tags/python/"/>
+      <category term="python" scheme="https://www.huangjingxue.com/tags/python/"/>
     
-      <category term="数据开发" scheme="https://huangjingxue.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91/"/>
+      <category term="数据开发" scheme="https://www.huangjingxue.com/tags/%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>python爬虫初体验</title>
-    <link href="https://huangjingxue.github.io/2020/04/04/python/python%E7%88%AC%E8%99%AB%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>https://huangjingxue.github.io/2020/04/04/python/python%E7%88%AC%E8%99%AB%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
+    <link href="https://www.huangjingxue.com/2020/04/04/python/python%E7%88%AC%E8%99%AB%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>https://www.huangjingxue.com/2020/04/04/python/python%E7%88%AC%E8%99%AB%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
     <published>2020-04-03T22:08:43.000Z</published>
     <updated>2020-04-06T15:54:50.105Z</updated>
     
@@ -306,12 +323,12 @@
     </summary>
     
     
-      <category term="开发语言" scheme="https://huangjingxue.github.io/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
+      <category term="开发语言" scheme="https://www.huangjingxue.com/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="python" scheme="https://huangjingxue.github.io/tags/python/"/>
+      <category term="python" scheme="https://www.huangjingxue.com/tags/python/"/>
     
-      <category term="数据开发" scheme="https://huangjingxue.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91/"/>
+      <category term="数据开发" scheme="https://www.huangjingxue.com/tags/%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
