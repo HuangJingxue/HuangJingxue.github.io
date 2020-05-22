@@ -1,8 +1,852 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用github Page搭建自己的轻量博客</title>
+    <url>/2020/05/22/%E4%BD%BF%E7%94%A8githubPage%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BD%BB%E9%87%8F%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
+<ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+</ul>
+<p>如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果您的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。</p>
+<blockquote>
+<p>Mac 用户</p>
+<p>您在编译时可能会遇到问题，请先到 App Store 安装 Xcode，Xcode 完成后，启动并进入 <strong>Preferences -&gt; Download -&gt; Command Line Tools -&gt; Install</strong> 安装命令行工具。</p>
+</blockquote>
+<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><ul>
+<li>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>.</li>
+<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a> ：<code>brew install git</code>;或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装程序</a> 安装。</li>
+<li>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code></li>
+<li>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></li>
+</ul>
+<blockquote>
+<p>Windows 用户</p>
+<p>由于众所周知的原因，从上面的链接下载git for windows最好挂上一个代理，否则下载速度十分缓慢。也可以参考<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">这个页面</a>，收录了存储于百度云的下载地址。</p>
+</blockquote>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>。</p>
+<p>CURL:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl https:&#x2F;&#x2F;raw.github.com&#x2F;creationix&#x2F;nvm&#x2F;v0.33.11&#x2F;install.sh | sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Wget:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ wget -qO- https:&#x2F;&#x2F;raw.github.com&#x2F;creationix&#x2F;nvm&#x2F;v0.33.11&#x2F;install.sh | sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装完成后，重启终端并执行下列命令即可安装 Node.js。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
+
+
+
+<p>或者您也可以下载 <a href="http://nodejs.org/" target="_blank" rel="noopener">安装程序</a> 来安装。</p>
+<blockquote>
+<p>Windows 用户</p>
+<p>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选<strong>Add to PATH</strong>选项。<br>另外，您也可以使用<strong>Git Bash</strong>，这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“Git Bash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用<strong>Git Bash</strong>来进行操作。</p>
+</blockquote>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Copy $ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><h3 id="建站操作明细"><a href="#建站操作明细" class="headerlink" title="建站操作明细"></a>建站操作明细</h3><p>搭建一个名字为blog的博客:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init blogcd blognpm install</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="建站文件结构讲解"><a href="#建站文件结构讲解" class="headerlink" title="建站文件结构讲解"></a>建站文件结构讲解</h3><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.├── _config.yml├── package.json├── scaffolds├── source|   ├── _drafts|   └── _posts└── themes</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>网站的 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置</a> 信息，您可以在此配置大部分的参数。</p>
+<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><p>应用程序的信息。<a href="http://embeddedjs.com/" target="_blank" rel="noopener">EJS</a>, <a href="http://learnboost.github.io/stylus/" target="_blank" rel="noopener">Stylus</a> 和 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> renderer 已默认安装，您可以自由移除。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package.json&#123;  &quot;name&quot;: &quot;hexo-site&quot;,  &quot;version&quot;: &quot;0.0.0&quot;,  &quot;private&quot;: true,  &quot;hexo&quot;: &#123;    &quot;version&quot;: &quot;&quot;  &#125;,  &quot;dependencies&quot;: &#123;    &quot;hexo&quot;: &quot;^3.0.0&quot;,    &quot;hexo-generator-archive&quot;: &quot;^0.1.0&quot;,    &quot;hexo-generator-category&quot;: &quot;^0.1.0&quot;,    &quot;hexo-generator-index&quot;: &quot;^0.1.0&quot;,    &quot;hexo-generator-tag&quot;: &quot;^0.1.0&quot;,    &quot;hexo-renderer-ejs&quot;: &quot;^0.1.0&quot;,    &quot;hexo-renderer-stylus&quot;: &quot;^0.2.0&quot;,    &quot;hexo-renderer-marked&quot;: &quot;^0.2.4&quot;,    &quot;hexo-server&quot;: &quot;^0.1.2&quot;  &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
+<p>Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+<h4 id="source"><a href="#source" class="headerlink" title="source"></a>source</h4><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
+<h4 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h4><p><a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>您可以在 <code>_config.yml</code> 中修改大部份的配置。</p>
+<h3 id="配置操作明细"><a href="#配置操作明细" class="headerlink" title="配置操作明细"></a>配置操作明细</h3><p>配置文件中主要修改了博客的语言、标题、作者、描述、时区和文件模式<code>post_asset_folder</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Hexo Configuration## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;configuration.html## Source: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo&#x2F;# Sitetitle: Booboo Wei&#39;s Blogsubtitle: Talk is cheap, show me the codedescription: 数据库工程师keywords: MySQL Linux DBA BigData Redis Pythonauthor: Booboo Weilanguage: zh-Hanstimezone: UTC# URL## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;url: http:&#x2F;&#x2F;yoursite.comroot: &#x2F;permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;permalink_defaults:# Directorysource_dir: sourcepublic_dir: publictag_dir: tagsarchive_dir: archivescategory_dir: categoriescode_dir: downloads&#x2F;codei18n_dir: :langskip_render:# Writingnew_post_name: :title.md # File name of new postsdefault_layout: posttitlecase: false # Transform title into titlecaseexternal_link: true # Open external links in new tabfilename_case: 0render_drafts: falsepost_asset_folder: truerelative_link: falsefuture: truehighlight:  enable: true  line_number: true  auto_detect: false  tab_replace:# Home page setting# path: Root path for your blogs index page. (default &#x3D; &#39;&#39;)# per_page: Posts displayed per page. (0 &#x3D; disable pagination)# order_by: Posts order. (Order by date descending by default)index_generator:  path: &#39;&#39;  per_page: 10  order_by: -date# Category &amp; Tagdefault_category: MySQLcategory_map:tag_map:# Date &#x2F; Time format## Hexo uses Moment.js to parse and display date## You can customize the date format as defined in## http:&#x2F;&#x2F;momentjs.com&#x2F;docs&#x2F;#&#x2F;displaying&#x2F;format&#x2F;date_format: YYYY-MM-DDtime_format: HH:mm:ss# Pagination## Set per_page to 0 to disable paginationper_page: 10pagination_dir: page# Extensions## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;theme: landscape# Deployment## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.htmldeploy:  type:</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="配置参数讲解"><a href="#配置参数讲解" class="headerlink" title="配置参数讲解"></a>配置参数讲解</h3><h4 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>title</code></td>
+<td align="left">网站标题</td>
+</tr>
+<tr>
+<td align="left"><code>subtitle</code></td>
+<td align="left">网站副标题</td>
+</tr>
+<tr>
+<td align="left"><code>description</code></td>
+<td align="left">网站描述</td>
+</tr>
+<tr>
+<td align="left"><code>author</code></td>
+<td align="left">您的名字</td>
+</tr>
+<tr>
+<td align="left"><code>language</code></td>
+<td align="left">网站使用的语言</td>
+</tr>
+<tr>
+<td align="left"><code>timezone</code></td>
+<td align="left">网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a>。比如说：<code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。</td>
+</tr>
+</tbody></table>
+<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+<h4 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>url</code></td>
+<td align="left">网址</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>root</code></td>
+<td align="left">网站根目录</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>permalink</code></td>
+<td align="left">文章的 <a href="https://hexo.io/zh-cn/docs/permalinks" target="_blank" rel="noopener">永久链接</a> 格式</td>
+<td align="left"><code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td align="left"><code>permalink_defaults</code></td>
+<td align="left">永久链接中各部分的默认值</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>网站存放在子目录</p>
+<p>如果您的网站存放在子目录中，例如 <code>http://yoursite.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p>
+</blockquote>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>source_dir</code></td>
+<td align="left">资源文件夹，这个文件夹用来存放内容。</td>
+<td align="left"><code>source</code></td>
+</tr>
+<tr>
+<td align="left"><code>public_dir</code></td>
+<td align="left">公共文件夹，这个文件夹用于存放生成的站点文件。</td>
+<td align="left"><code>public</code></td>
+</tr>
+<tr>
+<td align="left"><code>tag_dir</code></td>
+<td align="left">标签文件夹</td>
+<td align="left"><code>tags</code></td>
+</tr>
+<tr>
+<td align="left"><code>archive_dir</code></td>
+<td align="left">归档文件夹</td>
+<td align="left"><code>archives</code></td>
+</tr>
+<tr>
+<td align="left"><code>category_dir</code></td>
+<td align="left">分类文件夹</td>
+<td align="left"><code>categories</code></td>
+</tr>
+<tr>
+<td align="left"><code>code_dir</code></td>
+<td align="left">Include code 文件夹</td>
+<td align="left"><code>downloads/code</code></td>
+</tr>
+<tr>
+<td align="left"><code>i18n_dir</code></td>
+<td align="left">国际化（i18n）文件夹</td>
+<td align="left"><code>:lang</code></td>
+</tr>
+<tr>
+<td align="left"><code>skip_render</code></td>
+<td align="left">跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="noopener">glob 表达式</a>来匹配路径。</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示</p>
+<p>如果您刚刚开始接触Hexo，通常没有必要修改这一部分的值。</p>
+</blockquote>
+<h4 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>new_post_name</code></td>
+<td align="left">新文章的文件名称</td>
+<td align="left">:title.md</td>
+</tr>
+<tr>
+<td align="left"><code>default_layout</code></td>
+<td align="left">预设布局</td>
+<td align="left">post</td>
+</tr>
+<tr>
+<td align="left"><code>auto_spacing</code></td>
+<td align="left">在中文和英文之间加入空格</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>titlecase</code></td>
+<td align="left">把标题转换为 title case</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>external_link</code></td>
+<td align="left">在新标签中打开链接</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left"><code>filename_case</code></td>
+<td align="left">把文件名称转换为 (1) 小写或 (2) 大写</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left"><code>render_drafts</code></td>
+<td align="left">显示草稿</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>post_asset_folder</code></td>
+<td align="left">启动 <a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">Asset 文件夹</a></td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>relative_link</code></td>
+<td align="left">把链接改为与根目录的相对位址</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>future</code></td>
+<td align="left">显示未来的文章</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left"><code>highlight</code></td>
+<td align="left">代码块的设置</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>相对地址</p>
+<p>默认情况下，Hexo生成的超链接都是绝对地址。例如，如果您的网站域名为<code>example.com</code>,您有一篇文章名为<code>hello</code>，那么绝对链接可能像这样：<code>http://example.com/hello.html</code>，它是<strong>绝对</strong>于域名的。相对链接像这样：<code>/hello.html</code>，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。</p>
+</blockquote>
+<h4 id="分类-amp-标签"><a href="#分类-amp-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>default_category</code></td>
+<td align="left">默认分类</td>
+<td align="left"><code>uncategorized</code></td>
+</tr>
+<tr>
+<td align="left"><code>category_map</code></td>
+<td align="left">分类别名</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>tag_map</code></td>
+<td align="left">标签别名</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h4 id="日期-时间格式"><a href="#日期-时间格式" class="headerlink" title="日期 / 时间格式"></a>日期 / 时间格式</h4><p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="noopener">Moment.js</a> 来解析和显示时间。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>date_format</code></td>
+<td align="left">日期格式</td>
+<td align="left"><code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td align="left"><code>time_format</code></td>
+<td align="left">时间格式</td>
+<td align="left"><code>H:mm:ss</code></td>
+</tr>
+</tbody></table>
+<h4 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>per_page</code></td>
+<td align="left">每页显示的文章量 (0 = 关闭分页功能)</td>
+<td align="left"><code>10</code></td>
+</tr>
+<tr>
+<td align="left"><code>pagination_dir</code></td>
+<td align="left">分页目录</td>
+<td align="left"><code>page</code></td>
+</tr>
+</tbody></table>
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>theme</code></td>
+<td align="left">当前主题名称。值为<code>false</code>时禁用主题</td>
+</tr>
+<tr>
+<td align="left"><code>deploy</code></td>
+<td align="left">部署部分的设置</td>
+</tr>
+</tbody></table>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="指令操作明细"><a href="#指令操作明细" class="headerlink" title="指令操作明细"></a>指令操作明细</h3><p>在上一步基本配置后，我们可以在本地启动我们的博客网站了。具体操作如下：</p>
+<p>打开git bash，执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;我的第一篇文章&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>该命令会在blog/source/_post/目录中创建一个文件和一个同名的目录：</p>
+<ul>
+<li>文件：<code>我的第一篇文章.md</code></li>
+<li>目录：<code>我的第一篇文章</code></li>
+</ul>
+<p>目录用于存放图片，这样将来在网页中才能通过markdown的语法调用图片。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new &#39;我的第一篇文章&#39;INFO  Created: ~\Desktop\jigouyun_Git\个人项目\doc-share\source\_posts\我的第一篇文章.mdrgwei@DESKTOP-G9S0U3G MINGW64 ~&#x2F;Desktop&#x2F;jigouyun_Git&#x2F;个人项目&#x2F;doc-share&#x2F;source&#x2F;_posts$ ll 我的*-rw-r--r-- 1 rgwei 197121 69 11月 27 10:20 我的第一篇文章.md我的第一篇文章:total 0</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来就可以通过markdown的编辑器编辑你的文章。</p>
+<h3 id="指令讲解"><a href="#指令讲解" class="headerlink" title="指令讲解"></a>指令讲解</h3><h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<h4 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-d</code>, <code>--deploy</code></td>
+<td align="left">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td align="left"><code>-w</code>, <code>--watch</code></td>
+<td align="left">监视文件变动</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>发表草稿。</p>
+<h4 id="server"><a href="#server" class="headerlink" title="server"></a>server</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--port</code></td>
+<td align="left">重设端口</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--static</code></td>
+<td align="left">只使用静态文件</td>
+</tr>
+<tr>
+<td align="left"><code>-l</code>, <code>--log</code></td>
+<td align="left">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<h4 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+
+<p>部署网站。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-g</code>, <code>--generate</code></td>
+<td align="left">部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="render"><a href="#render" class="headerlink" title="render"></a>render</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo render &lt;file1&gt; [file2] ...</span><br></pre></td></tr></table></figure>
+
+
+
+<p>渲染文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-o</code>, <code>--output</code></td>
+<td align="left">设置输出路径</td>
+</tr>
+</tbody></table>
+<h4 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a>migrate</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo migrate &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>从其他博客系统 <a href="https://hexo.io/zh-cn/docs/migration" target="_blank" rel="noopener">迁移内容</a>。</p>
+<h4 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+
+
+<p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo list &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>列出网站资料。</p>
+<h4 id="version"><a href="#version" class="headerlink" title="version"></a>version</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
+
+
+
+<p>显示 Hexo 版本。</p>
+<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><h5 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --safe</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。</p>
+<h5 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --debug</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在终端中显示调试信息并记录到 <code>debug.log</code>。当您碰到问题时，可以尝试用调试模式重新执行一次，并 <a href="https://github.com/hexojs/hexo/issues/new" target="_blank" rel="noopener">提交调试信息到 GitHub</a>。</p>
+<h5 id="简洁模式"><a href="#简洁模式" class="headerlink" title="简洁模式"></a>简洁模式</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --silent</span><br></pre></td></tr></table></figure>
+
+
+
+<p>隐藏终端信息。</p>
+<h5 id="自定义配置文件的路径"><a href="#自定义配置文件的路径" class="headerlink" title="自定义配置文件的路径"></a>自定义配置文件的路径</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --config custom.yml</span><br></pre></td></tr></table></figure>
+
+
+
+<p>自定义配置文件的路径，执行后将不再使用 <code>_config.yml</code>。</p>
+<h5 id="显示草稿"><a href="#显示草稿" class="headerlink" title="显示草稿"></a>显示草稿</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --draft</span><br></pre></td></tr></table></figure>
+
+
+
+<p>显示 <code>source/_drafts</code> 文件夹中的草稿文章。</p>
+<h5 id="自定义-CWD"><a href="#自定义-CWD" class="headerlink" title="自定义 CWD"></a>自定义 CWD</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --cwd &#x2F;path&#x2F;to&#x2F;cwd</span><br></pre></td></tr></table></figure>
+
+
+
+<p>自定义当前工作目录（Current working directory）的路径。</p>
+<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h3><p>稍微与markdown不同的是，我们必须在文章的开头加一些标识，才能够做到给文章分类和打标签的功能。</p>
+<p>首先新建一个文章<code>hexo new &quot;CPU飙高故障排查&quot;</code></p>
+<p>然后我们修改<code>CPU飙高故障排查.md</code>的文章如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---title: CPU飙高故障排查date: 2018-01-17 14:11:01categories:- AIA友邦tags:- 云数据库 RDS MySQL 版- 数据库CPU故障---## 故障描述2018-01-16 21点左右 &#96;prod-mysql01&#96;数据实例的CPU100% ， 阿里的监控图也没有显示了，后台阿里建议做主从切换，切换后数据库慢慢的恢复了， 现在需要找出故障原因。## 排查过程从监控图中可以看到，CPU飙高的事件段为：&#96;2018-01-16 21:00:00 &#96;左右</span><br></pre></td></tr></table></figure>
+
+
+
+<p>文章的头部叫做”Front-matter“以 <code>---</code> 分隔的区域</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---title: CPU飙高故障排查date: 2018-01-17 14:11:01categories:- AIA友邦tags:- 云数据库 RDS MySQL 版- 数据库CPU故障---</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>categories：建议只由一个</li>
+<li>tags：可以由多个</li>
+</ul>
+<h2 id="生成html页面"><a href="#生成html页面" class="headerlink" title="生成html页面"></a>生成html页面</h2><p>使用 Hexo 生成静态文件快速而且简单。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate或者$ hexo g</span><br></pre></td></tr></table></figure>
+
+
+
+<p>因为我们是本地部署，因此不用执行后续的动作。</p>
+<h2 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h2><p>Hexo 3.0 把服务器独立成了个别模块，您必须先安装 <a href="https://github.com/hexojs/hexo-server" target="_blank" rel="noopener">hexo-server</a> 才能使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装完成后，输入以下命令以启动服务器，您的网站会在 <code>http://localhost:4000</code> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果您想要更改端口，或是在执行时遇到了 <code>EADDRINUSE</code> 错误，可以在执行时使用 <code>-p</code> 选项指定其他端口，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server -p 5000</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h3><p>在静态模式下，服务器只处理 <code>public</code> 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 <code>hexo generate</code>，此模式通常用于生产环境（production mode）下。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server -s</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="自定义-IP"><a href="#自定义-IP" class="headerlink" title="自定义 IP"></a>自定义 IP</h3><p>服务器默认运行在 <code>0.0.0.0</code>，您可以覆盖默认的 IP 设置，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server -i 192.168.1.1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>指定这个参数后，您就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的<code>127.0.0.1</code>外，通常还有一个<code>192.168.*.*</code>的局域网IP，如果像上面那样使用<code>-i</code>参数，就不能用<code>127.0.0.1</code>来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为<code>-i</code>参数的值，那么就无法通过公网来访问站点。</p>
+<h2 id="Pow"><a href="#Pow" class="headerlink" title="Pow"></a>Pow</h2><p><a href="http://pow.cx/" target="_blank" rel="noopener">Pow</a> 是一个 Mac 系统上的零配置 Rack 服务器，它也可以作为一个简单易用的静态文件服务器来使用。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl get.pow.cx | sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>在 <code>~/.pow</code> 文件夹建立链接（symlink）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd ~&#x2F;.pow$ ln -s &#x2F;path&#x2F;to&#x2F;myapp</span><br></pre></td></tr></table></figure>
+
+
+
+<p>您的网站将会在 <code>http://myapp.dev</code> 下运行，网址根据链接名称而定。</p>
+<h2 id="部署在Github"><a href="#部署在Github" class="headerlink" title="部署在Github"></a>部署在Github</h2><p>如果需要部署在github上面，请参见<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">使用Hexo+Github一步步搭建属于自己的博客（基础）</a></p>
+<h2 id="修改博客模板为Next"><a href="#修改博客模板为Next" class="headerlink" title="修改博客模板为Next"></a>修改博客模板为Next</h2><p>如果需要修改博客模板为Next，请参见<a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">hexo搭建个人博客–NexT主题优化</a></p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记一次datatime类型字段变身记</title>
+    <url>/2020/05/22/mysql/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h1><h2 id="案件回顾"><a href="#案件回顾" class="headerlink" title="案件回顾"></a>案件回顾</h2><ul>
+<li>某著名保险企业邮件一条DTS链路故障，报错信息显示目标库的对应表不存在</li>
+<li>链路是整库同步，支持源库创建表后，目标库会同步创建表</li>
+<li>请我方协助排查原因并修复故障</li>
+</ul>
+<p>信息详情</p>
+<table>
+<thead>
+<tr>
+<th align="left">信息</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">故障时间点</td>
+<td align="left">2020-05-20 10:33:50</td>
+</tr>
+<tr>
+<td align="left">DTS链路名称</td>
+<td align="left">Polardb 5.6-&gt;RDS for MySQL5.7</td>
+</tr>
+<tr>
+<td align="left">DTS同步失败报错内容</td>
+<td align="left">DTS-071001: the Table cloudods.pipprntlog Information Loaded failed in Target DB. cause by [com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException:Table ‘cloudods.pipprntlog’ doesn’t exist] About more information in [<a href="https://yq.aliyun.com/articles/505378]" target="_blank" rel="noopener">https://yq.aliyun.com/articles/505378]</a>.</td>
+</tr>
+<tr>
+<td align="left">同步粒度</td>
+<td align="left">整库同步</td>
+</tr>
+<tr>
+<td align="left">源数据库名称</td>
+<td align="left">PDB</td>
+</tr>
+<tr>
+<td align="left">源数据库类型</td>
+<td align="left">PolarDB for MySQL 5.6</td>
+</tr>
+<tr>
+<td align="left">源库同步用户/权限</td>
+<td align="left">i_read/只读</td>
+</tr>
+<tr>
+<td align="left">目标数据库名称</td>
+<td align="left">RDS</td>
+</tr>
+<tr>
+<td align="left">目标数据库类型</td>
+<td align="left">RDS for MySQL 5.7</td>
+</tr>
+<tr>
+<td align="left">目标库同步用户/权限</td>
+<td align="left">e_dev/读写</td>
+</tr>
+</tbody></table>
+<h1 id="排障过程"><a href="#排障过程" class="headerlink" title="排障过程"></a>排障过程</h1><h2 id="阶段一：怀疑人为因素造成"><a href="#阶段一：怀疑人为因素造成" class="headerlink" title="阶段一：怀疑人为因素造成"></a>阶段一：怀疑人为因素造成</h2><ul>
+<li>解析故障时间段源目标库的 binlog 来验证</li>
+<li>下载目标数据库对应时间段的binlog → mysql-bin.000498，并通过mysqlbinlog -vv 的方式对日志进行解析</li>
+</ul>
+<p>目标库 binlog 解析结果</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">COMMIT</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8993767</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 2278327273  end_log_pos 8993832 CRC32 0xeb1056ff     GTID    last_committed=2005     sequence_number=2006    rbr_only=no</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'9669d21f-7e11-11ea-bdd0-6c92bf5c9bf2:6704774'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8993832</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 2278327273  end_log_pos 8993973 CRC32 0xa980631b     Query   thread_id=1653742       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">use</span> <span class="string">`cloudods`</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941811</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.foreign_key_checks=<span class="number">0</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.sql_mode=<span class="number">0</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">/*!\C utf8mb4 */</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.character_set_client=<span class="number">45</span>,@@session.collation_connection=<span class="number">45</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`pipprntlog`</span> <span class="comment">/* generated by server */</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8993973</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994038 CRC32 0x9b7bb805     GTID    last_committed=2006     sequence_number=2007    rbr_only=yes</span></span><br><span class="line"><span class="comment">/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*/</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'9669d21f-7e11-11ea-bdd0-6c92bf5c9bf2:6704775'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8994038</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994106 CRC32 0x84aeabab     Query   thread_id=1273498       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941820</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8994106</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994276 CRC32 0x5d226504     Table_map: `isp_maindb_s`.`sys_userinfo` mapped to number 1362</span></span><br><span class="line"><span class="comment"># at 8994276</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994893 CRC32 0x43a6caee     Delete_rows: table id 1362 flags: STMT_END_F</span></span><br><span class="line"> </span><br><span class="line">BINLOG '</span><br><span class="line">PJbEXhPpg8yHqgAAAOQ9iQAAAFIFAAAAAAEADGlzcF9tYWluZGJfcwAMc3lzX3VzZXJpbmZvACoI</span><br><span class="line">Dw8PDw8PDw8PDw8SDw8DAwMDDxISCPwSAw8PEhIPDw8SEg8PDw8PDw89YAADAAMA7gIwADAANgAY</span><br><span class="line">AFgCYABgAAADAIABAwAAAAIAlgBgAAAA/QJYAlgCAAAeAP0C/QL9Av0CPAADAP7/////AwRlIl0=</span><br><span class="line">PJbEXhnpg8yHaQIAAE1AiQAAAFIFAAAAAAMAKv///////8BYAACA/LEIAAAAAAAACTAwMDAxNjk3</span><br><span class="line">MQFBATEhAOacseWLpOWNjiAgICAgICAgICAgICAgICAgICAgICAgIAROVUxMBDA5ODYEAEZFMDEJ</span><br><span class="line">RzAwMDAwNDA5ATABAAAAAQAAAAEAAAABAAAAAUGZpG4AAJmknQSyAAAAAAAAAADKAHtBU0lUVTpD</span><br><span class="line">TSxFQUZDUjowMDAwMDM0MjEsQ0hBTk5FTDpBZ2VuY3l9LXsiQUdUQ09EIjoiMDAwMDE2OTcxICAg</span><br><span class="line">ICIsIk9GRkNPRCI6IkZFMDEiLCJBR1lDT0QiOiJHMDAwMDA0MDkiLCJyb3dfbnVtYmVyIjo5NSwi</span><br><span class="line">Q09OVFlQRSI6Ik0xIiwiaW5pUHdkIjoiMTExMTExMTEiLCJBR1ROQU1FIjoi5pyx5Yuk5Y2OICAg</span><br><span class="line">ICAgICAgICAgICAgICAgICAgICAgIn2ZpgcaagAAAAAGQWdlbmN5CDExMDMwNTM3mZ3lBKiZpmil</span><br><span class="line">lAIAQ00IADExMTExMTExGABSWU96dm9Vd3JiaEJBeWwxNnhxLzRRPT2ZpmimRpmmaKZGA0lTUEwA</span><br><span class="line">MDdFNDAwMDUwMDE0MDAwQTAwMTYwMDE2MEI4MEYyNDAwMDAwMDAxRDAwMDBBRkI0MDAwMDM0MUEw</span><br><span class="line">MDA2MDAwMDAwMDEwMDAwMDAwMCIAOTIwMDAwMDA0MzQ4NEY1NDMzNTIzODQzNTM1MTRDMzEzMRQA</span><br><span class="line">MDAwMEFGQjQwMDAwMzQxQTAwMDYUMjAyMDA1MjAxMDIyMjIxOTMwMDABSe7KpkM=</span><br><span class="line">'<span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">### DELETE FROM `isp_maindb_s`.`sys_userinfo`</span></span><br><span class="line"><span class="comment">### WHERE</span></span><br><span class="line"><span class="comment">###   @1=2225 /* LONGINT meta=0 nullable=0 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @2='000016971' /* VARSTRING(96) meta=96 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @3='A' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @4='1' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>发现SQL：DROP TABLE IF EXISTS <code>pipprntlog</code> /* generated by server */</p>
+<p>执行时间：200520 10:30:11</p>
+<p>由于该DROP动作，无论库中是否存在该表，binlog均会记录，因此想何时该DROP动作在建表之后</p>
+</blockquote>
+<p>从源库information_schema.tables获取表的创建时间</p>
+<img src="/2020/05/22/mysql/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/1.png" class="" title="This is an 1 image">
+<blockquote>
+<p>与DROP的时间一致</p>
+<p><strong>因后来证实，当 alter 表时，create_time 字段会被更新；增删改查表时，update_time字段会被更新；truncate表时，时间字段不被更新</strong></p>
+<p>因此怀疑该时间不够准确，决定从PolarDB获取对应时间段的binlog日志，查看该时间是否是CREATE TABLE的时间</p>
+</blockquote>
+<p>由于<strong>PolarDB不支持直接下载binlog</strong>需要通过客户端连接的方式把binlog日志解析到本地</p>
+<p>通过客户端连接获取binlog的命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysqlbinlog -vv -P 3306 -uxxxx -pxxxx -hxxxx.mysql.rds.aliyuncs.com --read-from-remote-server --start-datetime='2020-05-20 09:00:00' --stop-datetime='2020-05-20 11:00:00' --base64-output=DECODE-ROWS mysql-bin.000xxx &gt; xxxlog.sql</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>遇到报错的情况下，需检查mysqlbinlog版本是否正确</p>
+</blockquote>
+<p>源端数据库binlog内容</p>
+<p>源库故障时间 binlog 解析结果</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment"># at 398730036</span></span><br><span class="line"><span class="comment">#200520 10:30:10 server id 9793953  end_log_pos 398730084 CRC32 0x42791024      GTID    last_committed=0        sequence_number=0</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'e1ecc4a7-f9fa-11e9-ad35-506b4b478fa4:107546949'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398730084</span></span><br><span class="line"><span class="comment">#200520 10:30:10 server id 9793953  end_log_pos 398730225 CRC32 0x28099038      Query   thread_id=1749351       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">use</span> <span class="string">`cloudods`</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941810</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">/*!\C utf8 */</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.character_set_client=<span class="number">33</span>,@@session.collation_connection=<span class="number">33</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`pipprntlog`</span> <span class="comment">/* generated by server */</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398730225</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 9793953  end_log_pos 398730273 CRC32 0x699cf5ca      GTID    last_committed=0        sequence_number=0</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'e1ecc4a7-f9fa-11e9-ad35-506b4b478fa4:107546950'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398730273</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 9793953  end_log_pos 398731371 CRC32 0xe7281576      Query   thread_id=1749353       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941811</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">/*!\C utf8mb4 */</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.character_set_client=<span class="number">45</span>,@@session.collation_connection=<span class="number">45</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="string">`cloudods`</span>.<span class="string">`pipprntlog`</span> (^M</span><br><span class="line">  <span class="string">`co`</span> <span class="built_in">varchar</span>(<span class="number">4</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,^M</span><br><span class="line">  <span class="string">`polnum`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,^M</span><br><span class="line">  <span class="string">`code`</span> <span class="built_in">varchar</span>(<span class="number">5</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`msg`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`lstupdtime`</span> datetime(<span class="number">6</span>) <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxrestart1`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxrestart2`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxuow`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxuser`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxtimestamp`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxaction`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxcasdelind`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxrrn`</span> <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">0</span>) <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`inserttime`</span> <span class="built_in">timestamp</span>  ,^M</span><br><span class="line">  <span class="string">`updatetime`</span> <span class="built_in">timestamp</span>  ,^M</span><br><span class="line">  <span class="string">`srcsys`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  primary <span class="keyword">key</span> (<span class="string">`co`</span>,<span class="string">`polnum`</span>,<span class="string">`lstupdtime`</span>)^M</span><br><span class="line">) <span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8 <span class="keyword">collate</span>=utf8_bin</span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398731371</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398731419 CRC32 0x7bc1d5fb      GTID    last_committed=0        sequence_number=0</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'e1ecc4a7-f9fa-11e9-ad35-506b4b478fa4:107546951'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398731419</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398731487 CRC32 0xfbae67c6      Query   thread_id=452351        exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941819</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398731487</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398731657 CRC32 0xfc6068eb      Table_map: `isp_maindb_s`.`sys_userinfo` mapped to number 1405</span></span><br><span class="line"><span class="comment"># at 398731657</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398732274 CRC32 0x95cb0304      Delete_rows: table id 1405 flags: STMT_END_F</span></span><br><span class="line"><span class="comment">### DELETE FROM `isp_maindb_s`.`sys_userinfo`</span></span><br><span class="line"><span class="comment">### WHERE</span></span><br><span class="line"><span class="comment">###   @1=2225 /* LONGINT meta=0 nullable=0 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @2='000016971' /* VARSTRING(96) meta=96 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @3='A' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @4='1' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>获得如下发现：</p>
+<ul>
+<li>几乎相同的时间都有DROP TABLE的动作</li>
+<li>区别是源端有CREATE TABLE的记录，而目标端没有CREATE TABLE的记录</li>
+</ul>
+</blockquote>
+<h1 id="阶段二：怀疑DTS工具BUG"><a href="#阶段二：怀疑DTS工具BUG" class="headerlink" title="阶段二：怀疑DTS工具BUG"></a>阶段二：怀疑DTS工具BUG</h1><ul>
+<li><p>由于阶段一获取的源库和目标库的 binlog 日志，推测是源库在建表的过程中，先进行了一个DROP TABLE IF EXISTS的动作，然后再CREATE TABLE</p>
+</li>
+<li><p>而目标库只有DROP TABLE IF EXISTS，而缺失CREATE TABLE的记录，因此怀疑是DTS少传输了CREATE TABLE的部分</p>
+</li>
+<li><p>向阿里方提工单协助解决此问题</p>
+</li>
+</ul>
+<h1 id="阶段三：手动建表进行故障恢复"><a href="#阶段三：手动建表进行故障恢复" class="headerlink" title="阶段三：手动建表进行故障恢复"></a>阶段三：手动建表进行故障恢复</h1><ul>
+<li><p>由于目标端是缺失了对应的表，造成的故障，因此决定通过手动在目标端创建表来解决问题</p>
+</li>
+<li><p>从源端SHOW CREATE TABLE获取建表语句</p>
+</li>
+</ul>
+<p>源端 SHOW CREATE TABLE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt;show create table pipprntlog\G</span><br><span class="line">*************************** 1. row ***************************</span><br><span class="line">       Table: pipprntlog</span><br><span class="line"><span class="keyword">Create</span> <span class="keyword">Table</span>: <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`pipprntlog`</span> (</span><br><span class="line">  <span class="string">`co`</span> <span class="built_in">varchar</span>(<span class="number">4</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">  <span class="string">`polnum`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">  <span class="string">`code`</span> <span class="built_in">varchar</span>(<span class="number">5</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`msg`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`lstupdtime`</span> datetime(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0000-00-00 00:00:00.000000'</span>,</span><br><span class="line">  <span class="string">`dtl__capxrestart1`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxrestart2`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxuow`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxuser`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxtimestamp`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxaction`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxcasdelind`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxrrn`</span> <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">0</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`inserttime`</span> <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  <span class="string">`updatetime`</span> <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0000-00-00 00:00:00'</span>,</span><br><span class="line">  <span class="string">`srcsys`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`co`</span>,<span class="string">`polnum`</span>,<span class="string">`lstupdtime`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COLLATE</span>=utf8_bin</span><br><span class="line">返回行数：[<span class="number">1</span>]，耗时：<span class="number">6</span> ms.</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将该建表语句复制到目标端手动创建，然后启动DTS链路</p>
+<p><strong>再通过SELECT * FROM 表 来验证数据是否正常同步过来时，提示该表不存在</strong></p>
+<p>刷新DTS链路信息，DTS链路报错，报错与之前一致</p>
+</blockquote>
+<p>多次重复上述操作，均可复现，现象反馈给阿里方，协助排查该问题</p>
+<h1 id="阶段四：开启审计，查找“真凶”"><a href="#阶段四：开启审计，查找“真凶”" class="headerlink" title="阶段四：开启审计，查找“真凶”"></a>阶段四：开启审计，查找“真凶”</h1><ul>
+<li>在阿里方的建议下，开启审计，查看是“谁”删除了这张表</li>
+</ul>
+<p>审计内容</p>
+<img src="/2020/05/22/mysql/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/2.png" class="" title="This is an 2 image">
+
+<blockquote>
+<p>发现是eds_dev用户，是 DTS 同步用户，传输过来的动作是先进行 DROP 再进行创建，但创建失败</p>
+<p>CREATE 之前先 DROP，就是手动创建被会失败的原因</p>
+<p><strong>而 CREATE 之所以失败，根据审计的提示，失败代码：1171</strong></p>
+</blockquote>
+<p>查询 MySQL 的错误代码 1171</p>
+<img src="/2020/05/22/mysql/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/3.png" class="" title="This is an 3 image">
+
+<blockquote>
+<p>当主键的字段属性为“允许空值”时会报出1171的错误代码 </p>
+</blockquote>
+<p>检查审计 CREATE TABLE 语句</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">---目标库 CREATE TABLE 语句---</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="string">`cloudods`</span>.<span class="string">`pipprntlog`</span></span><br><span class="line">( <span class="string">`co`</span> <span class="built_in">varchar</span>(<span class="number">4</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,</span><br><span class="line"><span class="string">`polnum`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,</span><br><span class="line"><span class="string">`code`</span> <span class="built_in">varchar</span>(<span class="number">5</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`msg`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`lstupdtime`</span> datetime(<span class="number">6</span>) <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxrestart1`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxrestart2`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxuow`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxuser`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxtimestamp`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxaction`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxcasdelind`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxrrn`</span> <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">0</span>) <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`inserttime`</span> <span class="built_in">timestamp</span> ,</span><br><span class="line"><span class="string">`updatetime`</span> <span class="built_in">timestamp</span> ,</span><br><span class="line"><span class="string">`srcsys`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line">primary <span class="keyword">key</span> (<span class="string">`co`</span>,<span class="string">`polnum`</span>,<span class="string">`lstupdtime`</span>)</span><br><span class="line">) <span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8 <span class="keyword">collate</span>=utf8_bin</span><br></pre></td></tr></table></figure>
+
+<p>发现以下问题：</p>
+<ul>
+<li>与之前在源库SHOW CREATE TABLE的SQL不一致</li>
+<li>lstupdtime 字段属性有 default null，但后面又被包含在primary key中（引起 1171 报错）</li>
+<li>与源库在 binlog 获取 CREATE TABLE 的SQL一致</li>
+</ul>
+<p>产生以下推测：</p>
+<ul>
+<li>SHOW CREATE TABLE的SQL是系统修正后的“正规”SQL</li>
+<li>binlog拿到的SQL是人为输入的“原生”SQL</li>
+<li>“原生”SQL在源库建表成功，在目标库执行失败，可能是版本差异引起的<br>验证版本差异：</li>
+</ul>
+<p>5.6 → 成功创建</p>
+<img src="/2020/05/22/mysql/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/4.png" class="" title="This is an 4 image">
+
+<p>5.7 → 报错 ERROR 1171</p>
+<img src="/2020/05/22/mysql/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/5.png" class="" title="This is an 5 image">
+
+
+<p>结论</p>
+<ul>
+<li><p>建表语句不规范，导致DTS链路故障</p>
+</li>
+<li><p>在MySQL 5.6 中，当设计表时 datetime 数据类型的字段带有 default null，且设置为主键时，MySQL会自动将 default null 更正为 not null default ‘0000-00-00 00:00:00’，以满足 PRIMARY KEY 的需求</p>
+</li>
+<li><p>在MySQL 5.7 中，当设计表时 datetime 数据类型的字段带有 default null，且设置为主键时，MySQL遵照用户的需求（default null），与 PRIMARY KEY 冲突，因此报错 1171</p>
+</li>
+</ul>
+<h1 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h1><h2 id="—MySQL-5-6—"><a href="#—MySQL-5-6—" class="headerlink" title="—MySQL 5.6—"></a>—MySQL 5.6—</h2><table>
+<thead>
+<tr>
+<th align="left">SQL中字段属性（并设置为主键）</th>
+<th align="left">结果</th>
+<th align="left">SHOW CREATE TABLE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">col_test datetime(6)</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL DEFAULT ‘0000-00-00 00:00:00.000000’</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) default null</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL DEFAULT ‘0000-00-00 00:00:00.000000’</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) not null</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL</td>
+</tr>
+</tbody></table>
+<h2 id="—MySQL-5-7—"><a href="#—MySQL-5-7—" class="headerlink" title="—MySQL 5.7—"></a>—MySQL 5.7—</h2><table>
+<thead>
+<tr>
+<th align="left">SQL中字段属性（并设置为主键）</th>
+<th align="left">结果</th>
+<th align="left">SHOW CREATE TABLE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">col_test datetime(6)</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) default null</td>
+<td align="left">建表失败</td>
+<td align="left">ERROR 1171</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) not null</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL</td>
+</tr>
+</tbody></table>
+<h2 id="知识延伸"><a href="#知识延伸" class="headerlink" title="知识延伸"></a>知识延伸</h2><p>explicit_defaults_for_timestamp 参数</p>
+<ul>
+<li>该参数只限制 timestamp 数据类型，对 datetime 无法起到限制作用</li>
+<li>MySQL 5.6 需要在配置文件中修改该参数，重启服务后生效</li>
+<li>MySQL 5.7 可直接修改该参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">explicit_defaults_for_timestamp</th>
+<th align="left">SQL中字段属性</th>
+<th align="left">SHOW CREATE TABLE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">OFF / 0</td>
+<td align="left">col01 timestamp col02 timestamp</td>
+<td align="left">col01 timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP col01 timestamp NOT NULL DEFAULT ‘0000-00-00 00:00:00’</td>
+</tr>
+<tr>
+<td align="left">ON / 1</td>
+<td align="left">col01 timestamp col02 timestamp</td>
+<td align="left">col01 timestamp NULL DEFAULT NULL col01 timestamp NULL DEFAULT NULL</td>
+</tr>
+</tbody></table>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
+<li>由于同步链路“卡死”在当前这个建表的事务</li>
+<li>因此需要将该库从同步链路中移除，然后将整库重新加入到同步链路中</li>
+<li>阿里方虽然可以通过后台跳过该DDL，但有风险（可能跳过不止一个DDL）</li>
+</ul>
+<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><ul>
+<li><p>如何普及研发人员操作数据库的规范？</p>
+</li>
+<li><p>正确的互联网发布流程怎样才可以避免此类问题？</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>mysql</tag>
+        <tag>阿里云</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>获取在线MySQL实例的Binlog信息</title>
-    <url>/2020/05/22/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/</url>
+    <url>/2020/05/22/mysql/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/</url>
     <content><![CDATA[<div class="note info">
             <p>mysqlbinlog -vv -P 3306 -utaiping_admin -pxxxx -hxxxxx.mysql.rds.aliyuncs.com –read-from-remote-server –start-datetime=’2017-09-12 06:29:00’ –stop-datetime=’2017-09-12 06:30:01’ –base64-output=DECODE-ROWS mysql-bin.000634 &gt; taiping0912.binlog</p>
           </div>
