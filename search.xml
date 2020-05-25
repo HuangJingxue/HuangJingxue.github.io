@@ -1467,7 +1467,7 @@
   </entry>
   <entry>
     <title>InfluxDB时序数据库</title>
-    <url>/2020/02/25/InfluxDB%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <url>/2020/02/25/InfluxDB/InfluxDB%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<h1 id="Influx-DB的学习"><a href="#Influx-DB的学习" class="headerlink" title="Influx DB的学习"></a>Influx DB的学习</h1><h2 id="Influxdb-下载"><a href="#Influxdb-下载" class="headerlink" title="Influxdb 下载"></a>Influxdb 下载</h2><p>学习参考博客</p>
 <p>安装部署：</p>
 <p><a href="https://www.cnblogs.com/imyalost/p/9689209.html" target="_blank" rel="noopener">https://www.cnblogs.com/imyalost/p/9689209.html</a></p>

@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.huangjingxue.com/2020/02/25/InfluxDB%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>https://www.huangjingxue.com/tookit/index.html</loc>
+    
+    <lastmod>2020-05-22T08:32:43.368Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.huangjingxue.com/2020/02/25/InfluxDB/InfluxDB%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     
     <lastmod>2020-05-22T08:26:59.970Z</lastmod>
     
@@ -19,13 +26,6 @@
     <loc>https://www.huangjingxue.com/2020/05/22/hexo/%E4%BD%BF%E7%94%A8githubPage%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BD%BB%E9%87%8F%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2020-05-22T08:17:08.226Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.huangjingxue.com/tookit/index.html</loc>
-    
-    <lastmod>2020-05-22T08:12:55.163Z</lastmod>
     
   </url>
   
