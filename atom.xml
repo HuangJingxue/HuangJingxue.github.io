@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>青雨果果的博客</title>
+  <icon>https://www.huangjingxue.com/icon.png</icon>
+  <subtitle>不积硅步，无以至千里！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.huangjingxue.com/"/>
+  <updated>2020-05-22T08:17:08.226Z</updated>
+  <id>https://www.huangjingxue.com/</id>
+  
+  <author>
+    <name>青雨果果</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用github Page搭建自己的轻量博客</title>
+    <link href="https://www.huangjingxue.com/2020/05/22/hexo/%E4%BD%BF%E7%94%A8githubPage%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BD%BB%E9%87%8F%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://www.huangjingxue.com/2020/05/22/hexo/%E4%BD%BF%E7%94%A8githubPage%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BD%BB%E9%87%8F%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-05-22T10:53:48.000Z</published>
+    <updated>2020-05-22T08:17:08.226Z</updated>
+    
+    <summary type="html">
+    
+      10分钟教你搭建属于自己的博客。
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://www.huangjingxue.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://www.huangjingxue.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次datatime类型字段变身记</title>
+    <link href="https://www.huangjingxue.com/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/"/>
+    <id>https://www.huangjingxue.com/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/</id>
+    <published>2020-05-22T09:51:26.000Z</published>
+    <updated>2020-05-22T07:19:53.343Z</updated>
+    
+    <summary type="html">
+    
+      教你如何获取远程MySQL实例在线binlog，揭开datatime类型在mysql5.6和5.7版本中的神秘面纱，explicit_defaults_for_timestamp 参数对timestamp类型的作用。
+    
+    </summary>
+    
+    
+      <category term="云数据库" scheme="https://www.huangjingxue.com/categories/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Polardb for MySQL" scheme="https://www.huangjingxue.com/tags/Polardb-for-MySQL/"/>
+    
+      <category term="RDS for MySQL" scheme="https://www.huangjingxue.com/tags/RDS-for-MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取在线MySQL实例的Binlog信息</title>
+    <link href="https://www.huangjingxue.com/2020/05/22/MySQL/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/"/>
+    <id>https://www.huangjingxue.com/2020/05/22/MySQL/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/</id>
+    <published>2020-05-21T17:49:19.000Z</published>
+    <updated>2020-05-22T07:24:05.159Z</updated>
+    
+    <summary type="html">
+    
+      当你没有开启SQL洞察，SQL审计，慢日志也抓取不到的时候，请用它。
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL Binlog" scheme="https://www.huangjingxue.com/tags/MySQL-Binlog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git玩转三剑客-第1课-仓库初始化</title>
+    <link href="https://www.huangjingxue.com/2020/05/16/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/"/>
+    <id>https://www.huangjingxue.com/2020/05/16/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/</id>
+    <published>2020-05-15T20:04:04.000Z</published>
+    <updated>2020-05-22T08:11:17.131Z</updated>
+    
+    <summary type="html">
+    
+      一分钟带你入门Git仓库管理
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://www.huangjingxue.com/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://www.huangjingxue.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git玩转三剑客-第2课-分支管理</title>
+    <link href="https://www.huangjingxue.com/2020/05/15/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC2%E8%AF%BE-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/"/>
+    <id>https://www.huangjingxue.com/2020/05/15/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC2%E8%AF%BE-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</id>
+    <published>2020-05-15T11:41:22.000Z</published>
+    <updated>2020-05-22T08:11:58.386Z</updated>
+    
+    <summary type="html">
+    
+      一分钟带你入门Git分支管理
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://www.huangjingxue.com/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://www.huangjingxue.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开源工具MyFlash</title>
+    <link href="https://www.huangjingxue.com/2020/05/12/MySQL/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7MyFlash/"/>
+    <id>https://www.huangjingxue.com/2020/05/12/MySQL/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7MyFlash/</id>
+    <published>2020-05-12T10:56:24.518Z</published>
+    <updated>2020-05-22T07:17:01.410Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;MyFlash初体验&quot;&gt;&lt;a href=&quot;#MyFlash初体验&quot; class=&quot;headerlink&quot; title=&quot;MyFlash初体验&quot;&gt;&lt;/a&gt;MyFlash初体验&lt;/h2&gt;&lt;h2 id=&quot;验证binlog2sql-是否支持blob转换&quot;&gt;&lt;a href=&quot;#验证binlog2sql-是否支持blob转换&quot; class=&quot;headerlink&quot; title=&quot;验证binlog2sql 是否支持blob转换&quot;&gt;&lt;/a&gt;验证binlog2sql 是否支持blob转换&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#96;--w_blob.py  写入blob   import sys import pymysql import os  path &amp;#x3D; &amp;quot;.&amp;#x2F;&amp;quot;  fp &amp;#x3D; open(&amp;quot;&amp;#x2F;alidata&amp;#x2F;PG01.jpg&amp;quot;, &amp;#39;rb&amp;#39;) img &amp;#x3D; fp.read() fp.close()  database &amp;#x3D; pymysql.connect(host&amp;#x3D;&amp;quot;localhost&amp;quot;, user&amp;#x3D;&amp;quot;root&amp;quot;, passwd&amp;#x3D;&amp;quot;root&amp;quot;, db&amp;#x3D;&amp;quot;qinxi&amp;quot;) cursor &amp;#x3D; database.cursor() sql &amp;#x3D; &amp;quot;INSERT INTO tb_test (nameBlob) VALUES  (%s);&amp;quot; args &amp;#x3D; (img) cursor.execute(sql, args) database.commit() cursor.close() database.close()  print(&amp;quot;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;quot;) print(&amp;quot;Done! &amp;quot;)   --r_blob.py 读取blob  import pymysql as mdb import sys  conn &amp;#x3D; mdb.connect(host&amp;#x3D;&amp;#39;localhost&amp;#39;,user&amp;#x3D;&amp;#39;root&amp;#39;,passwd&amp;#x3D;&amp;#39;root&amp;#39;,db&amp;#x3D;&amp;#39;qinxi&amp;#39;) cursor &amp;#x3D; conn.cursor() cursor.execute(&amp;quot;SELECT nameBlob FROM tb_test LIMIT 1&amp;quot;) fout &amp;#x3D; open(&amp;#39;PG333.jpg&amp;#39;,&amp;#39;wb&amp;#39;) fout.write(cursor.fetchone()[0]) fout.close() cursor.close() conn.close()    python binlog2sql.py -uroot -h10.200.6.53 -proot -B --start-file&amp;#x3D;mybinlog.000033 &amp;gt; 33.sql&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+&lt;h1 id=&quot;MyFlash测试&quot;&gt;&lt;a href=&quot;#MyFlash测试&quot; class=&quot;headerlink&quot; title=&quot;MyFlash测试&quot;&gt;&lt;/a&gt;MyFlash测试&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Meituan-Dianping/MyFlash&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Meituan-Dianping/MyFlash&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="开源工具" scheme="https://www.huangjingxue.com/categories/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="MyFlash" scheme="https://www.huangjingxue.com/tags/MyFlash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>幻读是什么，幻读有什么问题？</title>
+    <link href="https://www.huangjingxue.com/2020/04/21/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/"/>
+    <id>https://www.huangjingxue.com/2020/04/21/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/</id>
+    <published>2020-04-20T19:23:13.000Z</published>
+    <updated>2020-05-22T07:22:14.077Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;初始化语句&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL实战45讲" scheme="https://www.huangjingxue.com/categories/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
+    
+      <category term="事务" scheme="https://www.huangjingxue.com/tags/%E4%BA%8B%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开源工具cannal</title>
+    <link href="https://www.huangjingxue.com/2020/04/15/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7cannal/"/>
+    <id>https://www.huangjingxue.com/2020/04/15/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7cannal/</id>
+    <published>2020-04-15T13:27:48.000Z</published>
+    <updated>2020-05-22T08:00:58.461Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;云数据库Polardb如何获取事务提交时间戳&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;polardb-需开启binlog&quot;&gt;&lt;a href=&quot;#polardb-需开启binlog&quot; class=&quot;headerlink&quot; title=&quot;polardb 需开启binlog&quot;&gt;&lt;/a&gt;polardb 需开启binlog&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;修改当前值&lt;strong&gt;loose_polar_log_bin&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;数据库引擎为MySQL 5.6的PolarDB集群，当前值修改为ON_WITH_GTID；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数据库引擎为MySQL 8.0的PolarDB集群，当前值修改为ON。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;canal拉取binlog&quot;&gt;&lt;a href=&quot;#canal拉取binlog&quot; class=&quot;headerlink&quot; title=&quot;canal拉取binlog&quot;&gt;&lt;/a&gt;canal拉取binlog&lt;/h2&gt;&lt;p&gt;简介：（阿里巴巴 MySQL binlog 增量订阅&amp;amp;消费组件）&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;参考：&lt;a href=&quot;https://github.com/alibaba/canal&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/alibaba/canal&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="开源工具" scheme="https://www.huangjingxue.com/categories/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Polardb for MySQL" scheme="https://www.huangjingxue.com/tags/Polardb-for-MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么你改了我看不见?</title>
+    <link href="https://www.huangjingxue.com/2020/04/15/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/"/>
+    <id>https://www.huangjingxue.com/2020/04/15/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/</id>
+    <published>2020-04-14T19:23:01.000Z</published>
+    <updated>2020-05-22T07:22:28.921Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;事务的基本要素(ACID)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原子性（Atomicity）；事务开始后所有操作，要么全部做完，要么全部不做，不能停滞在中间环节。&lt;/li&gt;
+&lt;li&gt;一致性（Consistency）：事务开始前和结束后，数据库的完整性
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL实战45讲" scheme="https://www.huangjingxue.com/categories/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
+    
+      <category term="事务" scheme="https://www.huangjingxue.com/tags/%E4%BA%8B%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql误删数据谁来背锅</title>
+    <link href="https://www.huangjingxue.com/2020/04/10/MySQL/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/"/>
+    <id>https://www.huangjingxue.com/2020/04/10/MySQL/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/</id>
+    <published>2020-04-10T14:26:28.000Z</published>
+    <updated>2020-05-22T08:22:44.178Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;我们不止要说误删数据的事后处理办法，更重要是要做到事前预防。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;误删数据分类&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 delete 语句误删数据行；&lt;/li&gt;
+&lt;li&gt;使用 drop table 或者 truncate table 语句误删数据表；&lt;/li&gt;
+&lt;li&gt;使用 drop database 语句误删数据库；&lt;/li&gt;
+&lt;li&gt;使用 rm 命令误删整个 MySQL 实例。
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MonogDB非关系型数据库</title>
+    <link href="https://www.huangjingxue.com/2020/04/04/MongoDB/MonogDB%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://www.huangjingxue.com/2020/04/04/MongoDB/MonogDB%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <published>2020-04-04T13:18:09.000Z</published>
+    <updated>2020-05-22T07:13:47.482Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-MonogDB简介&quot;&gt;&lt;a href=&quot;#1-MonogDB简介&quot; class=&quot;headerlink&quot; title=&quot;1.MonogDB简介&quot;&gt;&lt;/a&gt;1.MonogDB简介&lt;/h1&gt;&lt;p&gt;MongoDB 是一款强大，灵活，且易于扩展的通用性数据库，&lt;strong&gt;面向文档的数据库&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;二级索引&lt;/li&gt;
+&lt;li&gt;范围查询&lt;/li&gt;
+&lt;li&gt;排序&lt;/li&gt;
+&lt;li&gt;聚合&lt;/li&gt;
+&lt;li&gt;地理空间索引&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="MongoDB" scheme="https://www.huangjingxue.com/categories/MongoDB/"/>
+    
+    
+      <category term="MongoDB" scheme="https://www.huangjingxue.com/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>豆瓣电影排行榜</title>
+    <link href="https://www.huangjingxue.com/2020/04/04/Python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/"/>
+    <id>https://www.huangjingxue.com/2020/04/04/Python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/</id>
+    <published>2020-04-04T12:51:14.000Z</published>
+    <updated>2020-05-22T07:23:41.603Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-如何处理数据&quot;&gt;&lt;a href=&quot;#1-如何处理数据&quot; class=&quot;headerlink&quot; title=&quot;1.如何处理数据&quot;&gt;&lt;/a&gt;1.如何处理数据&lt;/h1&gt;&lt;p&gt;BeautifulSoup&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解析数据&lt;/li&gt;
+&lt;li&gt;提出数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install beautifulsoup4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://www.huangjingxue.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://www.huangjingxue.com/tags/Python/"/>
+    
+      <category term="数据处理" scheme="https://www.huangjingxue.com/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬虫初体验</title>
+    <link href="https://www.huangjingxue.com/2020/04/04/Python/python%E7%88%AC%E8%99%AB%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>https://www.huangjingxue.com/2020/04/04/Python/python%E7%88%AC%E8%99%AB%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
+    <published>2020-04-03T22:08:43.000Z</published>
+    <updated>2020-05-22T07:23:15.617Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;requests模块&quot;&gt;&lt;a href=&quot;#requests模块&quot; class=&quot;headerlink&quot; title=&quot;requests模块&quot;&gt;&lt;/a&gt;requests模块&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# -*- coding: utf-8 -*-&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; requests&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;res = requests.get(&lt;span class=&quot;string&quot;&gt;&#39;https://wpblog.x0y1.com&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#print(res)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(res.text)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; res.status_code == &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  print(&lt;span class=&quot;string&quot;&gt;&#39;请求成功&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  print(&lt;span class=&quot;string&quot;&gt;&#39;请求失败&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 获取孔乙己数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;res = requests.get(&lt;span class=&quot;string&quot;&gt;&#39;https://apiv3.shanbay.com/codetime/articles/mnvdu&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 以写入的方式打开一个名为孔乙己的 txt 文档&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; open(&lt;span class=&quot;string&quot;&gt;&#39;孔乙己.txt&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt; ,encoding=&lt;span class=&quot;string&quot;&gt;&#39;utf8&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; file:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# 将数据的字符串形式写入文件中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  file.write(res.text)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 获取图片数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;res = requests.get(&lt;span class=&quot;string&quot;&gt;&#39;https://assets.baydn.com/baydn/public/codetime/xiaobei/info.jpg&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 以二进制写入的方式打开一个名为 info.jpg 的文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; open(&lt;span class=&quot;string&quot;&gt;&#39;info.jpg&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;wb&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; file:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 将数据的二进制形式写入文件中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  file.write(res.content)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://www.huangjingxue.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://www.huangjingxue.com/tags/Python/"/>
+    
+      <category term="爬虫" scheme="https://www.huangjingxue.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>InfluxDB时序数据库</title>
+    <link href="https://www.huangjingxue.com/2020/02/25/InfluxDB/InfluxDB%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://www.huangjingxue.com/2020/02/25/InfluxDB/InfluxDB%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <published>2020-02-25T03:43:49.681Z</published>
+    <updated>2020-05-22T08:26:59.970Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Influx-DB的学习&quot;&gt;&lt;a href=&quot;#Influx-DB的学习&quot; class=&quot;headerlink&quot; title=&quot;Influx DB的学习&quot;&gt;&lt;/a&gt;Influx DB的学习&lt;/h1&gt;&lt;h2 id=&quot;Influxdb-下载&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="时序数据库" scheme="https://www.huangjingxue.com/categories/%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="InfluxDB" scheme="https://www.huangjingxue.com/tags/InfluxDB/"/>
+    
+  </entry>
+  
+</feed>

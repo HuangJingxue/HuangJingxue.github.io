@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>使用github Page搭建自己的轻量博客</title>
+    <url>/2020/05/22/hexo/%E4%BD%BF%E7%94%A8githubPage%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BD%BB%E9%87%8F%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
+<ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+</ul>
+<p>如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果您的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。</p>
+<blockquote>
+<p>Mac 用户</p>
+<p>您在编译时可能会遇到问题，请先到 App Store 安装 Xcode，Xcode 完成后，启动并进入 <strong>Preferences -&gt; Download -&gt; Command Line Tools -&gt; Install</strong> 安装命令行工具。</p>
+</blockquote>
+<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><ul>
+<li>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>.</li>
+<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a> ：<code>brew install git</code>;或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装程序</a> 安装。</li>
+<li>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code></li>
+<li>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></li>
+</ul>
+<blockquote>
+<p>Windows 用户</p>
+<p>由于众所周知的原因，从上面的链接下载git for windows最好挂上一个代理，否则下载速度十分缓慢。也可以参考<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">这个页面</a>，收录了存储于百度云的下载地址。</p>
+</blockquote>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>。</p>
+<p>CURL:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl https:&#x2F;&#x2F;raw.github.com&#x2F;creationix&#x2F;nvm&#x2F;v0.33.11&#x2F;install.sh | sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Wget:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ wget -qO- https:&#x2F;&#x2F;raw.github.com&#x2F;creationix&#x2F;nvm&#x2F;v0.33.11&#x2F;install.sh | sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装完成后，重启终端并执行下列命令即可安装 Node.js。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
+
+
+
+<p>或者您也可以下载 <a href="http://nodejs.org/" target="_blank" rel="noopener">安装程序</a> 来安装。</p>
+<blockquote>
+<p>Windows 用户</p>
+<p>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选<strong>Add to PATH</strong>选项。<br>另外，您也可以使用<strong>Git Bash</strong>，这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“Git Bash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用<strong>Git Bash</strong>来进行操作。</p>
+</blockquote>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Copy $ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><h3 id="建站操作明细"><a href="#建站操作明细" class="headerlink" title="建站操作明细"></a>建站操作明细</h3><p>搭建一个名字为blog的博客:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init blogcd blognpm install</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="建站文件结构讲解"><a href="#建站文件结构讲解" class="headerlink" title="建站文件结构讲解"></a>建站文件结构讲解</h3><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.├── _config.yml├── package.json├── scaffolds├── source|   ├── _drafts|   └── _posts└── themes</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>网站的 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置</a> 信息，您可以在此配置大部分的参数。</p>
+<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><p>应用程序的信息。<a href="http://embeddedjs.com/" target="_blank" rel="noopener">EJS</a>, <a href="http://learnboost.github.io/stylus/" target="_blank" rel="noopener">Stylus</a> 和 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> renderer 已默认安装，您可以自由移除。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package.json&#123;  &quot;name&quot;: &quot;hexo-site&quot;,  &quot;version&quot;: &quot;0.0.0&quot;,  &quot;private&quot;: true,  &quot;hexo&quot;: &#123;    &quot;version&quot;: &quot;&quot;  &#125;,  &quot;dependencies&quot;: &#123;    &quot;hexo&quot;: &quot;^3.0.0&quot;,    &quot;hexo-generator-archive&quot;: &quot;^0.1.0&quot;,    &quot;hexo-generator-category&quot;: &quot;^0.1.0&quot;,    &quot;hexo-generator-index&quot;: &quot;^0.1.0&quot;,    &quot;hexo-generator-tag&quot;: &quot;^0.1.0&quot;,    &quot;hexo-renderer-ejs&quot;: &quot;^0.1.0&quot;,    &quot;hexo-renderer-stylus&quot;: &quot;^0.2.0&quot;,    &quot;hexo-renderer-marked&quot;: &quot;^0.2.4&quot;,    &quot;hexo-server&quot;: &quot;^0.1.2&quot;  &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
+<p>Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+<h4 id="source"><a href="#source" class="headerlink" title="source"></a>source</h4><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
+<h4 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h4><p><a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>您可以在 <code>_config.yml</code> 中修改大部份的配置。</p>
+<h3 id="配置操作明细"><a href="#配置操作明细" class="headerlink" title="配置操作明细"></a>配置操作明细</h3><p>配置文件中主要修改了博客的语言、标题、作者、描述、时区和文件模式<code>post_asset_folder</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Hexo Configuration## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;configuration.html## Source: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo&#x2F;# Sitetitle: Booboo Wei&#39;s Blogsubtitle: Talk is cheap, show me the codedescription: 数据库工程师keywords: MySQL Linux DBA BigData Redis Pythonauthor: Booboo Weilanguage: zh-Hanstimezone: UTC# URL## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;url: http:&#x2F;&#x2F;yoursite.comroot: &#x2F;permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;permalink_defaults:# Directorysource_dir: sourcepublic_dir: publictag_dir: tagsarchive_dir: archivescategory_dir: categoriescode_dir: downloads&#x2F;codei18n_dir: :langskip_render:# Writingnew_post_name: :title.md # File name of new postsdefault_layout: posttitlecase: false # Transform title into titlecaseexternal_link: true # Open external links in new tabfilename_case: 0render_drafts: falsepost_asset_folder: truerelative_link: falsefuture: truehighlight:  enable: true  line_number: true  auto_detect: false  tab_replace:# Home page setting# path: Root path for your blogs index page. (default &#x3D; &#39;&#39;)# per_page: Posts displayed per page. (0 &#x3D; disable pagination)# order_by: Posts order. (Order by date descending by default)index_generator:  path: &#39;&#39;  per_page: 10  order_by: -date# Category &amp; Tagdefault_category: MySQLcategory_map:tag_map:# Date &#x2F; Time format## Hexo uses Moment.js to parse and display date## You can customize the date format as defined in## http:&#x2F;&#x2F;momentjs.com&#x2F;docs&#x2F;#&#x2F;displaying&#x2F;format&#x2F;date_format: YYYY-MM-DDtime_format: HH:mm:ss# Pagination## Set per_page to 0 to disable paginationper_page: 10pagination_dir: page# Extensions## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;theme: landscape# Deployment## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.htmldeploy:  type:</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="配置参数讲解"><a href="#配置参数讲解" class="headerlink" title="配置参数讲解"></a>配置参数讲解</h3><h4 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>title</code></td>
+<td align="left">网站标题</td>
+</tr>
+<tr>
+<td align="left"><code>subtitle</code></td>
+<td align="left">网站副标题</td>
+</tr>
+<tr>
+<td align="left"><code>description</code></td>
+<td align="left">网站描述</td>
+</tr>
+<tr>
+<td align="left"><code>author</code></td>
+<td align="left">您的名字</td>
+</tr>
+<tr>
+<td align="left"><code>language</code></td>
+<td align="left">网站使用的语言</td>
+</tr>
+<tr>
+<td align="left"><code>timezone</code></td>
+<td align="left">网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a>。比如说：<code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。</td>
+</tr>
+</tbody></table>
+<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+<h4 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>url</code></td>
+<td align="left">网址</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>root</code></td>
+<td align="left">网站根目录</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>permalink</code></td>
+<td align="left">文章的 <a href="https://hexo.io/zh-cn/docs/permalinks" target="_blank" rel="noopener">永久链接</a> 格式</td>
+<td align="left"><code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td align="left"><code>permalink_defaults</code></td>
+<td align="left">永久链接中各部分的默认值</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>网站存放在子目录</p>
+<p>如果您的网站存放在子目录中，例如 <code>http://yoursite.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p>
+</blockquote>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>source_dir</code></td>
+<td align="left">资源文件夹，这个文件夹用来存放内容。</td>
+<td align="left"><code>source</code></td>
+</tr>
+<tr>
+<td align="left"><code>public_dir</code></td>
+<td align="left">公共文件夹，这个文件夹用于存放生成的站点文件。</td>
+<td align="left"><code>public</code></td>
+</tr>
+<tr>
+<td align="left"><code>tag_dir</code></td>
+<td align="left">标签文件夹</td>
+<td align="left"><code>tags</code></td>
+</tr>
+<tr>
+<td align="left"><code>archive_dir</code></td>
+<td align="left">归档文件夹</td>
+<td align="left"><code>archives</code></td>
+</tr>
+<tr>
+<td align="left"><code>category_dir</code></td>
+<td align="left">分类文件夹</td>
+<td align="left"><code>categories</code></td>
+</tr>
+<tr>
+<td align="left"><code>code_dir</code></td>
+<td align="left">Include code 文件夹</td>
+<td align="left"><code>downloads/code</code></td>
+</tr>
+<tr>
+<td align="left"><code>i18n_dir</code></td>
+<td align="left">国际化（i18n）文件夹</td>
+<td align="left"><code>:lang</code></td>
+</tr>
+<tr>
+<td align="left"><code>skip_render</code></td>
+<td align="left">跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="noopener">glob 表达式</a>来匹配路径。</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示</p>
+<p>如果您刚刚开始接触Hexo，通常没有必要修改这一部分的值。</p>
+</blockquote>
+<h4 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>new_post_name</code></td>
+<td align="left">新文章的文件名称</td>
+<td align="left">:title.md</td>
+</tr>
+<tr>
+<td align="left"><code>default_layout</code></td>
+<td align="left">预设布局</td>
+<td align="left">post</td>
+</tr>
+<tr>
+<td align="left"><code>auto_spacing</code></td>
+<td align="left">在中文和英文之间加入空格</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>titlecase</code></td>
+<td align="left">把标题转换为 title case</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>external_link</code></td>
+<td align="left">在新标签中打开链接</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left"><code>filename_case</code></td>
+<td align="left">把文件名称转换为 (1) 小写或 (2) 大写</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left"><code>render_drafts</code></td>
+<td align="left">显示草稿</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>post_asset_folder</code></td>
+<td align="left">启动 <a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">Asset 文件夹</a></td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>relative_link</code></td>
+<td align="left">把链接改为与根目录的相对位址</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left"><code>future</code></td>
+<td align="left">显示未来的文章</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left"><code>highlight</code></td>
+<td align="left">代码块的设置</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>相对地址</p>
+<p>默认情况下，Hexo生成的超链接都是绝对地址。例如，如果您的网站域名为<code>example.com</code>,您有一篇文章名为<code>hello</code>，那么绝对链接可能像这样：<code>http://example.com/hello.html</code>，它是<strong>绝对</strong>于域名的。相对链接像这样：<code>/hello.html</code>，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。</p>
+</blockquote>
+<h4 id="分类-amp-标签"><a href="#分类-amp-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>default_category</code></td>
+<td align="left">默认分类</td>
+<td align="left"><code>uncategorized</code></td>
+</tr>
+<tr>
+<td align="left"><code>category_map</code></td>
+<td align="left">分类别名</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>tag_map</code></td>
+<td align="left">标签别名</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h4 id="日期-时间格式"><a href="#日期-时间格式" class="headerlink" title="日期 / 时间格式"></a>日期 / 时间格式</h4><p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="noopener">Moment.js</a> 来解析和显示时间。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>date_format</code></td>
+<td align="left">日期格式</td>
+<td align="left"><code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td align="left"><code>time_format</code></td>
+<td align="left">时间格式</td>
+<td align="left"><code>H:mm:ss</code></td>
+</tr>
+</tbody></table>
+<h4 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>per_page</code></td>
+<td align="left">每页显示的文章量 (0 = 关闭分页功能)</td>
+<td align="left"><code>10</code></td>
+</tr>
+<tr>
+<td align="left"><code>pagination_dir</code></td>
+<td align="left">分页目录</td>
+<td align="left"><code>page</code></td>
+</tr>
+</tbody></table>
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>theme</code></td>
+<td align="left">当前主题名称。值为<code>false</code>时禁用主题</td>
+</tr>
+<tr>
+<td align="left"><code>deploy</code></td>
+<td align="left">部署部分的设置</td>
+</tr>
+</tbody></table>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="指令操作明细"><a href="#指令操作明细" class="headerlink" title="指令操作明细"></a>指令操作明细</h3><p>在上一步基本配置后，我们可以在本地启动我们的博客网站了。具体操作如下：</p>
+<p>打开git bash，执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;我的第一篇文章&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>该命令会在blog/source/_post/目录中创建一个文件和一个同名的目录：</p>
+<ul>
+<li>文件：<code>我的第一篇文章.md</code></li>
+<li>目录：<code>我的第一篇文章</code></li>
+</ul>
+<p>目录用于存放图片，这样将来在网页中才能通过markdown的语法调用图片。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new &#39;我的第一篇文章&#39;INFO  Created: ~\Desktop\jigouyun_Git\个人项目\doc-share\source\_posts\我的第一篇文章.mdrgwei@DESKTOP-G9S0U3G MINGW64 ~&#x2F;Desktop&#x2F;jigouyun_Git&#x2F;个人项目&#x2F;doc-share&#x2F;source&#x2F;_posts$ ll 我的*-rw-r--r-- 1 rgwei 197121 69 11月 27 10:20 我的第一篇文章.md我的第一篇文章:total 0</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来就可以通过markdown的编辑器编辑你的文章。</p>
+<h3 id="指令讲解"><a href="#指令讲解" class="headerlink" title="指令讲解"></a>指令讲解</h3><h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<h4 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-d</code>, <code>--deploy</code></td>
+<td align="left">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td align="left"><code>-w</code>, <code>--watch</code></td>
+<td align="left">监视文件变动</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>发表草稿。</p>
+<h4 id="server"><a href="#server" class="headerlink" title="server"></a>server</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--port</code></td>
+<td align="left">重设端口</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--static</code></td>
+<td align="left">只使用静态文件</td>
+</tr>
+<tr>
+<td align="left"><code>-l</code>, <code>--log</code></td>
+<td align="left">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<h4 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+
+<p>部署网站。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-g</code>, <code>--generate</code></td>
+<td align="left">部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="render"><a href="#render" class="headerlink" title="render"></a>render</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo render &lt;file1&gt; [file2] ...</span><br></pre></td></tr></table></figure>
+
+
+
+<p>渲染文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-o</code>, <code>--output</code></td>
+<td align="left">设置输出路径</td>
+</tr>
+</tbody></table>
+<h4 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a>migrate</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo migrate &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>从其他博客系统 <a href="https://hexo.io/zh-cn/docs/migration" target="_blank" rel="noopener">迁移内容</a>。</p>
+<h4 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+
+
+<p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo list &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>列出网站资料。</p>
+<h4 id="version"><a href="#version" class="headerlink" title="version"></a>version</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
+
+
+
+<p>显示 Hexo 版本。</p>
+<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><h5 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --safe</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。</p>
+<h5 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --debug</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在终端中显示调试信息并记录到 <code>debug.log</code>。当您碰到问题时，可以尝试用调试模式重新执行一次，并 <a href="https://github.com/hexojs/hexo/issues/new" target="_blank" rel="noopener">提交调试信息到 GitHub</a>。</p>
+<h5 id="简洁模式"><a href="#简洁模式" class="headerlink" title="简洁模式"></a>简洁模式</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --silent</span><br></pre></td></tr></table></figure>
+
+
+
+<p>隐藏终端信息。</p>
+<h5 id="自定义配置文件的路径"><a href="#自定义配置文件的路径" class="headerlink" title="自定义配置文件的路径"></a>自定义配置文件的路径</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --config custom.yml</span><br></pre></td></tr></table></figure>
+
+
+
+<p>自定义配置文件的路径，执行后将不再使用 <code>_config.yml</code>。</p>
+<h5 id="显示草稿"><a href="#显示草稿" class="headerlink" title="显示草稿"></a>显示草稿</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --draft</span><br></pre></td></tr></table></figure>
+
+
+
+<p>显示 <code>source/_drafts</code> 文件夹中的草稿文章。</p>
+<h5 id="自定义-CWD"><a href="#自定义-CWD" class="headerlink" title="自定义 CWD"></a>自定义 CWD</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo --cwd &#x2F;path&#x2F;to&#x2F;cwd</span><br></pre></td></tr></table></figure>
+
+
+
+<p>自定义当前工作目录（Current working directory）的路径。</p>
+<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h3><p>稍微与markdown不同的是，我们必须在文章的开头加一些标识，才能够做到给文章分类和打标签的功能。</p>
+<p>首先新建一个文章<code>hexo new &quot;CPU飙高故障排查&quot;</code></p>
+<p>然后我们修改<code>CPU飙高故障排查.md</code>的文章如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---title: CPU飙高故障排查date: 2018-01-17 14:11:01categories:- AIA友邦tags:- 云数据库 RDS MySQL 版- 数据库CPU故障---## 故障描述2018-01-16 21点左右 &#96;prod-mysql01&#96;数据实例的CPU100% ， 阿里的监控图也没有显示了，后台阿里建议做主从切换，切换后数据库慢慢的恢复了， 现在需要找出故障原因。## 排查过程从监控图中可以看到，CPU飙高的事件段为：&#96;2018-01-16 21:00:00 &#96;左右</span><br></pre></td></tr></table></figure>
+
+
+
+<p>文章的头部叫做”Front-matter“以 <code>---</code> 分隔的区域</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---title: CPU飙高故障排查date: 2018-01-17 14:11:01categories:- AIA友邦tags:- 云数据库 RDS MySQL 版- 数据库CPU故障---</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>categories：建议只由一个</li>
+<li>tags：可以由多个</li>
+</ul>
+<h2 id="生成html页面"><a href="#生成html页面" class="headerlink" title="生成html页面"></a>生成html页面</h2><p>使用 Hexo 生成静态文件快速而且简单。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate或者$ hexo g</span><br></pre></td></tr></table></figure>
+
+
+
+<p>因为我们是本地部署，因此不用执行后续的动作。</p>
+<h2 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h2><p>Hexo 3.0 把服务器独立成了个别模块，您必须先安装 <a href="https://github.com/hexojs/hexo-server" target="_blank" rel="noopener">hexo-server</a> 才能使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装完成后，输入以下命令以启动服务器，您的网站会在 <code>http://localhost:4000</code> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果您想要更改端口，或是在执行时遇到了 <code>EADDRINUSE</code> 错误，可以在执行时使用 <code>-p</code> 选项指定其他端口，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server -p 5000</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h3><p>在静态模式下，服务器只处理 <code>public</code> 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 <code>hexo generate</code>，此模式通常用于生产环境（production mode）下。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server -s</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="自定义-IP"><a href="#自定义-IP" class="headerlink" title="自定义 IP"></a>自定义 IP</h3><p>服务器默认运行在 <code>0.0.0.0</code>，您可以覆盖默认的 IP 设置，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server -i 192.168.1.1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>指定这个参数后，您就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的<code>127.0.0.1</code>外，通常还有一个<code>192.168.*.*</code>的局域网IP，如果像上面那样使用<code>-i</code>参数，就不能用<code>127.0.0.1</code>来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为<code>-i</code>参数的值，那么就无法通过公网来访问站点。</p>
+<h2 id="Pow"><a href="#Pow" class="headerlink" title="Pow"></a>Pow</h2><p><a href="http://pow.cx/" target="_blank" rel="noopener">Pow</a> 是一个 Mac 系统上的零配置 Rack 服务器，它也可以作为一个简单易用的静态文件服务器来使用。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl get.pow.cx | sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>在 <code>~/.pow</code> 文件夹建立链接（symlink）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd ~&#x2F;.pow$ ln -s &#x2F;path&#x2F;to&#x2F;myapp</span><br></pre></td></tr></table></figure>
+
+
+
+<p>您的网站将会在 <code>http://myapp.dev</code> 下运行，网址根据链接名称而定。</p>
+<h2 id="部署在Github"><a href="#部署在Github" class="headerlink" title="部署在Github"></a>部署在Github</h2><p>如果需要部署在github上面，请参见<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">使用Hexo+Github一步步搭建属于自己的博客（基础）</a></p>
+<h2 id="修改博客模板为Next"><a href="#修改博客模板为Next" class="headerlink" title="修改博客模板为Next"></a>修改博客模板为Next</h2><p>如果需要修改博客模板为Next，请参见<a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">hexo搭建个人博客–NexT主题优化</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记一次datatime类型字段变身记</title>
+    <url>/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h1><h2 id="案件回顾"><a href="#案件回顾" class="headerlink" title="案件回顾"></a>案件回顾</h2><ul>
+<li>某著名保险企业邮件一条DTS链路故障，报错信息显示目标库的对应表不存在</li>
+<li>链路是整库同步，支持源库创建表后，目标库会同步创建表</li>
+<li>请我方协助排查原因并修复故障</li>
+</ul>
+<p>信息详情</p>
+<table>
+<thead>
+<tr>
+<th align="left">信息</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">故障时间点</td>
+<td align="left">2020-05-20 10:33:50</td>
+</tr>
+<tr>
+<td align="left">DTS链路名称</td>
+<td align="left">Polardb 5.6-&gt;RDS for MySQL5.7</td>
+</tr>
+<tr>
+<td align="left">DTS同步失败报错内容</td>
+<td align="left">DTS-071001: the Table cloudods.pipprntlog Information Loaded failed in Target DB. cause by [com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException:Table ‘cloudods.pipprntlog’ doesn’t exist] About more information in [<a href="https://yq.aliyun.com/articles/505378]" target="_blank" rel="noopener">https://yq.aliyun.com/articles/505378]</a>.</td>
+</tr>
+<tr>
+<td align="left">同步粒度</td>
+<td align="left">整库同步</td>
+</tr>
+<tr>
+<td align="left">源数据库名称</td>
+<td align="left">PDB</td>
+</tr>
+<tr>
+<td align="left">源数据库类型</td>
+<td align="left">PolarDB for MySQL 5.6</td>
+</tr>
+<tr>
+<td align="left">源库同步用户/权限</td>
+<td align="left">i_read/只读</td>
+</tr>
+<tr>
+<td align="left">目标数据库名称</td>
+<td align="left">RDS</td>
+</tr>
+<tr>
+<td align="left">目标数据库类型</td>
+<td align="left">RDS for MySQL 5.7</td>
+</tr>
+<tr>
+<td align="left">目标库同步用户/权限</td>
+<td align="left">e_dev/读写</td>
+</tr>
+</tbody></table>
+<h1 id="排障过程"><a href="#排障过程" class="headerlink" title="排障过程"></a>排障过程</h1><h2 id="阶段一：怀疑人为因素造成"><a href="#阶段一：怀疑人为因素造成" class="headerlink" title="阶段一：怀疑人为因素造成"></a>阶段一：怀疑人为因素造成</h2><ul>
+<li>解析故障时间段源目标库的 binlog 来验证</li>
+<li>下载目标数据库对应时间段的binlog → mysql-bin.000498，并通过mysqlbinlog -vv 的方式对日志进行解析</li>
+</ul>
+<p>目标库 binlog 解析结果</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">COMMIT</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8993767</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 2278327273  end_log_pos 8993832 CRC32 0xeb1056ff     GTID    last_committed=2005     sequence_number=2006    rbr_only=no</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'9669d21f-7e11-11ea-bdd0-6c92bf5c9bf2:6704774'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8993832</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 2278327273  end_log_pos 8993973 CRC32 0xa980631b     Query   thread_id=1653742       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">use</span> <span class="string">`cloudods`</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941811</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.foreign_key_checks=<span class="number">0</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.sql_mode=<span class="number">0</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">/*!\C utf8mb4 */</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.character_set_client=<span class="number">45</span>,@@session.collation_connection=<span class="number">45</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`pipprntlog`</span> <span class="comment">/* generated by server */</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8993973</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994038 CRC32 0x9b7bb805     GTID    last_committed=2006     sequence_number=2007    rbr_only=yes</span></span><br><span class="line"><span class="comment">/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*/</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'9669d21f-7e11-11ea-bdd0-6c92bf5c9bf2:6704775'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8994038</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994106 CRC32 0x84aeabab     Query   thread_id=1273498       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941820</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 8994106</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994276 CRC32 0x5d226504     Table_map: `isp_maindb_s`.`sys_userinfo` mapped to number 1362</span></span><br><span class="line"><span class="comment"># at 8994276</span></span><br><span class="line"><span class="comment">#200520 10:30:20 server id 2278327273  end_log_pos 8994893 CRC32 0x43a6caee     Delete_rows: table id 1362 flags: STMT_END_F</span></span><br><span class="line"> </span><br><span class="line">BINLOG '</span><br><span class="line">PJbEXhPpg8yHqgAAAOQ9iQAAAFIFAAAAAAEADGlzcF9tYWluZGJfcwAMc3lzX3VzZXJpbmZvACoI</span><br><span class="line">Dw8PDw8PDw8PDw8SDw8DAwMDDxISCPwSAw8PEhIPDw8SEg8PDw8PDw89YAADAAMA7gIwADAANgAY</span><br><span class="line">AFgCYABgAAADAIABAwAAAAIAlgBgAAAA/QJYAlgCAAAeAP0C/QL9Av0CPAADAP7/////AwRlIl0=</span><br><span class="line">PJbEXhnpg8yHaQIAAE1AiQAAAFIFAAAAAAMAKv///////8BYAACA/LEIAAAAAAAACTAwMDAxNjk3</span><br><span class="line">MQFBATEhAOacseWLpOWNjiAgICAgICAgICAgICAgICAgICAgICAgIAROVUxMBDA5ODYEAEZFMDEJ</span><br><span class="line">RzAwMDAwNDA5ATABAAAAAQAAAAEAAAABAAAAAUGZpG4AAJmknQSyAAAAAAAAAADKAHtBU0lUVTpD</span><br><span class="line">TSxFQUZDUjowMDAwMDM0MjEsQ0hBTk5FTDpBZ2VuY3l9LXsiQUdUQ09EIjoiMDAwMDE2OTcxICAg</span><br><span class="line">ICIsIk9GRkNPRCI6IkZFMDEiLCJBR1lDT0QiOiJHMDAwMDA0MDkiLCJyb3dfbnVtYmVyIjo5NSwi</span><br><span class="line">Q09OVFlQRSI6Ik0xIiwiaW5pUHdkIjoiMTExMTExMTEiLCJBR1ROQU1FIjoi5pyx5Yuk5Y2OICAg</span><br><span class="line">ICAgICAgICAgICAgICAgICAgICAgIn2ZpgcaagAAAAAGQWdlbmN5CDExMDMwNTM3mZ3lBKiZpmil</span><br><span class="line">lAIAQ00IADExMTExMTExGABSWU96dm9Vd3JiaEJBeWwxNnhxLzRRPT2ZpmimRpmmaKZGA0lTUEwA</span><br><span class="line">MDdFNDAwMDUwMDE0MDAwQTAwMTYwMDE2MEI4MEYyNDAwMDAwMDAxRDAwMDBBRkI0MDAwMDM0MUEw</span><br><span class="line">MDA2MDAwMDAwMDEwMDAwMDAwMCIAOTIwMDAwMDA0MzQ4NEY1NDMzNTIzODQzNTM1MTRDMzEzMRQA</span><br><span class="line">MDAwMEFGQjQwMDAwMzQxQTAwMDYUMjAyMDA1MjAxMDIyMjIxOTMwMDABSe7KpkM=</span><br><span class="line">'<span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">### DELETE FROM `isp_maindb_s`.`sys_userinfo`</span></span><br><span class="line"><span class="comment">### WHERE</span></span><br><span class="line"><span class="comment">###   @1=2225 /* LONGINT meta=0 nullable=0 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @2='000016971' /* VARSTRING(96) meta=96 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @3='A' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @4='1' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>发现SQL：DROP TABLE IF EXISTS <code>pipprntlog</code> /* generated by server */</p>
+<p>执行时间：200520 10:30:11</p>
+<p>由于该DROP动作，无论库中是否存在该表，binlog均会记录，因此想何时该DROP动作在建表之后</p>
+</blockquote>
+<p>从源库information_schema.tables获取表的创建时间</p>
+<img src="/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/1.png" class="" title="This is an 1 image">
+<blockquote>
+<p>与DROP的时间一致</p>
+<p><strong>因后来证实，当 alter 表时，create_time 字段会被更新；增删改查表时，update_time字段会被更新；truncate表时，时间字段不被更新</strong></p>
+<p>因此怀疑该时间不够准确，决定从PolarDB获取对应时间段的binlog日志，查看该时间是否是CREATE TABLE的时间</p>
+</blockquote>
+<p>由于<strong>PolarDB不支持直接下载binlog</strong>需要通过客户端连接的方式把binlog日志解析到本地</p>
+<p>通过客户端连接获取binlog的命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysqlbinlog -vv -P 3306 -uxxxx -pxxxx -hxxxx.mysql.rds.aliyuncs.com --read-from-remote-server --start-datetime='2020-05-20 09:00:00' --stop-datetime='2020-05-20 11:00:00' --base64-output=DECODE-ROWS mysql-bin.000xxx &gt; xxxlog.sql</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>遇到报错的情况下，需检查mysqlbinlog版本是否正确</p>
+</blockquote>
+<p>源端数据库binlog内容</p>
+<p>源库故障时间 binlog 解析结果</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment"># at 398730036</span></span><br><span class="line"><span class="comment">#200520 10:30:10 server id 9793953  end_log_pos 398730084 CRC32 0x42791024      GTID    last_committed=0        sequence_number=0</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'e1ecc4a7-f9fa-11e9-ad35-506b4b478fa4:107546949'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398730084</span></span><br><span class="line"><span class="comment">#200520 10:30:10 server id 9793953  end_log_pos 398730225 CRC32 0x28099038      Query   thread_id=1749351       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">use</span> <span class="string">`cloudods`</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941810</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">/*!\C utf8 */</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.character_set_client=<span class="number">33</span>,@@session.collation_connection=<span class="number">33</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`pipprntlog`</span> <span class="comment">/* generated by server */</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398730225</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 9793953  end_log_pos 398730273 CRC32 0x699cf5ca      GTID    last_committed=0        sequence_number=0</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'e1ecc4a7-f9fa-11e9-ad35-506b4b478fa4:107546950'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398730273</span></span><br><span class="line"><span class="comment">#200520 10:30:11 server id 9793953  end_log_pos 398731371 CRC32 0xe7281576      Query   thread_id=1749353       exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941811</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment">/*!\C utf8mb4 */</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">SET</span> @@session.character_set_client=<span class="number">45</span>,@@session.collation_connection=<span class="number">45</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="string">`cloudods`</span>.<span class="string">`pipprntlog`</span> (^M</span><br><span class="line">  <span class="string">`co`</span> <span class="built_in">varchar</span>(<span class="number">4</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,^M</span><br><span class="line">  <span class="string">`polnum`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,^M</span><br><span class="line">  <span class="string">`code`</span> <span class="built_in">varchar</span>(<span class="number">5</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`msg`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`lstupdtime`</span> datetime(<span class="number">6</span>) <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxrestart1`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxrestart2`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxuow`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxuser`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxtimestamp`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxaction`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxcasdelind`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`dtl__capxrrn`</span> <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">0</span>) <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  <span class="string">`inserttime`</span> <span class="built_in">timestamp</span>  ,^M</span><br><span class="line">  <span class="string">`updatetime`</span> <span class="built_in">timestamp</span>  ,^M</span><br><span class="line">  <span class="string">`srcsys`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,^M</span><br><span class="line">  primary <span class="keyword">key</span> (<span class="string">`co`</span>,<span class="string">`polnum`</span>,<span class="string">`lstupdtime`</span>)^M</span><br><span class="line">) <span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8 <span class="keyword">collate</span>=utf8_bin</span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398731371</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398731419 CRC32 0x7bc1d5fb      GTID    last_committed=0        sequence_number=0</span></span><br><span class="line"><span class="keyword">SET</span> @@SESSION.GTID_NEXT= <span class="string">'e1ecc4a7-f9fa-11e9-ad35-506b4b478fa4:107546951'</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398731419</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398731487 CRC32 0xfbae67c6      Query   thread_id=452351        exec_time=0     error_code=0</span></span><br><span class="line"><span class="keyword">SET</span> <span class="built_in">TIMESTAMP</span>=<span class="number">1589941819</span><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="comment">/*!*/</span>;</span><br><span class="line"><span class="comment"># at 398731487</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398731657 CRC32 0xfc6068eb      Table_map: `isp_maindb_s`.`sys_userinfo` mapped to number 1405</span></span><br><span class="line"><span class="comment"># at 398731657</span></span><br><span class="line"><span class="comment">#200520 10:30:19 server id 9793953  end_log_pos 398732274 CRC32 0x95cb0304      Delete_rows: table id 1405 flags: STMT_END_F</span></span><br><span class="line"><span class="comment">### DELETE FROM `isp_maindb_s`.`sys_userinfo`</span></span><br><span class="line"><span class="comment">### WHERE</span></span><br><span class="line"><span class="comment">###   @1=2225 /* LONGINT meta=0 nullable=0 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @2='000016971' /* VARSTRING(96) meta=96 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @3='A' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @4='1' /* VARSTRING(3) meta=3 nullable=1 is_null=0 */</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>获得如下发现：</p>
+<ul>
+<li>几乎相同的时间都有DROP TABLE的动作</li>
+<li>区别是源端有CREATE TABLE的记录，而目标端没有CREATE TABLE的记录</li>
+</ul>
+</blockquote>
+<h1 id="阶段二：怀疑DTS工具BUG"><a href="#阶段二：怀疑DTS工具BUG" class="headerlink" title="阶段二：怀疑DTS工具BUG"></a>阶段二：怀疑DTS工具BUG</h1><ul>
+<li><p>由于阶段一获取的源库和目标库的 binlog 日志，推测是源库在建表的过程中，先进行了一个DROP TABLE IF EXISTS的动作，然后再CREATE TABLE</p>
+</li>
+<li><p>而目标库只有DROP TABLE IF EXISTS，而缺失CREATE TABLE的记录，因此怀疑是DTS少传输了CREATE TABLE的部分</p>
+</li>
+<li><p>向阿里方提工单协助解决此问题</p>
+</li>
+</ul>
+<h1 id="阶段三：手动建表进行故障恢复"><a href="#阶段三：手动建表进行故障恢复" class="headerlink" title="阶段三：手动建表进行故障恢复"></a>阶段三：手动建表进行故障恢复</h1><ul>
+<li><p>由于目标端是缺失了对应的表，造成的故障，因此决定通过手动在目标端创建表来解决问题</p>
+</li>
+<li><p>从源端SHOW CREATE TABLE获取建表语句</p>
+</li>
+</ul>
+<p>源端 SHOW CREATE TABLE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt;show create table pipprntlog\G</span><br><span class="line">*************************** 1. row ***************************</span><br><span class="line">       Table: pipprntlog</span><br><span class="line"><span class="keyword">Create</span> <span class="keyword">Table</span>: <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`pipprntlog`</span> (</span><br><span class="line">  <span class="string">`co`</span> <span class="built_in">varchar</span>(<span class="number">4</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">  <span class="string">`polnum`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">  <span class="string">`code`</span> <span class="built_in">varchar</span>(<span class="number">5</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`msg`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`lstupdtime`</span> datetime(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0000-00-00 00:00:00.000000'</span>,</span><br><span class="line">  <span class="string">`dtl__capxrestart1`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxrestart2`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxuow`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxuser`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxtimestamp`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxaction`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxcasdelind`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dtl__capxrrn`</span> <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">0</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`inserttime`</span> <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  <span class="string">`updatetime`</span> <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0000-00-00 00:00:00'</span>,</span><br><span class="line">  <span class="string">`srcsys`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">COLLATE</span> utf8_bin <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`co`</span>,<span class="string">`polnum`</span>,<span class="string">`lstupdtime`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COLLATE</span>=utf8_bin</span><br><span class="line">返回行数：[<span class="number">1</span>]，耗时：<span class="number">6</span> ms.</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将该建表语句复制到目标端手动创建，然后启动DTS链路</p>
+<p><strong>再通过SELECT * FROM 表 来验证数据是否正常同步过来时，提示该表不存在</strong></p>
+<p>刷新DTS链路信息，DTS链路报错，报错与之前一致</p>
+</blockquote>
+<p>多次重复上述操作，均可复现，现象反馈给阿里方，协助排查该问题</p>
+<h1 id="阶段四：开启审计，查找“真凶”"><a href="#阶段四：开启审计，查找“真凶”" class="headerlink" title="阶段四：开启审计，查找“真凶”"></a>阶段四：开启审计，查找“真凶”</h1><ul>
+<li>在阿里方的建议下，开启审计，查看是“谁”删除了这张表</li>
+</ul>
+<p>审计内容</p>
+<img src="/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/2.png" class="" title="This is an 2 image">
+
+<blockquote>
+<p>发现是eds_dev用户，是 DTS 同步用户，传输过来的动作是先进行 DROP 再进行创建，但创建失败</p>
+<p>CREATE 之前先 DROP，就是手动创建被会失败的原因</p>
+<p><strong>而 CREATE 之所以失败，根据审计的提示，失败代码：1171</strong></p>
+</blockquote>
+<p>查询 MySQL 的错误代码 1171</p>
+<img src="/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/3.png" class="" title="This is an 3 image">
+
+<blockquote>
+<p>当主键的字段属性为“允许空值”时会报出1171的错误代码 </p>
+</blockquote>
+<p>检查审计 CREATE TABLE 语句</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">---目标库 CREATE TABLE 语句---</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="string">`cloudods`</span>.<span class="string">`pipprntlog`</span></span><br><span class="line">( <span class="string">`co`</span> <span class="built_in">varchar</span>(<span class="number">4</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,</span><br><span class="line"><span class="string">`polnum`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,</span><br><span class="line"><span class="string">`code`</span> <span class="built_in">varchar</span>(<span class="number">5</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`msg`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`lstupdtime`</span> datetime(<span class="number">6</span>) <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxrestart1`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxrestart2`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxuow`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxuser`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxtimestamp`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxaction`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxcasdelind`</span> <span class="built_in">varchar</span>(<span class="number">1</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`dtl__capxrrn`</span> <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">0</span>) <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"><span class="string">`inserttime`</span> <span class="built_in">timestamp</span> ,</span><br><span class="line"><span class="string">`updatetime`</span> <span class="built_in">timestamp</span> ,</span><br><span class="line"><span class="string">`srcsys`</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line">primary <span class="keyword">key</span> (<span class="string">`co`</span>,<span class="string">`polnum`</span>,<span class="string">`lstupdtime`</span>)</span><br><span class="line">) <span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8 <span class="keyword">collate</span>=utf8_bin</span><br></pre></td></tr></table></figure>
+
+<p>发现以下问题：</p>
+<ul>
+<li>与之前在源库SHOW CREATE TABLE的SQL不一致</li>
+<li>lstupdtime 字段属性有 default null，但后面又被包含在primary key中（引起 1171 报错）</li>
+<li>与源库在 binlog 获取 CREATE TABLE 的SQL一致</li>
+</ul>
+<p>产生以下推测：</p>
+<ul>
+<li>SHOW CREATE TABLE的SQL是系统修正后的“正规”SQL</li>
+<li>binlog拿到的SQL是人为输入的“原生”SQL</li>
+<li>“原生”SQL在源库建表成功，在目标库执行失败，可能是版本差异引起的<br>验证版本差异：</li>
+</ul>
+<p>5.6 → 成功创建</p>
+<img src="/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/4.png" class="" title="This is an 4 image">
+
+<p>5.7 → 报错 ERROR 1171</p>
+<img src="/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/5.png" class="" title="This is an 5 image">
+
+
+<p>结论</p>
+<ul>
+<li><p>建表语句不规范，导致DTS链路故障</p>
+</li>
+<li><p>在MySQL 5.6 中，当设计表时 datetime 数据类型的字段带有 default null，且设置为主键时，MySQL会自动将 default null 更正为 not null default ‘0000-00-00 00:00:00’，以满足 PRIMARY KEY 的需求</p>
+</li>
+<li><p>在MySQL 5.7 中，当设计表时 datetime 数据类型的字段带有 default null，且设置为主键时，MySQL遵照用户的需求（default null），与 PRIMARY KEY 冲突，因此报错 1171</p>
+</li>
+</ul>
+<h1 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h1><h2 id="—MySQL-5-6—"><a href="#—MySQL-5-6—" class="headerlink" title="—MySQL 5.6—"></a>—MySQL 5.6—</h2><table>
+<thead>
+<tr>
+<th align="left">SQL中字段属性（并设置为主键）</th>
+<th align="left">结果</th>
+<th align="left">SHOW CREATE TABLE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">col_test datetime(6)</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL DEFAULT ‘0000-00-00 00:00:00.000000’</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) default null</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL DEFAULT ‘0000-00-00 00:00:00.000000’</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) not null</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL</td>
+</tr>
+</tbody></table>
+<h2 id="—MySQL-5-7—"><a href="#—MySQL-5-7—" class="headerlink" title="—MySQL 5.7—"></a>—MySQL 5.7—</h2><table>
+<thead>
+<tr>
+<th align="left">SQL中字段属性（并设置为主键）</th>
+<th align="left">结果</th>
+<th align="left">SHOW CREATE TABLE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">col_test datetime(6)</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) default null</td>
+<td align="left">建表失败</td>
+<td align="left">ERROR 1171</td>
+</tr>
+<tr>
+<td align="left">col_test datetime(6) not null</td>
+<td align="left">建表成功</td>
+<td align="left">col_test datetime(6) NOT NULL</td>
+</tr>
+</tbody></table>
+<h2 id="知识延伸"><a href="#知识延伸" class="headerlink" title="知识延伸"></a>知识延伸</h2><p>explicit_defaults_for_timestamp 参数</p>
+<ul>
+<li>该参数只限制 timestamp 数据类型，对 datetime 无法起到限制作用</li>
+<li>MySQL 5.6 需要在配置文件中修改该参数，重启服务后生效</li>
+<li>MySQL 5.7 可直接修改该参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">explicit_defaults_for_timestamp</th>
+<th align="left">SQL中字段属性</th>
+<th align="left">SHOW CREATE TABLE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">OFF / 0</td>
+<td align="left">col01 timestamp col02 timestamp</td>
+<td align="left">col01 timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP col01 timestamp NOT NULL DEFAULT ‘0000-00-00 00:00:00’</td>
+</tr>
+<tr>
+<td align="left">ON / 1</td>
+<td align="left">col01 timestamp col02 timestamp</td>
+<td align="left">col01 timestamp NULL DEFAULT NULL col01 timestamp NULL DEFAULT NULL</td>
+</tr>
+</tbody></table>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
+<li>由于同步链路“卡死”在当前这个建表的事务</li>
+<li>因此需要将该库从同步链路中移除，然后将整库重新加入到同步链路中</li>
+<li>阿里方虽然可以通过后台跳过该DDL，但有风险（可能跳过不止一个DDL）</li>
+</ul>
+<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><ul>
+<li><p>如何普及研发人员操作数据库的规范？</p>
+</li>
+<li><p>正确的互联网发布流程怎样才可以避免此类问题？</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>云数据库</category>
+      </categories>
+      <tags>
+        <tag>Polardb for MySQL</tag>
+        <tag>RDS for MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>获取在线MySQL实例的Binlog信息</title>
+    <url>/2020/05/22/MySQL/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<div class="note info">
+            <p>mysqlbinlog -vv -P 3306 -utaiping_admin -pxxxx -hxxxxx.mysql.rds.aliyuncs.com –read-from-remote-server –start-datetime=’2017-09-12 06:29:00’ –stop-datetime=’2017-09-12 06:30:01’ –base64-output=DECODE-ROWS mysql-bin.000634 &gt; taiping0912.binlog</p>
+          </div>
+
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL Binlog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git玩转三剑客-第1课-仓库初始化</title>
+    <url>/2020/05/16/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">创建目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir git_01</span></span><br><span class="line"></span><br><span class="line">进入目录</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> git_01/</span></span><br><span class="line"></span><br><span class="line">初始化</span><br><span class="line"><span class="meta">$</span><span class="bash"> git init .</span></span><br><span class="line">Initialized empty Git repository in xxx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> .git/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 7</span><br><span class="line">-rw-r--r-- 1 Apple 197121 130 5月  15 10:33 config</span><br><span class="line">-rw-r--r-- 1 Apple 197121  73 5月  15 10:33 description</span><br><span class="line">-rw-r--r-- 1 Apple 197121  23 5月  15 10:33 HEAD</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 hooks/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 info/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 objects/</span><br><span class="line">drwxr-xr-x 1 Apple 197121   0 5月  15 10:33 refs/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line"></span><br><span class="line">配置</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">		</span><br><span class="line">--global配置config文件内容没有变化</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.name apple</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> user.mail huangjx@jiagouyun.com</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">[user]</span><br><span class="line">        name = apple</span><br><span class="line">        mail = huangjx@jiagouyun.com</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="上传文件到仓库"><a href="#上传文件到仓库" class="headerlink" title="上传文件到仓库"></a>上传文件到仓库</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">新建文件</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim xxCPU高了.md</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use "git add &lt;file&gt;..." to include in what will be committed)</span><br><span class="line"></span><br><span class="line">        "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use "git add" to track)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line">warning: LF will be replaced by CRLF in xxCPU高了.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 /d/智能团队相关资料/08_学习内容/04_gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git rm --cached &lt;file&gt;..." to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'新增了一个文件XX'</span></span></span><br><span class="line">[master (root-commit) e9a5c8c] 新增了一个文件XX</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 "xxCPU\351\253\230\344\272\206.md"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>新增文件会先放到工作区放到git add将文件放到暂存区再放到git commit版本库</p>
+</blockquote>
+<h1 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br></pre></td></tr></table></figure>
+
+<h1 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch a</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">        a</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">[master e84f58a] 新增a</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit e84f58a3eff4b3b05023e005d966cdb8f835a258 (HEAD -&gt; master)</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:46:36 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增a</span><br><span class="line"></span><br><span class="line">commit e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span><br><span class="line">Author: apple &lt;13774437301@163.com&gt;</span><br><span class="line">Date:   Fri May 15 10:42:29 2020 +0800</span><br><span class="line"></span><br><span class="line">    新增了一个文件XX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard e9a5c8cf5f144de7790e895e0b9fbf8bf45bbc57</span></span><br><span class="line">HEAD is now at e9a5c8c 新增了一个文件XX</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">-rw-r--r-- 1 Apple 197121 10 5月  15 10:38 xxCPU高了.md</span><br></pre></td></tr></table></figure>
+
+<h1 id="将git仓库备份到本地"><a href="#将git仓库备份到本地" class="headerlink" title="将git仓库备份到本地"></a>将git仓库备份到本地</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> backup_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> --bare file:///d/gitlab仓库1/git_01 backup_git_01</span></span><br><span class="line">Cloning into bare repository 'backup_git_01'...</span><br><span class="line">remote: Counting objects: 3, done.</span><br><span class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (3/3), done.</span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/backup_dir</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add backup_git_01 file:///gitlab仓库1/git_01/</span></span><br><span class="line"></span><br><span class="line">/d/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push --<span class="built_in">set</span>-upstream backup_git_01 master</span></span><br><span class="line">Everything up-to-date</span><br><span class="line">Branch master set up to track remote branch master from backup_git_01.</span><br></pre></td></tr></table></figure>
+
+<h1 id="如何多地管理仓库"><a href="#如何多地管理仓库" class="headerlink" title="如何多地管理仓库"></a>如何多地管理仓库</h1><p><a href="https://help.github.com/en/github/getting-started-with-github" target="_blank" rel="noopener">github帮助</a></p>
+<ul>
+<li>github创建仓库<img src="/2020/05/16/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/1.jpg" class="" title="This is an 1 image"></li>
+<li>本地仓库上传到github仓库</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">create a new repository on the command line</span><br><span class="line">echo "# git_01" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line">                </span><br><span class="line">…or push an existing repository from the command line</span><br><span class="line">git remote add origin git@github.com:HuangJingxue/git_01.git</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin git@github.com:HuangJingxue/git_01.git</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Writing objects: 100% (3/3), 248 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">Branch master set up to track remote branch master from origin.</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>本地仓库成功推送到github仓库</p>
+</blockquote>
+<img src="/2020/05/16/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC1%E8%AF%BE-%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96/2.jpg" class="" title="This is an 2 image">
+
+<p>远程拉取github仓库更新内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim studygit.md</span></span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -A .</span></span><br><span class="line">warning: LF will be replaced by CRLF in studygit.md.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'add studygit'</span></span></span><br><span class="line">[master b8623c7] add studygit</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 studygit.md</span><br><span class="line"></span><br><span class="line">/gitlab仓库1/git_01 (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (3/3), 287 bytes | 0 bytes/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:HuangJingxue/git_01.git</span><br><span class="line">   e9a5c8c..b8623c7  master -&gt; master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">由BooBooWei操作</span><br><span class="line">cd gittest</span><br><span class="line">git clone https://github.com/HuangJingxue/git_01.git</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git玩转三剑客-第2课-分支管理</title>
+    <url>/2020/05/15/Git/Git%E7%8E%A9%E8%BD%AC%E4%B8%89%E5%89%91%E5%AE%A2-%E7%AC%AC2%E8%AF%BE-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> ssh://git@gitlab.jiagouyun.com:40022/zy-docs/pd-forethought-helps.git</span></span><br><span class="line">Cloning into 'pd-forethought-helps'...</span><br><span class="line">remote: Counting objects: 10236, done.</span><br><span class="line">remote: Compressing objects: 100% (77/77), done.</span><br><span class="line">remote: Total 10236 (delta 26), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (10236/10236), 67.68 MiB | 949.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (5016/5016), done.</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Your branch is up-to-date with 'origin/master'.</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看当前分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line">* master</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看所有分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch --all</span></span><br><span class="line">* master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dashboard/MySQL锁监控</span><br><span class="line">  remotes/origin/dashboard/自建MariaDB监控</span><br><span class="line"></span><br><span class="line">创建分支</span><br><span class="line">git branch dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line">切换分支</span><br><span class="line">git checkout dashborad/自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> 当前分支所有提交完成，允许切换</span></span><br><span class="line"></span><br><span class="line">上传本地到分支仓库</span><br><span class="line">git push --set-upstream origin dashborad/自建MariaDB2监控</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">提交merge request</span><br><span class="line">初学者选择web页面上处理</span><br><span class="line"><span class="meta">#</span><span class="bash">命令方式待完善</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除分支</span><br><span class="line">git branch -d 自建MariaDB2监控</span><br><span class="line"><span class="meta">#</span><span class="bash"> web页面上也点击清除</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><ul>
+<li>Pycharm管理git仓库</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源工具MyFlash</title>
+    <url>/2020/05/12/MySQL/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7MyFlash/</url>
+    <content><![CDATA[<h2 id="MyFlash初体验"><a href="#MyFlash初体验" class="headerlink" title="MyFlash初体验"></a>MyFlash初体验</h2><h2 id="验证binlog2sql-是否支持blob转换"><a href="#验证binlog2sql-是否支持blob转换" class="headerlink" title="验证binlog2sql 是否支持blob转换"></a>验证binlog2sql 是否支持blob转换</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;--w_blob.py  写入blob   import sys import pymysql import os  path &#x3D; &quot;.&#x2F;&quot;  fp &#x3D; open(&quot;&#x2F;alidata&#x2F;PG01.jpg&quot;, &#39;rb&#39;) img &#x3D; fp.read() fp.close()  database &#x3D; pymysql.connect(host&#x3D;&quot;localhost&quot;, user&#x3D;&quot;root&quot;, passwd&#x3D;&quot;root&quot;, db&#x3D;&quot;qinxi&quot;) cursor &#x3D; database.cursor() sql &#x3D; &quot;INSERT INTO tb_test (nameBlob) VALUES  (%s);&quot; args &#x3D; (img) cursor.execute(sql, args) database.commit() cursor.close() database.close()  print(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;) print(&quot;Done! &quot;)   --r_blob.py 读取blob  import pymysql as mdb import sys  conn &#x3D; mdb.connect(host&#x3D;&#39;localhost&#39;,user&#x3D;&#39;root&#39;,passwd&#x3D;&#39;root&#39;,db&#x3D;&#39;qinxi&#39;) cursor &#x3D; conn.cursor() cursor.execute(&quot;SELECT nameBlob FROM tb_test LIMIT 1&quot;) fout &#x3D; open(&#39;PG333.jpg&#39;,&#39;wb&#39;) fout.write(cursor.fetchone()[0]) fout.close() cursor.close() conn.close()    python binlog2sql.py -uroot -h10.200.6.53 -proot -B --start-file&#x3D;mybinlog.000033 &gt; 33.sql&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="MyFlash测试"><a href="#MyFlash测试" class="headerlink" title="MyFlash测试"></a>MyFlash测试</h1><p><a href="https://github.com/Meituan-Dianping/MyFlash" target="_blank" rel="noopener">https://github.com/Meituan-Dianping/MyFlash</a></p>
+<p>安装</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;yum install libgnomeui-devel  gcc -w -g &#96;pkg-config --cflags  glib-2.0&#96; source&#x2F;binlogParseGlib.c   -o binary&#x2F;flashback &#x2F;usr&#x2F;lib64&#x2F;libglib-2.0.a -lrt yum install install glib2*&#96;</span><br></pre></td></tr></table></figure>
+
+<p>测试环境准备</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;Meituan-Dianping&#x2F;MyFlash&#x2F;blob&#x2F;master&#x2F;doc&#x2F;TestCase.md</span><br><span class="line">CREATE TABLE &#96;tb_test&#96; (   &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,   &#96;nameBlob&#96; longblob,   PRIMARY KEY (&#96;id&#96;) ) ENGINE&#x3D;InnoDB；</span><br></pre></td></tr></table></figure>
+
+
+
+<p>回滚命令生成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;.&#x2F;MyFlash&#x2F;binary&#x2F;flashback --binlogFileNames&#x3D;&#x2F;alidata&#x2F;mysql&#x2F;mybinlog.000022 --outBinlogFileNameBase&#x3D;22delete.flashback&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>扩展</p>
+<p>阿里云RDS实例，用户没有Super权限，导入带有set @@信息，会提示ERROR 1227 (42000) at line 18: Access denied; you need (at least one of) the SUPERprivilege(s) for this operation报错。</p>
+<p>本地5.7版本，测试去除set @@GTID_NEXT,当GTID模式开启状态，导入实例会提示报错:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR 1782 (HY000) at line 19: @@SESSION.GTID_NEXT cannot be set to ANONYMOUS when @@GLOBAL.GTID_MODE &#x3D; ON.</span><br></pre></td></tr></table></figure>
+
+<p>只有将 GTID模式关闭，才可以正常导入。</p>
+<p><a href="https://bugs.mysql.com/bug.php?id=85480" target="_blank" rel="noopener">https://bugs.mysql.com/bug.php?id=85480</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;mysqlbinlog -v -v --skip-gtids 22delete.flashback | sed &#39;s@\&#x2F;\*.*\*\&#x2F;@@&#39; |mysql -uroot -proot&#96;</span><br></pre></td></tr></table></figure>
+
+<p>初步结论：云上RDS 目前无法使用该工具，由于没有super权限。</p>
+]]></content>
+      <categories>
+        <category>开源工具</category>
+      </categories>
+      <tags>
+        <tag>MyFlash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>幻读是什么，幻读有什么问题？</title>
+    <url>/2020/04/21/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/</url>
+    <content><![CDATA[<p><strong>初始化语句</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE `t` (</span><br><span class="line">    -&gt;   `id` int(11) NOT NULL,</span><br><span class="line">    -&gt;   `c` int(11) DEFAULT NULL,</span><br><span class="line">    -&gt;   `d` int(11) DEFAULT NULL,</span><br><span class="line">    -&gt;   PRIMARY KEY (`id`),</span><br><span class="line">    -&gt;   KEY `c` (`c`)</span><br><span class="line">    -&gt; ) ENGINE=InnoDB;</span><br><span class="line">Query OK, 0 rows affected (0.06 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; </span><br><span class="line">mysql&gt; insert into t values(0,0,0),(5,5,5),</span><br><span class="line">    -&gt; (10,10,10),(15,15,15),(20,20,20),(25,25,25);</span><br><span class="line">Query OK, 6 rows affected (0.04 sec)</span><br><span class="line">Records: 6  Duplicates: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>隔离级别</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; select @@tx_isolation;</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| @@tx_isolation  |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">| REPEATABLE-READ |</span><br><span class="line">+<span class="comment">-----------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">select</span> @@global.tx_isolation;</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| @@global.tx_isolation |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| REPEATABLE-READ       |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<h1 id="幻读是什么？"><a href="#幻读是什么？" class="headerlink" title="幻读是什么？"></a>幻读是什么？</h1><table>
+<thead>
+<tr>
+<th></th>
+<th>sessionA</th>
+<th>sessionB</th>
+<th>seesionC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>begin;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select * from t where d=5 for update;/*Q1/ result:(5,5,5)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T2</td>
+<td></td>
+<td>update t set d=5 where id=0;</td>
+<td></td>
+</tr>
+<tr>
+<td>T3</td>
+<td>select * from t where d=5 for update;/*Q2/ result:(0,0,5),(5,5,5)</td>
+<td></td>
+<td>insert into t values(1,1,5);</td>
+</tr>
+<tr>
+<td>T4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T5</td>
+<td>select * from t where d=5 for update;/*Q3/ result:(0,0,5),(1,1,5),(5,5,5)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T6</td>
+<td>commit;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.Q1 只返回 id&#x3D;5 这一行；</span><br><span class="line">2.在 T2 时刻，session B 把 id&#x3D;0 这一行的 d 值改成了 5，因此 T3 时刻 Q2 查出来的是 id&#x3D;0 和 id&#x3D;5 这两行；</span><br><span class="line">3.在 T4 时刻，session C 又插入一行（1,1,5），因此 T5 时刻 Q3 查出来的是 id&#x3D;0、id&#x3D;1 和 id&#x3D;5 的这三行。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中，Q3 读到 id=1 这一行的现象，被称为“幻读”。也就是说，幻读指的是一个事务在前后两次查询同一个范围的时候，后一次查询看到了前一次查询没有看到的行。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.在可重复读隔离级别下，普通的查询是快照读，是不会看到别的事务插入的数据的。因此，幻读在“当前读”下才会出现。</span><br><span class="line">2.上面 session B 的修改结果，被 session A 之后的 select 语句用“当前读”看到，不能称为幻读。幻读仅专指“新插入的行”。</span><br></pre></td></tr></table></figure>
+
+<h2 id="幻读有什么问题？"><a href="#幻读有什么问题？" class="headerlink" title="幻读有什么问题？"></a>幻读有什么问题？</h2><ul>
+<li>首先是语义上的。</li>
+<li>其次，是数据一致性的问题。</li>
+<li>也就是说，即使把所有的记录都加上锁，还是阻止不了新插入的记录</li>
+</ul>
+<h2 id="如何解决幻读？"><a href="#如何解决幻读？" class="headerlink" title="如何解决幻读？"></a>如何解决幻读？</h2><blockquote>
+<p>产生幻读的原因是，行锁只能锁住行，但是新插入记录这个动作，要更新的是记录之间的“间隙”。因此，为了解决幻读问题，InnoDB 只好引入新的锁，也就是间隙锁 (Gap Lock)。间隙锁和 next-key lock 的引入，帮我们解决了幻读的问题，但同时也带来了一些“困扰”。间隙锁的引入，可能会导致同样的语句锁住更大的范围，这其实是影响了并发度的。</p>
+</blockquote>
+<ul>
+<li>间隙锁是在可重复读隔离级别下才会生效的</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL实战45讲</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>事务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源工具cannal</title>
+    <url>/2020/04/15/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7cannal/</url>
+    <content><![CDATA[<blockquote>
+<p>云数据库Polardb如何获取事务提交时间戳</p>
+</blockquote>
+<h2 id="polardb-需开启binlog"><a href="#polardb-需开启binlog" class="headerlink" title="polardb 需开启binlog"></a>polardb 需开启binlog</h2><ul>
+<li>修改当前值<strong>loose_polar_log_bin</strong></li>
+</ul>
+<p><strong>说明</strong></p>
+<ul>
+<li><p>数据库引擎为MySQL 5.6的PolarDB集群，当前值修改为ON_WITH_GTID；</p>
+</li>
+<li><p>数据库引擎为MySQL 8.0的PolarDB集群，当前值修改为ON。</p>
+</li>
+</ul>
+<h2 id="canal拉取binlog"><a href="#canal拉取binlog" class="headerlink" title="canal拉取binlog"></a>canal拉取binlog</h2><p>简介：（阿里巴巴 MySQL binlog 增量订阅&amp;消费组件）</p>
+<p><em>参考：<a href="https://github.com/alibaba/canal" target="_blank" rel="noopener">https://github.com/alibaba/canal</a></em></p>
+<a id="more"></a>
+
+
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul>
+<li><p>下载 canal, 访问 <a href="https://github.com/alibaba/canal/releases" target="_blank" rel="noopener">release 页面</a> , 选择需要的包下载, 如以 1.1.4 版本为例</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;alibaba&#x2F;canal&#x2F;releases&#x2F;download&#x2F;canal-1.1.4&#x2F;canal.deployer-1.1.4.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h1 id="canal-python"><a href="#canal-python" class="headerlink" title="canal-python"></a>canal-python</h1><h2 id="一-canal-python-简介"><a href="#一-canal-python-简介" class="headerlink" title="一.canal-python 简介"></a>一.canal-python 简介</h2><p>canal-python 是阿里巴巴开源项目 <a href="https://github.com/alibaba/canal" target="_blank" rel="noopener">Canal</a>是阿里巴巴mysql数据库binlog的增量订阅&amp;消费组件 的 python 客户端。为 python 开发者提供一个更友好的使用 Canal 的方式。Canal 是mysql数据库binlog的增量订阅&amp;消费组件。</p>
+<p>基于日志增量订阅&amp;消费支持的业务：</p>
+<ol>
+<li>数据库镜像</li>
+<li>数据库实时备份</li>
+<li>多级索引 (卖家和买家各自分库索引)</li>
+<li>search build</li>
+<li>业务cache刷新</li>
+<li>价格变化等重要业务消息</li>
+</ol>
+<p>关于 Canal 的更多信息请访问 <a href="https://github.com/alibaba/canal/wiki" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki</a></p>
+<h2 id="二-应用场景"><a href="#二-应用场景" class="headerlink" title="二.应用场景"></a>二.应用场景</h2><p>canal-python 作为Canal的客户端，其应用场景就是Canal的应用场景。关于应用场景在Canal介绍一节已有概述。举一些实际的使用例子：</p>
+<p>1.代替使用轮询数据库方式来监控数据库变更，有效改善轮询耗费数据库资源。</p>
+<p>2.根据数据库的变更实时更新搜索引擎，比如电商场景下商品信息发生变更，实时同步到商品搜索引擎 Elasticsearch、solr等</p>
+<p>3.根据数据库的变更实时更新缓存，比如电商场景下商品价格、库存发生变更实时同步到redis</p>
+<p>4.数据库异地备份、数据同步</p>
+<p>5.根据数据库变更触发某种业务，比如电商场景下，创建订单超过xx时间未支付被自动取消，我们获取到这条订单数据的状态变更即可向用户推送消息。</p>
+<p>6.将数据库变更整理成自己的数据格式发送到kafka等消息队列，供消息队列的消费者进行消费。</p>
+<h2 id="三-工作原理"><a href="#三-工作原理" class="headerlink" title="三.工作原理"></a>三.工作原理</h2><p>canal-python 是 Canal 的 python 客户端，它与 Canal 是采用的Socket来进行通信的，传输协议是TCP，交互协议采用的是 Google Protocol Buffer 3.0。</p>
+<h2 id="四-工作流程"><a href="#四-工作流程" class="headerlink" title="四.工作流程"></a>四.工作流程</h2><p>1.Canal连接到mysql数据库，模拟slave</p>
+<p>2.canal-python 与 Canal 建立连接</p>
+<p>2.数据库发生变更写入到binlog</p>
+<p>5.Canal向数据库发送dump请求，获取binlog并解析</p>
+<p>4.canal-python 向 Canal 请求数据库变更</p>
+<p>4.Canal 发送解析后的数据给canal-python</p>
+<p>5.canal-python收到数据，消费成功，发送回执。（可选）</p>
+<p>6.Canal记录消费位置。</p>
+<h2 id="五-快速启动"><a href="#五-快速启动" class="headerlink" title="五.快速启动"></a>五.快速启动</h2><h3 id="安装Canal"><a href="#安装Canal" class="headerlink" title="安装Canal"></a>安装Canal</h3><p>Canal 的安装以及配置使用请查看 <a href="https://github.com/alibaba/canal/wiki/QuickStart" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki/QuickStart</a></p>
+<p>安装java请查看 <a href="https://www.cnblogs.com/lumama520/p/11058927.html" target="_blank" rel="noopener">https://www.cnblogs.com/lumama520/p/11058927.html</a></p>
+<h3 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h3><p>python &gt;= 3</p>
+<h3 id="构建canal-python客户端"><a href="#构建canal-python客户端" class="headerlink" title="构建canal python客户端"></a>构建canal python客户端</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install canal-python</span><br><span class="line">pip install protobuf</span><br></pre></td></tr></table></figure>
+
+<h3 id="建立与Canal的连接"><a href="#建立与Canal的连接" class="headerlink" title="建立与Canal的连接"></a>建立与Canal的连接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim canalpython.py</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">from canal.client import Client</span><br><span class="line">from canal.protocol import EntryProtocol_pb2</span><br><span class="line">from canal.protocol import CanalProtocol_pb2</span><br><span class="line"></span><br><span class="line">client &#x3D; Client()</span><br><span class="line">client.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;11111)</span><br><span class="line">client.check_valid(username&#x3D;b&#39;&#39;, password&#x3D;b&#39;&#39;)</span><br><span class="line">client.subscribe(client_id&#x3D;b&#39;1001&#39;, destination&#x3D;b&#39;example&#39;, filter&#x3D;b&#39;.*\\..*&#39;)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    message &#x3D; client.get(100)</span><br><span class="line">    entries &#x3D; message[&#39;entries&#39;]</span><br><span class="line">    for entry in entries:</span><br><span class="line">        entry_type &#x3D; entry.entryType</span><br><span class="line">        if entry_type in [EntryProtocol_pb2.EntryType.TRANSACTIONBEGIN, EntryProtocol_pb2.EntryType.TRANSACTIONEND]:</span><br><span class="line">            continue</span><br><span class="line">        row_change &#x3D; EntryProtocol_pb2.RowChange()</span><br><span class="line">        row_change.MergeFromString(entry.storeValue)</span><br><span class="line">        event_type &#x3D; row_change.eventType</span><br><span class="line">        header &#x3D; entry.header</span><br><span class="line">        database &#x3D; header.schemaName</span><br><span class="line">        table &#x3D; header.tableName</span><br><span class="line">        event_type &#x3D; header.eventType</span><br><span class="line">        for row in row_change.rowDatas:</span><br><span class="line">            format_data &#x3D; dict()</span><br><span class="line">            if event_type &#x3D;&#x3D; EntryProtocol_pb2.EventType.DELETE:</span><br><span class="line">                for column in row.beforeColumns:</span><br><span class="line">                    format_data &#x3D; &#123;</span><br><span class="line">                        column.name: column.value</span><br><span class="line">                    &#125;</span><br><span class="line">            elif event_type &#x3D;&#x3D; EntryProtocol_pb2.EventType.INSERT:</span><br><span class="line">                for column in row.afterColumns:</span><br><span class="line">                    format_data &#x3D; &#123;</span><br><span class="line">                        column.name: column.value</span><br><span class="line">                    &#125;</span><br><span class="line">            else:</span><br><span class="line">                format_data[&#39;before&#39;] &#x3D; format_data[&#39;after&#39;] &#x3D; dict()</span><br><span class="line">                for column in row.beforeColumns:</span><br><span class="line">                    format_data[&#39;before&#39;][column.name] &#x3D; column.value</span><br><span class="line">                for column in row.afterColumns:</span><br><span class="line">                    format_data[&#39;after&#39;][column.name] &#x3D; column.value</span><br><span class="line">            data &#x3D; dict(</span><br><span class="line">                db&#x3D;database,</span><br><span class="line">                table&#x3D;table,</span><br><span class="line">                event_type&#x3D;event_type,</span><br><span class="line">                data&#x3D;format_data,</span><br><span class="line">            )</span><br><span class="line">            print(data)</span><br><span class="line">    time.sleep(1)</span><br><span class="line"></span><br><span class="line">client.disconnect()</span><br></pre></td></tr></table></figure>
+
+<h2 id="事务时间戳获取"><a href="#事务时间戳获取" class="headerlink" title="事务时间戳获取"></a>事务时间戳获取</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@Oracle01 ~]# mysql -uxxx -pxxx -hlocalhost</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> use qinxidb</span></span><br><span class="line">Database changed</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> insert into tb (userId) values (9161);</span></span><br><span class="line">Query OK, 1 row affected (0.10 sec)</span><br><span class="line"></span><br><span class="line">[root@Oracle01 canal]# python3 canalpython.py </span><br><span class="line">connected to 127.0.0.1:11111</span><br><span class="line">Auth succed</span><br><span class="line">Subscribe succed</span><br><span class="line">header &#123;</span><br><span class="line">  version: 1</span><br><span class="line">  logfileName: "mybinlog.000011"</span><br><span class="line">  logfileOffset: 38812146</span><br><span class="line">  serverId: 4</span><br><span class="line">  serverenCode: "UTF-8"</span><br><span class="line">  executeTime: 1586929590000</span><br><span class="line">  sourceType: MYSQL</span><br><span class="line">  eventLength: 75</span><br><span class="line">&#125;</span><br><span class="line">entryType: TRANSACTIONBEGIN</span><br><span class="line">storeValue: " \204\254\001"</span><br><span class="line"></span><br><span class="line">header &#123;</span><br><span class="line">  version: 1</span><br><span class="line">  logfileName: "mybinlog.000011"</span><br><span class="line">  logfileOffset: 38812269</span><br><span class="line">  serverId: 4</span><br><span class="line">  serverenCode: "UTF-8"</span><br><span class="line">  executeTime: 1586929590000</span><br><span class="line">  sourceType: MYSQL</span><br><span class="line">  schemaName: "qinxidb"</span><br><span class="line">  tableName: "tb"</span><br><span class="line">  eventLength: 40</span><br><span class="line">  eventType: INSERT</span><br><span class="line">  props &#123;</span><br><span class="line">    key: "rowsCount"</span><br><span class="line">    value: "1"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">entryType: ROWDATA</span><br><span class="line">storeValue: "\010\177\020\001P\000b#\022!\010\000\020\004\032\006userId \000(\0010\000B\0049161R\007int(11)"</span><br><span class="line"></span><br><span class="line">&#123;'db': 'qinxidb', 'table': 'tb', 'event_type': 1, 'data': &#123;'userId': '9161'&#125;&#125;</span><br><span class="line">header &#123;</span><br><span class="line">  version: 1</span><br><span class="line">  logfileName: "mybinlog.000011"</span><br><span class="line">  logfileOffset: 38812309</span><br><span class="line">  serverId: 4</span><br><span class="line">  serverenCode: "UTF-8"</span><br><span class="line">  executeTime: 1586929590000</span><br><span class="line">  sourceType: MYSQL</span><br><span class="line">  eventLength: 31</span><br><span class="line">&#125;</span><br><span class="line">entryType: TRANSACTIONEND</span><br><span class="line">storeValue: "\022\00551434"</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>开源工具</category>
+      </categories>
+      <tags>
+        <tag>Polardb for MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你改了我看不见?</title>
+    <url>/2020/04/15/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%94%B9%E4%BA%86%E6%88%91%E7%9C%8B%E4%B8%8D%E8%A7%81/</url>
+    <content><![CDATA[<p><strong>事务的基本要素(ACID)</strong></p>
+<ul>
+<li>原子性（Atomicity）；事务开始后所有操作，要么全部做完，要么全部不做，不能停滞在中间环节。</li>
+<li>一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏。</li>
+<li>隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。</li>
+<li>持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</li>
+</ul>
+<p><strong>事务的并发问题</strong></p>
+<ul>
+<li>脏读：事务B修改数据但未提交，事务A读数据，然后B回滚，则A读到的是脏数据。</li>
+<li>不可重复读：事务A第一次读取数据，事务B修改数据提交，事务A第二次读数据，两次数据不一致。</li>
+<li>幻读：事务A update表的全部行，事务B插入一行，事务A就会发现表中还有未修改的行。（一般加间隙锁）</li>
+</ul>
+<p><strong>MySQL事务隔离级别</strong></p>
+<table>
+<thead>
+<tr>
+<th>事务隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读未提交</td>
+<td>会</td>
+<td>会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>读已提交</td>
+<td>不会</td>
+<td>会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>可重复读</td>
+<td>不会</td>
+<td>不会</td>
+<td>会</td>
+</tr>
+<tr>
+<td>串行话</td>
+<td>不会</td>
+<td>不会</td>
+<td>不会</td>
+</tr>
+</tbody></table>
+<p><strong>案例</strong></p>
+<table>
+<thead>
+<tr>
+<th>事务A</th>
+<th>事务B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动事务；查询得到值</td>
+<td>启动事务</td>
+</tr>
+<tr>
+<td></td>
+<td>查询得到值1</td>
+</tr>
+<tr>
+<td></td>
+<td>将1改成2</td>
+</tr>
+<tr>
+<td>查询得到值V1</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>提交事务B</td>
+</tr>
+<tr>
+<td>查询得到值V2</td>
+<td></td>
+</tr>
+<tr>
+<td>提交事务A</td>
+<td></td>
+</tr>
+<tr>
+<td>查询得到值V3</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>若隔离级别是“读未提交”， 则 V1 的值就是 2。这时候事务 B 虽然还没有提交，但是结果已经被 A 看到了。因此，V2、V3 也都是 2。</p>
+</li>
+<li><p>若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以，V3的值也是2。</p>
+</li>
+<li><p>若隔离级别是“可重复读”，则 V1、V2 是 1，V3 是 2。之所以 V2 还是 1，遵循的就是这个要求：事务在执行期间看到的数据前后必须是一致的。</p>
+</li>
+<li><p>若隔离级别是“串行化”，则在事务 B 执行“将 1 改成 2”的时候，会被锁住。直到事务 A 提交后，事务 B 才可以继续执行。所以从 A 的角度看， V1、V2 值是 1，V3 的值是 2。</p>
+</li>
+</ul>
+<p>在实现上，数据库里面会创建一个视图，访问的时候以视图的逻辑结果为准。</p>
+<ul>
+<li>在“可重复读”隔离级别下，这个视图是在事务启动时创建的，整个事务存在期间都用这个视图。</li>
+<li>在“读提交”隔离级别下，这个视图是在每个SQL语句开始执行的时候创建的。</li>
+<li>在“读未提交”隔离级别下直接返回记录下的最新之，没有视图概念。</li>
+<li>而“串性化”隔离级别下直接用加锁的方式来避免并行访问。</li>
+</ul>
+<p>为保证数据库隔离级别一致，你一定要记得将MYSQL的隔离级别设置为“读提交”。</p>
+]]></content>
+      <categories>
+        <category>MySQL实战45讲</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>事务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql误删数据谁来背锅</title>
+    <url>/2020/04/10/MySQL/mysql%E8%AF%AF%E5%88%A0%E6%95%B0%E6%8D%AE%E8%B0%81%E6%9D%A5%E8%83%8C%E9%94%85/</url>
+    <content><![CDATA[<blockquote>
+<p>我们不止要说误删数据的事后处理办法，更重要是要做到事前预防。</p>
+</blockquote>
+<p><em>误删数据分类</em></p>
+<ul>
+<li>使用 delete 语句误删数据行；</li>
+<li>使用 drop table 或者 truncate table 语句误删数据表；</li>
+<li>使用 drop database 语句误删数据库；</li>
+<li>使用 rm 命令误删整个 MySQL 实例。<a id="more"></a>
+
+</li>
+</ul>
+<p><em>需要完善自动恢复脚本</em></p>
+<blockquote>
+<p>一种加速的方法是，在用备份恢复出临时实例之后，将这个临时实例设置成线上备库的从库</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.恢复全量备份</span></span><br><span class="line">a.指定全量备份路径</span><br><span class="line">b.写入全量备份名称</span><br><span class="line">c.恢复全量备份到指定临时实例</span><br><span class="line"></span><br><span class="line">在 start slave 之前，先通过执行﻿﻿change replication filter replicate_do_table = (tbl_name) 命令，就可以让临时库只同步误操作的表；</span><br><span class="line">这样做也可以用上并行复制技术，来加速整个数据恢复过程。</span><br><span class="line"><span class="comment">#2.自动恢复binlog</span></span><br><span class="line">a.指定binlog备份路径</span><br><span class="line">b.指定需要恢复的binlog名称（1个或者多个）</span><br><span class="line">c.恢复binlog到指定临时实例</span><br></pre></td></tr></table></figure>
+
+<p><em>预防误删库 / 表的方法</em></p>
+<ul>
+<li><p>第一条建议是，账号分离。这样做的目的是，避免写错命令。</p>
+<blockquote>
+<p>比如：我们只给业务开发同学 DML 权限，而不给 truncate/drop 权限。<br>而如果业务开发人员有 DDL 需求的话，也可以通过开发管理系统得到支持。<br>即使是 DBA 团队成员，日常也都规定只使用只读账号，必要的时候才使用有更新权限的账号。</p>
+</blockquote>
+</li>
+<li><p>第二条建议是，制定操作规范。</p>
+<blockquote>
+<p>这样做的目的，是避免写错要删除的表名。<br>比如：在删除数据表之前，必须先对表做改名操作。然后，观察一段时间，确保对业务无影响以后再删除这张表。<br>改表名的时候，要求给表名加固定的后缀（比如加 _to_be_deleted)，然后删除表的动作必须通过管理系统执行。并且，管理系删除表的时候，只能删除固定后缀的表。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MonogDB非关系型数据库</title>
+    <url>/2020/04/04/MongoDB/MonogDB%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="1-MonogDB简介"><a href="#1-MonogDB简介" class="headerlink" title="1.MonogDB简介"></a>1.MonogDB简介</h1><p>MongoDB 是一款强大，灵活，且易于扩展的通用性数据库，<strong>面向文档的数据库</strong>。</p>
+<ul>
+<li>二级索引</li>
+<li>范围查询</li>
+<li>排序</li>
+<li>聚合</li>
+<li>地理空间索引</li>
+</ul>
+<a id="more"></a>
+
+<p>丰富的功能：</p>
+<ul>
+<li>索引（indexing）</li>
+</ul>
+<p>MongoDB支持通用二级索引，允许多种快速查询，且提供唯一索引、复合索引、地理空间索引，以及全文索引。</p>
+<ul>
+<li>聚合（aggregation）</li>
+</ul>
+<p>MongoDB支持“聚合管道”。用户能通过简单的片段创建复杂的聚合，并通过数据库自动优化。</p>
+<ul>
+<li>特殊的集合类型</li>
+</ul>
+<p>MongoDB支持存在时间有限的集合，适用于那些将在某个时刻过期的数据，如会话。固定大小的集合，用于保存近期数据，如日志。</p>
+<ul>
+<li>文件存储</li>
+</ul>
+<p>MongoDB支持一种非常医用的协议，用于存储大文件和文件元数据。</p>
+<p>基本概念：</p>
+<ul>
+<li>文档是MongoDB中数据的基本单元，非常类似于关系型数据库管理系统中的行，但更具有表现力。</li>
+<li>集合是一个拥有动态模式的表。</li>
+<li>MongoDB的一个实例可以拥有多个相互独立的数据库，每一个数据库都拥有自己的集合。</li>
+<li>每一个文档都有一个特殊的键“_id”,这个键在文档所属的集合中是唯一的。</li>
+<li>MongoDB自带了一个简单但功能强大的JavaScript shell，可用于管理MongoDB的实例或数据操作。</li>
+</ul>
+<h1 id="2-基础知识"><a href="#2-基础知识" class="headerlink" title="2.基础知识"></a>2.基础知识</h1><p>集合命名：</p>
+<ul>
+<li>集合名不能使空字符串（””）</li>
+<li>集合名不能包含\0字符（空字符），这个字符表示集合名的结束。</li>
+<li>集合名不能以”system.”开头，这是为系统集合保留的前缀。</li>
+<li>用户创建的集合不能在集合名中包含保留字符’$’。</li>
+</ul>
+<p>子集合：</p>
+<p>组合集合的一种惯例是使用“.”分隔不同命名空间的子集合。</p>
+<ul>
+<li>GridFS使用自己和来存储文件的元数据，这样就可以与文件内容块很好地隔离开来。</li>
+<li>大多数驱动程序都提供了一些语法糖，用于访问指定集合的子集合。</li>
+</ul>
+<p>数据库：</p>
+<ul>
+<li>多个文档组成集合，多个集合可以组成数据库。</li>
+<li>一个MongoDB实例可以承载多个数据库，每个数据库拥有0个或者多个集合。</li>
+<li>每个数据库斗殴独立的权限，即便是在磁盘上，不同的数据库也放置在不同的文件中。</li>
+</ul>
+<p>数据库命名：</p>
+<ul>
+<li>不能空字符串（””）</li>
+<li>基本只能使用ASCII中的字母和数字。</li>
+<li>数据库名区分大小写（不区分大小写的文件系统也是如此，建议全部小写）。</li>
+<li>数据库名最多为64字节。</li>
+</ul>
+<h1 id="3-启动关闭MongoDB"><a href="#3-启动关闭MongoDB" class="headerlink" title="3.启动关闭MongoDB"></a>3.启动关闭MongoDB</h1><ul>
+<li>mongod默认数据目录/data/db（Windows系统中为C:\data\db）。</li>
+<li>启动前，创建数据目录（mkdir -p /data/db）,确保对改目录有写权限。</li>
+<li>默认MonoDB监听27017端口。</li>
+</ul>
+<h1 id="4-MonogDB客户端"><a href="#4-MonogDB客户端" class="headerlink" title="4.MonogDB客户端"></a>4.MonogDB客户端</h1><ul>
+<li>启动时，mongodb shell会练到MongoDB服务器的test数据库，并将数据库连接赋值给全局变量db。</li>
+<li>这个变量是通过shell访问MongoDB的主要入口点。</li>
+</ul>
+<h1 id="5-shell中的基本操作"><a href="#5-shell中的基本操作" class="headerlink" title="5.shell中的基本操作"></a>5.shell中的基本操作</h1><p>1、创建</p>
+<ul>
+<li>insert函数可将一个文档添加到集合中。</li>
+<li>创建一个名为post的局部变量，用来表示我们的文档。</li>
+<li>它会有几个键：”title”、”content”、“date”。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; post &#x3D; &#123;&quot;title&quot;:&quot;this is test,&quot;&#125;</span><br><span class="line">&#123; &quot;title&quot; : &quot;this is test,&quot; &#125;</span><br><span class="line">&gt; post &#x3D; &#123;&quot;title&quot;:&quot;this is test&quot;,</span><br><span class="line">... &quot;content&quot; :&quot;here&#39;s my blog test&quot;,</span><br><span class="line">... &quot;data&quot;:new Date()&#125;</span><br><span class="line">&#123;</span><br><span class="line">	&quot;title&quot; : &quot;this is test&quot;,</span><br><span class="line">	&quot;content&quot; : &quot;here&#39;s my blog test&quot;,</span><br><span class="line">	&quot;data&quot; : ISODate(&quot;2017-10-12T03:20:09.121Z&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&gt; show dbs</span><br><span class="line">local  0.000GB</span><br><span class="line">&gt; use hjxdb</span><br><span class="line">switched to db hjxdb</span><br><span class="line">&gt; db.blog.insert(post);</span><br><span class="line">WriteResult(&#123; &quot;nInserted&quot; : 1 &#125;)</span><br><span class="line">&gt; db.blog.find()</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;59dedf7ecb7cf32013d3da35&quot;), &quot;title&quot; : &quot;this is test&quot;, &quot;content&quot; : &quot;here&#39;s my blog test&quot;, &quot;data&quot; : ISODate(&quot;2017-10-12T03:20:09.121Z&quot;) &#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、读取</p>
+<p>find和findOne方法可以用于查询集合里的文档。若只想查看一个文档，可用findOne：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; db.blog.findOne()</span><br><span class="line">&#123;</span><br><span class="line">	&quot;_id&quot; : ObjectId(&quot;59dedf7ecb7cf32013d3da35&quot;),</span><br><span class="line">	&quot;title&quot; : &quot;this is test&quot;,</span><br><span class="line">	&quot;content&quot; : &quot;here&#39;s my blog test&quot;,</span><br><span class="line">	&quot;data&quot; : ISODate(&quot;2017-10-12T03:20:09.121Z&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、更新</p>
+<ul>
+<li>update至少两个参数</li>
+<li>一个是限定条件,匹配待更新的文档</li>
+<li>一个是新的文档</li>
+<li>之前的文章增加平冷功能，新增一个键，用来保存评论数组</li>
+</ul>
+<p>增加”comments”键：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; post.comments &#x3D; []</span><br><span class="line">[ ]</span><br><span class="line">&gt; db.blog.update(&#123;title:&quot;this is test&quot;&#125;,post)</span><br><span class="line">WriteResult(&#123; &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 &#125;)</span><br><span class="line">&gt; db.blog.find()</span><br><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;59dedf7ecb7cf32013d3da35&quot;), &quot;title&quot; : &quot;this is test&quot;, &quot;content&quot; : &quot;here&#39;s my blog test&quot;, &quot;data&quot; : ISODate(&quot;2017-10-12T03:20:09.121Z&quot;), &quot;comments&quot; : [ ] &#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、删除</p>
+<ul>
+<li>remove方法可将文档从数据库中永久删除。</li>
+<li>没有任何参数，将删除集合内的所有文档全部删除。</li>
+<li>接受一个限定条件的文档作为参数。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; db.blog.remove(&#123;title:&quot;this is test&quot;&#125;)</span><br><span class="line">WriteResult(&#123; &quot;nRemoved&quot; : 1 &#125;)</span><br><span class="line">&gt; db.blog.find()</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>MongoDB</category>
+      </categories>
+      <tags>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>豆瓣电影排行榜</title>
+    <url>/2020/04/04/Python/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C/</url>
+    <content><![CDATA[<h1 id="1-如何处理数据"><a href="#1-如何处理数据" class="headerlink" title="1.如何处理数据"></a>1.如何处理数据</h1><p>BeautifulSoup</p>
+<ul>
+<li>解析数据</li>
+<li>提出数据</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="2-案例"><a href="#2-案例" class="headerlink" title="2.案例"></a>2.案例</h1><h2 id="2-1获取豆瓣图书TOP250当中"><a href="#2-1获取豆瓣图书TOP250当中" class="headerlink" title="2.1获取豆瓣图书TOP250当中"></a>2.1获取豆瓣图书TOP250当中</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment"># 引入 BeautifulSoup</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">res = requests.get(<span class="string">'https://book.douban.com/top250'</span>, headers=headers)</span><br><span class="line"><span class="comment"># 第一个参数为网页源代码，第二个参数为解析器</span></span><br><span class="line">soup = BeautifulSoup(res.text, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment"># print(soup)</span></span><br><span class="line"><span class="comment"># items = soup.find_all('div', class_='pl2')</span></span><br><span class="line">items = soup.select(<span class="string">'div.pl2 a'</span>)</span><br><span class="line"><span class="comment"># print(items)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  <span class="comment"># tag = i.find('a')</span></span><br><span class="line">  <span class="comment"># name = ''.join(tag.text.split())</span></span><br><span class="line">  <span class="comment"># name = tag['title']</span></span><br><span class="line">  <span class="comment"># link = tag['href']</span></span><br><span class="line">  name = i[<span class="string">'title'</span>]</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  print(name, link)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2获取豆瓣电影的数据-电影名和链接"><a href="#2-2获取豆瓣电影的数据-电影名和链接" class="headerlink" title="2.2获取豆瓣电影的数据(电影名和链接)"></a>2.2获取豆瓣电影的数据(电影名和链接)</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'https://movie.douban.com/top250'</span>, headers=headers)</span><br><span class="line">soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">items = soup.select(<span class="string">'div.hd a'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> items:</span><br><span class="line">  link = i[<span class="string">'href'</span>]</span><br><span class="line">  tag = i.find(class_=<span class="string">'title'</span>)</span><br><span class="line">  name = tag.text</span><br><span class="line">  print(name,link)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>数据处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python爬虫初体验</title>
+    <url>/2020/04/04/Python/python%E7%88%AC%E8%99%AB%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res = requests.get(<span class="string">'https://wpblog.x0y1.com'</span>)</span><br><span class="line"><span class="comment">#print(res)</span></span><br><span class="line">print(res.text)</span><br><span class="line"><span class="keyword">if</span> res.status_code == <span class="number">200</span>:</span><br><span class="line">  print(<span class="string">'请求成功'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">'请求失败'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取孔乙己数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://apiv3.shanbay.com/codetime/articles/mnvdu'</span>)</span><br><span class="line"><span class="comment"># 以写入的方式打开一个名为孔乙己的 txt 文档</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'孔乙己.txt'</span>, <span class="string">'w'</span> ,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  <span class="comment"># 将数据的字符串形式写入文件中</span></span><br><span class="line">  file.write(res.text)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图片数据</span></span><br><span class="line">res = requests.get(<span class="string">'https://assets.baydn.com/baydn/public/codetime/xiaobei/info.jpg'</span>)</span><br><span class="line"><span class="comment"># 以二进制写入的方式打开一个名为 info.jpg 的文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'info.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line"><span class="comment"># 将数据的二进制形式写入文件中</span></span><br><span class="line">  file.write(res.content)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>变量 <strong>res</strong>它的类型是 <strong>Response</strong> 对象</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>res.status_code</td>
+<td>响应的 HTTP 状态码</td>
+</tr>
+<tr>
+<td>res.text</td>
+<td>响应内容的字符串形式</td>
+</tr>
+<tr>
+<td>res.content</td>
+<td>响应内容的二进制形式</td>
+</tr>
+<tr>
+<td>res.encoding</td>
+<td>响应内容的编码</td>
+</tr>
+</tbody></table>
+<h2 id="爬虫初体验"><a href="#爬虫初体验" class="headerlink" title="爬虫初体验"></a>爬虫初体验</h2><blockquote>
+<p>目标：自动循环小王子的所有章节，将故事存放到一个目录当中，每个章节一份文件。title做为文件名</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">'http://www.eywedu.net/xiaowangzi/14.htm'</span>)</span><br><span class="line">res.encoding=<span class="string">'gb2312'</span></span><br><span class="line">text = res.text</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open (<span class="string">'小王子.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">  file.write(text)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>InfluxDB时序数据库</title>
+    <url>/2020/02/25/InfluxDB/InfluxDB%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="Influx-DB的学习"><a href="#Influx-DB的学习" class="headerlink" title="Influx DB的学习"></a>Influx DB的学习</h1><h2 id="Influxdb-下载"><a href="#Influxdb-下载" class="headerlink" title="Influxdb 下载"></a>Influxdb 下载</h2><p>学习参考博客</p>
+<p>安装部署：</p>
+<p><a href="https://www.cnblogs.com/imyalost/p/9689209.html" target="_blank" rel="noopener">https://www.cnblogs.com/imyalost/p/9689209.html</a></p>
+<p>配置文件说明：</p>
+<p><a href="https://www.cnblogs.com/smail-bao/p/8080894.html" target="_blank" rel="noopener">https://www.cnblogs.com/smail-bao/p/8080894.html</a></p>
+<p>基本概念和操作：</p>
+<p><a href="https://www.cnblogs.com/wzbk/p/10569683.html" target="_blank" rel="noopener">https://www.cnblogs.com/wzbk/p/10569683.html</a></p>
+<p><a href="http://www.361way.com/influxdb-user/5291.html" target="_blank" rel="noopener">http://www.361way.com/influxdb-user/5291.html</a></p>
+<p>备份与恢复：</p>
+<p><a href="https://blog.csdn.net/weixin_44649870/article/details/96457486" target="_blank" rel="noopener">https://blog.csdn.net/weixin_44649870/article/details/96457486</a></p>
+<p>官网下载：</p>
+<p><a href="https://portal.influxdata.com/downloads/" target="_blank" rel="noopener">https://portal.influxdata.com/downloads/</a></p>
+<p>由于直接点击下载链接会被墙，导致下载按钮点击完无反应</p>
+<p>可以通过右键查看网页源代码，检索release，并找到对应版本&amp;平台的下载链接</p>
+<p><img src="C:%5CUsers%5Cadmin%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200224143032364.png" alt="image-20200224143032364"></p>
+<p><a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.7.10.x86_64.rpm" target="_blank" rel="noopener">https://dl.influxdata.com/influxdb/releases/influxdb-1.7.10.x86_64.rpm</a></p>
+<h2 id="Infuxdb-安装"><a href="#Infuxdb-安装" class="headerlink" title="Infuxdb 安装"></a>Infuxdb 安装</h2><p>[root@influx tmp]# yum install influxdb-1.7.10.x86_64.rpm</p>
+<p>直接通过yum安装，在测试安装时，本人采用的是minimal的Linux环境，发现不需要其他依赖包</p>
+<p>文件结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 路径：&#x2F;usr&#x2F;bin</span><br><span class="line">influxd            # influxdb服务器</span><br><span class="line">influx             # influxdb命令行客户端</span><br><span class="line">influx_inspect     # 查看工具</span><br><span class="line">influx_stress      # 压力测试工具</span><br><span class="line">influx_tsm         # 数据库转换工具（将数据库从b1或bz1格式转换为tsm1格式）</span><br><span class="line"></span><br><span class="line"># 路径：&#x2F;var&#x2F;lib&#x2F;influxdb&#x2F;</span><br><span class="line">data               # 存放最终存储的数据，文件以.tsm结尾</span><br><span class="line">meta               # 存放数据库元数据</span><br><span class="line">wal                # 存放预写日志文件</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><p>[root@influx influxdb]# service influxdb start</p>
+<h2 id="初步了解"><a href="#初步了解" class="headerlink" title="初步了解"></a>初步了解</h2><p>1、数据格式</p>
+<p>在 InfluxDB 中，我们可以粗略的将要存入的一条数据看作<strong>一个虚拟的 key 和其对应的 value(field value)</strong>。格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cpu_usage,host&#x3D;server01,region&#x3D;us-west value&#x3D;0.64 1434055562000000000</span><br></pre></td></tr></table></figure>
+
+
+
+<p>虚拟的 key 包括以下几个部分： database, retention policy, measurement, tag sets, field name, timestamp。</p>
+<ul>
+<li>database: 数据库名，在 InfluxDB 中可以创建多个数据库，不同数据库中的数据文件是隔离存放的，存放在磁盘上的不同目录。</li>
+<li>retention policy: 存储策略，用于设置数据保留的时间，每个数据库刚开始会自动创建一个默认的存储策略 autogen，数据保留时间为永久，之后用户可以自己设置，例如保留最近2小时的数据。插入和查询数据时如果不指定存储策略，则使用默认存储策略，且默认存储策略可以修改。InfluxDB 会定期清除过期的数据。</li>
+<li>measurement: 测量指标名，例如 cpu_usage 表示 cpu 的使用率。</li>
+<li>tag sets: tags 在 InfluxDB 中会按照字典序排序，不管是 tagk 还是 tagv，只要不一致就分别属于两个 key，例如 host=server01,region=us-west 和 host=server02,region=us-west 就是两个不同的 tag set。</li>
+<li>tag–标签，在InfluxDB中，tag是一个非常重要的部分，表名+tag一起作为数据库的索引，是“key-value”的形式。</li>
+<li>field name: 例如上面数据中的 value 就是 fieldName，InfluxDB 中支持一条数据中插入多个 fieldName，这其实是一个语法上的优化，在实际的底层存储中，是当作多条数据来存储。</li>
+<li>timestamp: 每一条数据都需要指定一个时间戳，在 TSM 存储引擎中会特殊对待，以为了优化后续的查询操作。</li>
+</ul>
+<p>2、与传统数据库中的名词做比较</p>
+<table>
+<thead>
+<tr>
+<th>influxDB中的名词</th>
+<th>传统数据库中的概念</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>database</td>
+<td>数据库</td>
+</tr>
+<tr>
+<td>measurement</td>
+<td>数据库中的表</td>
+</tr>
+<tr>
+<td>points</td>
+<td>表里面的一行数据</td>
+</tr>
+</tbody></table>
+<p>3、Point</p>
+<p>Point由时间戳（time）、数据（field）、标签（tags）组成。</p>
+<p>Point相当于传统数据库里的一行数据，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>Point属性</th>
+<th>传统数据库中的概念</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>time</td>
+<td>每个数据记录时间，是数据库中的主索引(会自动生成)</td>
+</tr>
+<tr>
+<td>fields</td>
+<td>各种记录值（没有索引的属性）</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>各种有索引的属性</td>
+</tr>
+</tbody></table>
+<p>4、Series</p>
+<p>​    Series 相当于是 InfluxDB 中一些数据的集合，在同一个 database 中，retention policy、measurement、tag sets 完全相同的数据同属于一个 series，同一个 series 的数据在物理上会按照时间顺序排列存储在一起。</p>
+<p>5、Shard</p>
+<p>​    Shard 在 InfluxDB 中是一个比较重要的概念，它和 retention policy 相关联。每一个存储策略下会存在许多 shard，每一个 shard 存储一个指定时间段内的数据，并且不重复，例如 7点-8点 的数据落入 shard0 中，8点-9点的数据则落入 shard1 中。每一个 shard 都对应一个底层的 tsm 存储引擎，有独立的 cache、wal、tsm file。</p>
+<p>6、组件</p>
+<p>TSM 存储引擎主要由几个部分组成： cache、wal、tsm file、compactor。</p>
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524092614591-2097512916.png" alt="img"></p>
+<p>1）Cache：cache 相当于是 LSM Tree 中的 memtabl。插入数据时，实际上是同时往 cache 与 wal 中写入数据，可以认为 cache 是 wal 文件中的数据在内存中的缓存。当 InfluxDB 启动时，会遍历所有的 wal 文件，重新构造 cache，这样即使系统出现故障，也不会导致数据的丢失。</p>
+<p>cache 中的数据并不是无限增长的，有一个 maxSize 参数用于控制当 cache 中的数据占用多少内存后就会将数据写入 tsm 文件。如果不配置的话，默认上限为 25MB，每当 cache 中的数据达到阀值后，会将当前的 cache 进行一次快照，之后清空当前 cache 中的内容，再创建一个新的 wal 文件用于写入，剩下的 wal 文件最后会被删除，快照中的数据会经过排序写入一个新的 tsm 文件中。</p>
+<p>2）WAL：wal 文件的内容与内存中的 cache 相同，其作用就是为了持久化数据，当系统崩溃后可以通过 wal 文件恢复还没有写入到 tsm 文件中的数据。</p>
+<p>3）TSM File：单个 tsm file 大小最大为 2GB，用于存放数据。</p>
+<p>4）Compactor：compactor 组件在后台持续运行，每隔 1 秒会检查一次是否有需要压缩合并的数据。</p>
+<p>主要进行两种操作，一种是 cache 中的数据大小达到阀值后，进行快照，之后转存到一个新的 tsm 文件中。</p>
+<p>另外一种就是合并当前的 tsm 文件，将多个小的 tsm 文件合并成一个，使每一个文件尽量达到单个文件的最大大小，减少文件的数量，并且一些数据的删除操作也是在这个时候完成。</p>
+<p>7、目录与文件结构</p>
+<p>InfluxDB 的数据存储主要有三个目录。默认情况下是 meta, wal 以及 data 三个目录。</p>
+<p>meta 用于存储数据库的一些元数据，meta 目录下有一个 <code>meta.db</code> 文件。</p>
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524093235825-1659794905.png" alt="img"></p>
+<p>wal 目录存放预写日志文件，以 <code>.wal</code> 结尾。</p>
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524093306075-667589526.png" alt="img"></p>
+<p>data 目录存放实际存储的数据文件，以 <code>.tsm</code> 结尾。</p>
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524093334310-39898491.png" alt="img"></p>
+<p>上面几张图中，_internal为数据库名，monitor为存储策略名称，再下一层目录中的以数字命名的目录是 shard 的 ID 值。</p>
+<p>存储策略下有两个 shard，ID 分别为 1 和 2，shard 存储了某一个时间段范围内的数据。再下一级的目录则为具体的文件，分别是 <code>.wal</code> 和 <code>.tsm</code> 结尾的文件。</p>
+<h2 id="InfluxDB基本操作"><a href="#InfluxDB基本操作" class="headerlink" title="InfluxDB基本操作"></a>InfluxDB基本操作</h2><p>InfluxDB提供多种操作方式：</p>
+<p>1）客户端命令行方式</p>
+<p>2）HTTP API接口</p>
+<p>3）各语言API库</p>
+<p>4）基于WEB管理页面操作</p>
+<h2 id="客户端命令行方式操作"><a href="#客户端命令行方式操作" class="headerlink" title="客户端命令行方式操作"></a>客户端命令行方式操作</h2><p>进入命令行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">influx -precision rfc3339</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524094159044-437051621.png" alt="img"></p>
+<p>1、InfluxDB数据库操作</p>
+<ul>
+<li>显示数据库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show databases</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524094353341-524545793.png" alt="img"></p>
+<ul>
+<li>新建数据库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create database shhnwangjian</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524094458435-2086705134.png" alt="img"></p>
+<ul>
+<li>删除数据库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop database shhnwangjian</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524094543872-2074134150.png" alt="img"></p>
+<ul>
+<li>使用指定数据库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use shhnwangjian</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524094640560-11200090.png" alt="img"></p>
+<p>2、InfluxDB数据表操作</p>
+<p>在InfluxDB当中，并没有表（table）这个概念，取而代之的是MEASUREMENTS，MEASUREMENTS的功能与传统数据库中的表一致，因此我们也可以将MEASUREMENTS称为InfluxDB中的表。</p>
+<ul>
+<li>显示所有表</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SHOW MEASUREMENTS</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>新建表</li>
+</ul>
+<p>InfluxDB中没有显式的新建表的语句，只能通过insert数据的方式来建立新表。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert disk_free,hostname&#x3D;server01 value&#x3D;442221834240i</span><br></pre></td></tr></table></figure>
+
+
+
+<p>其中 disk_free 就是表名，hostname是索引（tag），value=xx是记录值（field），记录值可以有多个，系统自带追加时间戳</p>
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524100913700-845650904.png" alt="img"></p>
+<p>或者添加数据时，自己写入时间戳</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert disk_free,hostname&#x3D;server01 value&#x3D;442221834240i 1435362189575692182</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images2015.cnblogs.com/blog/830561/201705/830561-20170524101014904-2003353778.png" alt="img"></p>
+<ul>
+<li>删除表</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop measurement disk_free</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3、数据保存策略（Retention Policies）</p>
+<p>influxDB是没有提供直接删除数据记录的方法，但是提供数据保存策略，主要用于指定数据保留时间，超过指定时间，就删除这部分数据。</p>
+<ul>
+<li>查看当前数据库Retention Policies</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show retention policies on &quot;db_name&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images2017.cnblogs.com/blog/830561/201708/830561-20170807085757987-166994246.png" alt="img"></p>
+<ul>
+<li>创建新的Retention Policies</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create retention policy &quot;rp_name&quot; on &quot;db_name&quot; duration 3w replication 1 default</span><br></pre></td></tr></table></figure>
+
+
+
+<p>rp_name：策略名；</p>
+<p>db_name：具体的数据库名；</p>
+<p>3w：保存3周，3周之前的数据将被删除，influxdb具有各种事件参数，比如：h（小时），d（天），w（星期）；</p>
+<p>replication 1：副本个数，一般为1就可以了；</p>
+<p>default：设置为默认策略</p>
+<ul>
+<li>修改Retention Policies</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter retention policy &quot;rp_name&quot; on &quot;db_name&quot; duration 30d default</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>删除Retention Policies</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop retention policy &quot;rp_name&quot; on &quot;db_name&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>4、连续查询（Continuous Queries）</p>
+<p>InfluxDB的连续查询是在数据库中自动定时启动的一组语句，语句中必须包含 <code>SELECT</code>关键词和<code>GROUP BY time()</code>关键词。</p>
+<p>InfluxDB会将查询结果放在指定的数据表中。</p>
+<p><strong>目的：</strong>使用连续查询是最优的降低采样率的方式，连续查询和存储策略搭配使用将会大大降低InfluxDB的系统占用量。而且使用连续查询后，数据会存放到指定的数据表中，这样就为以后统计不同精度的数据提供了方便。</p>
+<ul>
+<li>新建连续查询</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE CONTINUOUS QUERY &lt;cq_name&gt; ON &lt;database_name&gt;</span><br><span class="line">[RESAMPLE [EVERY &lt;interval&gt;] [FOR &lt;interval&gt;]]</span><br><span class="line">BEGIN SELECT &lt;function&gt;(&lt;stuff&gt;)[,&lt;function&gt;(&lt;stuff&gt;)] INTO &lt;different_measurement&gt; </span><br><span class="line">FROM &lt;current_measurement&gt; [WHERE &lt;stuff&gt;] GROUP BY time(&lt;interval&gt;)[,&lt;stuff&gt;]</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+
+
+<p> 样例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE CONTINUOUS QUERY wj_30m ON shhnwangjian BEGIN SELECT mean(connected_clients), MEDIAN(connected_clients), MAX(connected_clients), MIN(connected_clients) INTO redis_clients_30m FROM redis_clients GROUP BY ip,port,time(30m) END</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在shhnwangjian库中新建了一个名为 wj_30m 的连续查询，每三十分钟取一个connected_clients字段的平均值、中位值、最大值、最小值 redis_clients_30m 表中。使用的数据保留策略都是 default。</p>
+<p>不同database样例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE CONTINUOUS QUERY wj_30m ON shhnwangjian_30 BEGIN SELECT mean(connected_clients), MEDIAN(connected_clients), MAX(connected_clients), MIN(connected_clients) INTO shhnwangjian_30.autogen.redis_clients_30m FROM shhnwangjian.autogen.redis_clients GROUP BY ip,port,time(30m) END</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>显示所有已存在的连续查询</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SHOW CONTINUOUS QUERIES</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images2017.cnblogs.com/blog/830561/201708/830561-20170807103904377-207403322.png" alt="img"></p>
+<ul>
+<li>删除Continuous Queries</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DROP CONTINUOUS QUERY &lt;cq_name&gt; ON &lt;database_name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>用户管理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 显示用户</span><br><span class="line">SHOW USERS</span><br><span class="line"># 创建用户</span><br><span class="line">CREATE USER &quot;username&quot; WITH PASSWORD &#39;password&#39;</span><br><span class="line"># 创建管理员权限的用户</span><br><span class="line">CREATE USER &quot;username&quot; WITH PASSWORD &#39;password&#39; WITH ALL PRIVILEGES</span><br><span class="line"># 删除用户</span><br><span class="line">DROP USER &quot;username&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="备份与恢复"><a href="#备份与恢复" class="headerlink" title="备份与恢复"></a>备份与恢复</h2><p>备份元数据</p>
+<p>influxd backup 元数据存储位置<br>influxd backup -host localhost:8088 元数据存储位置   # 远程备份</p>
+<p>备份数据库</p>
+<p>influxd backup -database database_name  数据存储位置<br>influxd backup -database database_name -host localhost:8088 数据存储位置   # 远程备份</p>
+<p>恢复元数据</p>
+<p>influxd restore -metadir /var/lib/influxdb/meta/ 元数据存储位置</p>
+<p>恢复数据库</p>
+<p>influxd restore -database database_name -datadir /var/lib/influxdb/data 数据存储位置</p>
+<p>修改权限</p>
+<p>chown -R influxdb:influxdb /var/lib/influxdb</p>
+<p>重启influxdb</p>
+<p>service influxdb stop<br>service influxdb start</p>
+]]></content>
+      <categories>
+        <category>时序数据库</category>
+      </categories>
+      <tags>
+        <tag>InfluxDB</tag>
+      </tags>
+  </entry>
+</search>
