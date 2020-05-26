@@ -5,7 +5,7 @@
     <url>/2020/05/27/Python/python3%E7%89%88%E6%9C%ACtime%E6%A8%A1%E6%A8%A1%E5%9D%97%E6%8F%90%E7%A4%BAlocale%E6%8A%A5%E9%94%99/</url>
     <content><![CDATA[<p><a href="https://www.cnblogs.com/nisen/p/6101196.html" target="_blank" rel="noopener">locale帮助</a></p>
 <div class="note warning">
-            <p>print(time.strftime(u’%Y年%m月%d日’,time.localtime(time.time())))<br>Traceback (most recent call last):<br>  File “<input>“, line 1, in <module><br>UnicodeEncodeError: ‘locale’ codec can’t encode character ‘\u5e74’ in position 2: encoding error</p>
+            <p>print(time.strftime(u’%Y年%m月%d日’,time.localtime(time.time())))<br>Traceback (most recent call last):<br>UnicodeEncodeError: ‘locale’ codec can’t encode character ‘\u5e74’ in position 2: encoding error</p>
           </div>
 
 <div class="note success">
