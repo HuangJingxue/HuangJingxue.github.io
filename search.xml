@@ -1860,8 +1860,8 @@
             <p>NumPy 中最重要的对象是<strong>多维数组（ndarray）</strong>，ndarray 是 N-dimensional array，即 N 维数组。</p>
           </div>
 
-<p>创建数组 <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">Click
-  </a><span class="hide-content">np.array()</span></span><br>生成元素全为0的多维数组<code>默认生成的是浮点数</code> <span class="hide-inline"><a class="hide-button button--primary button--animated" style="background-color: #FF7242;color: #fff">点击一下
+<p>创建数组 <span class="hide-inline"><a class="hide-button button--primary button--animated" style="background-color: #FF7242;color: #fff">点击一下
+  </a><span class="hide-content">np.array()</span></span><br>生成元素全为0的多维数组<code>默认生成的是浮点数</code> <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">点击一下
   </a><span class="hide-content">np.ones()</span></span><br>生成元素全为1的多维数组<code>默认生成的是浮点数</code> <span class="hide-inline"><a class="hide-button button--primary button--animated" style="background-color: #FF7242;color: #fff">点击一下
   </a><span class="hide-content">np.zeros()</span></span></p>
 <h3 id="多维数组的加减乘除"><a href="#多维数组的加减乘除" class="headerlink" title="多维数组的加减乘除"></a>多维数组的加减乘除</h3><img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/3.jpg" class="" title="多维数组的加减乘除">
@@ -1870,7 +1870,7 @@
 <img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/6.jpg" class="" title="多维数组直接和数字进行计算">
 
 <p>广播是什么？ <span class="hide-inline"><a class="hide-button button--primary button--animated" style="background-color: #FF7242;color: #fff">查看答案
-  </a><span class="hide-content">多维数组和数字的四则运算会作用在数组中的每个元素上，这在 numpy 中被称为 广播（Broadcasting)</span></span><br>矢量化是什么？ <span class="hide-inline"><a class="hide-button button--primary button--animated" style="background-color: #FF7242;color: #fff">查看答案
+  </a><span class="hide-content">多维数组和数字的四则运算会作用在数组中的每个元素上，这在 numpy 中被称为 广播（Broadcasting)</span></span><br>矢量化是什么？ <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">查看答案
   </a><span class="hide-content">numpy 中这种不用编写循环就可以对数据进行批量运算的方式叫做 矢量化</span></span></p>
 <img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/7.jpg" class="" title="多维数组索引和分片">
 
