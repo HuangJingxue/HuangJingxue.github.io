@@ -55,6 +55,8 @@
 <blockquote>
 <p>离中趋势是指一组数据中各数据值以不同程度的距离偏离其中心（平均数）的趋势。其常用指标有 极差、方差 和标准差。<br>极差是一组数据的最大值减去最小值得到的，反应了数据变动的最大范围。<br>方差的计算方式是：将一组数据中的每个数减去这组数据的平均数，然后将得到的结果进行平方求和，最后再除以数据的个数。<br>而方差的平方根则是标准差。因为方差是对数据进行平方得到的，所以量纲（单位）和原数据不一致。对方差进行开根号后得到的标准差量纲和原数据一致，使用起来更方便。</p>
 </blockquote>
+<img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/8.jpg" class="" title="统计学函数">
+
 </li>
 </ul>
 <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a><a href="https://github.com/HuangJingxue/apple_python/blob/master/data_analysis/ndarray.py" target="_blank" rel="noopener">练习</a></h2>]]></content>
