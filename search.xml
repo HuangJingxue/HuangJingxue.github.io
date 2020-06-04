@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>01关-Numpy初识</title>
+    <url>/2020/06/04/Python%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/</url>
+    <content><![CDATA[<div class="note info">
+            <p>数据分析需要三方面的知识：分析工具、统计学知识、行业基本知识。</p>
+          </div>
+
+
+<h1 id="数据分析完整的过程"><a href="#数据分析完整的过程" class="headerlink" title="数据分析完整的过程"></a>数据分析完整的过程</h1><img src="/2020/06/04/Python%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/1.jpg" class="" title="This is an 1 image">
+
+<ul>
+<li>第一步，分析需求，明确目标；</li>
+<li>第二步，采集第一步确定的数据；</li>
+<li>第三步，整理数据，也就是数据清洗；</li>
+<li>第四步，分析数据，采用数学方法、统计方法等对数据进行分析操作；</li>
+<li>第五步，数据可视化，将分析结果以直观的形式进行展示。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python 数据分析</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python3版本time模模块提示locale报错</title>
     <url>/2020/05/27/Python/python3%E7%89%88%E6%9C%ACtime%E6%A8%A1%E6%A8%A1%E5%9D%97%E6%8F%90%E7%A4%BAlocale%E6%8A%A5%E9%94%99/</url>
     <content><![CDATA[<p><a href="https://www.cnblogs.com/nisen/p/6101196.html" target="_blank" rel="noopener">locale帮助</a></p>
