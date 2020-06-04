@@ -1848,6 +1848,47 @@
 <li>第四步，分析数据，采用数学方法、统计方法等对数据进行分析操作；</li>
 <li>第五步，数据可视化，将分析结果以直观的形式进行展示。</li>
 </ul>
+<h2 id="数据分析模块"><a href="#数据分析模块" class="headerlink" title="数据分析模块"></a>数据分析模块</h2><img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/2.jpg" class="" title="This is an 2 image">
+
+<ul>
+<li><a href="https://numpy.org/" target="_blank" rel="noopener">NumPy</a> Numerical Python是一个用于数值运算的 Python 库，专门对数值运算进行优化，最大的优势是运行高效。</li>
+<li>Matplotlib 是常用的数据可视化的工具包，用来绘制各种图表，更好地展示数据。</li>
+<li><a href="https://pandas.pydata.org/" target="_blank" rel="noopener">Pandas</a> 是 Python 重要的数据分析工具包，也是目前非常流行的 Python 数据分析工具。</li>
+<li><a href="https://github.com/pydata/pandas-datareader" target="_blank" rel="noopener">pandas-datareader</a></li>
+</ul>
+<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><div class="note info">
+            <p>NumPy 中最重要的对象是<strong>多维数组（ndarray）</strong>，ndarray 是 N-dimensional array，即 N 维数组。</p>
+          </div>
+
+<p>创建数组 <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">Click
+  </a><span class="hide-content">np.array()</span></span><br>生成元素全为0的多维数组<code>默认生成的是浮点数</code> <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">Click
+  </a><span class="hide-content">np.ones()</span></span><br>生成元素全为1的多维数组<code>默认生成的是浮点数</code> <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">Click
+  </a><span class="hide-content">np.zeros()</span></span></p>
+<h3 id="多维数组的加减乘除"><a href="#多维数组的加减乘除" class="headerlink" title="多维数组的加减乘除"></a>多维数组的加减乘除</h3><img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/3.jpg" class="" title="多维数组的加减乘除">
+<img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/4.jpg" class="" title="多维数组的加减乘除">
+<img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/5.jpg" class="" title="多维数组直接和数字进行计算">
+<img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/6.jpg" class="" title="多维数组直接和数字进行计算">
+
+<p>广播是什么？ <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">Click
+  </a><span class="hide-content">多维数组和数字的四则运算会作用在数组中的每个元素上，这在 numpy 中被称为 广播（Broadcasting)</span></span><br>矢量化是什么？ <span class="hide-inline"><a class="hide-button button--primary button--animated" style="">Click
+  </a><span class="hide-content">numpy 中这种不用编写循环就可以对数据进行批量运算的方式叫做 矢量化</span></span></p>
+<img src="/2020/06/04/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/01%E5%85%B3-Numpy%E5%88%9D%E8%AF%86/7.jpg" class="" title="多维数组索引和分片">
+
+
+<h2 id="数据分析思维"><a href="#数据分析思维" class="headerlink" title="数据分析思维"></a>数据分析思维</h2><p><code>统计学</code></p>
+<ul>
+<li><p>集中趋势</p>
+<blockquote>
+<p>集中趋势所反映的是一组数据所具有的共同趋势，它代表了一组数据的总体水平。其常用指标有 平均数、中位数 和 众数。<br>中位数是指数据排序后处于中间的那个数。众数是指一组数据中出现次数最多的数。</p>
+</blockquote>
+</li>
+<li><p>离中趋势</p>
+<blockquote>
+<p>离中趋势是指一组数据中各数据值以不同程度的距离偏离其中心（平均数）的趋势。其常用指标有 极差、方差 和标准差。<br>极差是一组数据的最大值减去最小值得到的，反应了数据变动的最大范围。<br>方差的计算方式是：将一组数据中的每个数减去这组数据的平均数，然后将得到的结果进行平方求和，最后再除以数据的个数。<br>而方差的平方根则是标准差。因为方差是对数据进行平方得到的，所以量纲（单位）和原数据不一致。对方差进行开根号后得到的标准差量纲和原数据一致，使用起来更方便。</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://github.com/HuangJingxue/apple_python/blob/master/data_analysis/ndarray.py" target="_blank" rel="noopener">练习</a></p>
 ]]></content>
       <categories>
         <category>Python数据分析</category>
