@@ -1902,4 +1902,79 @@
         <category>打造个人影响力</category>
       </categories>
   </entry>
+  <entry>
+    <title>02关-Numpy进阶</title>
+    <url>/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[<div class="note info">
+            <p>嵌套列表就是列表中的元素也是列表的列表。</p>
+          </div>
+
+<h1 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h1><img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/1.jpg" class="" title="嵌套列表">
+
+<p><code>二维数组</code></p>
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/2.jpg" class="" title="嵌套列表">
+
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/3.jpg" class="" title="嵌套列表">
+
+<p><code>三维数组</code></p>
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/4.jpg" class="" title="嵌套列表">
+
+<ul>
+<li><code>ndim</code>：多维数组维度的个数。例如：二维数组的 <code>ndim</code> 为 2；</li>
+<li><code>shape</code>：多维数组的形状。它是一个元组，每个元素分别表示每个维度中数组的长度。对于 m 行和 n 列的的数组，它的 <code>shape</code> 将是 <code>(m, n)</code>。因此，<code>shape</code> 元组的长度（元素个数）就是 <code>ndim</code> 的值；</li>
+<li><code>size</code>：多维数组中所有元素的个数。<code>shape</code> 元组中每个元素的乘积就是 <code>size</code> 的值；</li>
+<li><code>dtype</code>：多维数组中元素的类型。</li>
+</ul>
+<h2 id="二维数组的加减乘除"><a href="#二维数组的加减乘除" class="headerlink" title="二维数组的加减乘除"></a>二维数组的加减乘除</h2><img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/5.jpg" class="" title="二维数组的加减乘除">
+
+<p><code>数据形状不同</code></p>
+<blockquote>
+<p>当运算中的 2 个数组的形状不同时，numpy 将自动触发广播机制，它具体的规则是：在较小维度数组的 <code>shape</code> 元组前补 1，直到两个数组的 <code>shape</code> 元组长度相同。接着将元素在值为 1 的维度上进行复制，直到两个数组的形状相同。如果无法使两个数组的形状相同，则会抛出 <code>ValueError: operands could not be broadcast together</code> 的异常。</p>
+</blockquote>
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/6.jpg" class="" title="二维数组的加减乘除">
+
+<h2 id="二维数组的通用方法"><a href="#二维数组的通用方法" class="headerlink" title="二维数组的通用方法"></a>二维数组的通用方法</h2><img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/7.jpg" class="" title="二维数组的加减乘除">
+
+<p>什么是 轴？ <span class="hide-inline"><a class="hide-button button--primary button--animated" style="background-color: #FF7242;color: #fff">点击一下
+  </a><span class="hide-content">轴（axis）。轴和维度的概念是类似的，一维数组有 1 个轴，二维数组有 2 个轴，三维数组有 3 个轴</span></span></p>
+<blockquote>
+<p>在一维数组中，<code>axis=0</code> 就代表着它唯一的轴；二维数组中 <code>axis=0</code> 和 <code>axis=1</code> 代表其中的行轴和列轴；在三维数组中，<code>axis=0</code>、<code>axis=1</code> 和 <code>axis=2</code> 分别代表对应的三条轴。</p>
+</blockquote>
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/8.jpg" class="" title="二维数组axis">
+
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/9.jpg" class="" title="二维数组axis">
+
+<h2 id="二维数组的索引和分片"><a href="#二维数组的索引和分片" class="headerlink" title="二维数组的索引和分片"></a>二维数组的索引和分片</h2><p><code>data[m, n]</code>其中 <code>data</code> 是二维数组，<code>m</code> 是行索引或分片，<code>n</code> 是列索引或分片。</p>
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/10.jpg" class="" title="二维数组的索引和分片">
+
+<p><code>布尔索引</code></p>
+<p><code>and</code> 改用 <code>&amp;</code>，<code>or</code> 改用 <code>|</code>，<code>not</code> 改用 <code>~</code>，并且每个条件要用括号括起来。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"><span class="comment"># 大于 3 或者小于 2</span></span><br><span class="line">print(data[(data &gt; <span class="number">3</span>) | (data &lt; <span class="number">2</span>)])</span><br><span class="line"><span class="comment"># 输出：[1 4 5 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 大于 3 或者不小于 2（即大于等于 2）</span></span><br><span class="line">print(data[(data &gt; <span class="number">3</span>) | ~(data &lt; <span class="number">2</span>)])</span><br><span class="line"><span class="comment"># 输出：[2 3 4 5 6]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="实用方法"><a href="#实用方法" class="headerlink" title="实用方法"></a>实用方法</h1><p>arange()、rand()、randint()、genfromtxt()</p>
+<ul>
+<li><code>genfromtxt()</code> 方法常用的参数有两个，分别是数据源和分隔符。</li>
+</ul>
+<p><code>均方误差</code></p>
+<blockquote>
+<p>常被作为模型的损失函数，用来预测和回归</p>
+</blockquote>
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/11.jpg" class="" title="均方误差">
+
+<blockquote>
+<p><code>n</code> 是数据集的个数，<code>Y_prediction</code> 是模型预测的结果集，<code>Y</code> 是实际的数据集。将预测的结果和实际的值作差后进行平方求和，最后除以数据集的个数，得到的就是均方误差。均方误差越小，说明模型预测的越准确，反之则越不准确。</p>
+</blockquote>
+<img src="/2020/06/05/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/02%E5%85%B3-Numpy%E8%BF%9B%E9%98%B6/12.jpg" class="" title="均方误差">
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">predictions = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">labels = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">error = (<span class="number">1</span> / labels.size) * np.sum(np.square(predictions - labels))</span><br><span class="line">print(error)</span><br><span class="line"><span class="comment"># 输出：1.6666666666666665</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a><a href="https://github.com/HuangJingxue/apple_python/blob/master/data_analysis/numpy2.py" target="_blank" rel="noopener">练习</a></h1>]]></content>
+      <categories>
+        <category>Python数据分析</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
 </search>
