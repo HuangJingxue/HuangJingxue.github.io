@@ -9,7 +9,14 @@
 <li><input checked="" disabled="" type="checkbox"> 准备每页PPT讲解话术</li>
 <li><input checked="" disabled="" type="checkbox"> 讲解过程随时准备回答问题</li>
 </ul>
-<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>ACA、ACE、ACP 区别 <a href="https://edu.aliyun.com/certification?spm=5176.10731491.1149155.2.6e3670d7rEzob4" target="_blank" rel="noopener">认证帮助</a><br>阿里云有一个认证体系：体系会分三个等级<br>初级是ACA，针对大学生<br>往上是ACP，专业认证针对在职人员<br>最高级是ACE， 专家级认证</p>
+<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><ul>
+<li><p>ACA、ACE、ACP 区别 <a href="https://edu.aliyun.com/certification?spm=5176.10731491.1149155.2.6e3670d7rEzob4" target="_blank" rel="noopener">认证帮助</a><br>阿里云有一个认证体系：体系会分三个等级<br>初级是ACA，针对大学生<br>往上是ACP，专业认证针对在职人员<br>最高级是ACE， 专家级认证</p>
+</li>
+<li><p>地域如何选择<br>地域是机房吗？ </p>
+</li>
+<li><p>规格族与规格<br><a href="https://help.aliyun.com/document_detail/25378.html?spm=5176.10695662.1996646101.searchclickresult.20682bf8khalts" target="_blank" rel="noopener">规格族</a></p>
+</li>
+</ul>
 <h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ul>
 <li><input checked="" disabled="" type="checkbox"> 讲解中互动话题抛出自己完全了解的技术</li>
 <li><input checked="" disabled="" type="checkbox"> 了解课程PPT的思维逻辑，根据逻辑安排语言逻辑顺序</li>
