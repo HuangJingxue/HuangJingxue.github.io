@@ -35,7 +35,27 @@
     <url>/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/</url>
     <content><![CDATA[<h1 id="Matplotlib-初识"><a href="#Matplotlib-初识" class="headerlink" title="Matplotlib 初识"></a>Matplotlib 初识</h1><p>帮助</p>
 <p><a href="https://matplotlib.org/api/pyplot_api.html" target="_blank" rel="noopener">matplotlib.pyplot</a></p>
-<img src="/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/1.jpg" class="" title="嵌套列表">]]></content>
+<img src="/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/1.jpg" class="" title="嵌套列表">
+<img src="/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/2.jpg" class="" title="嵌套列表">
+<img src="/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/3.jpg" class="" title="嵌套列表">
+<img src="/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/4.jpg" class="" title="嵌套列表">
+
+<blockquote>
+<p>数据展示的目标可以把它们分为五种，分别是：趋势、比较、构成、分布和联系。</p>
+</blockquote>
+<ul>
+<li><p>趋势：这是最常见的一种时间序列关系，关心数据如何随着时间变化，趋势类里的图表能直观反映出每年、每月、每天的变化趋势，增长、减少、上下波动还是基本不变。最常见的是折线图，它能很好地表现指标随时间呈现的趋势。</p>
+</li>
+<li><p>构成：主要关注每个部分占整体的比例，如果你想分析的目标诸如“份额”、“百分比”等。展示构成关系的图表类型里，最常见的就是饼图。</p>
+</li>
+<li><p>比较：可以展示某个维度上的排列顺序，分析某维度之间的对比是差不多，还是 “大于”、“小于”，比如分析男生和女生的身高差别。- </p>
+</li>
+<li><p>分布：当你关心数据集中、频率、分布时，比如根据地理位置数据，通过地图来展示不同分布特征。比较常用的图表有地图、直方图、散点图。</p>
+</li>
+<li><p>联系：主要查看两个变量之间是否表达出我们预期所要证明的相关关系。比如预期销售额可能随着优惠折扣的增长而增长，常用于表达“与……有关”、“随……而增长”、“随……而不同”等维度间的关系。</p>
+</li>
+</ul>
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a><a href="https://github.com/HuangJingxue/apple_python/blob/master/data_analysis/matplotlib.py" target="_blank" rel="noopener">练习</a></h1>]]></content>
       <categories>
         <category>Python数据分析</category>
       </categories>
