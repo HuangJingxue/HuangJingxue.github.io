@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-06-23T01:54:17.856Z</updated>
+  <updated>2020-06-29T02:27:19.778Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql5.7语句改写query_rewrite功能</title>
+    <link href="https://www.huangjingxue.com/2020/06/29/MySQL/mysql57%E8%AF%AD%E5%8F%A5%E6%94%B9%E5%86%99query-rewrite%E5%8A%9F%E8%83%BD/"/>
+    <id>https://www.huangjingxue.com/2020/06/29/MySQL/mysql57%E8%AF%AD%E5%8F%A5%E6%94%B9%E5%86%99query-rewrite%E5%8A%9F%E8%83%BD/</id>
+    <published>2020-06-29T10:22:47.000Z</published>
+    <updated>2020-06-29T02:27:19.778Z</updated>
+    
+    <summary type="html">
+    
+      MySQL 5.7 提供了 query_rewrite 功能，可以把输入的一种语句改写成另外一种模式。
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/categories/MySQL/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>课程开发要求</title>
+    <link href="https://www.huangjingxue.com/2020/06/24/%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/%E8%AF%BE%E7%A8%8B%E5%BC%80%E5%8F%91%E8%A6%81%E6%B1%82/"/>
+    <id>https://www.huangjingxue.com/2020/06/24/%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/%E8%AF%BE%E7%A8%8B%E5%BC%80%E5%8F%91%E8%A6%81%E6%B1%82/</id>
+    <published>2020-06-24T14:21:19.000Z</published>
+    <updated>2020-06-24T06:23:25.474Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Aliyun讲师认证" scheme="https://www.huangjingxue.com/categories/Aliyun%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/"/>
+    
+    
+      <category term="阿里云大学" scheme="https://www.huangjingxue.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E5%A4%A7%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>QuickBI数据分析云课堂基础版</title>
@@ -407,62 +445,6 @@
     
     
       <category term="Git" scheme="https://www.huangjingxue.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开源工具MyFlash</title>
-    <link href="https://www.huangjingxue.com/2020/05/12/MySQL/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7MyFlash/"/>
-    <id>https://www.huangjingxue.com/2020/05/12/MySQL/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7MyFlash/</id>
-    <published>2020-05-12T10:56:24.518Z</published>
-    <updated>2020-05-22T07:17:01.410Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;MyFlash初体验&quot;&gt;&lt;a href=&quot;#MyFlash初体验&quot; class=&quot;headerlink&quot; title=&quot;MyFlash初体验&quot;&gt;&lt;/a&gt;MyFlash初体验&lt;/h2&gt;&lt;h2 id=&quot;验证binlog2sql-是否支持blob转换&quot;&gt;&lt;a href=&quot;#验证binlog2sql-是否支持blob转换&quot; class=&quot;headerlink&quot; title=&quot;验证binlog2sql 是否支持blob转换&quot;&gt;&lt;/a&gt;验证binlog2sql 是否支持blob转换&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#96;--w_blob.py  写入blob   import sys import pymysql import os  path &amp;#x3D; &amp;quot;.&amp;#x2F;&amp;quot;  fp &amp;#x3D; open(&amp;quot;&amp;#x2F;alidata&amp;#x2F;PG01.jpg&amp;quot;, &amp;#39;rb&amp;#39;) img &amp;#x3D; fp.read() fp.close()  database &amp;#x3D; pymysql.connect(host&amp;#x3D;&amp;quot;localhost&amp;quot;, user&amp;#x3D;&amp;quot;root&amp;quot;, passwd&amp;#x3D;&amp;quot;root&amp;quot;, db&amp;#x3D;&amp;quot;qinxi&amp;quot;) cursor &amp;#x3D; database.cursor() sql &amp;#x3D; &amp;quot;INSERT INTO tb_test (nameBlob) VALUES  (%s);&amp;quot; args &amp;#x3D; (img) cursor.execute(sql, args) database.commit() cursor.close() database.close()  print(&amp;quot;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;quot;) print(&amp;quot;Done! &amp;quot;)   --r_blob.py 读取blob  import pymysql as mdb import sys  conn &amp;#x3D; mdb.connect(host&amp;#x3D;&amp;#39;localhost&amp;#39;,user&amp;#x3D;&amp;#39;root&amp;#39;,passwd&amp;#x3D;&amp;#39;root&amp;#39;,db&amp;#x3D;&amp;#39;qinxi&amp;#39;) cursor &amp;#x3D; conn.cursor() cursor.execute(&amp;quot;SELECT nameBlob FROM tb_test LIMIT 1&amp;quot;) fout &amp;#x3D; open(&amp;#39;PG333.jpg&amp;#39;,&amp;#39;wb&amp;#39;) fout.write(cursor.fetchone()[0]) fout.close() cursor.close() conn.close()    python binlog2sql.py -uroot -h10.200.6.53 -proot -B --start-file&amp;#x3D;mybinlog.000033 &amp;gt; 33.sql&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-
-
-&lt;h1 id=&quot;MyFlash测试&quot;&gt;&lt;a href=&quot;#MyFlash测试&quot; class=&quot;headerlink&quot; title=&quot;MyFlash测试&quot;&gt;&lt;/a&gt;MyFlash测试&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Meituan-Dianping/MyFlash&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Meituan-Dianping/MyFlash&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;安装&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="开源工具" scheme="https://www.huangjingxue.com/categories/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="MyFlash" scheme="https://www.huangjingxue.com/tags/MyFlash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>幻读是什么，幻读有什么问题？</title>
-    <link href="https://www.huangjingxue.com/2020/04/21/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/"/>
-    <id>https://www.huangjingxue.com/2020/04/21/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/%E5%B9%BB%E8%AF%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%B9%BB%E8%AF%BB%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F/</id>
-    <published>2020-04-20T19:23:13.000Z</published>
-    <updated>2020-05-22T07:22:14.077Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;初始化语句&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL实战45讲" scheme="https://www.huangjingxue.com/categories/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/"/>
-    
-    
-      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
-    
-      <category term="事务" scheme="https://www.huangjingxue.com/tags/%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
