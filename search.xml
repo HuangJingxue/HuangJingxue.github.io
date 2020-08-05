@@ -1,6 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>DataWorks增量调度任务配置</title>
+    <url>/2020/08/05/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/DataWorks%E5%A2%9E%E9%87%8F%E8%B0%83%E5%BA%A6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p>参考：<a href="https://help.aliyun.com/knowledge_detail/137548.html?spm=a1z3jh.13523495.0.0.689762428L6Zxe" target="_blank" rel="noopener">https://help.aliyun.com/knowledge_detail/137548.html?spm=a1z3jh.13523495.0.0.689762428L6Zxe</a></p>
+</blockquote>
+<h1 id="增量配置"><a href="#增量配置" class="headerlink" title="增量配置"></a>增量配置</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 源表过滤条件</span></span><br><span class="line">convert(varchar(100),[Update_Date],120)&gt;'$&#123;keys1&#125; $&#123;keys2&#125;'</span><br><span class="line">convert(varchar(100),[update_date],120)&gt;'$&#123;keys1&#125; $&#123;keys2&#125;'</span><br><span class="line"> </span><br><span class="line">每10分钟调度一次</span><br><span class="line"><span class="comment"># 自定义变量</span></span><br><span class="line">keys1=$[yyyy-mm-dd] keys2=$[hh24:mi:ss -12/24/60]</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">每小时调度一次</span><br><span class="line"><span class="comment"># 自定义变量</span></span><br><span class="line">keys1=$[yyyy-mm-dd] keys2=$[hh24:mi:ss -1/24]</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/08/05/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/DataWorks%E5%A2%9E%E9%87%8F%E8%B0%83%E5%BA%A6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE/1.png" class="" title="This is an 1 image">
+<img src="/2020/08/05/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/DataWorks%E5%A2%9E%E9%87%8F%E8%B0%83%E5%BA%A6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE/2.png" class="" title="This is an 2 image">
+
+<h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><p>调度资源有<code>最大线程数</code>限制，需求对象超出最大线程数，需要规划业务流。</p>
+<ul>
+<li>强要求按照分钟频率</li>
+<li>其他按小时频率，并错开起始时间</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表名</th>
+<th>opt前置库表行数</th>
+<th>明珠塔表行数</th>
+<th>全量迁移时长</th>
+<th>全量同步是否有问题</th>
+<th>数据是否异常</th>
+<th>备注</th>
+<th>增量同步</th>
+<th>增量频率</th>
+<th>增量调度起始时间</th>
+<th>全量调度日期</th>
+<th>全量调度时间</th>
+<th>全量调度周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dic</td>
+<td>0</td>
+<td>0</td>
+<td>1min</td>
+<td>否</td>
+<td>否</td>
+<td></td>
+<td>incr_2</td>
+<td>1h</td>
+<td>0:10</td>
+<td>2020-07-28 ~ 2020-07-29</td>
+<td>23:20</td>
+<td>日调度</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>云数据库</category>
+      </categories>
+      <tags>
+        <tag>DataWorks</tag>
+        <tag>异构迁移</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01_一条SQL是如何执行的？</title>
+    <url>/2020/07/01/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/01-%E4%B8%80%E6%9D%A1SQL%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%EF%BC%9F/</url>
+    <content><![CDATA[<h1 id="SQL语句执行的基本链路"><a href="#SQL语句执行的基本链路" class="headerlink" title="SQL语句执行的基本链路"></a>SQL语句执行的基本链路</h1><img src="/2020/07/01/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/01-%E4%B8%80%E6%9D%A1SQL%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%EF%BC%9F/1.png" class="" title="This is an 1 image">
+
+<h1 id="重要的日志模块：redo-log"><a href="#重要的日志模块：redo-log" class="headerlink" title="重要的日志模块：redo log"></a>重要的日志模块：redo log</h1><img src="/2020/07/01/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/01-%E4%B8%80%E6%9D%A1SQL%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%EF%BC%9F/2.png" class="" title="This is an 2 image">
+<blockquote>
+<p>有了 redo log，InnoDB 就可以保证即使数据库发生异常重启，之前提交的记录都不会丢失，这个能力称为 <strong>crash-safe。</strong></p>
+</blockquote>
+<h1 id="重要的日志模块：binlog"><a href="#重要的日志模块：binlog" class="headerlink" title="重要的日志模块：binlog"></a>重要的日志模块：binlog</h1><p>这两种日志有以下三点不同:</p>
+<ul>
+<li>redo log 是 InnoDB 引擎特有的；binlog 是 MySQL 的 Server 层实现的，所有引擎都可以使用。</li>
+<li>redo log 是物理日志，记录的是“在某个数据页上做了什么修改”；binlog 是逻辑日志，记录的是这个语句的原始逻辑，比如“给 ID=2 这一行的 c 字段加 1 ”。</li>
+<li>redo log 是循环写的，空间固定会用完；binlog 是可以追加写入的。“追加写”是指 binlog 文件写到一定大小后会切换到下一个，并不会覆盖以前的日志。</li>
+</ul>
+<p><em>执行器和 InnoDB 引擎在执行这个简单的 update 语句时的内部流程。</em></p>
+<ul>
+<li>执行器先找引擎取 ID=2 这一行。ID 是主键，引擎直接用树搜索找到这一行。如果 ID=2 这一行所在的数据页本来就在内存中，就直接返回给执行器；否则，需要先从磁盘读入内存，然后再返回。</li>
+<li>执行器拿到引擎给的行数据，把这个值加上 1，比如原来是 N，现在就是 N+1，得到新的一行数据，再调用引擎接口写入这行新数据。- </li>
+<li>引擎将这行新数据更新到内存中，同时将这个更新操作记录到 redo log 里面，此时 redo log 处于 prepare 状态。然后告知执行器执行完成了，随时可以提交事务。</li>
+<li>执行器生成这个操作的 binlog，并把 binlog 写入磁盘。</li>
+<li>执行器调用引擎的提交事务接口，引擎把刚刚写入的 redo log 改成提交（commit）状态，更新完成。<img src="/2020/07/01/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/01-%E4%B8%80%E6%9D%A1SQL%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%EF%BC%9F/3.png" class="" title="This is an 3 image">
+
+
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>redo log 用于保证 crash-safe 能力。innodb_flush_log_at_trx_commit 这个参数设置成 1 的时候，表示每次事务的 redo log 都直接持久化到磁盘。这个参数我建议你设置成 1，这样可以保证 MySQL 异常重启之后数据不丢失。</li>
+<li>sync_binlog 这个参数设置成 1 的时候，表示每次事务的 binlog 都持久化到磁盘。这个参数我也建议你设置成 1，这样可以保证 MySQL 异常重启之后 binlog 不丢失。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL实战45讲</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mysql5.7语句改写query_rewrite功能</title>
     <url>/2020/06/29/MySQL/mysql57%E8%AF%AD%E5%8F%A5%E6%94%B9%E5%86%99query-rewrite%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<div class="note info">
