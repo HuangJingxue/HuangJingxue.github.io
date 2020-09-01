@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-08-05T03:56:45.930Z</updated>
+  <updated>2020-09-01T09:20:30.792Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pt-archiver归档表无主键的问题探索</title>
+    <link href="https://www.huangjingxue.com/2020/09/02/MySQL/pt-archiver%E5%BD%92%E6%A1%A3%E8%A1%A8%E6%97%A0%E4%B8%BB%E9%94%AE%E7%9A%84%E9%97%AE%E9%A2%98%E6%8E%A2%E7%B4%A2/"/>
+    <id>https://www.huangjingxue.com/2020/09/02/MySQL/pt-archiver%E5%BD%92%E6%A1%A3%E8%A1%A8%E6%97%A0%E4%B8%BB%E9%94%AE%E7%9A%84%E9%97%AE%E9%A2%98%E6%8E%A2%E7%B4%A2/</id>
+    <published>2020-09-01T17:09:35.000Z</published>
+    <updated>2020-09-01T09:20:30.792Z</updated>
+    
+    <summary type="html">
+    
+      不是所有的问题都是我以为可以解决的。
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/categories/MySQL/"/>
+    
+    
+      <category term="pt-archiver" scheme="https://www.huangjingxue.com/tags/pt-archiver/"/>
+    
+  </entry>
   
   <entry>
     <title>DataWorks增量调度任务配置</title>
@@ -432,29 +453,6 @@
     
     
       <category term="hexo" scheme="https://www.huangjingxue.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次datatime类型字段变身记</title>
-    <link href="https://www.huangjingxue.com/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/"/>
-    <id>https://www.huangjingxue.com/2020/05/22/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E8%AE%B0%E4%B8%80%E6%AC%A1datatime%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E5%8F%98%E8%BA%AB%E8%AE%B0/</id>
-    <published>2020-05-22T09:51:26.000Z</published>
-    <updated>2020-06-10T02:56:16.120Z</updated>
-    
-    <summary type="html">
-    
-      教你如何获取远程MySQL实例在线binlog，揭开datatime类型在mysql5.6和5.7版本中的神秘面纱，explicit_defaults_for_timestamp 参数对timestamp类型的作用。
-    
-    </summary>
-    
-    
-      <category term="云数据库" scheme="https://www.huangjingxue.com/categories/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="Polardb for MySQL" scheme="https://www.huangjingxue.com/tags/Polardb-for-MySQL/"/>
-    
-      <category term="RDS for MySQL" scheme="https://www.huangjingxue.com/tags/RDS-for-MySQL/"/>
     
   </entry>
   
