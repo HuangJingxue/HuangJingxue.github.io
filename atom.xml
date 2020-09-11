@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-09-01T09:20:30.792Z</updated>
+  <updated>2020-09-11T05:51:55.735Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>金融云各版本云数据库支持TDE的状态</title>
+    <link href="https://www.huangjingxue.com/2020/09/11/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%87%91%E8%9E%8D%E4%BA%91%E5%90%84%E7%89%88%E6%9C%AC%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%AF%E6%8C%81TDE%E7%9A%84%E7%8A%B6%E6%80%81/"/>
+    <id>https://www.huangjingxue.com/2020/09/11/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%87%91%E8%9E%8D%E4%BA%91%E5%90%84%E7%89%88%E6%9C%AC%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%AF%E6%8C%81TDE%E7%9A%84%E7%8A%B6%E6%80%81/</id>
+    <published>2020-09-11T13:50:01.000Z</published>
+    <updated>2020-09-11T05:51:55.735Z</updated>
+    
+    <summary type="html">
+    
+      金融云各版本云数据库支持TDE的状态
+    
+    </summary>
+    
+    
+      <category term="云数据库" scheme="https://www.huangjingxue.com/categories/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>pt-archiver归档表无主键的问题探索</title>
@@ -432,27 +451,6 @@
     
     
       <category term="MySQL Binlog" scheme="https://www.huangjingxue.com/tags/MySQL-Binlog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用github Page搭建自己的轻量博客</title>
-    <link href="https://www.huangjingxue.com/2020/05/22/hexo/%E4%BD%BF%E7%94%A8githubPage%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BD%BB%E9%87%8F%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://www.huangjingxue.com/2020/05/22/hexo/%E4%BD%BF%E7%94%A8githubPage%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BD%BB%E9%87%8F%E5%8D%9A%E5%AE%A2/</id>
-    <published>2020-05-22T10:53:48.000Z</published>
-    <updated>2020-05-22T08:17:08.226Z</updated>
-    
-    <summary type="html">
-    
-      10分钟教你搭建属于自己的博客。
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://www.huangjingxue.com/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://www.huangjingxue.com/tags/hexo/"/>
     
   </entry>
   

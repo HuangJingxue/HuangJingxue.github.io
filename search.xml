@@ -2374,4 +2374,112 @@
         <tag>pt-archiver</tag>
       </tags>
   </entry>
+  <entry>
+    <title>金融云各版本云数据库支持TDE的状态</title>
+    <url>/2020/09/11/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%87%91%E8%9E%8D%E4%BA%91%E5%90%84%E7%89%88%E6%9C%AC%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%AF%E6%8C%81TDE%E7%9A%84%E7%8A%B6%E6%80%81/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">存储引擎</th>
+<th align="left">数据库版本</th>
+<th align="left">实例类型</th>
+<th align="left">支持TDE的状态</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">MySQL</td>
+<td align="left">5.6</td>
+<td align="left">Primary</td>
+<td align="left">支持</td>
+<td align="left">RDS for MySQL是和公共云没有区别的 RDS MySQL 8.0高可用版（本地盘）RDS MySQL 5.7高可用版（本地盘）RDS MySQL 5.6</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">MySQL</td>
+<td align="left">5.6</td>
+<td align="left">Readonly</td>
+<td align="left">支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">MySQL</td>
+<td align="left">5.7</td>
+<td align="left">Primary</td>
+<td align="left">支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">MySQL</td>
+<td align="left">8.0</td>
+<td align="left">Primary</td>
+<td align="left">支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">PostgreSQL</td>
+<td align="left">9.4</td>
+<td align="left">Primary</td>
+<td align="left">不支持</td>
+<td align="left">RDS PostgreSQL提供数据加密功能，<strong>SSL链路加密</strong>和<strong>云盘加密</strong> RDS PostgreSQL提供全加密数据库功能，选择SGX加密型</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">PostgreSQL</td>
+<td align="left">12.0</td>
+<td align="left">Primary</td>
+<td align="left">不支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">SQLServer</td>
+<td align="left">2016_std_ha</td>
+<td align="left">Primary</td>
+<td align="left">不支持</td>
+<td align="left">实例类型为SQL Server企业版的主实例（只读实例不支持TDE）。只有阿里云主账号（即非子账号）登录才可以查看和修改TDE配置。开通TDE前需要先开通KMS。如果您未开通KMS，可在开通TDE过程中根据引导开通KMS。  版本支持明细见：<a href="https://help.aliyun.com/document_detail/145468.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/145468.html</a></td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">SQLServer</td>
+<td align="left">2016_ent_ha</td>
+<td align="left">Primary</td>
+<td align="left">支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">SQLServer</td>
+<td align="left">2008r2</td>
+<td align="left">Primary</td>
+<td align="left">支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">PolarDB for MySQL</td>
+<td align="left">5.6</td>
+<td align="left"></td>
+<td align="left">不支持</td>
+<td align="left">前提条件：集群版本为PolarDB MySQL 8.0PolarDB for Oracle 支持TDE：<a href="https://help.aliyun.com/document_detail/164154.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/164154.html</a></td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">PolarDB for Oracle</td>
+<td align="left">11</td>
+<td align="left"></td>
+<td align="left">支持</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>云数据库</category>
+      </categories>
+  </entry>
 </search>
