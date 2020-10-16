@@ -980,11 +980,6 @@
       </tags>
   </entry>
   <entry>
-    <title>oracle12C视图详解</title>
-    <url>/2020/05/25/oracle12C%E8%A7%86%E5%9B%BE%E8%AF%A6%E8%A7%A3/oracle12C%E8%A7%86%E5%9B%BE%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>MonogDB非关系型数据库</title>
     <url>/2020/04/04/MongoDB/MonogDB%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<h1 id="1-MonogDB简介"><a href="#1-MonogDB简介" class="headerlink" title="1.MonogDB简介"></a>1.MonogDB简介</h1><p>MongoDB 是一款强大，灵活，且易于扩展的通用性数据库，<strong>面向文档的数据库</strong>。</p>
@@ -2481,5 +2476,182 @@
       <categories>
         <category>云数据库</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Oracle单行函数详解</title>
+    <url>/2020/09/24/Oracle/Oracle%E5%8D%95%E8%A1%8C%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>函数详解</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FLOOR</td>
+<td>返回小于等于n的最大整数值</td>
+<td>floor(n)</td>
+</tr>
+<tr>
+<td>CEIL</td>
+<td>返回大于等于数值n的最小整数值</td>
+<td>ceil(n)，n是字符也可以</td>
+</tr>
+<tr>
+<td>CONCAT</td>
+<td>用于将两个字符串连接在一起</td>
+<td>CONCAT( string1, string2 )</td>
+</tr>
+<tr>
+<td>INSTR</td>
+<td>字符查找函数位置</td>
+<td></td>
+</tr>
+<tr>
+<td>SUBSTR</td>
+<td>截取字符指定段</td>
+<td></td>
+</tr>
+<tr>
+<td>INITCAP</td>
+<td>首字母变为大写</td>
+<td></td>
+</tr>
+<tr>
+<td>MOD</td>
+<td>返回m除以n的余数，如果n是0，返回m</td>
+<td>mod(m,n)</td>
+</tr>
+<tr>
+<td>trunc</td>
+<td>TRUNC()函数在截取时不进行四舍五入，直接截取；如果Num_digits为正数，则截取小数点后Num_digits位；如果为负数，则先保留整数部分，然后从个位开始向前数，并将遇到的数字都变为0。</td>
+<td>RUNC（number,num_digits）</td>
+</tr>
+<tr>
+<td>round</td>
+<td>和trunc函数不同，对截取的数字要四舍五入。如果为负数则表示从小数点开始左边的位数，相应整数数字用0填充，小数被去掉。</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>FLOOR</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">【功能】返回小于等于x的最大整数值</span><br><span class="line"></span><br><span class="line">【参数】x，数字型表达式</span><br><span class="line"></span><br><span class="line">【返回】数字</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SQL&gt; select floor(3.1),floor(3.6),floor(2.8+1.3),floor(0),floor(-1.5) from dual;</span><br><span class="line"></span><br><span class="line">FLOOR(3.1) FLOOR(3.6) FLOOR(2.8+1.3)   FLOOR(0) FLOOR(-1.5)</span><br><span class="line">---------- ---------- -------------- ---------- -----------</span><br><span class="line">	 3	    3		   4	      0 	 -2</span><br><span class="line">	 </span><br><span class="line">SQL&gt; select floor(3.1),floor(&#39;3.1&#39;),ceil(3.1),ceil(&#39;3.1&#39;) from dual;</span><br><span class="line"></span><br><span class="line">FLOOR(3.1) FLOOR(&#39;3.1&#39;)  CEIL(3.1) CEIL(&#39;3.1&#39;)</span><br><span class="line">---------- ------------ ---------- -----------</span><br><span class="line">	 3	      3 	 4	     4</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>CONCAT</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CONCAT(&#39;Oraok&#39;, &#39;.com&#39;)</span><br><span class="line">-- Result: &#39;Oraok.com&#39;</span><br><span class="line"></span><br><span class="line">CONCAT(&#39;a&#39;, &#39;b&#39;)</span><br><span class="line">-- Result: &#39;ab&#39;</span><br><span class="line"></span><br><span class="line">SELECT CONCAT(CONCAT(&#39;A&#39;, &#39;B&#39;),&#39;C&#39;)</span><br><span class="line">FROM dual;</span><br><span class="line">-- Result: &#39;ABC&#39;</span><br><span class="line"></span><br><span class="line">SQL&gt; SELECT CONCAT(&#39;Let&#39;&#39;s&#39;, &#39; learn Oracle&#39;) FROM dual;</span><br><span class="line"></span><br><span class="line">CONCAT(&#39;LET&#39;&#39;S&#39;,&#39;L</span><br><span class="line">------------------</span><br><span class="line">Let&#39;s learn Oracle</span><br><span class="line">由于参数包含在单引号中，因此在引号内使用2个额外的单引号来表示生成的连接字符串中的单引号。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>INSTR</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">格式一：instr( string1, string2 )</span><br><span class="line">/ instr(源字符串, 目标字符串)</span><br><span class="line"></span><br><span class="line">格式二：instr( string1, string2 [, start_position [, nth_appearance ] ] )</span><br><span class="line">/ instr(源字符串, 目标字符串, 起始位置, 匹配序号)</span><br><span class="line"></span><br><span class="line">解析：string2 的值要在string1中查找，是从start_position给出的数值（即：位置）开始在string1检索，检索第nth_appearance（几）次出现string2。</span><br><span class="line"></span><br><span class="line">SQL&gt; select instr('helloworld','l') from dual; </span><br><span class="line"></span><br><span class="line">INSTR('HELLOWORLD','L')</span><br><span class="line"><span class="comment">-----------------------</span></span><br><span class="line">		      3</span><br><span class="line"></span><br><span class="line">SQL&gt; select instr('helloworld','lo') from dual;--在“lo”中，“l”开始出现的位置</span><br><span class="line"></span><br><span class="line">INSTR('HELLOWORLD','LO')</span><br><span class="line"><span class="comment">------------------------</span></span><br><span class="line">		       4</span><br><span class="line"></span><br><span class="line">SQL&gt; select instr('helloworld','l',2,2) from dual;</span><br><span class="line"></span><br><span class="line">INSTR('HELLOWORLD','L',2,2)</span><br><span class="line"><span class="comment">---------------------------</span></span><br><span class="line">			  4</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>trunc 与  round</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">SYS@testdb&gt;select round(1),round(1.5,-1),round(55.5,-1),trunc(55.5,-1),trunc(1),trunc(1.5,-1) from dual;</span><br><span class="line"></span><br><span class="line">  ROUND(1) ROUND(1.5,-1) ROUND(55.5,-1) TRUNC(55.5,-1)	 TRUNC(1) TRUNC(1.5,-1)</span><br><span class="line"><span class="comment">---------- ------------- -------------- -------------- ---------- -------------</span></span><br><span class="line">	 1	       0	     60 	    50		1	      0</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Oracle</category>
+      </categories>
+      <tags>
+        <tag>Oracle 12C</tag>
+        <tag>OCP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Oracle时间函数详解</title>
+    <url>/2020/09/27/Oracle/Oracle%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>函数详解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>current_timestamp</td>
+<td>返回当前会话时区中的当前日期:以timestamp with time zone数据类型</td>
+</tr>
+<tr>
+<td>current_date</td>
+<td>返回当前会话时区中的当前日期</td>
+</tr>
+<tr>
+<td>SYSDATE</td>
+<td>函数可以得到目前系统的时间</td>
+</tr>
+<tr>
+<td>localtimestamp</td>
+<td>返回会话中的日期和时间</td>
+</tr>
+<tr>
+<td>dbtimezone</td>
+<td>返回时区</td>
+</tr>
+<tr>
+<td>SESSIONTIMEZONE</td>
+<td>返回会话时区</td>
+</tr>
+<tr>
+<td>systimestamp</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>测试：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SQL&gt; alter session set NLS_DATE_FORMAT='DD-MON-YYYY HH24:MI:SS';</span><br><span class="line"></span><br><span class="line">Session altered.</span><br><span class="line"></span><br><span class="line">SQL&gt; select current_timestamp,localtimestamp,sysdate,systimestamp from dual;</span><br><span class="line"></span><br><span class="line">CURRENT_TIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">LOCALTIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">SYSDATE</span><br><span class="line"><span class="comment">--------------------</span></span><br><span class="line">SYSTIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">27-SEP-20 03.42.56.895320 PM +08:00</span><br><span class="line">27-SEP-20 03.42.56.895320 PM</span><br><span class="line">27-SEP-2020 15:42:56</span><br><span class="line">27-SEP-20 03.42.56.895316 PM +08:00</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SQL&gt; alter session set time_zone='-5:00';</span><br><span class="line"></span><br><span class="line">Session altered.</span><br><span class="line"></span><br><span class="line">SQL&gt; select current_timestamp,localtimestamp,sysdate,systimestamp from dual;</span><br><span class="line"></span><br><span class="line">CURRENT_TIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">LOCALTIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">SYSDATE</span><br><span class="line"><span class="comment">--------------------</span></span><br><span class="line">SYSTIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">27-SEP-20 02.43.39.911368 AM -05:00</span><br><span class="line">27-SEP-20 02.43.39.911368 AM</span><br><span class="line">27-SEP-2020 15:43:39</span><br><span class="line">27-SEP-20 03.43.39.911363 PM +08:00</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>current_timestamp</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">oracle函数 current_timestamp</span><br><span class="line">【功能】：以timestamp with time zone数据类型返回当前会话时区中的当前日期</span><br><span class="line"></span><br><span class="line">【参数】：没有参数，没有括号</span><br><span class="line"></span><br><span class="line">【返回】：日期</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">SQL&gt; select current_timestamp from dual;</span><br><span class="line"></span><br><span class="line">CURRENT_TIMESTAMP</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">27-SEP-20 10.30.57.999511 AM +08:00</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>current_date</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">oracle函数 current_date</span><br><span class="line">【功能】：返回当前会话时区中的当前日期</span><br><span class="line"></span><br><span class="line">【参数】：没有参数，没有括号</span><br><span class="line"></span><br><span class="line">【返回】：日期</span><br><span class="line"></span><br><span class="line">SQL&gt; select current_date from dual;</span><br><span class="line"></span><br><span class="line">CURRENT_D</span><br><span class="line">---------</span><br><span class="line">27-SEP-20</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>sysdate</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SYSDATE函数可以得到目前系统的时间，例如：</span><br><span class="line">SQL&gt; select sysdate from dual;</span><br><span class="line"></span><br><span class="line">SYSDATE</span><br><span class="line"><span class="comment">---------</span></span><br><span class="line">27-SEP-20</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>localtimestamp</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">【功能】：返回会话中的日期和时间</span><br><span class="line"></span><br><span class="line">【参数】：没有参数，没有括号</span><br><span class="line"></span><br><span class="line">【返回】：日期</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">SQL&gt; select localtimestamp from dual;</span><br><span class="line"></span><br><span class="line">LOCALTIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">27-SEP-20 10.42.36.829529 AM</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>dbtimezone</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">【功能】：返回时区</span><br><span class="line"></span><br><span class="line">【参数】：没有参数，没有括号</span><br><span class="line"></span><br><span class="line">【返回】：字符型</span><br><span class="line"></span><br><span class="line">SQL&gt; select dbtimezone from dual;</span><br><span class="line"></span><br><span class="line">DBTIME</span><br><span class="line"><span class="comment">------</span></span><br><span class="line">+00:00</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>sessiontimezone</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">【功能】：返回会话时区</span><br><span class="line"></span><br><span class="line">【参数】：没有参数，没有括号</span><br><span class="line"></span><br><span class="line">【返回】：字符型</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">【示例】<span class="keyword">select</span> <span class="keyword">dbtimezone</span>,SESSIONTIMEZONE <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line">返回:+00:00   +08:00</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>systimestamp</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SQL&gt; select current_timestamp,systimestamp from dual;</span><br><span class="line"></span><br><span class="line">CURRENT_TIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">SYSTIMESTAMP</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------</span></span><br><span class="line">27-SEP-20 10.49.23.885829 AM +08:00</span><br><span class="line">27-SEP-20 10.49.23.885806 AM +08:00</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Oracle</category>
+      </categories>
+      <tags>
+        <tag>Oracle 12C</tag>
+        <tag>OCP</tag>
+      </tags>
   </entry>
 </search>

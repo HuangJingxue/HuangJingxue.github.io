@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-09-11T05:51:55.735Z</updated>
+  <updated>2020-10-16T02:41:17.239Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle时间函数详解</title>
+    <link href="https://www.huangjingxue.com/2020/09/27/Oracle/Oracle%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.huangjingxue.com/2020/09/27/Oracle/Oracle%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</id>
+    <published>2020-09-27T10:34:31.000Z</published>
+    <updated>2020-10-16T02:41:17.239Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数名&lt;/th&gt;
+&lt;th&gt;函数详解&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;current_timestamp&lt;/td&gt;
+&lt;td&gt;返回当前会话时区中的当前日期:以timestamp with
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Oracle" scheme="https://www.huangjingxue.com/categories/Oracle/"/>
+    
+    
+      <category term="Oracle 12C" scheme="https://www.huangjingxue.com/tags/Oracle-12C/"/>
+    
+      <category term="OCP" scheme="https://www.huangjingxue.com/tags/OCP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle单行函数详解</title>
+    <link href="https://www.huangjingxue.com/2020/09/24/Oracle/Oracle%E5%8D%95%E8%A1%8C%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.huangjingxue.com/2020/09/24/Oracle/Oracle%E5%8D%95%E8%A1%8C%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</id>
+    <published>2020-09-24T15:26:13.000Z</published>
+    <updated>2020-10-16T02:41:05.314Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数名&lt;/th&gt;
+&lt;th&gt;函数详解&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;FLOOR&lt;/td&gt;
+&lt;td&gt;返回小于等于n的最大整数值&lt;/td&gt;
+&lt;td&gt;floor(n)&lt;/t
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Oracle" scheme="https://www.huangjingxue.com/categories/Oracle/"/>
+    
+    
+      <category term="Oracle 12C" scheme="https://www.huangjingxue.com/tags/Oracle-12C/"/>
+    
+      <category term="OCP" scheme="https://www.huangjingxue.com/tags/OCP/"/>
+    
+  </entry>
   
   <entry>
     <title>金融云各版本云数据库支持TDE的状态</title>
@@ -415,42 +493,6 @@
     
       <category term="打造个人影响力" scheme="https://www.huangjingxue.com/categories/%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%BD%B1%E5%93%8D%E5%8A%9B/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>oracle12C视图详解</title>
-    <link href="https://www.huangjingxue.com/2020/05/25/oracle12C%E8%A7%86%E5%9B%BE%E8%AF%A6%E8%A7%A3/oracle12C%E8%A7%86%E5%9B%BE%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://www.huangjingxue.com/2020/05/25/oracle12C%E8%A7%86%E5%9B%BE%E8%AF%A6%E8%A7%A3/oracle12C%E8%A7%86%E5%9B%BE%E8%AF%A6%E8%A7%A3/</id>
-    <published>2020-05-25T10:53:26.000Z</published>
-    <updated>2020-05-26T05:53:57.208Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>获取在线MySQL实例的Binlog信息</title>
-    <link href="https://www.huangjingxue.com/2020/05/25/MySQL/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/"/>
-    <id>https://www.huangjingxue.com/2020/05/25/MySQL/%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BFMySQL%E5%AE%9E%E4%BE%8B%E7%9A%84Binlog%E4%BF%A1%E6%81%AF/</id>
-    <published>2020-05-25T10:49:11.000Z</published>
-    <updated>2020-05-25T02:50:45.747Z</updated>
-    
-    <summary type="html">
-    
-      当你没有开启SQL洞察，SQL审计，慢日志也抓取不到的时候，请用它。
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="https://www.huangjingxue.com/categories/MySQL/"/>
-    
-    
-      <category term="MySQL Binlog" scheme="https://www.huangjingxue.com/tags/MySQL-Binlog/"/>
     
   </entry>
   
