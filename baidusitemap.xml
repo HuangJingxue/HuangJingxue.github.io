@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.huangjingxue.com/2020/10/19/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC2%E7%AB%A0InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</loc>
+    <lastmod>2020-10-21</lastmod>
+  </url>  <url>
+    <loc>https://www.huangjingxue.com/2020/10/22/MySQL/innodb%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4/</loc>
+    <lastmod>2020-10-21</lastmod>
+  </url>  <url>
+    <loc>https://www.huangjingxue.com/2020/10/21/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-10-21</lastmod>
+  </url>  <url>
     <loc>https://www.huangjingxue.com/2020/10/20/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC6%E7%AB%A0%E9%94%81/</loc>
     <lastmod>2020-10-21</lastmod>
   </url>  <url>
@@ -14,9 +23,6 @@
     <lastmod>2020-10-20</lastmod>
   </url>  <url>
     <loc>https://www.huangjingxue.com/2020/10/20/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC1%E7%AB%A0MySQL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%92%8C%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</loc>
-    <lastmod>2020-10-19</lastmod>
-  </url>  <url>
-    <loc>https://www.huangjingxue.com/2020/10/19/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC2%E7%AB%A0InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</loc>
     <lastmod>2020-10-19</lastmod>
   </url>  <url>
     <loc>https://www.huangjingxue.com/2020/09/27/Oracle/Oracle%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</loc>

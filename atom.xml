@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-10-20T09:49:03.402Z</updated>
+  <updated>2020-10-21T10:06:46.839Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>innodb状态解说</title>
+    <link href="https://www.huangjingxue.com/2020/10/22/MySQL/innodb%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4/"/>
+    <id>https://www.huangjingxue.com/2020/10/22/MySQL/innodb%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4/</id>
+    <published>2020-10-21T18:06:24.000Z</published>
+    <updated>2020-10-21T10:06:46.839Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第5章索引与算法</title>
+    <link href="https://www.huangjingxue.com/2020/10/21/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    <id>https://www.huangjingxue.com/2020/10/21/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/</id>
+    <published>2020-10-21T15:29:50.000Z</published>
+    <updated>2020-10-21T07:30:21.197Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="MySQL技术内幕" scheme="https://www.huangjingxue.com/categories/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>TiDB简介</title>
@@ -76,7 +118,7 @@
     <link href="https://www.huangjingxue.com/2020/10/20/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC6%E7%AB%A0%E9%94%81/"/>
     <id>https://www.huangjingxue.com/2020/10/20/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC6%E7%AB%A0%E9%94%81/</id>
     <published>2020-10-20T11:13:57.000Z</published>
-    <updated>2020-10-21T07:15:03.728Z</updated>
+    <updated>2020-10-21T07:25:42.246Z</updated>
     
     <summary type="html">
     
@@ -135,7 +177,7 @@
     <link href="https://www.huangjingxue.com/2020/10/19/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC2%E7%AB%A0InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/"/>
     <id>https://www.huangjingxue.com/2020/10/19/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC2%E7%AB%A0InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/</id>
     <published>2020-10-19T14:14:41.000Z</published>
-    <updated>2020-10-19T10:52:51.931Z</updated>
+    <updated>2020-10-21T10:29:22.726Z</updated>
     
     <summary type="html">
     
@@ -143,7 +185,12 @@
       
         
         
-          &lt;h1 id=&quot;2-1-InnoDB存储引擎概述&quot;&gt;&lt;a href=&quot;#2-1-InnoDB存储引擎概述&quot; class=&quot;headerlink&quot; title=&quot;2.1 InnoDB存储引擎概述&quot;&gt;&lt;/a&gt;2.1
+          &lt;p&gt;&lt;strong&gt;章节目标&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;了解InnoDB存储引擎的历史&lt;/li&gt;
+&lt;li&gt;了解InnoDB存储引擎的体系结构（包括后台线程和内存结构）&lt;/li&gt;
+&lt;li&gt;了解InnoDB存储引擎的关键特性&lt;/li&gt;
+&lt;li&gt;了解启动和关闭MyS
         
       
     
@@ -487,52 +534,6 @@
     
     
       <category term="阿里云大学" scheme="https://www.huangjingxue.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E5%A4%A7%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>03关-Matplotlib</title>
-    <link href="https://www.huangjingxue.com/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/"/>
-    <id>https://www.huangjingxue.com/2020/06/11/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/03%E5%85%B3-Matplotlib/</id>
-    <published>2020-06-11T09:42:04.000Z</published>
-    <updated>2020-06-16T10:42:16.011Z</updated>
-    
-    <summary type="html">
-    
-      通过数据分析来进行决策，那么使用合适的图表来准确地展示数据是至关重要的。要做到这一点，首先你要理解每种图表的表达方式及其适用场景。数据可视化时要确保图表的含义清晰准确。
-    
-    </summary>
-    
-    
-      <category term="Python数据分析" scheme="https://www.huangjingxue.com/categories/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="Python" scheme="https://www.huangjingxue.com/tags/Python/"/>
-    
-      <category term="数据分析" scheme="https://www.huangjingxue.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作记录管理系统</title>
-    <link href="https://www.huangjingxue.com/2020/06/08/Python/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://www.huangjingxue.com/2020/06/08/Python/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</id>
-    <published>2020-06-08T10:19:52.000Z</published>
-    <updated>2020-06-10T02:49:59.884Z</updated>
-    
-    <summary type="html">
-    
-      手把手教你搭建工作记录管理系统。
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="https://www.huangjingxue.com/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="https://www.huangjingxue.com/tags/Python/"/>
-    
-      <category term="Flaskadmin" scheme="https://www.huangjingxue.com/tags/Flaskadmin/"/>
     
   </entry>
   
