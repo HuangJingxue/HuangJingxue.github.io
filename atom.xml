@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-10-21T10:06:46.839Z</updated>
+  <updated>2020-10-28T07:17:33.866Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第5章索引与算法</title>
+    <link href="https://www.huangjingxue.com/2020/10/27/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    <id>https://www.huangjingxue.com/2020/10/27/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/</id>
+    <published>2020-10-27T09:51:44.000Z</published>
+    <updated>2020-10-28T07:17:33.866Z</updated>
+    
+    <summary type="html">
+    
+      要找到一个合适的平衡点，这对应用程序的性能至关重要。
+    
+    </summary>
+    
+    
+      <category term="MySQL技术内幕" scheme="https://www.huangjingxue.com/categories/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第7章事务</title>
+    <link href="https://www.huangjingxue.com/2020/10/24/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC7%E7%AB%A0%E4%BA%8B%E5%8A%A1/"/>
+    <id>https://www.huangjingxue.com/2020/10/24/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC7%E7%AB%A0%E4%BA%8B%E5%8A%A1/</id>
+    <published>2020-10-23T17:44:57.000Z</published>
+    <updated>2020-10-23T10:44:18.166Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;7-2-事务的实现&quot;&gt;&lt;a href=&quot;#7-2-事务的实现&quot; class=&quot;headerlink&quot; title=&quot;7.2 事务的实现&quot;&gt;&lt;/a&gt;7.2 事务的实现&lt;/h1&gt;&lt;p&gt;redo log
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL技术内幕" scheme="https://www.huangjingxue.com/categories/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>innodb状态解说</title>
     <link href="https://www.huangjingxue.com/2020/10/22/MySQL/innodb%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4/"/>
     <id>https://www.huangjingxue.com/2020/10/22/MySQL/innodb%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4/</id>
     <published>2020-10-21T18:06:24.000Z</published>
-    <updated>2020-10-21T10:06:46.839Z</updated>
+    <updated>2020-10-21T10:29:49.697Z</updated>
     
     <summary type="html">
     
@@ -36,25 +84,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>第5章索引与算法</title>
-    <link href="https://www.huangjingxue.com/2020/10/21/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    <id>https://www.huangjingxue.com/2020/10/21/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/</id>
-    <published>2020-10-21T15:29:50.000Z</published>
-    <updated>2020-10-21T07:30:21.197Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="MySQL技术内幕" scheme="https://www.huangjingxue.com/categories/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
-    
-    
-      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
     
   </entry>
   
@@ -513,27 +542,6 @@
       <category term="Python" scheme="https://www.huangjingxue.com/tags/Python/"/>
     
       <category term="数据分析" scheme="https://www.huangjingxue.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Aliyun讲师认证</title>
-    <link href="https://www.huangjingxue.com/2020/06/12/%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/Aliyun%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/"/>
-    <id>https://www.huangjingxue.com/2020/06/12/%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/Aliyun%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/</id>
-    <published>2020-06-12T15:00:44.000Z</published>
-    <updated>2020-06-24T06:23:06.894Z</updated>
-    
-    <summary type="html">
-    
-      系统地整理自己的思路，整理过往的经验，使它有逻辑性，有条理性。
-    
-    </summary>
-    
-    
-      <category term="Aliyun讲师认证" scheme="https://www.huangjingxue.com/categories/Aliyun%E8%AE%B2%E5%B8%88%E8%AE%A4%E8%AF%81/"/>
-    
-    
-      <category term="阿里云大学" scheme="https://www.huangjingxue.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E5%A4%A7%E5%AD%A6/"/>
     
   </entry>
   
