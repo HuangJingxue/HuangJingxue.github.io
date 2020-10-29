@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-10-28T07:17:33.866Z</updated>
+  <updated>2020-10-29T03:43:24.097Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -17,11 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mysqldump和xtrabackup备份原理说明</title>
+    <link href="https://www.huangjingxue.com/2020/10/29/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/mysqldump%E5%92%8Cxtrabackup%E5%A4%87%E4%BB%BD%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E/"/>
+    <id>https://www.huangjingxue.com/2020/10/29/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/mysqldump%E5%92%8Cxtrabackup%E5%A4%87%E4%BB%BD%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E/</id>
+    <published>2020-10-29T11:43:24.000Z</published>
+    <updated>2020-10-29T03:43:24.097Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>第5章索引与算法</title>
     <link href="https://www.huangjingxue.com/2020/10/27/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     <id>https://www.huangjingxue.com/2020/10/27/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/</id>
     <published>2020-10-27T09:51:44.000Z</published>
-    <updated>2020-10-28T07:17:33.866Z</updated>
+    <updated>2020-10-29T10:30:43.222Z</updated>
     
     <summary type="html">
     
@@ -42,7 +57,7 @@
     <link href="https://www.huangjingxue.com/2020/10/24/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC7%E7%AB%A0%E4%BA%8B%E5%8A%A1/"/>
     <id>https://www.huangjingxue.com/2020/10/24/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC7%E7%AB%A0%E4%BA%8B%E5%8A%A1/</id>
     <published>2020-10-23T17:44:57.000Z</published>
-    <updated>2020-10-23T10:44:18.166Z</updated>
+    <updated>2020-10-28T07:18:40.994Z</updated>
     
     <summary type="html">
     
@@ -238,7 +253,7 @@
     <link href="https://www.huangjingxue.com/2020/10/16/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E8%A6%81%E8%AF%BB%E8%BF%99%E6%9C%AC%E4%B9%A6/"/>
     <id>https://www.huangjingxue.com/2020/10/16/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E8%A6%81%E8%AF%BB%E8%BF%99%E6%9C%AC%E4%B9%A6/</id>
     <published>2020-10-16T10:50:51.000Z</published>
-    <updated>2020-10-20T03:12:40.562Z</updated>
+    <updated>2020-10-29T08:29:11.970Z</updated>
     
     <summary type="html">
     
@@ -509,29 +524,6 @@
     <summary type="html">
     
       pandas 是Python的核心数据分析支持库，提供了快速、灵活、明确的数据结构，旨在简单、直观地处理关系型、标记型数据。
-    
-    </summary>
-    
-    
-      <category term="Python数据分析" scheme="https://www.huangjingxue.com/categories/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="Python" scheme="https://www.huangjingxue.com/tags/Python/"/>
-    
-      <category term="数据分析" scheme="https://www.huangjingxue.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>04关-Matplotlib实战</title>
-    <link href="https://www.huangjingxue.com/2020/06/18/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/04%E5%85%B3-Matplotlib%E5%AE%9E%E6%88%98/"/>
-    <id>https://www.huangjingxue.com/2020/06/18/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/04%E5%85%B3-Matplotlib%E5%AE%9E%E6%88%98/</id>
-    <published>2020-06-18T10:10:58.000Z</published>
-    <updated>2020-06-19T06:08:52.371Z</updated>
-    
-    <summary type="html">
-    
-      通过数据分析来进行决策，那么使用合适的图表来准确地展示数据是至关重要的。要做到这一点，首先你要理解每种图表的表达方式及其适用场景。数据可视化时要确保图表的含义清晰准确。
     
     </summary>
     
