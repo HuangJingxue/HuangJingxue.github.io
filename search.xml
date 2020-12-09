@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>docker操作篇-部署MySQL</title>
+    <url>/2020/11/21/Docker/docker%E6%93%8D%E4%BD%9C%E7%AF%87-%E9%83%A8%E7%BD%B2MySQL/</url>
+    <content><![CDATA[<p><a href="https://hub.docker.com/_/mysql?tab=description" target="_blank" rel="noopener">#LearnInstallMySQL</a></p>
+<ul>
+<li>Docker镜像分享</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 ~</span><br><span class="line"><span class="meta">$</span><span class="bash"> docker save -o a.tar qingyu111/docker101tutorial</span></span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 ~</span><br><span class="line"><span class="meta">$</span><span class="bash"> docker stop 9e137a347a3f</span></span><br><span class="line">9e137a347a3f</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 ~</span><br><span class="line"><span class="meta">$</span><span class="bash"> docker rmi qingyu111/docker101tutorial</span></span><br><span class="line">Error response from daemon: conflict: unable to remove repository reference "qingyu111/docker101tutorial" (must force) - container 9e137a347a3f is using its referenced image 9318f962962d</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 ~</span><br><span class="line"><span class="meta">$</span><span class="bash"> docker load -i  a.tar</span></span><br><span class="line">Loaded image: qingyu111/docker101tutorial:latest</span><br><span class="line"></span><br><span class="line">Apple@DESKTOP-V8IAR5D MINGW64 ~</span><br><span class="line"><span class="meta">$</span><span class="bash"> docker images</span></span><br><span class="line">REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">qingyu111/docker101tutorial   latest              9318f962962d        28 hours ago        27.2MB</span><br><span class="line">mysql                         8.0                 4f1413420360        2 days ago          545MB</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>docker入门篇-图形化配置</title>
+    <url>/2020/11/19/Docker/docker%E5%85%A5%E9%97%A8%E7%AF%87-%E5%9B%BE%E5%BD%A2%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p><a href="https://www.docker.com/101-tutorial" target="_blank" rel="noopener">#LearnDocker</a></p>
+<p><a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener">#Dockeroverview</a></p>
+<h4 id="Docker-Desktop"><a href="#Docker-Desktop" class="headerlink" title="Docker Desktop"></a>Docker Desktop</h4><p>Docker Desktop is a native application that delivers all of the Docker tools to your Mac or Windows Computer. </p>
+<ol>
+<li>Open Docker Desktop. (Download <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">here</a> if you don’t have it).</li>
+<li>Type the following command in your terminal: <code>docker run -dp 80:80 docker/getting-started</code></li>
+<li>Open your browser to <a href="http://localhost/" target="_blank" rel="noopener">http://localhost</a></li>
+<li>Have fun!</li>
+</ol>
+<p><em>DockerID:qingyu111</em></p>
+
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>去o专题</title>
+    <url>/2020/11/16/Oracle/%E5%8E%BBo%E4%B8%93%E9%A2%98/</url>
+    <content><![CDATA[<p><a href="https://time.geekbang.org/column/article/207010" target="_blank" rel="noopener">陆金所去Oracle转MySQL全过程</a><br><a href="https://www.lufaxholding.com/zh-cn/solution/detail/solution/luDBGate/sqlmapo2m/index.html" target="_blank" rel="noopener">SQL转换官网</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>02-日志系统一条SQL更新语句是如何执行的？</title>
     <url>/2020/11/16/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/02-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E4%B8%80%E6%9D%A1SQL%E6%9B%B4%E6%96%B0%E8%AF%AD%E5%8F%A5%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%EF%BC%9F/</url>
     <content><![CDATA[]]></content>
@@ -2364,7 +2403,7 @@ svg text::selection,svg tspan::selection{background-color: #4285f4;color: #fffff
   <entry>
     <title>峰会引导</title>
     <url>/2020/10/30/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/%E5%B3%B0%E4%BC%9A%E5%BC%95%E5%AF%BC/</url>
-    <content><![CDATA[<p><a href="https://www.dams.org.cn/" target="_blank" rel="noopener">DAMS中国数据智能管理峰会</a></p>
+    <content><![CDATA[<p><a href="https://www.dams.org.cn/" target="_blank" rel="noopener">DAMS中国数据智能管理峰会</a><br><a href="https://qcon.infoq.cn/2020/beijing/" target="_blank" rel="noopener">全球软件开发大会</a><br><a href="https://www.infoq.cn/topic/ArchSummit" target="_blank" rel="noopener">全球架构师大会</a></p>
 ]]></content>
       <categories>
         <category>峰会</category>
@@ -3866,6 +3905,21 @@ svg text::selection,svg tspan::selection{background-color: #4285f4;color: #fffff
 <blockquote>
 <p>MySQL可以分为 Server层和存储引擎层两部分<br>Server 层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖 MySQL 的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。<br>而存储引擎层负责数据的存储和提取。其架构模式是插件式的，支持 InnoDB、MyISAM、Memory 等多个存储引擎。现在最常用的存储引擎是 InnoDB，它从 MySQL 5.5.5 版本开始成为了默认存储引擎。</p>
 </blockquote>
+<p><strong>连接器</strong></p>
+<ul>
+<li>连接器第一步，你会先连接到这个数据库上，这时候接待你的就是连接器。连接器负责跟客户端建立连接、获取权限、维持和管理连接。</li>
+</ul>
+<p><strong>查询缓存</strong></p>
+<ul>
+<li>MySQL拿到一个查询请求后，会先到查询缓存看看，之前是不是执行过这条语句。查询能够直接在这个缓存中找到key，那么这个value就会被直接返回给客户段。</li>
+<li>如果语句不在查询缓存中，就会继续后面的执行阶段。执行完成后，执行结果会被存入查询缓存中。</li>
+</ul>
+<p><strong>分析器</strong></p>
+<ul>
+<li>分析器先做“词法分析”，做完关键字识别后，就要做“语法分析”</li>
+<li>如果语句不对，提示“You have an error in you SQL syntax”</li>
+</ul>
+<p><strong>优化器</strong></p>
 <h1 id="重要的日志模块：redo-log"><a href="#重要的日志模块：redo-log" class="headerlink" title="重要的日志模块：redo log"></a>重要的日志模块：redo log</h1><img src="/2020/07/01/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/01-%E4%B8%80%E6%9D%A1SQL%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%EF%BC%9F/2.png" class="" title="This is an 2 image">
 <blockquote>
 <p>有了 redo log，InnoDB 就可以保证即使数据库发生异常重启，之前提交的记录都不会丢失，这个能力称为 <strong>crash-safe。</strong></p>
