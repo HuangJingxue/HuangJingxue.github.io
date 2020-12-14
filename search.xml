@@ -2796,6 +2796,12 @@ svg text::selection,svg tspan::selection{background-color: #4285f4;color: #fffff
     <title>TiDB简介</title>
     <url>/2020/10/21/TiDB/TiDB%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<p><em>帮助文档：<a href="https://docs.pingcap.com/zh/tidb/v3.0/online-deployment-using-ansible" target="_blank" rel="noopener">https://docs.pingcap.com/zh/tidb/v3.0/online-deployment-using-ansible</a></em></p>
+<blockquote>
+<p>欢迎大家参与 TiDB 4.0 课程尝鲜，进群后辛苦将群昵称修改为：姓名@公司</p>
+<p>12.9~12.14 是报名阶段，正式的追“剧”将从 12.15 正式开始，持续 21 天，复习计划详见【腾讯文档】TiDB 4.0 课程 21 天定制学习计划<br><a href="https://docs.qq.com/sheet/DUmJWRWNNY0N1eFh6，进群的同学也可以提前抢跑。" target="_blank" rel="noopener">https://docs.qq.com/sheet/DUmJWRWNNY0N1eFh6，进群的同学也可以提前抢跑。</a></p>
+<p>打卡将从 12.15 开始，发布学习笔记到 <a href="https://asktug.com/c/pu/notes" target="_blank" rel="noopener">https://asktug.com/c/pu/notes</a> 视为打卡成功，一篇学习笔记积 10 分，被评选为优质学习笔记，可额外获得 20 分加分，累计积分可兑换 PCTA 考试限时优惠券、PingCAP 年度大会邀请函、TiDB 限量周边等；优质学习笔记，将被整合至 TiDB 4.0 学习素材库。</p>
+<p>预祝大家学习愉快！</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>TiDB</category>

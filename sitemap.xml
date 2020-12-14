@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.huangjingxue.com/2020/10/21/TiDB/TiDB%E7%AE%80%E4%BB%8B/</loc>
+    
+    <lastmod>2020-12-14T03:07:55.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.huangjingxue.com/2020/11/16/Oracle/%E5%8E%BBo%E4%B8%93%E9%A2%98/</loc>
+    
+    <lastmod>2020-12-09T02:02:21.794Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.huangjingxue.com/2020/11/21/Docker/docker%E6%93%8D%E4%BD%9C%E7%AF%87-%E9%83%A8%E7%BD%B2MySQL/</loc>
+    
+    <lastmod>2020-12-09T02:02:21.792Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.huangjingxue.com/2020/11/19/Docker/docker%E5%85%A5%E9%97%A8%E7%AF%87-%E5%9B%BE%E5%BD%A2%E5%8C%96%E9%85%8D%E7%BD%AE/</loc>
     
-    <lastmod>2020-12-09T02:01:55.693Z</lastmod>
+    <lastmod>2020-12-09T02:02:21.786Z</lastmod>
     
   </url>
   
@@ -12,20 +33,6 @@
     <loc>https://www.huangjingxue.com/2020/10/30/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/%E5%B3%B0%E4%BC%9A%E5%BC%95%E5%AF%BC/</loc>
     
     <lastmod>2020-12-09T02:01:29.052Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.huangjingxue.com/2020/11/21/Docker/docker%E6%93%8D%E4%BD%9C%E7%AF%87-%E9%83%A8%E7%BD%B2MySQL/</loc>
-    
-    <lastmod>2020-11-20T11:03:30.245Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.huangjingxue.com/2020/11/16/Oracle/%E5%8E%BBo%E4%B8%93%E9%A2%98/</loc>
-    
-    <lastmod>2020-11-16T06:52:26.101Z</lastmod>
     
   </url>
   
@@ -110,13 +117,6 @@
     <loc>https://www.huangjingxue.com/2020/10/20/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC6%E7%AB%A0%E9%94%81/</loc>
     
     <lastmod>2020-10-21T07:25:42.246Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.huangjingxue.com/2020/10/21/TiDB/TiDB%E7%AE%80%E4%BB%8B/</loc>
-    
-    <lastmod>2020-10-20T09:49:03.402Z</lastmod>
     
   </url>
   
