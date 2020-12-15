@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-12-15T02:59:42.064Z</updated>
+  <updated>2020-12-15T06:49:23.230Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.huangjingxue.com/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"/>
     <id>https://www.huangjingxue.com/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/</id>
     <published>2020-12-15T10:22:07.000Z</published>
-    <updated>2020-12-15T02:59:42.064Z</updated>
+    <updated>2020-12-15T06:49:23.230Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,10 @@
       
         
         
-          &lt;p&gt;[Day 1]&lt;/p&gt;
+          &lt;p&gt;&lt;a href=&quot;https://docs.pingcap.com/zh/tidb/stable&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;TiDB简介&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[Day 1]&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;1.1 A Brief History of Distributed Database（分布式数据库发展简史）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本课程简要介绍了从 20 世纪到 21
+&lt;li&gt;1.1 A Brief
         
       
     

@@ -3,7 +3,8 @@
   <entry>
     <title>TiDB新手指南</title>
     <url>/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>[Day 1]</p>
+    <content><![CDATA[<p><a href="https://docs.pingcap.com/zh/tidb/stable" target="_blank" rel="noopener">TiDB简介</a></p>
+<p>[Day 1]</p>
 <ul>
 <li>1.1 A Brief History of Distributed Database（分布式数据库发展简史）</li>
 </ul>
@@ -12,10 +13,29 @@
 <p>学习目标： 帮助学员了解分布式数据库的发展历史</p>
 <p>关键知识点： 分布式数据库历史，NoSQL 和 NewSQL，OLTP 和 HTAP，新技术</p>
 </blockquote>
-<p><img src="TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/image-20201215105931550.png" alt="image-20201215105931550"></p>
+<p>TiDB：高性能高扩展的数据库</p>
+<img src="/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/1.png" class="" title="This is an 1 image">
+
+
+
+
+
 <ul>
 <li>1.2 What’s an HTAP Database? （HTAP 数据库简介）</li>
 </ul>
+<blockquote>
+<p>本课程简要介绍了 HTAP 意义，技术难点，TiDB 如何实现 HTAP 以及相关的应用场景。</p>
+<p>学习目标： 帮助学员熟悉 HTAP 领域</p>
+<p>关键知识点： HTAP意义；设计原则以及应用场景</p>
+</blockquote>
+<p>数据库的演化</p>
+<p>HTAP的架构</p>
+<p>HTAP应用场景</p>
+<p>什么是HTAP？</p>
+
+
+
+
 <p>[Day2]</p>
 <ul>
 <li><p>1.3 A   Brief History About the TiDB database platform（TiDB 发展简史）</p>
