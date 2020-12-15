@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.huangjingxue.com/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2020-12-15</lastmod>
+  </url>  <url>
     <loc>https://www.huangjingxue.com/2020/10/21/TiDB/TiDB%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-15</lastmod>
   </url>  <url>
     <loc>https://www.huangjingxue.com/2020/11/16/Oracle/%E5%8E%BBo%E4%B8%93%E9%A2%98/</loc>
     <lastmod>2020-12-09</lastmod>

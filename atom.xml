@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-12-09T02:02:21.792Z</updated>
+  <updated>2020-12-15T02:59:42.064Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TiDB新手指南</title>
+    <link href="https://www.huangjingxue.com/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"/>
+    <id>https://www.huangjingxue.com/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/</id>
+    <published>2020-12-15T10:22:07.000Z</published>
+    <updated>2020-12-15T02:59:42.064Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[Day 1]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.1 A Brief History of Distributed Database（分布式数据库发展简史）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本课程简要介绍了从 20 世纪到 21
+        
+      
+    
+    </summary>
+    
+    
+      <category term="TiDB" scheme="https://www.huangjingxue.com/categories/TiDB/"/>
+    
+    
+      <category term="TiDB入门" scheme="https://www.huangjingxue.com/tags/TiDB%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>docker操作篇-部署MySQL</title>
@@ -301,7 +333,7 @@
     <link href="https://www.huangjingxue.com/2020/10/21/TiDB/TiDB%E7%AE%80%E4%BB%8B/"/>
     <id>https://www.huangjingxue.com/2020/10/21/TiDB/TiDB%E7%AE%80%E4%BB%8B/</id>
     <published>2020-10-20T16:55:09.000Z</published>
-    <updated>2020-12-14T03:07:55.909Z</updated>
+    <updated>2020-12-15T02:20:34.104Z</updated>
     
     <summary type="html">
     
@@ -496,46 +528,6 @@
 &lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;current_timestamp&lt;/td&gt;
 &lt;td&gt;返回当前会话时区中的当前日期:以timestamp with
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Oracle" scheme="https://www.huangjingxue.com/categories/Oracle/"/>
-    
-    
-      <category term="Oracle 12C" scheme="https://www.huangjingxue.com/tags/Oracle-12C/"/>
-    
-      <category term="OCP" scheme="https://www.huangjingxue.com/tags/OCP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle单行函数详解</title>
-    <link href="https://www.huangjingxue.com/2020/09/24/Oracle/Oracle%E5%8D%95%E8%A1%8C%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://www.huangjingxue.com/2020/09/24/Oracle/Oracle%E5%8D%95%E8%A1%8C%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3/</id>
-    <published>2020-09-24T15:26:13.000Z</published>
-    <updated>2020-10-16T02:42:43.170Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;函数名&lt;/th&gt;
-&lt;th&gt;函数详解&lt;/th&gt;
-&lt;th&gt;备注&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;FLOOR&lt;/td&gt;
-&lt;td&gt;返回小于等于n的最大整数值&lt;/td&gt;
-&lt;td&gt;floor(n)&lt;/t
         
       
     
