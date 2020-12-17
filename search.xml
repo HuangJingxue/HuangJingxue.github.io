@@ -1,6 +1,478 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>07-TiDB典型应用场景及用户案例</title>
+    <url>/2020/12/18/TiDB/07-TiDB%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%8F%8A%E7%94%A8%E6%88%B7%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<h2 id="课程名称：1-7-Use-cases-and-success-stories-with-the-TiDB（TiDB-典型应用场景及用户案例）"><a href="#课程名称：1-7-Use-cases-and-success-stories-with-the-TiDB（TiDB-典型应用场景及用户案例）" class="headerlink" title="课程名称：1.7 Use cases and success stories with the TiDB（TiDB 典型应用场景及用户案例）"></a>课程名称：1.7 Use cases and success stories with the TiDB（TiDB 典型应用场景及用户案例）</h2><h2 id="学习时长：20min"><a href="#学习时长：20min" class="headerlink" title="学习时长：20min"></a>学习时长：20min</h2><h2 id="课程收获："><a href="#课程收获：" class="headerlink" title="课程收获："></a>课程收获：</h2><p>本课程简要介绍了 TiDB 的适用场景及用户案例。 从 TiDB 具有的可扩展性，高可用性，分布式事务，实时分析等特点出发，总结出 TiDB 的各种适用场景。在海量数据，高并发等大规模集群中，TiDB 能够体现出超强的处理能力。同时基于 HTAP 的架构设计，TiDB 也非常适合作为实时分析类系统的数据库。</p>
+<h2 id="课程内容："><a href="#课程内容：" class="headerlink" title="课程内容："></a>课程内容：</h2><p>学习目标： 了解 TiDB 的特性及适用的场景</p>
+<p>关键知识点： TiDB；HTAP；用户案例</p>
+<h2 id="TiDB特性"><a href="#TiDB特性" class="headerlink" title="TiDB特性"></a>TiDB特性</h2><ul>
+<li>可扩展性</li>
+<li>高可用</li>
+<li>分布式事务</li>
+<li>实时分析能力</li>
+</ul>
+<h2 id="TiDB适用场景"><a href="#TiDB适用场景" class="headerlink" title="TiDB适用场景"></a>TiDB适用场景</h2><p>基于可扩展性及分布式事务特性</p>
+<ul>
+<li>海量数据</li>
+<li>高并发</li>
+<li>基于MySQL开发的数据代码</li>
+<li>未来可扩展</li>
+</ul>
+<p>高可用：</p>
+<ul>
+<li>重要的业务</li>
+<li>多活需求</li>
+</ul>
+<p>实时分析需求：</p>
+<ul>
+<li>跨库统计报表</li>
+<li>指定列的分析业务</li>
+</ul>
+<h2 id="客户案例"><a href="#客户案例" class="headerlink" title="客户案例"></a>客户案例</h2><p><a href="https://asktug.com/uploads/default/original/3X/8/7/8781cdb1b2cf9ea3d1d35a0bf80f4e0b5cfbfc2b.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/8/7/8781cdb1b2cf9ea3d1d35a0bf80f4e0b5cfbfc2b_2_690x322.jpeg" alt="image">image.jpg1260×589 71 KB</a></p>
+<p>知乎（最大的生产集群）<br>250多个数据节点 20多个计算节点<br>2万亿的数据记录数<br>每个月100亿的数据增长<br>超强处理能力</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/a/7/a7e0a0d954427c4ceff4201745d00a5c2e36b1a9.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/a/7/a7e0a0d954427c4ceff4201745d00a5c2e36b1a9_2_690x295.jpeg" alt="image">image.jpg1274×546 73.4 KB</a></p>
+<p>北京银行<br>两地三中心<br>经历过在线扩容和缩容，业务不受影响</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/5/d/5d7e27f2b9a97bee99de0dfe3bc7bf855a61088b.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/5/d/5d7e27f2b9a97bee99de0dfe3bc7bf855a61088b_2_690x343.jpeg" alt="image">image.jpg1274×635 53.6 KB</a></p>
+<p>PayPay<br>日本第一支付公司<br>支付，钱包交易写库的流量都使用TiDB<br>100TB数据量</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/a/d/adf98a3d6a8b1a78ae3c85674b14bc4504f1be3c.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/a/d/adf98a3d6a8b1a78ae3c85674b14bc4504f1be3c_2_690x327.jpeg" alt="image">image.jpg1278×606 57.9 KB</a></p>
+<p>中通快递<br>网点查询业务系统，各网点寄件的情况<br>TiSpark应用各网点BI需求</p>
+<p>思考问题：<br>TiDB能否支撑BI业务？</p>
+<ul>
+<li>可以</li>
+</ul>
+<p>TiDB是否有银行使用案例？</p>
+<ul>
+<li>有</li>
+<li>[TiDB 典型应用场景及用户案例视频教程](<a href="https://university.pingcap.com/courses/TiDB" target="_blank" rel="noopener">https://university.pingcap.com/courses/TiDB</a> 4.0 新手指南/chapter/101-章节/lesson/Use-cases-and-success-stories-with-the-TiDB)</li>
+<li>TiDB 生态工具适用场景</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TiDB</category>
+      </categories>
+      <tags>
+        <tag>TiDB入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>06-TiDB中的读写流程</title>
+    <url>/2020/12/18/TiDB/06-TiDB%E4%B8%AD%E7%9A%84%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="课程名称：1-6-Read-and-Write-data-in-the-TiDB-database-platform（TiDB-中的读写流程）"><a href="#课程名称：1-6-Read-and-Write-data-in-the-TiDB-database-platform（TiDB-中的读写流程）" class="headerlink" title="课程名称：1.6 Read and Write data in the TiDB database platform（TiDB 中的读写流程）"></a>课程名称：1.6 Read and Write data in the TiDB database platform（TiDB 中的读写流程）</h2><h2 id="学习时长：20min"><a href="#学习时长：20min" class="headerlink" title="学习时长：20min"></a>学习时长：20min</h2><h2 id="课程收获："><a href="#课程收获：" class="headerlink" title="课程收获："></a>课程收获：</h2><p>本课程主要包括 TiDB 架构的简单介绍、各个组件的作用，以及读写请求在 TiDB 中的过程</p>
+<h2 id="课程内容："><a href="#课程内容：" class="headerlink" title="课程内容："></a>课程内容：</h2><p>学习目标： 对 TiDB 整体架构以及读写路程有大概的了解<br>关键知识点： TiDB 架构；读写流程</p>
+<h2 id="TiDB整体架构"><a href="#TiDB整体架构" class="headerlink" title="TiDB整体架构"></a>TiDB整体架构</h2><p><a href="https://asktug.com/uploads/default/original/3X/3/9/3922aed8671259e75b76381cbad35a599622dbdc.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/3/9/3922aed8671259e75b76381cbad35a599622dbdc_2_689x360.jpeg" alt="image">image.jpg1237×646 97.8 KB</a></p>
+<p>三大组件：</p>
+<ul>
+<li><ol>
+<li>TiDB：负责SQL处理组件</li>
+</ol>
+</li>
+<li><ol>
+<li>TiKV：负责存储组件</li>
+</ol>
+</li>
+<li><ol>
+<li>PD：负责调度组件</li>
+</ol>
+</li>
+</ul>
+<p>TiDB可以很好的跟spark结合，通过TiSpark做为入口，可以像使用spark一样使用TiDB</p>
+<p><strong>TiDB</strong></p>
+<p><a href="https://asktug.com/uploads/default/original/3X/f/b/fb327f927f6b2134710fd3c04ac73c8fa656ba13.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/f/b/fb327f927f6b2134710fd3c04ac73c8fa656ba13_2_690x360.jpeg" alt="image">image.jpg1247×652 133 KB</a></p>
+<p>SQL 层，对外暴露 MySQL 协议的连接 endpoint，负责接受客户端的连接，执行 SQL 解析和优化，最终生成分布式执行计划。TiDB 层本身是无状态的，实践中可以启动多个 TiDB 实例，通过负载均衡组件（如 LVS、HAProxy 或 F5）对外提供统一的接入地址，客户端的连接可以均匀地分摊在多个 TiDB 实例上以达到负载均衡的效果。TiDB Server 本身并不存储数据，只是解析 SQL，将实际的数据读取请求转发给底层的存储节点 TiKV（或 TiFlash）。</p>
+<p><strong>TiKV</strong></p>
+<p><a href="https://asktug.com/uploads/default/original/3X/a/d/ad94b1f8e1431d234f0ef9e9f53765120fde632e.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/a/d/ad94b1f8e1431d234f0ef9e9f53765120fde632e_2_690x334.jpeg" alt="image">image.jpg1248×605 58.4 KB</a></p>
+<p>目前是一个基于**引擎修改实现的分布式KV存储引擎，具有高度分层的特性，底层的KV存储上层实现了Raft协议实现了保证数据一致性，上层实现了MVCC特性实现事务的多版本控制，上层Transaction事务层实现事务相关内容，TIKV分布式强一致的存储引擎不依赖分布式文件系统实现的。</p>
+<p>负责存储数据，从外部看 TiKV 是一个分布式的提供事务的 Key-Value 存储引擎。存储数据的基本单位是 Region，每个 Region 负责存储一个 Key Range（从 StartKey 到 EndKey 的左闭右开区间）的数据，每个 TiKV 节点会负责多个 Region。TiKV 的 API 在 KV 键值对层面提供对分布式事务的原生支持，默认提供了 SI (Snapshot Isolation) 的隔离级别，这也是 TiDB 在 SQL 层面支持分布式事务的核心。TiDB 的 SQL 层做完 SQL 解析后，会将 SQL 的执行计划转换为对 TiKV API 的实际调用。所以，数据都存储在 TiKV 中。另外，TiKV 中的数据都会自动维护多副本（默认为三副本），天然支持高可用和自动故障转移。</p>
+<p><strong>PD</strong></p>
+<p><a href="https://asktug.com/uploads/default/original/3X/9/c/9c8e5a75689c0beef7480299a39e595f4ba04101.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/9/c/9c8e5a75689c0beef7480299a39e595f4ba04101_2_690x374.jpeg" alt="image">image.jpg1254×681 80.9 KB</a></p>
+<p>主要负责全局事务ID的分配，实现region以及leader的调度，实现均衡。<br>整个 TiDB 集群的元信息管理模块，负责存储每个 TiKV 节点实时的数据分布情况和集群的整体拓扑结构，提供 TiDB Dashboard 管控界面，并为分布式事务分配事务 ID。PD 不仅存储元信息，同时还会根据 TiKV 节点实时上报的数据分布状态，下发数据调度命令给具体的 TiKV 节点，可以说是整个集群的“大脑”。此外，PD 本身也是由至少 3 个节点构成，拥有高可用的能力。建议部署奇数个 PD 节点。</p>
+<p>4.0中提供了pd dashboad的功能</p>
+<h1 id="TiDB中SQL读写处理流程"><a href="#TiDB中SQL读写处理流程" class="headerlink" title="TiDB中SQL读写处理流程"></a>TiDB中SQL读写处理流程</h1><p><a href="https://asktug.com/uploads/default/original/3X/8/a/8aac3876c20b474c2a8d5b1d4bf14f10e3c33758.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/8/a/8aac3876c20b474c2a8d5b1d4bf14f10e3c33758_2_690x375.jpeg" alt="image">image.jpg1245×678 87.4 KB</a></p>
+<h2 id="读请求在TiDB中的处理过程"><a href="#读请求在TiDB中的处理过程" class="headerlink" title="读请求在TiDB中的处理过程"></a>读请求在TiDB中的处理过程</h2><p>1.客户端与TiDB建立连接并发送请求给TiDB<br>2.TiDB接受客户端发送的请求获取客户端发送的SQL语句<br>3.TiDB负责parses和compiles阶段文本解析，并生成AST语法树进行优化<br>4.TiDB与PD交互获取start_ts信息<br>5.TiDB根据执行计划与table元信息生成executor执行器<br>6.TiDB通过gRPC请求的方式将coprocessor请求发送给TiKV层<br>7.TiKV接到请求并按照请求过滤数据，并将数据返回给TiDB<br>8.TiDB接收到所有返回结果之后，整理汇总数据<br>9.TiDB将整理的结果返回给客户端</p>
+<h2 id="写请求在TiDB中的处理过程"><a href="#写请求在TiDB中的处理过程" class="headerlink" title="写请求在TiDB中的处理过程"></a>写请求在TiDB中的处理过程</h2><p>1.客户端与TiDB建立连接并发送请求给TiDB<br>2.TiDB接受客户端发送的请求获取客户端发送的SQL语句<br>3.TiDB负责parses和compiles阶段文本解析，并生成AST语法树进行优化<br>4.TiDB与PD交互获取start_ts信息<br>5.TiDB根据执行计划与table元信息生成executor执行器<br>6.TiDB发起commit请求<br>7.参照percolator论文进行二阶段提交，prewrite阶段以及commit阶段，TiDB会在二阶段提交的commit阶段像TiKV请求获取commit_ts<br>8.TiKV将结果返回给TiDB<br>9.TiDB将结果返回给客户端</p>
+<h2 id="对比读请求和写请求"><a href="#对比读请求和写请求" class="headerlink" title="对比读请求和写请求"></a>对比读请求和写请求</h2><ol>
+<li>读请求主要像PD请求一次ts即可</li>
+<li>写请求会请求两次tso，一次start_ts,一次commit_ts</li>
+<li>写请求会涉及二阶段提交以及分布式事务相关内容</li>
+</ol>
+<ul>
+<li>[TiDB 中的读写流程视频教程](<a href="https://university.pingcap.com/courses/TiDB" target="_blank" rel="noopener">https://university.pingcap.com/courses/TiDB</a> 4.0 新手指南/chapter/101-章节/lesson/Read-and-Write-data-in-the-TiDB-database-platform)</li>
+<li><a href="https://docs.pingcap.com/zh/tidb/stable/tidb-architecture" target="_blank" rel="noopener">TiDB整体架构</a></li>
+<li><a href="https://docs.pingcap.com/zh/tidb/stable/tidb-storage" target="_blank" rel="noopener">TiDB 数据库的存储</a></li>
+<li><a href="https://docs.pingcap.com/zh/tidb/stable/tidb-scheduling" target="_blank" rel="noopener">调度概述</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TiDB</category>
+      </categories>
+      <tags>
+        <tag>TiDB入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>05-TiDB4.0重要特性</title>
+    <url>/2020/12/18/TiDB/05-TiDB4-0%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="课程名称：1-5-Important-features-of-TiDB-database-platform（TiDB-4-0-重要特性）"><a href="#课程名称：1-5-Important-features-of-TiDB-database-platform（TiDB-4-0-重要特性）" class="headerlink" title="课程名称：1.5 Important features of TiDB database platform（TiDB 4.0 重要特性）"></a>课程名称：1.5 Important features of TiDB database platform（TiDB 4.0 重要特性）</h2><h2 id="学习时长："><a href="#学习时长：" class="headerlink" title="学习时长："></a>学习时长：</h2><p>10min</p>
+<h2 id="课程收获："><a href="#课程收获：" class="headerlink" title="课程收获："></a>课程收获：</h2><ul>
+<li>了解 TiDB 的基础架构以及特性，能够帮助业务解决什么样的问题。</li>
+<li>了解 TiDB 4.0 提供的新功能及改进点。</li>
+</ul>
+<h2 id="课程内容："><a href="#课程内容：" class="headerlink" title="课程内容："></a>课程内容：</h2><blockquote>
+<p>本课程简要介绍了原生分布式数据库 TiDB 的技术特性，相比于传统的单机关系型数据，以及基于分库分表中间件架构的分布式数据库的不同点。</p>
+<p>学习目标： 了解 TiDB 的基础架构以及特性，能够帮助业务解决什么样的问题。</p>
+<p>关键知识点： TiDB 的基础架构，扩展 HTAP 架构，TiDB 4.0 提供的新功能及改进点。</p>
+</blockquote>
+<h3 id="TiDB架构"><a href="#TiDB架构" class="headerlink" title="TiDB架构"></a>TiDB架构</h3><ul>
+<li>Basic Architecture：TiDB、TiKV、PD</li>
+<li>Extended Architecture with TiSpark：分布式计算引擎，千万级别大量join计算时，封装了Spark 的Jar包</li>
+<li>Extended Architecture with TiFlash：行列混存，4.0新推出的最重要的功能。</li>
+</ul>
+<h3 id="技术特性"><a href="#技术特性" class="headerlink" title="技术特性"></a>技术特性</h3><p>在线可拓展性、高可用性、分布式事务、实时HTAP</p>
+<ul>
+<li>一键水平扩容或者缩容得益于 TiDB 存储计算分离的架构的设计，可按需对计算、存储分别进行在线扩容或者缩容，扩容或者缩容过程中对应用运维人员透明。</li>
+<li>金融级高可用数据采用多副本存储，数据副本通过 Multi-Raft 协议同步事务日志，多数派写入成功事务才能提交，确保数据强一致性且少数副本发生故障时不影响数据的可用性。可按需配置副本地理位置、副本数量等策略满足不同容灾级别的要求。</li>
+<li>实时 HTAP提供行存储引擎 TiKV、列存储引擎 TiFlash 两款存储引擎，TiFlash 通过 Multi-Raft Learner 协议实时从 TiKV 复制数据，确保行存储引擎 TiKV 和列存储引擎 TiFlash 之间的数据强一致。TiKV、TiFlash 可按需部署在不同的机器，解决 HTAP 资源隔离的问题。</li>
+<li>云原生的分布式数据库专为云而设计的分布式数据库，通过 <a href="https://docs.pingcap.com/zh/tidb-in-kubernetes/v1.1/tidb-operator-overview" target="_blank" rel="noopener">TiDB Operator</a> 可在公有云、私有云、混合云中实现部署工具化、自动化。</li>
+<li>兼容 MySQL 5.7 协议和 MySQL 生态兼容 MySQL 5.7 协议、MySQL 常用的功能、MySQL 生态，应用无需或者修改少量代码即可从 MySQL 迁移到 TiDB。提供丰富的数据迁移工具帮助应用便捷完成数据迁移。</li>
+</ul>
+<p>案例：</p>
+<ul>
+<li>知乎：300+节点，300+TP数据量</li>
+</ul>
+<h3 id="TiDB-4-0-新特性"><a href="#TiDB-4-0-新特性" class="headerlink" title="TiDB 4.0 新特性"></a>TiDB 4.0 新特性</h3><ul>
+<li>TiUP: 一键安装工具</li>
+<li>Large transaction: 3.0的限制（100MB limit, 6MB per kv pair, 300,000 kyes per transaction） 4.0 (10 GB limit more memory needed, 6MB per kv pair) 支持大事务，最大事务限制由 100 MB 提升到了 10 GB，同时支持乐观事务和悲观事务。</li>
+<li>Tmp storage: 临时表 ,新增查询数据时将 Join、Sort 中间结果写入本地磁盘，防止查询语句占用内存过多导致系统 OOM 的问题，提升系统的稳定性。</li>
+<li>Dashboard:TiDB Dashboard 图形化界面，内置各种有力工具方便 DBA 同学诊断、监视和管理集群。</li>
+<li>Elastic Scheduling: 热点调度支持更多维度。热点调度在决策时，除了根据写入/读取流量作为调度依据外，新引入 key 的维度。可以很大程度改善原有单一维度决策造成的 CPU 资源利用率不均衡的问题。详情参阅：<a href="https://docs.pingcap.com/zh/tidb/stable/tidb-scheduling" target="_blank" rel="noopener">调度</a>。</li>
+</ul>
+<h2 id="学习过程中参考的其他资料"><a href="#学习过程中参考的其他资料" class="headerlink" title="学习过程中参考的其他资料"></a>学习过程中参考的其他资料</h2><ul>
+<li>[视频教程-1.5 Important features of TiDB database platform（TiDB 4.0 重要特性）](<a href="https://university.pingcap.com/courses/TiDB" target="_blank" rel="noopener">https://university.pingcap.com/courses/TiDB</a> 4.0 新手指南/chapter/101-章节/lesson/Important-features-of-TiDB-database-platform)</li>
+<li><a href="https://pingcap.com/blog-cn/tidb-4.0-new-features-tasting-guide/" target="_blank" rel="noopener">TiDB 4.0 新特性尝鲜指南</a></li>
+<li><a href="https://www.toberoot.com/database/tidb/01_raft协议理解.html" target="_blank" rel="noopener">Raft-Understandable Distributed Consensus</a></li>
+<li><a href="https://docs.pingcap.com/zh/tidb/stable/whats-new-in-tidb-4.0" target="_blank" rel="noopener">What’s New in TiDB 4.0</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TiDB</category>
+      </categories>
+      <tags>
+        <tag>TiDB入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>04-TiDB4.0架构概览</title>
+    <url>/2020/12/18/TiDB/04-TiDB4-0%E6%9E%B6%E6%9E%84%E6%A6%82%E8%A7%88/</url>
+    <content><![CDATA[<h1 id="课程名称：1-4-The-TiDB-platform-architecture-and-landscape（TiDB-4-0-架构概览）"><a href="#课程名称：1-4-The-TiDB-platform-architecture-and-landscape（TiDB-4-0-架构概览）" class="headerlink" title="课程名称：1.4 The TiDB platform architecture and landscape（TiDB 4.0 架构概览）"></a>课程名称：1.4 The TiDB platform architecture and landscape（TiDB 4.0 架构概览）</h1><h2 id="学习时长："><a href="#学习时长：" class="headerlink" title="学习时长："></a>学习时长：</h2><p>10min</p>
+<h2 id="课程收获："><a href="#课程收获：" class="headerlink" title="课程收获："></a>课程收获：</h2><p>对 TiDB 的核心组件和生态工具的功能有一定的理解</p>
+<h2 id="课程内容："><a href="#课程内容：" class="headerlink" title="课程内容："></a>课程内容：</h2><blockquote>
+<p>本课程简要介绍了 TiDB 核心系统的各个组件以及部分 TiDB 的生态工具</p>
+<p>学习目标： 对 TiDB 的核心组件和生态工具的功能有一定的理解</p>
+<p>关键知识点： TiDB 架构，计算存储分离，Raft 共识协议，多副本，调度和负载均衡</p>
+</blockquote>
+<h3 id="TiDB-整体架构"><a href="#TiDB-整体架构" class="headerlink" title="TiDB 整体架构"></a>TiDB 整体架构</h3><p>与传统的单机数据库相比，TiDB 具有以下优势：</p>
+<ul>
+<li>纯分布式架构，拥有良好的扩展性，支持弹性的扩缩容</li>
+<li>支持 SQL，对外暴露 MySQL 的网络协议，并兼容大多数 MySQL 的语法，在大多数场景下可以直接替换 MySQL</li>
+<li>默认支持高可用，在少数副本失效的情况下，数据库本身能够自动进行数据修复和故障转移，对业务透明</li>
+<li>支持 ACID 事务，对于一些有强一致需求的场景友好，例如：银行转账</li>
+<li>具有丰富的工具链生态，覆盖数据迁移、同步、备份等多种场景</li>
+</ul>
+<p>在内核设计上，TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间互相通信，组成完整的 TiDB 系统。对应的架构图如下：</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/2/0/20dbc3915f73b13c7bb2d5bb729f297962e6543e.png" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/2/0/20dbc3915f73b13c7bb2d5bb729f297962e6543e_2_690x370.png" alt="architecture">tidb-architecture-1.png2200×1182 227 KB</a></p>
+<ul>
+<li>TiDB Server：SQL 层，对外暴露 MySQL 协议的连接 endpoint，负责接受客户端的连接，执行 SQL 解析和优化，最终生成分布式执行计划。TiDB 层本身是无状态的，实践中可以启动多个 TiDB 实例，通过负载均衡组件（如 LVS、HAProxy 或 F5）对外提供统一的接入地址，客户端的连接可以均匀地分摊在多个 TiDB 实例上以达到负载均衡的效果。TiDB Server 本身并不存储数据，只是解析 SQL，将实际的数据读取请求转发给底层的存储节点 TiKV（或 TiFlash）。</li>
+<li>PD Server：整个 TiDB 集群的元信息管理模块，负责存储每个 TiKV 节点实时的数据分布情况和集群的整体拓扑结构，提供 TiDB Dashboard 管控界面，并为分布式事务分配事务 ID。PD 不仅存储元信息，同时还会根据 TiKV 节点实时上报的数据分布状态，下发数据调度命令给具体的 TiKV 节点，可以说是整个集群的“大脑”。此外，PD 本身也是由至少 3 个节点构成，拥有高可用的能力。建议部署奇数个 PD 节点。</li>
+<li>存储节点<ul>
+<li>TiKV Server：负责存储数据，从外部看 TiKV 是一个分布式的提供事务的 Key-Value 存储引擎。存储数据的基本单位是 Region，每个 Region 负责存储一个 Key Range（从 StartKey 到 EndKey 的左闭右开区间）的数据，每个 TiKV 节点会负责多个 Region。TiKV 的 API 在 KV 键值对层面提供对分布式事务的原生支持，默认提供了 SI (Snapshot Isolation) 的隔离级别，这也是 TiDB 在 SQL 层面支持分布式事务的核心。TiDB 的 SQL 层做完 SQL 解析后，会将 SQL 的执行计划转换为对 TiKV API 的实际调用。所以，数据都存储在 TiKV 中。另外，TiKV 中的数据都会自动维护多副本（默认为三副本），天然支持高可用和自动故障转移。</li>
+<li>TiFlash：TiFlash 是一类特殊的存储节点。和普通 TiKV 节点不一样的是，在 TiFlash 内部，数据是以列式的形式进行存储，主要的功能是为分析型的场景加速。</li>
+</ul>
+</li>
+</ul>
+<h3 id="TiDB-的生态工具"><a href="#TiDB-的生态工具" class="headerlink" title="TiDB 的生态工具"></a>TiDB 的生态工具</h3><h4 id="全量导出"><a href="#全量导出" class="headerlink" title="全量导出"></a>全量导出</h4><p><a href="https://docs.pingcap.com/zh/tidb/stable/dumpling-overview" target="_blank" rel="noopener">Dumpling</a> 是一个用于从 MySQL/TiDB 进行全量逻辑导出的工具。</p>
+<p>基本信息：</p>
+<ul>
+<li>Dumpling 的输入：MySQL/TiDB 集群</li>
+<li>Dumpling 的输出：SQL/CSV 文件</li>
+<li>适用 TiDB 版本：所有版本</li>
+<li>Kubernetes 支持：尚未支持</li>
+</ul>
+<h4 id="全量导入"><a href="#全量导入" class="headerlink" title="全量导入"></a>全量导入</h4><p><a href="https://docs.pingcap.com/zh/tidb/stable/tidb-lightning-overview" target="_blank" rel="noopener">TiDB Lightning</a> 是一个用于将全量数据导入到 TiDB 集群的工具。</p>
+<p>使用 TiDB Lightning 导入数据到 TiDB 时，有三种模式：</p>
+<ul>
+<li><code>local</code> 模式：TiDB Lightning 将数据解析为有序的键值对，并直接将其导入 TiKV。这种模式一般用于导入大量的数据（TB 级别）到新集群，但在数据导入过程中集群无法提供正常的服务。</li>
+<li><code>importer</code> 模式：和 <code>local</code> 模式类似，但是需要部署额外的组件 <code>tikv-importer</code> 协助完成键值对的导入。对于 4.0 以上的目标集群，请优先使用 <code>local</code> 模式进行导入。</li>
+<li><code>tidb</code> 模式：以 TiDB/MySQL 作为后端，这种模式相比 <code>local</code> 和 <code>importer</code> 模式的导入速度较慢，但是可以在线导入，同时也支持将数据导入到 MySQL。</li>
+</ul>
+<p>基本信息：</p>
+<ul>
+<li>Lightning 的输入：<ul>
+<li>Dumpling 输出文件</li>
+<li>其他格式兼容的 CSV 文件</li>
+</ul>
+</li>
+<li>适用 TiDB 版本：v2.1 及以上</li>
+<li>Kubernetes 支持：<a href="https://docs.pingcap.com/zh/tidb-in-kubernetes/v1.1/restore-data-using-tidb-lightning" target="_blank" rel="noopener">使用 TiDB Lightning 快速恢复 Kubernetes 上的 TiDB 集群数据</a></li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>原 Loader 工具已停止维护，不再推荐使用。相关场景请使用 TiDB Lightning 的 <code>tidb</code> 模式进行替代，详细信息请参考 <a href="https://docs.pingcap.com/zh/tidb/stable/tidb-lightning-backends#从-loader-迁移到-tidb-lightning-tidb-backend" target="_blank" rel="noopener">TiDB Lightning TiDB-backend 文档</a>。</p>
+</blockquote>
+<h4 id="备份和恢复"><a href="#备份和恢复" class="headerlink" title="备份和恢复"></a>备份和恢复</h4><p><a href="https://docs.pingcap.com/zh/tidb/stable/backup-and-restore-tool" target="_blank" rel="noopener">BR</a> 是一个对 TiDB 进行分布式备份和恢复的工具，可以高效地对大数据量的 TiDB 集群进行数据备份和恢复。</p>
+<p>基本信息：</p>
+<ul>
+<li><a href="https://docs.pingcap.com/zh/tidb/stable/backup-and-restore-tool#备份文件类型" target="_blank" rel="noopener">备份输出和恢复输入的文件类型</a>：SST + <code>backupmeta</code> 文件</li>
+<li>适用 TiDB 版本：v3.1 及 v4.0</li>
+<li>Kubernetes 支持：<a href="https://docs.pingcap.com/zh/tidb-in-kubernetes/v1.1/backup-to-aws-s3-using-br" target="_blank" rel="noopener">使用 BR 工具备份 TiDB 集群数据到兼容 S3 的存储</a>, <a href="https://docs.pingcap.com/zh/tidb-in-kubernetes/v1.1/restore-from-aws-s3-using-br" target="_blank" rel="noopener">使用 BR 工具恢复 S3 兼容存储上的备份数据</a></li>
+</ul>
+<h4 id="TiDB-增量日志同步"><a href="#TiDB-增量日志同步" class="headerlink" title="TiDB 增量日志同步"></a>TiDB 增量日志同步</h4><p><a href="https://docs.pingcap.com/zh/tidb/stable/tidb-binlog-overview" target="_blank" rel="noopener">TiDB Binlog</a> 是收集 TiDB 的增量 binlog 数据，并提供准实时同步和备份的工具。该工具可用于 TiDB 集群间的增量数据同步，如将其中一个 TiDB 集群作为另一个 TiDB 集群的从集群。</p>
+<p>基本信息：</p>
+<ul>
+<li>TiDB Binlog 的输入：TiDB 集群</li>
+<li>TiDB Binlog 的输出：TiDB 集群、MySQL、Kafka 或者增量备份文件</li>
+<li>适用 TiDB 版本：v2.1 及以上</li>
+<li>Kubernetes 支持：<a href="https://docs.pingcap.com/zh/tidb-in-kubernetes/v1.1/deploy-tidb-binlog" target="_blank" rel="noopener">TiDB Binlog 运维文档</a>，<a href="https://docs.pingcap.com/zh/tidb-in-kubernetes/v1.1/configure-tidb-binlog-drainer" target="_blank" rel="noopener">Kubernetes 上的 TiDB Binlog Drainer 配置</a></li>
+</ul>
+<h4 id="数据迁入"><a href="#数据迁入" class="headerlink" title="数据迁入"></a>数据迁入</h4><p><a href="https://docs.pingcap.com/zh/tidb-data-migration/v2.0/overview" target="_blank" rel="noopener">TiDB Data Migration (DM)</a> 是将 MySQL/MariaDB 数据迁移到 TiDB 的工具，支持全量数据和增量数据的迁移。</p>
+<p>基本信息：</p>
+<ul>
+<li>DM 的输入：MySQL/MariaDB</li>
+<li>DM 的输出：TiDB 集群</li>
+<li>适用 TiDB 版本：所有版本</li>
+<li>Kubernetes 支持：开发中</li>
+</ul>
+<p>如果数据量在 TB 级别以下，推荐直接使用 DM 迁移 MySQL/MariaDB 数据到 TiDB（迁移的过程包括全量数据的导出导入和增量数据的同步）。</p>
+<p>如果数据量在 TB 级别，推荐的迁移步骤如下：</p>
+<ol>
+<li>使用 <a href="https://docs.pingcap.com/zh/tidb/stable/dumpling-overview" target="_blank" rel="noopener">Dumpling</a> 导出 MySQL/MariaDB 全量数据。</li>
+<li>使用 <a href="https://docs.pingcap.com/zh/tidb/stable/tidb-lightning-overview" target="_blank" rel="noopener">TiDB Lightning</a> 将全量导出数据导入 TiDB 集群。</li>
+<li>使用 DM 迁移 MySQL/MariaDB 增量数据到 TiDB。</li>
+</ol>
+<h2 id="学习过程中参考的其他资料"><a href="#学习过程中参考的其他资料" class="headerlink" title="学习过程中参考的其他资料"></a>学习过程中参考的其他资料</h2><ul>
+<li><p>[视频教程-1.4 The TiDB platform architecture and landscape（TiDB 4.0 架构概览）](<a href="https://university.pingcap.com/courses/TiDB" target="_blank" rel="noopener">https://university.pingcap.com/courses/TiDB</a> 4.0 新手指南/chapter/101-章节/lesson/The-TiDB-platform-architecture-and-landscape)</p>
+</li>
+<li><p><a href="https://docs.pingcap.com/zh/tidb/stable/ecosystem-tool-user-guide" target="_blank" rel="noopener">TiDB 生态工具功能概览</a></p>
+</li>
+<li><p><a href="https://docs.pingcap.com/zh/tidb/stable/tidb-architecture" target="_blank" rel="noopener">TiDB 架构</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TiDB</category>
+      </categories>
+      <tags>
+        <tag>TiDB入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>03-TiDB发展简史</title>
+    <url>/2020/12/18/TiDB/03-TiDB%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/</url>
+    <content><![CDATA[<h1 id="课程名称：1-3-A-Brief-History-About-the-TiDB-database-platform（TiDB-发展简史）"><a href="#课程名称：1-3-A-Brief-History-About-the-TiDB-database-platform（TiDB-发展简史）" class="headerlink" title="课程名称：1.3 A Brief History About the TiDB database platform（TiDB 发展简史）"></a>课程名称：1.3 A Brief History About the TiDB database platform（TiDB 发展简史）</h1><h2 id="学习时长："><a href="#学习时长：" class="headerlink" title="学习时长："></a>学习时长：</h2><p>30min</p>
+<h2 id="课程收获："><a href="#课程收获：" class="headerlink" title="课程收获："></a>课程收获：</h2><p>了解 TiDB 的发展历史</p>
+<h2 id="课程内容："><a href="#课程内容：" class="headerlink" title="课程内容："></a>课程内容：</h2><blockquote>
+<p>本课程简要介绍了 TiDB 的发展历史。自从 v1.0.0 GA 开始，TiDB 做到了：可以从计算和存储两个层面的无限扩展，兼容了 MySQL 的语法和协议，强一致的真分布式事务。到今天，TiDB 可以称为一个真正的 HTAP 系统，不需要 ETL 工具进行数据转换，在系统运行 OLTP 业务时，也可以方便的进行报表查询。</p>
+<p>学习目标： 了解 TiDB 的发展历史</p>
+<p>关键知识点： TiDB；HTAP；数据中台；TiSpark；TiFlash</p>
+</blockquote>
+<p>A Brief History of the TiDb Database Platform</p>
+<p>时间线：早期的TiDB，TiSpak TiDB，TiFlash TiDB</p>
+<h3 id="早期的TiDB"><a href="#早期的TiDB" class="headerlink" title="早期的TiDB"></a>早期的TiDB</h3><p><a href="https://asktug.com/uploads/default/original/3X/3/2/3218e1b3c94d7475706becd10599148f101b1166.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/3/2/3218e1b3c94d7475706becd10599148f101b1166_2_690x391.jpeg" alt="13">截屏2020-12-16 上午10.47.13.jpg1224×694 81.4 KB</a></p>
+<ul>
+<li>Google Spanner</li>
+<li>1.0.0 GA 兼容 MySQL 协议</li>
+<li>TiDB Cluster _ TiDB * N</li>
+<li>TiKV Cluster _ TiKV * N</li>
+<li>PD Cluster _ PD * N</li>
+<li>作为数据中台，汇聚数据的应用较多</li>
+<li>问题：TP场景的问题较多；AP场景下复杂查询较慢、总是OMM；无法与大数据平台集成</li>
+</ul>
+<h3 id="TiSpak-TiDB"><a href="#TiSpak-TiDB" class="headerlink" title="TiSpak TiDB"></a>TiSpak TiDB</h3><p><a href="https://asktug.com/uploads/default/original/3X/d/2/d256b755ef38cebf8018f53ea14b359e9c8dbc61.png" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/d/2/d256b755ef38cebf8018f53ea14b359e9c8dbc61_2_689x379.png" alt="00">截屏2020-12-16 上午10.47.00.png1240×682 207 KB</a></p>
+<ul>
+<li>为了解决上面的问题，TiSpark诞生了，分布式计算框架</li>
+<li>将单点的计算能力拓展成多节点的并行计算能力</li>
+<li>同时无缝地接入大数据平台，像 R语言、Python、Apache Zeppelin、Hadoop</li>
+<li>缺点：并发低、消耗大量的计算资源、用户希望使用高并发的同时进行一些中等程度的AP查询</li>
+</ul>
+<p>在这一点上TiDB 要比 TiSpark适合很多：</p>
+<ol>
+<li>复杂计算消耗的资源更少</li>
+<li>TiDB 的维护成本更低</li>
+</ol>
+<p>引入TiSpark的同时，对TiDB的优化：</p>
+<ol>
+<li>优化器的优化：简单的优化器 ==&gt; RBO + CBO ==&gt; Cascades Optimizer (WIP)</li>
+<li>执行器的优化：经典火山模型 ==&gt; 并发执行 ==&gt; 向量化执行；以及更好的并发控制</li>
+<li>其他的新特性：分区表、Index Merge等</li>
+</ol>
+<p>这些都对复杂计算有巨大的提升。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/d/9/d94693bbeef7bb052a469994988e600251673661.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/d/9/d94693bbeef7bb052a469994988e600251673661_2_690x383.jpeg" alt="22">截屏2020-12-16 上午11.11.22.jpg1246×692 64.1 KB</a></p>
+<p><a href="https://asktug.com/uploads/default/original/3X/2/f/2f11abe7d13957b9593d39a21be20ab04d8af3ed.png" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/2/f/2f11abe7d13957b9593d39a21be20ab04d8af3ed_2_690x387.png" alt="06">截屏2020-12-16 上午11.12.06.png1246×700 92.1 KB</a></p>
+<p>两个核心矛盾未解决：</p>
+<ol>
+<li>行存不适合做分析</li>
+<li>没有资源隔离</li>
+</ol>
+<h3 id="TiFlash-TiDB"><a href="#TiFlash-TiDB" class="headerlink" title="TiFlash TiDB"></a>TiFlash TiDB</h3><p>通过Raft Learner独立同步一组列存储:</p>
+<ul>
+<li>Raft Learner提供极低消耗的副本同步</li>
+<li>Raft Learner读协议可与MVCC配合使用，以提供强一致读</li>
+</ul>
+<p>通过标签 Label 进行物理资源隔离：</p>
+<ul>
+<li>AP/TP 工作负载不会互相影响</li>
+</ul>
+<p><a href="https://asktug.com/uploads/default/original/3X/7/9/79f50c33d2ecf68db5b1b1273d94c240593414fa.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/7/9/79f50c33d2ecf68db5b1b1273d94c240593414fa_2_690x377.jpeg" alt="57">截屏2020-12-16 上午11.19.57.jpg1246×682 107 KB</a></p>
+<ul>
+<li>TiFlash 作为只读节点，可以处理来自TiSpark 和 TiDB 的读请求；</li>
+<li>TiFlash 的数据是通过 Raft Learner 同步过来，通过列存的形式保存下来</li>
+</ul>
+<p><a href="https://asktug.com/uploads/default/original/3X/4/c/4c3af3dc7dc6b94130879553c4e9b10d213a510a.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/4/c/4c3af3dc7dc6b94130879553c4e9b10d213a510a_2_690x384.jpeg" alt="06">截屏2020-12-16 上午11.22.06.jpg1238×690 108 KB</a></p>
+<p><a href="https://asktug.com/uploads/default/original/3X/2/4/2451a0eee9faff90e8b728dfe1f053ade47cc169.png" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/2/4/2451a0eee9faff90e8b728dfe1f053ade47cc169_2_690x383.png" alt="03">截屏2020-12-16 上午11.23.03.png1248×694 189 KB</a></p>
+<p>将不同的SQL发送到不同的搜索引擎中：</p>
+<ul>
+<li>通过TiKV进行索引的扫描</li>
+<li>通过TiFlash进行某两列的扫描</li>
+</ul>
+<h3 id="Till-Now"><a href="#Till-Now" class="headerlink" title="Till Now"></a>Till Now</h3><ul>
+<li>TiDB 不需要你去选择 TP/AP</li>
+<li>一个平台，既有行存又有列存 row and column storage 无需ETL工具进行同步</li>
+<li>在系统运行TP业务时也可以方便进行报表查询</li>
+</ul>
+<p><a href="https://asktug.com/uploads/default/original/3X/d/d/dd5c3ab9948a0f0db1c2810c6e1097ebb925ef13.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/d/d/dd5c3ab9948a0f0db1c2810c6e1097ebb925ef13_2_690x382.jpeg" alt="22">截屏2020-12-16 上午11.31.22.jpg1244×690 167 KB</a></p>
+<ul>
+<li>同步上游数据：DM</li>
+<li>同步下游数据：TiDB CDC</li>
+<li>监控告警：TiDB Dashboard——Prometheus</li>
+<li>安装部署：TiUP \ TiDB Operator 分别对应TiDB 虚拟和物理部署</li>
+</ul>
+<h2 id="学习过程中参考的其他资料"><a href="#学习过程中参考的其他资料" class="headerlink" title="学习过程中参考的其他资料"></a>学习过程中参考的其他资料</h2><ul>
+<li>[视频教程-1.3 A Brief History About the TiDB database platform（TiDB 发展简史）](<a href="https://university.pingcap.com/courses/TiDB" target="_blank" rel="noopener">https://university.pingcap.com/courses/TiDB</a> 4.0 新手指南/chapter/101-章节/lesson/A-Brief-History-About-the-TiDB-database-platform)</li>
+<li><a href="https://pingcap.com/blog-cn/the-future-and-past-of-tidb/" target="_blank" rel="noopener">TiDB 的现在和未来</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Spanner_(database)" target="_blank" rel="noopener">Google Spanner</a></li>
+<li><a href="https://docs.pingcap.com/zh/tidb/stable/ecosystem-tool-user-guide" target="_blank" rel="noopener">TiDB 生态工具功能概览</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TiDB</category>
+      </categories>
+      <tags>
+        <tag>TiDB入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>02-HTAP数据库简介</title>
+    <url>/2020/12/18/TiDB/02-HTAP%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h1 id="课程名称：-1-2-What’s-an-HTAP-Database-（HTAP-数据库简介）"><a href="#课程名称：-1-2-What’s-an-HTAP-Database-（HTAP-数据库简介）" class="headerlink" title="课程名称： 1.2 What’s an HTAP Database? （HTAP 数据库简介）"></a>课程名称： 1.2 What’s an HTAP Database? （HTAP 数据库简介）</h1><h2 id="学习时长"><a href="#学习时长" class="headerlink" title="学习时长"></a>学习时长</h2><p>10min</p>
+<h2 id="课程收获"><a href="#课程收获" class="headerlink" title="课程收获"></a>课程收获</h2><p>熟悉 HTAP 领域 以及 TiDB 的HTAP 适用场景。</p>
+<h2 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h2><blockquote>
+<p>本课程简要介绍了 HTAP 意义，技术难点，TiDB 如何实现 HTAP 以及相关的应用场景。</p>
+</blockquote>
+<h2 id="什么是HTAP？"><a href="#什么是HTAP？" class="headerlink" title="什么是HTAP？"></a>什么是HTAP？</h2><p>传统上，有两种类型的数据库：</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Online_transaction_processing" target="_blank" rel="noopener">在线事务处理</a>（OLTP）数据库</li>
+<li><a href="https://en.wikipedia.org/wiki/Online_analytical_processing" target="_blank" rel="noopener">在线分析处理</a>（OLAP）数据库</li>
+</ul>
+<p>另一方面，HTAP数据库是混合数据库，可同时处理两个工作负载。</p>
+<p>HTAP functionality is offered by database companies, such as <a href="https://en.wikipedia.org/wiki/Microsoft_Azure" target="_blank" rel="noopener">Microsoft Azure</a> Synapse Link<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-9" target="_blank" rel="noopener">[9]</a> for <a href="https://en.wikipedia.org/wiki/Cosmos_DB" target="_blank" rel="noopener">Cosmos DB</a>, DbAlibaba DRDS, LeanXcale,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-10" target="_blank" rel="noopener">[10]</a> <a href="https://en.wikipedia.org/wiki/TiDB" target="_blank" rel="noopener">TiDB</a>,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-11" target="_blank" rel="noopener">[11]</a><a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-12" target="_blank" rel="noopener">[12]</a> Hubble, <a href="https://en.wikipedia.org/wiki/ArangoDB" target="_blank" rel="noopener">ArangoDB</a>, <a href="https://en.wikipedia.org/wiki/Aerospike_(database)" target="_blank" rel="noopener">Aerospike</a>, <a href="https://en.wikipedia.org/wiki/GridGain_Systems" target="_blank" rel="noopener">Apache Ignite/GridGain In-Memory Data Fabric</a>, <a href="https://en.wikipedia.org/wiki/IBM" target="_blank" rel="noopener">IBM</a> <a href="https://en.wikipedia.org/wiki/IBM_Db2" target="_blank" rel="noopener">IBM_Db2</a> IDAA,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-13" target="_blank" rel="noopener">[13]</a> <a href="https://en.wikipedia.org/wiki/InterSystems" target="_blank" rel="noopener">InterSystems</a>,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-14" target="_blank" rel="noopener">[14]</a><a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-15" target="_blank" rel="noopener">[15]</a> <a href="https://en.wikipedia.org/wiki/Kdb%2B" target="_blank" rel="noopener">Kdb+</a>, <a href="https://en.wikipedia.org/wiki/Microsoft_SQL_Server" target="_blank" rel="noopener">Microsoft SQL Server</a>, <a href="https://en.wikipedia.org/wiki/Neo4j" target="_blank" rel="noopener">Neo4j</a>, <a href="https://en.wikipedia.org/w/index.php?title=Oracle_12c_In-Memory&action=edit&redlink=1" target="_blank" rel="noopener">Oracle 12c In-Memory</a>,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-oracle.com_2018-16" target="_blank" rel="noopener">[16]</a> <a href="https://en.wikipedia.org/wiki/SAP_HANA" target="_blank" rel="noopener">SAP HANA</a>,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-17" target="_blank" rel="noopener">[17]</a><a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-18" target="_blank" rel="noopener">[18]</a> <a href="https://en.wikipedia.org/wiki/MemSQL" target="_blank" rel="noopener">MemSQL</a>, <a href="https://en.wikipedia.org/wiki/MongoDB" target="_blank" rel="noopener">MongoDB</a>, <a href="https://en.wikipedia.org/wiki/VoltDB" target="_blank" rel="noopener">VoltDB</a>, <a href="https://en.wikipedia.org/wiki/NuoDB" target="_blank" rel="noopener">NuoDB</a>, <a href="https://en.wikipedia.org/wiki/OrientDB" target="_blank" rel="noopener">OrientDB</a>, <a href="https://en.wikipedia.org/wiki/DataStax" target="_blank" rel="noopener">DataStax</a>, <a href="https://en.wikipedia.org/wiki/EXtremeDB" target="_blank" rel="noopener">eXtremeDB</a>, <a href="https://en.wikipedia.org/w/index.php?title=Splice_Machine&action=edit&redlink=1" target="_blank" rel="noopener">Splice Machine</a>,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-19" target="_blank" rel="noopener">[19]</a> <a href="https://en.wikipedia.org/w/index.php?title=EsgynDB&action=edit&redlink=1" target="_blank" rel="noopener">EsgynDB</a>, <a href="https://en.wikipedia.org/wiki/Spanner_(database)" target="_blank" rel="noopener">Cloud Spanner</a>, HarperDB, <a href="https://en.wikipedia.org/wiki/Amazon_Aurora" target="_blank" rel="noopener">Amazon Aurora</a> (Parallel Query), BlobCity, <a href="https://en.wikipedia.org/wiki/Couchbase" target="_blank" rel="noopener">Couchbase</a>,<a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-20" target="_blank" rel="noopener">[20]</a> <a href="https://en.wikipedia.org/wiki/YugabyteDB" target="_blank" rel="noopener">YugabyteDB</a><a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing#cite_note-21" target="_blank" rel="noopener">[21]</a> and Postgres.</p>
+<h3 id="传统数据平台架构"><a href="#传统数据平台架构" class="headerlink" title="传统数据平台架构"></a>传统数据平台架构</h3><p>一般来说，OLTP数据库使用基于行的存储引擎。它们存储当前数据，实时更新它们，并支持高并发性和强一致性。每个请求最多只能修改几行数据。另一方面，OLAP数据库更可能是列式数据库。它们批量处理历史数据，这意味着并发性不高，每个请求都涉及大量行。</p>
+<p>如您所见，OLTP和OLAP请求具有不同的要求，因此它们需要不同的技术。因此，OLTP和OLAP请求通常在隔离的数据库中处理。因此，传统的数据处理系统可能如下所示：</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/9/7/97a3017838e27ba0e4f787ba12630b7e27479d14.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/9/7/97a3017838e27ba0e4f787ba12630b7e27479d14_2_690x251.jpeg" alt="img">a-traditional-data-platform-with-oltp-and-olap.jpg1600×584 67 KB</a></p>
+<p>在以上架构中，在线数据存储在在线数据库中，该数据库处理事务性工作负载。定期从在线数据库中提取数据（例如每天一次），并将数据加载到分析处理数据库中，例如关系数据仓库或Hadoop数据湖。数据仓库或数据湖处理提取的数据，然后将其导出为报告，然后加载到数据服务数据库或发送回在线数据库。</p>
+<p>这个过程漫长而复杂。数据执行的过程越多，获得的延迟就越高。</p>
+<h3 id="为什么HTAP很重要"><a href="#为什么HTAP很重要" class="headerlink" title="为什么HTAP很重要"></a>为什么HTAP很重要</h3><p>您的数据平台是否必须与上述平台一样复杂？当然不是。HTAP数据库可帮助您简化系统并提供实时性能。让我解释一下原因。</p>
+<p>HTAP描述<strong>了一个可同时处理OLTP和OLAP工作负载的数据库</strong>。使用HTAP数据库，您不必在一个数据库中执行事务，而在另一个数据库中执行分析。它可以让您同时做到。通过组合行存储和列存储，HTAP数据库利用了两者的优点，并且完成了比简单地连接两种格式更多的工作。</p>
+<p>但是，为什么需要HTAP数据库？您的旧数据平台可能很复杂且运行缓慢，但是仍然可以使您的应用程序保持运行状态。</p>
+<p>答案在于，<strong>事务和分析工作负载之间的界限越来越模糊</strong>：</p>
+<ul>
+<li><strong>OLAP用例变得事务化</strong>。提供报告时，我们可能还必须执行高度并行的简短查询，并对历史数据进行小范围查询。</li>
+<li><strong>OLTP用例变得分析起来</strong>。交易运行时，我们可能还需要执行大规模分析。我们可能需要向在线数据库提供反馈，以改善在线行为，对应用程序数据进行实时分析或在不同的应用程序中进行查询。</li>
+</ul>
+<p>如果您看下面的情况，即使是普通销售平台中的数据库也必须处理一组混合的动态需求。左侧是类似OLTP的工作负载，而右侧是类似OLAP的工作负载。在两个椭圆形相交的区域，工作负载既需要OLTP功能又需要OLAP功能。即HTAP功能。每个工作负载对数据库功能都有各种要求，例如可伸缩性，细粒度索引，列存储，实时更新和高并发性。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/6/c/6c9541cd5d7a7040f6bd3d473ef4fe4bb1cd045b.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/6/c/6c9541cd5d7a7040f6bd3d473ef4fe4bb1cd045b_2_690x319.jpeg" alt="img">even-a-simple-sales-platform-can-have-mixed-requirements.jpg1600×742 107 KB</a></p>
+<p>为了满足这些要求，HTAP数据库必须同时具有行存储和列存储。但是，仅仅将它们放在一起并不是怎么工作的。我们需要将它们作为一个有机的整体进行整合：让列存储和行存储自由地相互通信，并确保数据是实时且一致的。</p>
+<h2 id="TiDB如何实施HTAP"><a href="#TiDB如何实施HTAP" class="headerlink" title="TiDB如何实施HTAP"></a>TiDB如何实施HTAP</h2><p>从一开始，TiDB就被设计为OLTP数据库。现在，它最大的单个数据库拥有数万亿行数据，并且可以在生产中每秒处理数千万个查询（QPS）。但是令我们惊讶的是，甚至在4.0之前，一些用户已经将TiDB部署为功能良好的数据中心或数据仓库。当时，TiDB支持OLTP和OLAP工作负载。</p>
+<p>那么，TiDB 4.0中有什么新功能？简而言之，TiDB 4.0通过引入实时列式存储引擎<a href="https://docs.pingcap.com/tidb/stable/tiflash-overview" target="_blank" rel="noopener">TiFlash来</a>提供改进的HTAP体验。TiFlash是<a href="https://docs.pingcap.com/tidb/dev/tikv-overview" target="_blank" rel="noopener">TiKV</a>（分布式，事务性键值存储）的列式扩展。它根据<a href="https://en.wikipedia.org/wiki/Raft_(computer_science)" target="_blank" rel="noopener">Raft共识算法</a>异步复制来自TiKV的数据，并通过验证Raft索引和多版本并发控制（MVCC）来确保快照隔离级别的一致性。</p>
+<p>现在，如下图所示，将TiFlash与TiKV结合使用时，TiDB具有集成行和列存储的可伸缩体系结构。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/f/d/fd9961301d94d1d41636c43c08a14da15f17a905.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/f/d/fd9961301d94d1d41636c43c08a14da15f17a905_2_690x343.jpeg" alt="img">tidb-4.0-htap-architecture.jpg1600×797 143 KB</a></p>
+<p>在这种架构中：</p>
+<ul>
+<li>TiKV和TiFlash使用单独的存储节点以确保完全隔离。</li>
+<li>柱状副本中的数据是实时且一致的。</li>
+<li>TiKV和TiFlash之间没有中间层，因此数据复制既快速又简单。</li>
+<li>它通过行存储索引和列存储支持点获取，小范围扫描和大批量扫描。优化器使用成本模型根据实际工作量在列存储和行存储之间进行选择。</li>
+</ul>
+<h3 id="可扩展的实时更新"><a href="#可扩展的实时更新" class="headerlink" title="可扩展的实时更新"></a>可扩展的实时更新</h3><p>在TiDB的HTAP架构中，行存储和列存储是可伸缩和实时更新的。</p>
+<p>就像TiKV一样，TiFlash实现了多筏组副本机制。唯一的区别是TiFlash将数据从行存储复制到列存储。复制或存储数据的基本单位称为<a href="https://docs.pingcap.com/tidb/stable/glossary#regionpeerraft-group" target="_blank" rel="noopener">Region</a>。</p>
+<p>同样，数据复制没有中间层。在其他数据复制过程中，数据必须通过某些分布式管道，例如Kafka或其他消息队列系统，这会增加延迟。但是在TiDB中，TiKV和TiFlash之间的复制是对等的。没有中间层，因此可以实时复制数据。</p>
+<p>HTAP架构在复制和存储可伸缩性之间取得平衡。它使用与以前的OLTP体系结构相同的复制和分片机制。因此，调度策略仍然适用于HTAP架构，集群仍可以水平扩展或扩展。此外，您可以分别扩展列存储和行存储，以满足您的应用程序的需求。</p>
+<p>要启用TiFlash复制，您只需要一个命令：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># To create 2 columnar replicas for orders table</span></span><br><span class="line">mysql&gt; ALTER TABLE orders SET TIFLASH REPLICA 2;</span><br></pre></td></tr></table></figure>
+
+<h3 id="具有实时和一致读取的异步复制"><a href="#具有实时和一致读取的异步复制" class="headerlink" title="具有实时和一致读取的异步复制"></a>具有实时和一致读取的异步复制</h3><p>在TiFlash中，数据复制是异步的。此设计有两个优点：</p>
+<ul>
+<li>列存储的复制不会阻止事务处理。</li>
+<li>即使列状副本已关闭，行存储仍然可以工作。</li>
+</ul>
+<p>尽管复制是异步的，但是由于Raft共识算法，应用程序始终读取最新数据。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/3/b/3bc9a3aaf435b2e9a1c31b7f3da52f521377aa09.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/3/b/3bc9a3aaf435b2e9a1c31b7f3da52f521377aa09_2_690x407.jpeg" alt="img">the-raft-learner-mechanism.jpg1600×945 115 KB</a></p>
+<p>当应用程序从TiFlash中的学习者副本读取数据时，该应用程序将读取验证发送到TiKV中的Leader副本，然后接收有关复制进度的信息。如果进度没有完成，则不会将最新数据复制到学习者副本，并且学习者副本将等待直到获得最新数据。除非系统达到峰值利用率，否则整个等待时间只有几十到几百毫秒。</p>
+<h3 id="智能选择的优化器"><a href="#智能选择的优化器" class="headerlink" title="智能选择的优化器"></a>智能选择的优化器</h3><p>请注意，列存储和行存储不是两个独立的系统，而是一个有机整体。两家商店如何协调？好吧，诀窍在我们的优化器中。</p>
+<p>优化器选择查询执行计划时，会将列存储视为特殊索引。在行存储和特殊列存储索引中的所有索引中，优化器通过统计信息和基于成本的优化（CBO）选择最快的索引。这样，既考虑了列存储又考虑了行存储。您不必决定要在复杂查询中使用哪个存储引擎，因为优化器会为您做出最佳决定。</p>
+<p>但是，如果打算完全隔离列存储和行存储，则可以手动指定查询使用两个存储引擎之一。</p>
+<p>以下来自<a href="https://en.wikipedia.org/wiki/ClickHouse" target="_blank" rel="noopener">ClickHouse的</a>结果显示了TiFlash，MariaDB，Spark和Greenplum在单个宽表上的实时基准测试。对于相同的10个查询，四个数据库具有不同的执行时间。如您所见，在这种体系结构中，TiFlash上的TiDB的性能优于其他体系结构。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/2/f/2f7dd550617e177805d9efe3fdd00811243dec4c.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/2/f/2f7dd550617e177805d9efe3fdd00811243dec4c_2_690x369.jpeg" alt="img">benchmarking-tiflash-mariadb-spark-greenplum.jpg1600×856 70.4 KB</a></p>
+<h3 id="Apache-Spark与TiSpark携手合作"><a href="#Apache-Spark与TiSpark携手合作" class="headerlink" title="Apache Spark与TiSpark携手合作"></a>Apache Spark与TiSpark携手合作</h3><p>TiDB的HTAP架构在TiSpark的帮助下可以与Apache Spark无缝协作。<a href="https://docs.pingcap.com/tidb/stable/tispark-overview" target="_blank" rel="noopener">TiSpark</a>是一个薄计算层，旨在在TiKV或TiFlash之上运行Spark以响应复杂的OLAP查询，例如提供AI计算和数据科学工具箱，以及与商业智能（BI）集成。通过与Spark生态系统连接，TiDB可以为这些复杂的场景提供服务。</p>
+<p>您可以将TiSpark与Hadoop数据湖一起使用。在这种情况下，TiDB是为重量级，复杂查询提供分布式计算的绝佳方法。</p>
+<p>当我们在TiSpark和Greenplum上运行<a href="http://www.tpc.org/tpch/" target="_blank" rel="noopener">TPC-H</a>基准测试时，TiSpark + TiFlash使Greenplum陷入困境。有时Greenplum更快，而其他时候TiSpark + TiFlash更快，如下所示。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/1/5/153221a23bd20fff47ec225b1412d290721ec5e5.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/1/5/153221a23bd20fff47ec225b1412d290721ec5e5_2_690x401.jpeg" alt="img">benchmarking-tispark-tiflash-and-greenplum.jpg1600×931 87.1 KB</a></p>
+<h2 id="在HTAP方案中应用TiDB"><a href="#在HTAP方案中应用TiDB" class="headerlink" title="在HTAP方案中应用TiDB"></a>在HTAP方案中应用TiDB</h2><p>如前所述，在HTAP方案中，TiDB帮助用户构建简化的体系结构，从而降低维护复杂性，为应用程序提供实时数据并提高业务敏捷性。</p>
+<h3 id="实时数据仓库"><a href="#实时数据仓库" class="headerlink" title="实时数据仓库"></a>实时数据仓库</h3><p>下图显示了一个流行的TiDB用例：实时数据仓库。TiDB支持连续更新，因此可以轻松同步来自其他OLTP数据库的数据。在这种体系结构中，TiDB从多个应用程序收集数据并实时聚合它们的数据。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/b/0/b0ffa95b1ac647629b67166d53718c95c95766e1.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/b/0/b0ffa95b1ac647629b67166d53718c95c95766e1_2_690x265.jpeg" alt="img">use-tidb-as-real-time-data-warehouse.jpg1600×616 78.1 KB</a></p>
+<h3 id="一站式交易和分析处理"><a href="#一站式交易和分析处理" class="headerlink" title="一站式交易和分析处理"></a>一站式交易和分析处理</h3><p>在HTAP方案中应用TiDB的另一种方法是建立一个用于事务处理和分析处理的一站式数据库。以前，用户可能会将MySQL视为在线数据库，并在T + 1天内将数据从MySQL复制到分析数据库或Hadoop。MySQL为在线应用程序提供服务，BI工具连接到分析数据库或Hadoop以执行数据分析。</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/7/7/77720f522f552eeb0de9e3e27347ffaecea85d8e.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/7/7/77720f522f552eeb0de9e3e27347ffaecea85d8e_2_690x247.jpeg" alt="img">tidb-as-one-stop-database-for-oltp-and-olap.jpg1600×574 74.1 KB</a></p>
+<p>但是对于这种情况，您只需要一个TiDB集群。在线应用程序连接到TiDB的行存储，BI服务器连接到列存储。这种架构不仅降低了架构的复杂性，而且提高了整体性能。</p>
+<h3 id="将TiDB与您现有的数据仓库集成"><a href="#将TiDB与您现有的数据仓库集成" class="headerlink" title="将TiDB与您现有的数据仓库集成"></a>将TiDB与您现有的数据仓库集成</h3><p>有人可能会说：但是我已经有了一个可行的数据仓库系统。我不能简单地放弃他们并将所有内容迁移到TiDB，可以吗？</p>
+<p>实际上，如果您已经在使用Hadoop或数据仓库，则先前的用例可能不适用于您的系统。但是TiDB是如此灵活和可扩展，您可以将其与现有的数据仓库系统集成在一起，如下图所示：</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/e/9/e9061783cc2c97a5dd415eda272a79dc298fdc80.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/e/9/e9061783cc2c97a5dd415eda272a79dc298fdc80_2_690x356.jpeg" alt="img">integrating-tidb-with-your-data-warehouse.jpg1600×826 114 KB</a></p>
+<p>这些应用程序将数据聚合到TiDB中，从而为实时查询和外部数据服务提供了一个实时层。通过此实时层，TiSpark可以将数据发送到脱机Hadoop层，在Hadoop层中Hadoop建模并清除数据，然后将数据导出回TiDB，以便TiDB可以更有效地服务数据。</p>
+<p>通常，由于Hadoop不支持高速实时查询，因此我们无法将其API直接公开给外部服务。借助TiDB，我们使现有系统能够实时提供数据服务。</p>
+<h1 id="学习过程中参考的其他资料"><a href="#学习过程中参考的其他资料" class="headerlink" title="学习过程中参考的其他资料"></a>学习过程中参考的其他资料</h1><ul>
+<li>[视频教程-1.2 Why HTAP Matters（HTAP 数据库简介）](<a href="https://university.pingcap.com/courses/TiDB" target="_blank" rel="noopener">https://university.pingcap.com/courses/TiDB</a> 4.0 新手指南/chapter/101-章节/lesson/Why-HTAP-Matters)</li>
+<li><a href="https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing" target="_blank" rel="noopener">Hybrid transactional/analytical processing</a></li>
+<li><a href="https://en.pingcap.com/blog/how-we-build-an-htap-database-that-simplifies-your-data-platform" target="_blank" rel="noopener">我们如何构建可简化数据平台的HTAP数据库</a></li>
+<li><a href="https://db-engines.com/en/system/TiDB" target="_blank" rel="noopener">DB-Engine TiDB</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TiDB</category>
+      </categories>
+      <tags>
+        <tag>TiDB入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01-分布式数据库发展简史</title>
+    <url>/2020/12/18/TiDB/01-%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/</url>
+    <content><![CDATA[<h2 id="课程名称：1-1-A-Brief-History-of-Distributed-Database（分布式数据库发展简史）"><a href="#课程名称：1-1-A-Brief-History-of-Distributed-Database（分布式数据库发展简史）" class="headerlink" title="课程名称：1.1 A Brief History of Distributed Database（分布式数据库发展简史）"></a>课程名称：1.1 A Brief History of Distributed Database（分布式数据库发展简史）</h2><h2 id="学习时长：10min"><a href="#学习时长：10min" class="headerlink" title="学习时长：10min"></a>学习时长：10min</h2><h2 id="课程收获："><a href="#课程收获：" class="headerlink" title="课程收获："></a>课程收获：</h2><p>本课程简要介绍了从 20 世纪到 21 世纪分布式数据库的发展历史</p>
+<h2 id="课程内容："><a href="#课程内容：" class="headerlink" title="课程内容："></a>课程内容：</h2><p>学习目标： 帮助学员了解分布式数据库的发展历史</p>
+<p>关键知识点： 分布式数据库历史，NoSQL 和 NewSQL，OLTP 和 HTAP，新技术</p>
+<p>20世纪的数据库<br>传统数据库<br>使用SQL交互<br>单节点（shared everything架构）<br>面向OLTP负载<br>PostgreSQL、MySQL、SQL Server</p>
+<p>Internet时代（2000年后）<br>分布式中间件<br>ShardingSphere<br>Viteness<br>数据仓库兴起<br>编程语言API交互<br>Hadoop<br>基于SQL的OLAP数据库<br>使用SQL交互<br>分布式（shared nothing架构）<br>面向列<br>OLAP负载<br>Greenplum、monetdb<br>NOSQL<br>使用key-value API交互<br>没有事务、没有关系模型、没有schema<br>高性能<br>高可用<br>分布式（shared nothing架构）<br>mongoDB、HBASE、cassandra</p>
+<p>NewSQL（2010年后）<br>对OLTP负载，提供了不逊于NoSQL系统的可扩展性，同时支持ACID事务<br>使用SQL交互<br>分布式（shared nothing架构）<br>Cloud Spanner</p>
+<p>HTAP（2010年后）<br>像NewSQL一样执行OLTP查询<br>像数据仓库一样执行OLAP查询<br>HTAP NewSQL 数据库<br>使用SQL交互<br>支持OLTP&amp;OLAP负载<br>分布式（shared nothing）<br>高性能<br>高可用<br>TiDB</p>
+<p><a href="https://asktug.com/uploads/default/original/3X/d/e/de661b4101ca616057d4c643088886b5f783d416.jpeg" target="_blank" rel="noopener"><img src="https://asktug.com/uploads/default/optimized/3X/d/e/de661b4101ca616057d4c643088886b5f783d416_2_455x500.jpeg" alt="image">image.jpg1013×1111 193 KB</a></p>
+<p><a href="https://docs.pingcap.com/zh/tidb/stable" target="_blank" rel="noopener">TiDB简介</a></p>
+<p><a href="https://docs.pingcap.com/zh/tidb/stable/release-notes#40" target="_blank" rel="noopener">TiDB版本发布历史</a></p>
+]]></content>
+      <categories>
+        <category>TiDB</category>
+      </categories>
+      <tags>
+        <tag>TiDB入门</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TiDB新手指南</title>
     <url>/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p><a href="https://docs.pingcap.com/zh/tidb/stable" target="_blank" rel="noopener">TiDB简介</a></p>
@@ -413,12 +885,6 @@
 <li>TiDB 生态工具适用场景</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>TiDB</category>
-      </categories>
-      <tags>
-        <tag>TiDB入门</tag>
-      </tags>
   </entry>
   <entry>
     <title>docker操作篇-部署MySQL</title>
