@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-12-17T08:26:01.915Z</updated>
+  <updated>2020-12-18T08:14:12.624Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>09-如何连接到TiDB</title>
+    <link href="https://www.huangjingxue.com/2020/12/18/TiDB/09-%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0TiDB/"/>
+    <id>https://www.huangjingxue.com/2020/12/18/TiDB/09-%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0TiDB/</id>
+    <published>2020-12-18T14:33:40.000Z</published>
+    <updated>2020-12-18T08:14:12.624Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;课程名称：2-2-How-to-connect-TiDB-platform（如何连接到-TiDB）&quot;&gt;&lt;a href=&quot;#课程名称：2-2-How-to-connect-TiDB-platform（如何连接到-TiDB）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="TiDB" scheme="https://www.huangjingxue.com/categories/TiDB/"/>
+    
+    
+      <category term="TiDB入门" scheme="https://www.huangjingxue.com/tags/TiDB%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>08-TiDB适用场景</title>
+    <link href="https://www.huangjingxue.com/2020/12/18/TiDB/08-TiDB%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+    <id>https://www.huangjingxue.com/2020/12/18/TiDB/08-TiDB%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF/</id>
+    <published>2020-12-18T14:30:55.000Z</published>
+    <updated>2020-12-18T06:31:46.737Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;课程名称：2-1-When-to-use-TiDB-platform（TiDB-的适用场景）&quot;&gt;&lt;a href=&quot;#课程名称：2-1-When-to-use-TiDB-platform（TiDB-的适用场景）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="TiDB" scheme="https://www.huangjingxue.com/categories/TiDB/"/>
+    
+    
+      <category term="TiDB入门" scheme="https://www.huangjingxue.com/tags/TiDB%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>07-TiDB典型应用场景及用户案例</title>
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/07-TiDB%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%8F%8A%E7%94%A8%E6%88%B7%E6%A1%88%E4%BE%8B/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/07-TiDB%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%8F%8A%E7%94%A8%E6%88%B7%E6%A1%88%E4%BE%8B/</id>
     <published>2020-12-17T16:24:51.000Z</published>
-    <updated>2020-12-17T08:26:01.915Z</updated>
+    <updated>2020-12-17T08:37:59.245Z</updated>
     
     <summary type="html">
     
@@ -48,7 +102,7 @@
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/06-TiDB%E4%B8%AD%E7%9A%84%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/06-TiDB%E4%B8%AD%E7%9A%84%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/</id>
     <published>2020-12-17T16:24:15.000Z</published>
-    <updated>2020-12-17T08:27:29.023Z</updated>
+    <updated>2020-12-17T08:37:59.243Z</updated>
     
     <summary type="html">
     
@@ -75,7 +129,7 @@
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/05-TiDB4-0%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/05-TiDB4-0%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7/</id>
     <published>2020-12-17T16:23:57.000Z</published>
-    <updated>2020-12-17T08:27:35.570Z</updated>
+    <updated>2020-12-17T08:37:59.247Z</updated>
     
     <summary type="html">
     
@@ -102,7 +156,7 @@
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/04-TiDB4-0%E6%9E%B6%E6%9E%84%E6%A6%82%E8%A7%88/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/04-TiDB4-0%E6%9E%B6%E6%9E%84%E6%A6%82%E8%A7%88/</id>
     <published>2020-12-17T16:23:37.000Z</published>
-    <updated>2020-12-17T08:28:17.237Z</updated>
+    <updated>2020-12-17T08:37:59.241Z</updated>
     
     <summary type="html">
     
@@ -129,7 +183,7 @@
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/03-TiDB%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/03-TiDB%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/</id>
     <published>2020-12-17T16:23:17.000Z</published>
-    <updated>2020-12-17T08:37:12.298Z</updated>
+    <updated>2020-12-17T08:37:59.246Z</updated>
     
     <summary type="html">
     
@@ -156,7 +210,7 @@
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/02-HTAP%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/02-HTAP%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B/</id>
     <published>2020-12-17T16:22:51.000Z</published>
-    <updated>2020-12-17T08:29:58.328Z</updated>
+    <updated>2020-12-17T08:37:59.234Z</updated>
     
     <summary type="html">
     
@@ -183,7 +237,7 @@
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/01-%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/01-%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/</id>
     <published>2020-12-17T16:22:32.000Z</published>
-    <updated>2020-12-17T08:34:25.007Z</updated>
+    <updated>2020-12-17T08:37:59.231Z</updated>
     
     <summary type="html">
     
@@ -202,30 +256,6 @@
     
     
       <category term="TiDB入门" scheme="https://www.huangjingxue.com/tags/TiDB%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TiDB新手指南</title>
-    <link href="https://www.huangjingxue.com/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"/>
-    <id>https://www.huangjingxue.com/2020/12/15/TiDB/TiDB%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/</id>
-    <published>2020-12-15T10:22:07.000Z</published>
-    <updated>2020-12-17T08:17:10.262Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://docs.pingcap.com/zh/tidb/stable&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;TiDB简介&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
@@ -483,29 +513,6 @@
     
     
       <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>innodb状态解说</title>
-    <link href="https://www.huangjingxue.com/2020/10/22/MySQL/innodb%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4/"/>
-    <id>https://www.huangjingxue.com/2020/10/22/MySQL/innodb%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4/</id>
-    <published>2020-10-21T18:06:24.000Z</published>
-    <updated>2020-10-21T10:29:49.697Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
