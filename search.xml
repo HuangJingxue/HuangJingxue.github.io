@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>02-MongoDB聚合框架</title>
+    <url>/2020/12/24/MongoDB/02-MongoDB%E8%81%9A%E5%90%88%E6%A1%86%E6%9E%B6/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>七天MongoDB训练营</category>
+      </categories>
+      <tags>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01-走进MongoDB</title>
+    <url>/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/</url>
+    <content><![CDATA[<h1 id="01-相关概念"><a href="#01-相关概念" class="headerlink" title="01 相关概念"></a>01 相关概念</h1><h2 id="MonogoDB的功能定位"><a href="#MonogoDB的功能定位" class="headerlink" title="MonogoDB的功能定位"></a>MonogoDB的功能定位</h2><img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223173145528.png" class="" title="This is an 1 image">
+
+<h2 id="MongoDB部署模型"><a href="#MongoDB部署模型" class="headerlink" title="MongoDB部署模型"></a>MongoDB部署模型</h2><img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223173201711.png" class="" title="This is an 1 image">
+
+<h2 id="MongoDB基本概念与关系数据的对应关系"><a href="#MongoDB基本概念与关系数据的对应关系" class="headerlink" title="MongoDB基本概念与关系数据的对应关系"></a>MongoDB基本概念与关系数据的对应关系</h2><img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223171617368.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223171652842.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223171836529.png" class="" title="This is an 1 image">
+
+<h1 id="02-集群部署"><a href="#02-集群部署" class="headerlink" title="02 集群部署"></a>02 集群部署</h1><img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223171914777.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172013322.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172032413.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172106829.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172250103.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172330933.png" class="" title="This is an 1 image">
+
+<h1 id="03-基本操作"><a href="#03-基本操作" class="headerlink" title="03 基本操作"></a>03 基本操作</h1><img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172727342.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172752634.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172818256.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172839549.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172909040.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223172940372.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223173010605.png" class="" title="This is an 1 image">
+
+<img src="/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/image-20201223173030740.png" class="" title="This is an 1 image">
+
+
+
+<p><em><code>帮助文档</code></em></p>
+<p><a href="https://docs.mongodb.com/manual/installation/" target="_blank" rel="noopener">MongoDB安装</a></p>
+<p><a href="https://docs.mongodb.com/manual/crud/" target="_blank" rel="noopener">MongoDB操作语言</a></p>
+]]></content>
+      <categories>
+        <category>七天MongoDB训练营</category>
+      </categories>
+      <tags>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>09-如何连接到TiDB</title>
     <url>/2020/12/18/TiDB/09-%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0TiDB/</url>
     <content><![CDATA[<h2 id="课程名称：2-2-How-to-connect-TiDB-platform（如何连接到-TiDB）"><a href="#课程名称：2-2-How-to-connect-TiDB-platform（如何连接到-TiDB）" class="headerlink" title="课程名称：2.2 How to connect TiDB platform（如何连接到 TiDB）"></a>课程名称：2.2 How to connect TiDB platform（如何连接到 TiDB）</h2><h2 id="学习时长：1h"><a href="#学习时长：1h" class="headerlink" title="学习时长：1h"></a>学习时长：1h</h2><h2 id="课程收获："><a href="#课程收获：" class="headerlink" title="课程收获："></a>课程收获：</h2><blockquote>

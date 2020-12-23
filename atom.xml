@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangjingxue.com/"/>
-  <updated>2020-12-18T08:14:12.624Z</updated>
+  <updated>2020-12-23T09:35:45.030Z</updated>
   <id>https://www.huangjingxue.com/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>02-MongoDB聚合框架</title>
+    <link href="https://www.huangjingxue.com/2020/12/24/MongoDB/02-MongoDB%E8%81%9A%E5%90%88%E6%A1%86%E6%9E%B6/"/>
+    <id>https://www.huangjingxue.com/2020/12/24/MongoDB/02-MongoDB%E8%81%9A%E5%90%88%E6%A1%86%E6%9E%B6/</id>
+    <published>2020-12-23T17:10:27.000Z</published>
+    <updated>2020-12-23T09:35:45.030Z</updated>
+    
+    <summary type="html">
+    
+      http://www.miued.com/wp-content/uploads/2014/09/20130816091233990.png
+    
+    </summary>
+    
+    
+      <category term="七天MongoDB训练营" scheme="https://www.huangjingxue.com/categories/%E4%B8%83%E5%A4%A9MongoDB%E8%AE%AD%E7%BB%83%E8%90%A5/"/>
+    
+    
+      <category term="MongoDB" scheme="https://www.huangjingxue.com/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01-走进MongoDB</title>
+    <link href="https://www.huangjingxue.com/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/"/>
+    <id>https://www.huangjingxue.com/2020/12/24/MongoDB/01-%E8%B5%B0%E8%BF%9BMongoDB/</id>
+    <published>2020-12-23T17:10:03.000Z</published>
+    <updated>2020-12-23T09:46:49.390Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;01-相关概念&quot;&gt;&lt;a href=&quot;#01-相关概念&quot; class=&quot;headerlink&quot; title=&quot;01 相关概念&quot;&gt;&lt;/a&gt;01 相关概念&lt;/h1&gt;&lt;h2 id=&quot;MonogoDB的功能定位&quot;&gt;&lt;a href=&quot;#MonogoDB的功能定位&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="七天MongoDB训练营" scheme="https://www.huangjingxue.com/categories/%E4%B8%83%E5%A4%A9MongoDB%E8%AE%AD%E7%BB%83%E8%90%A5/"/>
+    
+    
+      <category term="MongoDB" scheme="https://www.huangjingxue.com/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>09-如何连接到TiDB</title>
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/09-%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0TiDB/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/09-%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0TiDB/</id>
     <published>2020-12-18T14:33:40.000Z</published>
-    <updated>2020-12-18T08:14:12.624Z</updated>
+    <updated>2020-12-18T08:20:00.645Z</updated>
     
     <summary type="html">
     
@@ -48,7 +96,7 @@
     <link href="https://www.huangjingxue.com/2020/12/18/TiDB/08-TiDB%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
     <id>https://www.huangjingxue.com/2020/12/18/TiDB/08-TiDB%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF/</id>
     <published>2020-12-18T14:30:55.000Z</published>
-    <updated>2020-12-18T06:31:46.737Z</updated>
+    <updated>2020-12-18T08:20:00.642Z</updated>
     
     <summary type="html">
     
@@ -465,54 +513,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>第5章索引与算法</title>
-    <link href="https://www.huangjingxue.com/2020/10/27/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    <id>https://www.huangjingxue.com/2020/10/27/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC5%E7%AB%A0%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95/</id>
-    <published>2020-10-27T09:51:44.000Z</published>
-    <updated>2020-10-29T10:30:43.222Z</updated>
-    
-    <summary type="html">
-    
-      要找到一个合适的平衡点，这对应用程序的性能至关重要。
-    
-    </summary>
-    
-    
-      <category term="MySQL技术内幕" scheme="https://www.huangjingxue.com/categories/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
-    
-    
-      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第7章事务</title>
-    <link href="https://www.huangjingxue.com/2020/10/24/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC7%E7%AB%A0%E4%BA%8B%E5%8A%A1/"/>
-    <id>https://www.huangjingxue.com/2020/10/24/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/%E7%AC%AC7%E7%AB%A0%E4%BA%8B%E5%8A%A1/</id>
-    <published>2020-10-23T17:44:57.000Z</published>
-    <updated>2020-10-28T07:18:40.994Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;7-2-事务的实现&quot;&gt;&lt;a href=&quot;#7-2-事务的实现&quot; class=&quot;headerlink&quot; title=&quot;7.2 事务的实现&quot;&gt;&lt;/a&gt;7.2 事务的实现&lt;/h1&gt;&lt;p&gt;redo log
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL技术内幕" scheme="https://www.huangjingxue.com/categories/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
-    
-    
-      <category term="MySQL" scheme="https://www.huangjingxue.com/tags/MySQL/"/>
     
   </entry>
   
